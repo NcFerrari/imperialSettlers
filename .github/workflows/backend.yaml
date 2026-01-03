@@ -64,7 +64,7 @@ jobs:
       - name: increase patch version + set it into all pom.xml
         shell: bash
         env:
-          GH_PAT: ${{ secrets.SETTLER_KEY }}
+          GH_PAT: ${{ secrets.SETTLER_TOKEN }}
         run: |
           git fetch --prune --unshallow --tags
           LAST_TAG=$(git tag --list 'backend-v*' --sort=-creatordate | head -n1 || echo "backend-v0.0.0")
