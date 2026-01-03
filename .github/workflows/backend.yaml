@@ -1,0 +1,115 @@
+name: Backend
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Type of version'
+        required: false
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  unit_tests:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Cache Maven repository
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Build backend and run unit tests
+        run: mvn clean verify
+    
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build backend
+        run: mvn clean package
+        working-directory: .
+
+      - name: increase patch version + set it into all pom.xml
+        shell: bash
+        env:
+          GH_PAT: ${{ secrets.SETTLER_KEY }}
+        run: |
+          git fetch --prune --unshallow --tags
+          LAST_TAG=$(git tag --list 'backend-v*' --sort=-creatordate | head -n1 || echo "backend-v0.0.0")
+          if [ -z "$LAST_TAG" ]; then
+          BASE_VERSION="0.0.0"
+          else
+            BASE_VERSION=${LAST_TAG#backend-}
+            BASE_VERSION=${BASE_VERSION#v}
+          fi
+          
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$BASE_VERSION"
+          
+          VERSION_TYPE="${{ github.event.inputs.version_type }}"
+          
+          case "$VERSION_TYPE" in
+          patch)
+          PATCH=$((PATCH + 1))
+          ;;
+          minor)
+          MINOR=$((MINOR + 1))
+          PATCH=0
+          ;;
+          major)
+          MAJOR=$((MAJOR + 1))
+          MINOR=0
+          PATCH=0
+          ;;
+          esac
+          NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+          
+          echo "New version: $NEW_VERSION"
+          mvn versions:set -DnewVersion=$NEW_VERSION -f backend/pom.xml
+          
+          echo "Updating frontend dependency to backend version $BACKEND_VERSION"
+          
+          mvn versions:use-dep-version \
+              -Dincludes=cz.games.lp:backend \
+              -DdepVersion=$NEW_VERSION \
+              -DforceVersion=true \
+              -f frontend/pom.xml
+          
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add backend/pom.xml frontend/pom.xml
+          git commit -m "Bump backend to $NEW_VERSION and update dependent modules" || echo "No changes to commit"
+          git push https://$GH_PAT@github.com/NcFerrari/settlers.git HEAD
+          git tag "backend-v$NEW_VERSION"
+          git push https://$GH_PAT@github.com/NcFerrari/settlers.git "backend-v$NEW_VERSION"
