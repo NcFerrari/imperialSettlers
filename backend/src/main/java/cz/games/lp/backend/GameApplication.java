@@ -1,6 +1,6 @@
 package cz.games.lp.backend;
 
-import cz.games.lp.backend.initializer.GameInitializer;
+import cz.games.lp.backend.engine.GameEngine;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +12,7 @@ public class GameApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(GameApplication.class, args);
-        GameInitializer initializer = context.getBean(GameInitializer.class);
-        initializer.prepare();
+        GameEngine gameEngine = context.getBean(GameEngine.class);
+        gameEngine.prepareData();
     }
 }
