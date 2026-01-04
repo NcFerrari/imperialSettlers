@@ -71,16 +71,19 @@ jobs:
         run: |
           git fetch --prune --tags
           LAST_TAG=$(git tag --list 'backend-v*' --sort=-creatordate | head -n1 || echo "backend-v0.0.0")
+          echo "last_tag: $LAST_TAG"
           if [ -z "$LAST_TAG" ]; then
           BASE_VERSION="0.0.0"
           else
             BASE_VERSION=${LAST_TAG#backend-}
             BASE_VERSION=${BASE_VERSION#v}
           fi
+          echo "base_version: $BASE_VERSION"
           
           IFS='.' read -r MAJOR MINOR PATCH <<< "$BASE_VERSION"
           
           VERSION_TYPE="${{ github.event.inputs.version_type }}"
+          echo "version_type: $VERSION_TYPE"
           
           case "$VERSION_TYPE" in
           patch)
