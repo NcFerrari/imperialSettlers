@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -28,19 +29,20 @@ public class GameEngine {
     }
 
     @Async("thread")
-    public void prepareData() {
+    public CompletableFuture<String> prepareData() {
         log.info("prepareData");
         loadAllCardData();
         loadAllFactionData();
+        return CompletableFuture.completedFuture("loadingData");
     }
 
-    public void loadAllCardData() {
+    private void loadAllCardData() {
         log.info("loadAllCardData");
         List<CardJSON> list = jsonCreator.loadData(CardJSON.class, "data/cards.json");
         rawCardMap = list.stream().collect(Collectors.toMap(CardJSON::getCardId, Function.identity()));
     }
 
-    public void loadAllFactionData() {
+    private void loadAllFactionData() {
         log.info("loadAllFactionData");
         List<FactionJSON> list = jsonCreator.loadData(FactionJSON.class, "data/factions.json");
         rawFactionMap = list.stream().collect(Collectors.toMap(FactionJSON::getFaction, Function.identity()));
