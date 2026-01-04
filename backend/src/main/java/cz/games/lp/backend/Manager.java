@@ -8,9 +8,13 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class Manager {
 
-    public static void main(String[] args) {
+    public void run(String[] args) {
         ApplicationContext context = SpringApplication.run(Manager.class, args);
         GameApplication gameApplication = context.getBean(GameApplication.class);
         gameApplication.startApplication();
+    }
+
+    public static void main(String[] args) {
+        new Manager().run(args);
     }
 }

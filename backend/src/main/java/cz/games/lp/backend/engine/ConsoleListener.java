@@ -30,7 +30,7 @@ public class ConsoleListener {
         executor.execute(this::cliRunner);
     }
 
-    private void cliRunner() {
+    public void cliRunner() {
         log.debug("cliRunner");
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (!Thread.currentThread().isInterrupted()) {
@@ -49,7 +49,7 @@ public class ConsoleListener {
         }
     }
 
-    private void gameInput(String line) {
+    public void gameInput(String line) {
         log.debug("gameInput");
         log.info("you typed: {}", line);
     }

@@ -30,8 +30,6 @@ public class GameEngine {
     private final JsonManager jsonManager;
     private final CardMapper cardMapper;
     private final FactionMapper factionMapper;
-    private Map<String, CardJSON> rawCardMap;
-    private Map<String, FactionJSON> rawFactionMap;
 
     public GameEngine(JsonManager jsonCreator, CardMapper cardMapper, FactionMapper factionMapper) {
         this.jsonManager = jsonCreator;
@@ -42,32 +40,30 @@ public class GameEngine {
     @Async("thread")
     public CompletableFuture<String> prepareData() {
         log.debug("prepareData");
-        loadAllCardData();
-        mapAllCards();
-        loadAllFactionData();
-        mapAllFactions();
+        mapAllCardsData(loadAllCardsData());
+        mapAllFactions(loadAllFactionsData());
         return CompletableFuture.completedFuture("loadingData");
     }
 
-    private void loadAllCardData() {
+    public void mapAllCardsData(Map<String, CardJSON> jsonCardsDataMap) {
+        log.debug("mapAllCards");
+        cardMapper.mapToCardDTO(jsonCardsDataMap, cardMap);
+    }
+
+    public Map<String, CardJSON> loadAllCardsData() {
         log.debug("loadAllCardData");
         List<CardJSON> list = jsonManager.loadData(CardJSON.class, "data/cards.json");
-        rawCardMap = list.stream().collect(Collectors.toMap(CardJSON::getCardId, Function.identity()));
+        return list.stream().collect(Collectors.toMap(CardJSON::getCardId, Function.identity()));
     }
 
-    private void mapAllCards() {
-        log.debug("mapAllCards");
-        cardMapper.mapToCardDTO(rawCardMap, cardMap);
+    public void mapAllFactions(Map<String, FactionJSON> jsonFactionsDataMap) {
+        log.debug("mapAllFactions");
+        factionMapper.mapToFactionDTO(jsonFactionsDataMap, factionMap);
     }
 
-    private void loadAllFactionData() {
+    public Map<String, FactionJSON> loadAllFactionsData() {
         log.debug("loadAllFactionData");
         List<FactionJSON> list = jsonManager.loadData(FactionJSON.class, "data/factions.json");
-        rawFactionMap = list.stream().collect(Collectors.toMap(FactionJSON::getFaction, Function.identity()));
-    }
-
-    private void mapAllFactions() {
-        log.debug("mapAllFactions");
-        factionMapper.mapToFactionDTO(rawFactionMap, factionMap);
+        return list.stream().collect(Collectors.toMap(FactionJSON::getFaction, Function.identity()));
     }
 }

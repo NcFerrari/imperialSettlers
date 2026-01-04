@@ -25,7 +25,7 @@ class GameApplicationTest {
     private GameApplication gameApplication;
 
     @Test
-    void contextLoadsAndStartsApplication() {
+    void startApplicationTest() {
         when(gameEngine.prepareData()).thenReturn(CompletableFuture.completedFuture("ok"));
 
         gameApplication.startApplication();
