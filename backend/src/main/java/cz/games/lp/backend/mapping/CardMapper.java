@@ -9,5 +9,7 @@ import java.util.Map;
 
 @Mapper(componentModel = "spring")
 public interface CardMapper {
+
     void mapToCardDTO(Map<String, CardJSON> source, @MappingTarget Map<String, CardDTO> target);
+
 }

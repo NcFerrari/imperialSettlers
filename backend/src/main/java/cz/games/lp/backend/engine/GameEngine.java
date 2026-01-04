@@ -3,11 +3,16 @@ package cz.games.lp.backend.engine;
 import cz.games.lp.backend.data.CardJSON;
 import cz.games.lp.backend.data.FactionJSON;
 import cz.games.lp.backend.data.JsonManager;
+import cz.games.lp.backend.mapping.CardMapper;
+import cz.games.lp.backend.mapping.FactionMapper;
+import cz.games.lp.common.dto.CardDTO;
+import cz.games.lp.common.dto.FactionDTO;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -18,14 +23,20 @@ import java.util.stream.Collectors;
 @Component
 public class GameEngine {
 
+    @Getter
+    private final Map<String, CardDTO> cardMap = new HashMap<>();
+    @Getter
+    private final Map<String, FactionDTO> factionMap = new HashMap<>();
     private final JsonManager jsonManager;
-    @Getter
+    private final CardMapper cardMapper;
+    private final FactionMapper factionMapper;
     private Map<String, CardJSON> rawCardMap;
-    @Getter
     private Map<String, FactionJSON> rawFactionMap;
 
-    public GameEngine(JsonManager jsonCreator) {
+    public GameEngine(JsonManager jsonCreator, CardMapper cardMapper, FactionMapper factionMapper) {
         this.jsonManager = jsonCreator;
+        this.cardMapper = cardMapper;
+        this.factionMapper = factionMapper;
     }
 
     @Async("thread")
@@ -46,7 +57,7 @@ public class GameEngine {
 
     private void mapAllCards() {
         log.debug("mapAllCards");
-
+        cardMapper.mapToCardDTO(rawCardMap, cardMap);
     }
 
     private void loadAllFactionData() {
@@ -57,5 +68,6 @@ public class GameEngine {
 
     private void mapAllFactions() {
         log.debug("mapAllFactions");
+        factionMapper.mapToFactionDTO(rawFactionMap, factionMap);
     }
 }
