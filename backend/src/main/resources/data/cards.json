@@ -1,5 +1,6 @@
 [
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD",
       "WOOD"
@@ -7,7 +8,7 @@
     "cardEffectForPosition": null,
     "cardId": "bar001",
     "cardName": "Prales",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BROWN"
     ],
@@ -20,6 +21,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD",
       "WOOD"
@@ -27,7 +29,7 @@
     "cardEffectForPosition": null,
     "cardId": "bar002",
     "cardName": "Prales",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BROWN"
     ],
@@ -40,6 +42,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD",
       "WOOD"
@@ -47,7 +50,7 @@
     "cardEffectForPosition": null,
     "cardId": "bar003",
     "cardName": "Prales",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BROWN"
     ],
@@ -60,11 +63,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar004",
     "cardName": "Barbarský oltář",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -79,11 +83,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar005",
     "cardName": "Barbarský oltář",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -98,11 +103,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar006",
     "cardName": "Barbarský oltář",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -117,11 +123,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar007",
     "cardName": "Nájezd",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -135,11 +142,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar008",
     "cardName": "Nájezd",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -153,11 +161,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar009",
     "cardName": "Nájezd",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -171,11 +180,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar010",
     "cardName": "Záškodníci",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -189,11 +199,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar011",
     "cardName": "Záškodníci",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -207,6 +218,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SWORD",
       "SETTLER"
@@ -214,7 +226,7 @@
     "cardEffectForPosition": null,
     "cardId": "bar012",
     "cardName": "Hlídková věž",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -229,6 +241,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SWORD",
       "SETTLER"
@@ -236,7 +249,7 @@
     "cardEffectForPosition": null,
     "cardId": "bar013",
     "cardName": "Hlídková věž",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -251,11 +264,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar014",
     "cardName": "Temný oltář",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -271,11 +285,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar015",
     "cardName": "Temný oltář",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -291,11 +306,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar016",
     "cardName": "Tlupa",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -309,11 +325,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar017",
     "cardName": "Tlupa",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -327,11 +344,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar018",
     "cardName": "Sebranka",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -345,11 +363,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar019",
     "cardName": "Sebranka",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -363,6 +382,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "SETTLER"
@@ -370,7 +390,7 @@
     "cardEffectForPosition": null,
     "cardId": "bar020",
     "cardName": "Osada",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -383,6 +403,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "SETTLER"
@@ -390,7 +411,7 @@
     "cardEffectForPosition": null,
     "cardId": "bar021",
     "cardName": "Osada",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -403,11 +424,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "bar022",
     "cardName": "Hradiště",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -422,11 +444,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar023",
     "cardName": "Výprava",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -441,6 +464,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SWORD",
       "STONE"
@@ -448,7 +472,7 @@
     "cardEffectForPosition": null,
     "cardId": "bar024",
     "cardName": "Kamenolom",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -462,11 +486,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar025",
     "cardName": "Směnný obchod",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -480,11 +505,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar026",
     "cardName": "Zápasiště",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -499,11 +525,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "FOUR_SCORE_POINTS",
     "cardId": "bar027",
     "cardName": "Modla",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "PURPLE"
     ],
@@ -519,11 +546,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar028",
     "cardName": "Mise",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -538,11 +566,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar029",
     "cardName": "Hranice",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -557,11 +586,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar030",
     "cardName": "Loupežníci",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -575,6 +605,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "FOOD"
@@ -582,7 +613,7 @@
     "cardEffectForPosition": null,
     "cardId": "jap001",
     "cardName": "Farma",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -597,6 +628,7 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "FOOD"
@@ -604,7 +636,7 @@
     "cardEffectForPosition": null,
     "cardId": "jap002",
     "cardName": "Farma",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -619,6 +651,7 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "FOOD"
@@ -626,7 +659,7 @@
     "cardEffectForPosition": null,
     "cardId": "jap003",
     "cardName": "Farma",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -641,6 +674,7 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FOOD",
       "FOOD"
@@ -648,7 +682,7 @@
     "cardEffectForPosition": null,
     "cardId": "jap004",
     "cardName": "Rýžová pole",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -663,6 +697,7 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FOOD",
       "FOOD"
@@ -670,7 +705,7 @@
     "cardEffectForPosition": null,
     "cardId": "jap005",
     "cardName": "Rýžová pole",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -685,13 +720,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap006",
     "cardName": "Dům gejš",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -707,13 +743,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap007",
     "cardName": "Dům gejš",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -729,11 +766,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap008",
     "cardName": "Pevnost",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -749,13 +787,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SCORE_POINT"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap009",
     "cardName": "Daimyův hrad",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -772,13 +811,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SCORE_POINT"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap010",
     "cardName": "Daimyův hrad",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -795,13 +835,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FACTION_CARD"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap011",
     "cardName": "Buddhův chrám",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -819,11 +860,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap012",
     "cardName": "Herna",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -840,11 +882,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap013",
     "cardName": "Brána",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -860,11 +903,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap014",
     "cardName": "Brána",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -880,11 +924,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap015",
     "cardName": "Svatyně",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -901,11 +946,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap016",
     "cardName": "Stánky",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -921,11 +967,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap017",
     "cardName": "Stánky",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -941,11 +988,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap018",
     "cardName": "Stánky",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -961,11 +1009,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap019",
     "cardName": "Vyjednavač",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -981,11 +1030,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap020",
     "cardName": "Přípravna saké",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -1001,11 +1051,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap021",
     "cardName": "Obchodní stezka",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -1021,11 +1072,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap022",
     "cardName": "Obchodní stezka",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -1041,11 +1093,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap023",
     "cardName": "Obchodní stezka",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -1061,11 +1114,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "FACTION_CARD",
     "cardId": "jap024",
     "cardName": "Dojo",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -1081,11 +1135,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "FACTION_CARD",
     "cardId": "jap025",
     "cardName": "Dojo",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -1101,11 +1156,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": "TWO_SAMURAIS",
     "cardId": "jap026",
     "cardName": "Ninjové",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1121,11 +1177,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": "TWO_SAMURAIS",
     "cardId": "jap027",
     "cardName": "Ninjové",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1141,11 +1198,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap028",
     "cardName": "Škola sumo",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1161,11 +1219,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap029",
     "cardName": "Mistr mečíř",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1181,11 +1240,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap030",
     "cardName": "Škola diplomacie",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -1201,11 +1261,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom001",
     "cardName": "Sochařská dílna",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1219,11 +1280,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom002",
     "cardName": "Sochařská dílna",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1237,11 +1299,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom003",
     "cardName": "Sochařův učeň",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1255,11 +1318,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom004",
     "cardName": "Sochařův učeň",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1273,11 +1337,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom005",
     "cardName": "Sochařův učeň",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1291,11 +1356,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom006",
     "cardName": "Gladiátorská škola",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1309,11 +1375,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom007",
     "cardName": "Gladiátorská škola",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1327,11 +1394,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom008",
     "cardName": "Konstruktéři",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1346,11 +1414,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom009",
     "cardName": "Zahrady",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -1365,11 +1434,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom010",
     "cardName": "Zvědové",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -1384,13 +1454,14 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FACTION_CARD"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom011",
     "cardName": "Architekt",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -1407,11 +1478,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom012",
     "cardName": "Státní správa",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -1426,11 +1498,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom013",
     "cardName": "Státní správa",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -1445,11 +1518,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom014",
     "cardName": "Státní správa",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -1464,11 +1538,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom015",
     "cardName": "Velitelství",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1483,11 +1558,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom016",
     "cardName": "Velitelství",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1502,13 +1578,14 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "COMMON_CARD"
     ],
     "cardEffectForPosition": "COMMON_CARD",
     "cardId": "rom017",
     "cardName": "Legie",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -1522,13 +1599,14 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "COMMON_CARD"
     ],
     "cardEffectForPosition": "COMMON_CARD",
     "cardId": "rom018",
     "cardName": "Legie",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -1542,11 +1620,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom019",
     "cardName": "Skladiště",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "RED"
     ],
@@ -1560,6 +1639,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD",
       "STONE"
@@ -1567,7 +1647,7 @@
     "cardEffectForPosition": null,
     "cardId": "rom020",
     "cardName": "Stavitel",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BROWN"
     ],
@@ -1581,6 +1661,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD",
       "STONE"
@@ -1588,7 +1669,7 @@
     "cardEffectForPosition": null,
     "cardId": "rom021",
     "cardName": "Stavitel",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BROWN"
     ],
@@ -1602,11 +1683,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom022",
     "cardName": "Římské opevnění",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1621,6 +1703,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "GOLD"
@@ -1628,7 +1711,7 @@
     "cardEffectForPosition": null,
     "cardId": "rom023",
     "cardName": "Obchodní kolonie",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "RED",
       "BROWN",
@@ -1646,6 +1729,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "GOLD"
@@ -1653,7 +1737,7 @@
     "cardEffectForPosition": null,
     "cardId": "rom024",
     "cardName": "Obchodní kolonie",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "RED",
       "BROWN",
@@ -1671,6 +1755,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "GOLD"
@@ -1678,7 +1763,7 @@
     "cardEffectForPosition": null,
     "cardId": "rom025",
     "cardName": "Obchodní kolonie",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "RED",
       "BROWN",
@@ -1696,6 +1781,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "SETTLER"
@@ -1703,7 +1789,7 @@
     "cardEffectForPosition": null,
     "cardId": "rom026",
     "cardName": "Římská kasárna",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -1717,6 +1803,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE",
       "STONE"
@@ -1724,7 +1811,7 @@
     "cardEffectForPosition": null,
     "cardId": "rom027",
     "cardName": "Kameník",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1739,6 +1826,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE",
       "STONE"
@@ -1746,7 +1834,7 @@
     "cardEffectForPosition": null,
     "cardId": "rom028",
     "cardName": "Kameník",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1761,13 +1849,14 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "GOLD"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom029",
     "cardName": "Římská banka",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -1781,11 +1870,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom030",
     "cardName": "Kolos",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -1800,11 +1890,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": "TWO_CARDS",
     "cardId": "egy001",
     "cardName": "Poušť",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLUE"
     ],
@@ -1815,13 +1906,14 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy002",
     "cardName": "Oltář Bastet",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -1835,11 +1927,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy003",
     "cardName": "Stavitel vozů",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1854,13 +1947,14 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SWORD"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy004",
     "cardName": "Faraónova garda",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -1877,11 +1971,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "TWO_SETTLERS",
     "cardId": "egy005",
     "cardName": "Oáza",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -1895,11 +1990,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy006",
     "cardName": "Otrokář",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -1913,11 +2009,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy007",
     "cardName": "Královská lázeň",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -1931,11 +2028,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy008",
     "cardName": "Královská lázeň",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -1949,11 +2047,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy009",
     "cardName": "Zlatý bazar",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -1966,11 +2065,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy010",
     "cardName": "Chovatel škorpionů",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "PINK"
     ],
@@ -1985,6 +2085,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FOOD",
       "SETTLER"
@@ -1992,7 +2093,7 @@
     "cardEffectForPosition": null,
     "cardId": "egy011",
     "cardName": "Karavana",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2005,6 +2106,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FOOD",
       "SETTLER"
@@ -2012,7 +2114,7 @@
     "cardEffectForPosition": null,
     "cardId": "egy012",
     "cardName": "Karavana",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2025,11 +2127,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy013",
     "cardName": "Chrám boha Ra",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -2043,11 +2146,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy014",
     "cardName": "Útočiště",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -2062,11 +2166,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy015",
     "cardName": "Útočiště",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "BLACK"
     ],
@@ -2081,11 +2186,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy016",
     "cardName": "Alej Sfing",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2100,11 +2206,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy017",
     "cardName": "Alej Sfing",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2119,11 +2226,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy018",
     "cardName": "Alej Sfing",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2138,11 +2246,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy019",
     "cardName": "Sfinga",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -2156,11 +2265,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy020",
     "cardName": "Sfinga",
-    "cardType": "PROPERTIES",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -2174,11 +2284,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy021",
     "cardName": "Zlatník",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -2193,11 +2304,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy022",
     "cardName": "Zlatník",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -2212,11 +2324,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy023",
     "cardName": "Zlatník",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GOLD"
     ],
@@ -2231,11 +2344,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy024",
     "cardName": "Otroci",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2249,11 +2363,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy025",
     "cardName": "Otroci",
-    "cardType": "ACTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2267,6 +2382,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE",
       "STONE"
@@ -2274,7 +2390,7 @@
     "cardEffectForPosition": null,
     "cardId": "egy026",
     "cardName": "Kamenolom",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2288,6 +2404,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE",
       "STONE"
@@ -2295,7 +2412,7 @@
     "cardEffectForPosition": null,
     "cardId": "egy027",
     "cardName": "Kamenolom",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2309,6 +2426,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "GOLD",
       "STONE"
@@ -2316,7 +2434,7 @@
     "cardEffectForPosition": null,
     "cardId": "egy028",
     "cardName": "Pyramida",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2330,6 +2448,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "GOLD",
       "STONE"
@@ -2337,7 +2456,7 @@
     "cardEffectForPosition": null,
     "cardId": "egy029",
     "cardName": "Pyramida",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2351,6 +2470,7 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "GOLD",
       "STONE"
@@ -2358,7 +2478,7 @@
     "cardEffectForPosition": null,
     "cardId": "egy030",
     "cardName": "Pyramida",
-    "cardType": "PRODUCTION",
+    "cardType": "FACTION",
     "colors": [
       "GRAY"
     ],
@@ -2372,11 +2492,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com001",
     "cardName": "Socha",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -2394,11 +2515,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com002",
     "cardName": "Dodavatel",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -2416,11 +2538,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com003",
     "cardName": "Sklad dřeva",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -2438,11 +2561,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com004",
     "cardName": "Tesařská dílna",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -2460,11 +2584,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com005",
     "cardName": "Pranýř",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "BLACK"
     ],
@@ -2481,11 +2606,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com006",
     "cardName": "Větrný mlýn",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -2503,6 +2629,7 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD",
       "WOOD"
@@ -2510,7 +2637,7 @@
     "cardEffectForPosition": null,
     "cardId": "com007",
     "cardName": "Starý les",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -2527,13 +2654,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE"
     ],
     "cardEffectForPosition": "STONE",
     "cardId": "com008",
     "cardName": "Lom",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -2550,13 +2678,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE"
     ],
     "cardEffectForPosition": "STONE",
     "cardId": "com009",
     "cardName": "Lom",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -2573,13 +2702,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE"
     ],
     "cardEffectForPosition": "STONE",
     "cardId": "com010",
     "cardName": "Lom",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -2596,13 +2726,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "com011",
     "cardName": "Sutiny",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -2620,13 +2751,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER"
     ],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com012",
     "cardName": "Vesnice",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -2642,13 +2774,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER"
     ],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com013",
     "cardName": "Vesnice",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -2664,13 +2797,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER"
     ],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com014",
     "cardName": "Vesnice",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -2686,6 +2820,7 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER",
       "SETTLER"
@@ -2693,7 +2828,7 @@
     "cardEffectForPosition": null,
     "cardId": "com015",
     "cardName": "Městečko",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -2710,13 +2845,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "ANOTHER_PRODUCTION"
     ],
     "cardEffectForPosition": "CARD",
     "cardId": "com016",
     "cardName": "Pracující sedláci",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -2734,13 +2870,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "com017",
     "cardName": "Maminčiny lázně",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -2758,13 +2895,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SWORD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com018",
     "cardName": "Zbrojíř",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BLACK"
     ],
@@ -2781,13 +2919,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SWORD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com019",
     "cardName": "Zbrojíř",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BLACK"
     ],
@@ -2804,13 +2943,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SWORD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com020",
     "cardName": "Zbrojíř",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BLACK"
     ],
@@ -2827,11 +2967,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com021",
     "cardName": "Zlatý důl",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -2848,11 +2989,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com022",
     "cardName": "Zlatý důl",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -2869,13 +3011,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FOOD"
     ],
     "cardEffectForPosition": "FOOD",
     "cardId": "com023",
     "cardName": "Obilné pole",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -2892,13 +3035,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FOOD"
     ],
     "cardEffectForPosition": "FOOD",
     "cardId": "com024",
     "cardName": "Obilné pole",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -2915,13 +3059,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "FOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com025",
     "cardName": "Panská pole",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -2939,13 +3084,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "SCORE_POINT"
     ],
     "cardEffectForPosition": null,
     "cardId": "com026",
     "cardName": "Monument",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "PURPLE"
     ],
@@ -2961,13 +3107,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "GOLD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com027",
     "cardName": "Cech obchodníků",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -2985,13 +3132,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "GOLD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com028",
     "cardName": "Zlatonosný potok",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -3008,13 +3156,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com029",
     "cardName": "Dodavatel dřeva",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3032,11 +3181,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com030",
     "cardName": "Zlatnická dílna",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -3053,11 +3203,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com031",
     "cardName": "Zlatnická dílna",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -3074,11 +3225,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com032",
     "cardName": "Tržiště",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -3095,11 +3247,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com033",
     "cardName": "Uhelný důl",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -3116,11 +3269,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com034",
     "cardName": "Zedník",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -3137,11 +3291,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com035",
     "cardName": "Zedník",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -3158,11 +3313,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com036",
     "cardName": "Dvorní sochař",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -3178,11 +3334,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com037",
     "cardName": "Cech zedníků",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -3200,11 +3357,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com038",
     "cardName": "Cech zedníků",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -3222,11 +3380,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com039",
     "cardName": "Misionáři",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -3243,11 +3402,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com040",
     "cardName": "Kolonisté",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -3263,11 +3423,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com041",
     "cardName": "Potulní kejklíři",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -3284,11 +3445,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com042",
     "cardName": "Dřevorubci",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3305,11 +3467,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com043",
     "cardName": "Tesař",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3327,11 +3490,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com044",
     "cardName": "Truhlář",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3348,11 +3512,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com045",
     "cardName": "Truhlář",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3369,11 +3534,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com046",
     "cardName": "Hrad",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BLUE"
     ],
@@ -3390,11 +3556,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com047",
     "cardName": "Hrad",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BLUE"
     ],
@@ -3411,11 +3578,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com048",
     "cardName": "Hrad",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BLUE"
     ],
@@ -3432,11 +3600,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": "CARD",
     "cardId": "com049",
     "cardName": "Krčma",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BLUE"
     ],
@@ -3453,11 +3622,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com050",
     "cardName": "Kasárna",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BLACK"
     ],
@@ -3475,11 +3645,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com051",
     "cardName": "Kasárna",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BLACK"
     ],
@@ -3497,11 +3668,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com052",
     "cardName": "Cukrář",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -3519,11 +3691,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com053",
     "cardName": "Chovatel prasat",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -3540,11 +3713,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com054",
     "cardName": "Chovatel prasat",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -3561,11 +3735,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com055",
     "cardName": "Chovatel prasat",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -3582,11 +3757,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com056",
     "cardName": "Sládek",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -3602,11 +3778,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com057",
     "cardName": "Císařský posel",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -3622,11 +3799,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com058",
     "cardName": "Nový les",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3642,11 +3820,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com059",
     "cardName": "Nový les",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3662,11 +3841,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com060",
     "cardName": "Nový les",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3682,11 +3862,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com061",
     "cardName": "Hanzovní dům",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -3704,13 +3885,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD"
     ],
     "cardEffectForPosition": "WOOD",
     "cardId": "com062",
     "cardName": "Dřevorubecká stezka",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3727,13 +3909,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD"
     ],
     "cardEffectForPosition": "WOOD",
     "cardId": "com063",
     "cardName": "Dřevorubecká stezka",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3750,13 +3933,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "WOOD"
     ],
     "cardEffectForPosition": "WOOD",
     "cardId": "com064",
     "cardName": "Dřevorubecká stezka",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3773,13 +3957,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "CARD"
     ],
     "cardEffectForPosition": "CARD",
     "cardId": "com065",
     "cardName": "Strážní věž",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BLUE"
     ],
@@ -3796,13 +3981,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "CARD"
     ],
     "cardEffectForPosition": "CARD",
     "cardId": "com066",
     "cardName": "Strážní věž",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BLUE"
     ],
@@ -3819,13 +4005,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "CARD"
     ],
     "cardEffectForPosition": "CARD",
     "cardId": "com067",
     "cardName": "Strážní věž",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BLUE"
     ],
@@ -3842,13 +4029,14 @@
     ]
   },
   {
+    "cardCategory": "PRODUCTION",
     "cardEffect": [
       "CARD"
     ],
     "cardEffectForPosition": "CARD",
     "cardId": "com068",
     "cardName": "Strážní věž",
-    "cardType": "PRODUCTION",
+    "cardType": "COMMON",
     "colors": [
       "BLUE"
     ],
@@ -3865,11 +4053,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com069",
     "cardName": "Ruiny",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [],
     "condition": null,
     "dealSource": null,
@@ -3878,11 +4067,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com070",
     "cardName": "Ruiny",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [],
     "condition": null,
     "dealSource": null,
@@ -3891,11 +4081,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com071",
     "cardName": "Ruiny",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [],
     "condition": null,
     "dealSource": null,
@@ -3904,11 +4095,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com072",
     "cardName": "Ruiny",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [],
     "condition": null,
     "dealSource": null,
@@ -3917,11 +4109,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com073",
     "cardName": "Ruiny",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [],
     "condition": null,
     "dealSource": null,
@@ -3930,11 +4123,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SETTLER",
     "cardId": "com074",
     "cardName": "Ruiny",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [],
     "condition": null,
     "dealSource": null,
@@ -3943,11 +4137,12 @@
     "sourcesFromDestroy": []
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com075",
     "cardName": "Pekař",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -3965,11 +4160,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com076",
     "cardName": "Pila",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -3985,11 +4181,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com077",
     "cardName": "Pila",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "BROWN"
     ],
@@ -4005,11 +4202,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com078",
     "cardName": "Zájezdní hostinec",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -4027,11 +4225,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com079",
     "cardName": "Rynek",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],
@@ -4049,11 +4248,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com080",
     "cardName": "Obchodník Matyáš",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -4071,11 +4271,12 @@
     ]
   },
   {
+    "cardCategory": "PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com081",
     "cardName": "Noclehárna",
-    "cardType": "PROPERTIES",
+    "cardType": "COMMON",
     "colors": [
       "GOLD"
     ],
@@ -4093,11 +4294,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com082",
     "cardName": "Lovec Jeník",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "RED"
     ],
@@ -4113,11 +4315,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com083",
     "cardName": "Povrchový důl",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "GRAY"
     ],
@@ -4133,11 +4336,12 @@
     ]
   },
   {
+    "cardCategory": "ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com084",
     "cardName": "Nosiči",
-    "cardType": "ACTION",
+    "cardType": "COMMON",
     "colors": [
       "PINK"
     ],

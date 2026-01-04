@@ -2,7 +2,7 @@ package cz.games.lp.backend.engine;
 
 import cz.games.lp.backend.data.CardJSON;
 import cz.games.lp.backend.data.FactionJSON;
-import cz.games.lp.backend.data.JsonCreator;
+import cz.games.lp.backend.data.JsonManager;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
@@ -18,14 +18,14 @@ import java.util.stream.Collectors;
 @Component
 public class GameEngine {
 
-    private final JsonCreator jsonCreator;
+    private final JsonManager jsonManager;
     @Getter
     private Map<String, CardJSON> rawCardMap;
     @Getter
     private Map<String, FactionJSON> rawFactionMap;
 
-    public GameEngine(JsonCreator jsonCreator) {
-        this.jsonCreator = jsonCreator;
+    public GameEngine(JsonManager jsonCreator) {
+        this.jsonManager = jsonCreator;
     }
 
     @Async("thread")
@@ -38,13 +38,13 @@ public class GameEngine {
 
     private void loadAllCardData() {
         log.info("loadAllCardData");
-        List<CardJSON> list = jsonCreator.loadData(CardJSON.class, "data/cards.json");
+        List<CardJSON> list = jsonManager.loadData(CardJSON.class, "data/cards.json");
         rawCardMap = list.stream().collect(Collectors.toMap(CardJSON::getCardId, Function.identity()));
     }
 
     private void loadAllFactionData() {
         log.info("loadAllFactionData");
-        List<FactionJSON> list = jsonCreator.loadData(FactionJSON.class, "data/factions.json");
+        List<FactionJSON> list = jsonManager.loadData(FactionJSON.class, "data/factions.json");
         rawFactionMap = list.stream().collect(Collectors.toMap(FactionJSON::getFaction, Function.identity()));
     }
 }

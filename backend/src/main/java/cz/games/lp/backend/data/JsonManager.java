@@ -10,11 +10,11 @@ import java.util.List;
 
 @Slf4j
 @Component
-public class JsonCreator {
+public class JsonManager {
 
     private final ObjectMapper mapper;
 
-    public JsonCreator(ObjectMapper mapper) {
+    public JsonManager(ObjectMapper mapper) {
         this.mapper = mapper;
     }
 

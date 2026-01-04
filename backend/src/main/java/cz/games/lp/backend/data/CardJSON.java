@@ -12,6 +12,7 @@ import java.util.List;
 @ToString
 public class CardJSON {
 
+    private String cardCategory;
     private List<String> cardEffect = new ArrayList<>();
     private String cardEffectForPosition;
     private String cardId;
