@@ -64,6 +64,11 @@ jobs:
         run: mvn clean package
         working-directory: .
 
+  version_increment:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
       - name: increase patch version + set it into all pom.xml
         shell: bash
         env:
