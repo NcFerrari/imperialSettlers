@@ -69,7 +69,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.SETTLER_TOKEN }}
         run: |
-          git fetch --prune --unshallow --tags
+          git fetch --prune --tags
           LAST_TAG=$(git tag --list 'backend-v*' --sort=-creatordate | head -n1 || echo "backend-v0.0.0")
           if [ -z "$LAST_TAG" ]; then
           BASE_VERSION="0.0.0"
