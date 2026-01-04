@@ -30,21 +30,32 @@ public class GameEngine {
 
     @Async("thread")
     public CompletableFuture<String> prepareData() {
-        log.info("prepareData");
+        log.debug("prepareData");
         loadAllCardData();
+        mapAllCards();
         loadAllFactionData();
+        mapAllFactions();
         return CompletableFuture.completedFuture("loadingData");
     }
 
     private void loadAllCardData() {
-        log.info("loadAllCardData");
+        log.debug("loadAllCardData");
         List<CardJSON> list = jsonManager.loadData(CardJSON.class, "data/cards.json");
         rawCardMap = list.stream().collect(Collectors.toMap(CardJSON::getCardId, Function.identity()));
     }
 
+    private void mapAllCards() {
+        log.debug("mapAllCards");
+
+    }
+
     private void loadAllFactionData() {
-        log.info("loadAllFactionData");
+        log.debug("loadAllFactionData");
         List<FactionJSON> list = jsonManager.loadData(FactionJSON.class, "data/factions.json");
         rawFactionMap = list.stream().collect(Collectors.toMap(FactionJSON::getFaction, Function.identity()));
+    }
+
+    private void mapAllFactions() {
+        log.debug("mapAllFactions");
     }
 }

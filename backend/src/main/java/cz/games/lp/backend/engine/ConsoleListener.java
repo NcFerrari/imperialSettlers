@@ -22,7 +22,16 @@ public class ConsoleListener {
         this.ctx = ctx;
     }
 
+    public void startConsoleGame() {
+        log.debug("startConsoleGame");
+        log.info("----------------------------");
+        log.info("START IMPERIAL SETTLERS GAME");
+        log.info("----------------------------");
+        executor.execute(this::cliRunner);
+    }
+
     private void cliRunner() {
+        log.debug("cliRunner");
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (!Thread.currentThread().isInterrupted()) {
                 String line = reader.readLine();
@@ -40,14 +49,8 @@ public class ConsoleListener {
         }
     }
 
-    public void start() {
-        log.info("----------------------------");
-        log.info("START IMPERIAL SETTLERS GAME");
-        log.info("----------------------------");
-        executor.execute(this::cliRunner);
-    }
-
     private void gameInput(String line) {
+        log.debug("gameInput");
         log.info("you typed: {}", line);
     }
 }

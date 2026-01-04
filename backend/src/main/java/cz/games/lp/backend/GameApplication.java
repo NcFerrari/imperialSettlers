@@ -24,8 +24,9 @@ public class GameApplication {
     }
 
     private static void startApplication() {
+        log.debug("startApplication");
         CompletableFuture<String> future = gameEngine.prepareData();
         future.join();
-        consoleListener.start();
+        consoleListener.startConsoleGame();
     }
 }

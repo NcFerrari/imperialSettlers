@@ -19,7 +19,7 @@ public class JsonManager {
     }
 
     public <T> List<T> loadData(Class<T> clazz, String filePath) {
-        log.info("loadData");
+        log.debug("loadData");
         log.info("loading {} file", filePath);
         long timeStart = System.currentTimeMillis();
         InputStream stream = getClass().getClassLoader().getResourceAsStream(filePath);
