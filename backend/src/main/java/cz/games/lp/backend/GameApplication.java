@@ -27,5 +27,6 @@ public class GameApplication {
         CompletableFuture<String> future = gameEngine.prepareData();
         future.join();
         consoleListener.start();
+        System.out.println("test");
     }
 }
