@@ -1,4 +1,4 @@
-package cz.games.lp.backend.mapping;
+package cz.games.lp.backend.engine.mapping;
 
 import cz.games.lp.backend.data.CardJSON;
 import cz.games.lp.common.dto.CardDTO;
