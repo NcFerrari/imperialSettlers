@@ -1,5 +1,6 @@
 package cz.games.lp.backend.engine;
 
+import cz.games.lp.gamecore.service.GameDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +12,12 @@ public class GameApplication {
 
     private final GameEngine gameEngine;
     private final ConsoleListener consoleListener;
+    private final GameDataService gameDataService;
 
-    public GameApplication(GameEngine gameEngine, ConsoleListener consoleListener) {
+    public GameApplication(GameEngine gameEngine, ConsoleListener consoleListener, GameDataService gameDataService) {
         this.gameEngine = gameEngine;
         this.consoleListener = consoleListener;
+        this.gameDataService = gameDataService;
     }
 
     public void startApplication() {
@@ -22,5 +25,6 @@ public class GameApplication {
         CompletableFuture<String> future = gameEngine.prepareData();
         future.join();
         consoleListener.startConsoleGame();
+        log.info(gameDataService.getGameData().round());
     }
 }
