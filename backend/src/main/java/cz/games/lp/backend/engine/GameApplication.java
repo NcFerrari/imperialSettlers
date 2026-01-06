@@ -12,12 +12,10 @@ public class GameApplication {
 
     private final GameEngine gameEngine;
     private final ConsoleListener consoleListener;
-    private final GameDataService gameDataService;
 
-    public GameApplication(GameEngine gameEngine, ConsoleListener consoleListener, GameDataService gameDataService) {
+    public GameApplication(GameEngine gameEngine, ConsoleListener consoleListener) {
         this.gameEngine = gameEngine;
         this.consoleListener = consoleListener;
-        this.gameDataService = gameDataService;
     }
 
     public void startApplication() {
@@ -25,6 +23,5 @@ public class GameApplication {
         CompletableFuture<String> future = gameEngine.prepareData();
         future.join();
         consoleListener.startConsoleGame();
-        log.info(gameDataService.getGameData().round());
     }
 }
