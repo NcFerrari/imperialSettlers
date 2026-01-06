@@ -1,6 +1,6 @@
 [![Backend](https://github.com/NcFerrari/imperialSettlers/actions/workflows/backend.yaml/badge.svg)](https://github.com/NcFerrari/imperialSettlers/actions/workflows/backend.yaml)
 
-Wiki: https://github.com/NcFerrari/imperialSettlers.wiki.git
+Wiki: https://github.com/NcFerrari/imperialSettlers/wiki
 
 DashBoard: https://github.com/users/NcFerrari/projects/2
 
