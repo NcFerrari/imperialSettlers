@@ -1,8 +1,9 @@
 package cz.games.lp.backend.engine.consolegame;
 
 import cz.games.lp.backend.engine.GameEngine;
-import cz.games.lp.backend.serviceimpl.UserInputServiceImpl;
 import cz.games.lp.common.enums.Factions;
+import cz.games.lp.gamecore.service.GameDataService;
+import cz.games.lp.gamecore.service.GameManagerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
@@ -20,16 +21,18 @@ public class ConsoleListener {
     private final Executor executor;
     private final ApplicationContext ctx;
     private final Outputs outputs;
-    private final UserInputServiceImpl userInputService;
     private final GameEngine gameEngine;
+    private final GameDataService gameDataService;
+    private final GameManagerService gameManagerService;
     private GameOperations gameOperation;
 
-    public ConsoleListener(@Qualifier("consoleExecutor") Executor executor, ApplicationContext ctx, Outputs outputs, UserInputServiceImpl userInputService, GameEngine gameEngine) {
+    public ConsoleListener(@Qualifier("consoleExecutor") Executor executor, ApplicationContext ctx, Outputs outputs, GameEngine gameEngine, GameDataService gameDataService, GameManagerService gameManagerService) {
         this.executor = executor;
         this.ctx = ctx;
         this.outputs = outputs;
-        this.userInputService = userInputService;
         this.gameEngine = gameEngine;
+        this.gameDataService = gameDataService;
+        this.gameManagerService = gameManagerService;
     }
 
     public void startConsoleGame() {
@@ -72,7 +75,8 @@ public class ConsoleListener {
         switch (line) {
             case "1", "2", "3", "4", "5", "6", "7", "8" -> {
                 int number = Integer.parseInt(line);
-                userInputService.selectFaction(gameEngine.getFactionMap().get(Factions.values()[number - 1].name()));
+                gameDataService.selectFaction(gameEngine.getFactionMap().get(Factions.values()[number - 1].name()));
+                gameManagerService.newGame();
                 gameOperation = GameOperations.SHOW_STATS;
                 outputs.showStats();
             }

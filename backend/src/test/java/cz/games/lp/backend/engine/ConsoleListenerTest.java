@@ -2,7 +2,8 @@ package cz.games.lp.backend.engine;
 
 import cz.games.lp.backend.engine.consolegame.ConsoleListener;
 import cz.games.lp.backend.engine.consolegame.Outputs;
-import cz.games.lp.backend.serviceimpl.UserInputServiceImpl;
+import cz.games.lp.gamecore.service.GameDataService;
+import cz.games.lp.gamecore.service.GameManagerService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,9 @@ import java.io.InputStream;
 import java.util.concurrent.Executor;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 
 class ConsoleListenerTest {
 
@@ -22,18 +25,20 @@ class ConsoleListenerTest {
     private ApplicationContext ctx;
     private ConsoleListener listener;
     private InputStream originalIn;
+    private GameManagerService gameManagerService;
+    private GameDataService gameDataService;
     private Outputs outputs;
     private GameEngine gameEngine;
-    private UserInputServiceImpl userInputService;
 
     @BeforeEach
     void setUp() {
         executor = mock(Executor.class);
         ctx = mock(ApplicationContext.class);
         outputs = mock(Outputs.class);
-        userInputService = mock(UserInputServiceImpl.class);
         gameEngine = mock(GameEngine.class);
-        listener = spy(new ConsoleListener(executor, ctx, outputs, userInputService, gameEngine));
+        gameManagerService = mock(GameManagerService.class);
+        gameDataService = mock(GameDataService.class);
+        listener = spy(new ConsoleListener(executor, ctx, outputs, gameEngine, gameDataService, gameManagerService));
         originalIn = System.in;
     }
 
