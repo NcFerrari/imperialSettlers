@@ -6,5 +6,10 @@ public enum RoundPhases {
     PRODUCTION,
     ACTION,
     PASS,
-    CLEANUP
+    CLEANUP;
+
+    @Override
+    public String toString() {
+        return name();
+    }
 }

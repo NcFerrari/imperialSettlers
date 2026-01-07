@@ -14,4 +14,9 @@ public class FactionDTO {
     private Factions faction;
     private List<Sources> factionProduction;
     private Sources saveSource;
+
+    @Override
+    public String toString() {
+        return faction.name();
+    }
 }

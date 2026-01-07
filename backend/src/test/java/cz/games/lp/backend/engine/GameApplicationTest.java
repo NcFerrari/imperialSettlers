@@ -1,5 +1,6 @@
 package cz.games.lp.backend.engine;
 
+import cz.games.lp.backend.engine.consolegame.ConsoleListener;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

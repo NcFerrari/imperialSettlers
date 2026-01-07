@@ -1,6 +1,6 @@
 package cz.games.lp.backend.engine;
 
-import cz.games.lp.gamecore.service.GameDataService;
+import cz.games.lp.backend.engine.consolegame.ConsoleListener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
