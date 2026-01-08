@@ -1,6 +1,7 @@
 package cz.games.lp.backend.engine.consolegame;
 
 import cz.games.lp.backend.engine.GameEngine;
+import cz.games.lp.backend.serviceimpl.GameService;
 import cz.games.lp.common.dto.FactionDTO;
 import cz.games.lp.common.enums.Factions;
 import cz.games.lp.gamecore.service.GameDataService;
@@ -8,7 +9,6 @@ import cz.games.lp.gamecore.service.GameManagerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -21,7 +21,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class ConsoleListenerTest {
@@ -30,10 +36,10 @@ class ConsoleListenerTest {
     private Executor executor;
 
     @Mock
-    private Outputs outputs;
+    private ApplicationContext ctx;
 
     @Mock
-    private ApplicationContext ctx;
+    private Outputs outputs;
 
     @Mock
     private GameEngine gameEngine;
@@ -44,13 +50,15 @@ class ConsoleListenerTest {
     @Mock
     private GameManagerService gameManagerService;
 
-    @InjectMocks
+    private GameService gameService;
     private ConsoleListener consoleListener;
 
     private Method selectFactionMethod;
 
     @BeforeEach
     void setUp() throws Exception {
+        gameService = new GameService(gameEngine, gameDataService, gameManagerService);
+        consoleListener = new ConsoleListener(executor, ctx, outputs, gameService);
         selectFactionMethod = ConsoleListener.class
                 .getDeclaredMethod("selectFaction", String.class);
         selectFactionMethod.setAccessible(true);
@@ -70,14 +78,14 @@ class ConsoleListenerTest {
         Map<String, FactionDTO> factionMap = new HashMap<>();
         factionMap.put(Factions.BARBARIAN_F.name(), new FactionDTO());
 
-        when(gameEngine.getFactionMap()).thenReturn(factionMap);
+        when(gameService.getGameEngine().getFactionMap()).thenReturn(factionMap);
 
         setGameOperation(GameOperations.SELECT_FACTION);
 
         selectFactionMethod.invoke(consoleListener, "1");
 
-        verify(gameDataService).selectFaction(any());
-        verify(gameManagerService).newGame();
+        verify(gameService.getGameDataService()).selectFaction(any());
+        verify(gameService.getGameManagerService()).newGame();
         verify(outputs).showStats();
         verify(outputs, never()).wrongChoice();
     }
@@ -90,7 +98,7 @@ class ConsoleListenerTest {
 
         verify(outputs).wrongChoice();
         verify(outputs).selectFactionMessage();
-        verify(gameManagerService, never()).newGame();
+        verify(gameService.getGameManagerService(), never()).newGame();
         verify(outputs, never()).showStats();
     }
 
@@ -101,7 +109,7 @@ class ConsoleListenerTest {
 
         verify(outputs).wrongChoice();
         verify(outputs).selectFactionMessage();
-        verify(gameManagerService, never()).newGame();
+        verify(gameService.getGameManagerService(), never()).newGame();
     }
 
     @Test
@@ -122,15 +130,15 @@ class ConsoleListenerTest {
 
         Map<String, FactionDTO> factionMap = new HashMap<>();
         factionMap.put(Factions.BARBARIAN_M.name(), new FactionDTO());
-        when(gameEngine.getFactionMap()).thenReturn(factionMap);
+        when(gameService.getGameEngine().getFactionMap()).thenReturn(factionMap);
 
         consoleListener.startConsoleGame();
 
         try (MockedStatic<SpringApplication> springMock = mockStatic(SpringApplication.class)) {
             consoleListener.cliRunner();
 
-            verify(gameDataService).selectFaction(any());
-            verify(gameManagerService).newGame();
+            verify(gameService.getGameDataService()).selectFaction(any());
+            verify(gameService.getGameManagerService()).newGame();
             verify(outputs).showStats();
 
             springMock.verify(() -> SpringApplication.exit(eq(ctx), any()));
