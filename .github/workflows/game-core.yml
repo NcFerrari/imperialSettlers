@@ -96,17 +96,9 @@ jobs:
               -DforceVersion=true \
               -f backend/pom.xml
           
-          echo "Updating frontend dependency to game-core version $NEW_VERSION"
-
-          mvn versions:use-dep-version \
-              -Dincludes=cz.games.lp:game-core \
-              -DdepVersion=$NEW_VERSION \
-              -DforceVersion=true \
-              -f frontend/pom.xml
-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add game-core/pom.xml backend/pom.xml frontend/pom.xml
+          git add game-core/pom.xml backend/pom.xml
           git commit -m "Bump game-core to $NEW_VERSION and update dependent modules" || echo "No changes to commit"
           git push https://$GH_PAT@github.com/NcFerrari/imperialSettlers.git HEAD
           git tag "game-core-v$NEW_VERSION"
