@@ -6,17 +6,17 @@ on:
       - main
     paths:
       - 'game-core/**'
-    workflow_dispatch:
-      inputs:
-        version_type:
-          description: 'Type of version'
-          required: false
-          default: 'patch'
-          type: choice
-          options:
-            - patch
-            - minor
-            - major
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Type of version'
+        required: false
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
 
 jobs:
   build:
