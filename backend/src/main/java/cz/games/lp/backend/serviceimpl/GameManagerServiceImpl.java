@@ -21,4 +21,9 @@ public class GameManagerServiceImpl implements GameManagerService {
         gameManager.newGame(gameDataService.getGameData());
         return "new game";
     }
+
+    @Override
+    public void proceedLookoutPhase() {
+
+    }
 }

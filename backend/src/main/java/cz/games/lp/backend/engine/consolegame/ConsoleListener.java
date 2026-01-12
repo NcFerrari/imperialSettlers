@@ -7,15 +7,19 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
+import org.yaml.snakeyaml.parser.ParserException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.concurrent.Executor;
 
 @Slf4j
 @Component
 public class ConsoleListener {
 
+    private final Map<String, Runnable> offerActions = new LinkedHashMap<>();
     private final Executor executor;
     private final ApplicationContext ctx;
     private final Outputs outputs;
@@ -60,8 +64,24 @@ public class ConsoleListener {
         log.debug("game");
         switch (gameOperation) {
             case SELECT_FACTION -> selectFaction(line);
-            case SHOW_STATS -> outputs.showStats();
+            case OFFER -> offer(line);
         }
+    }
+
+    private void offer(String line) {
+        log.debug("offer");
+        int number;
+        try {
+            number = Integer.parseInt(line);
+        } catch (ParserException e) {
+            outputs.wrongChoice();
+            return;
+        }
+        if (number > offerActions.size() || number < 0) {
+            outputs.wrongChoice();
+            return;
+        }
+
     }
 
     private void selectFaction(String line) {
@@ -71,8 +91,9 @@ public class ConsoleListener {
                 int number = Integer.parseInt(line);
                 gameService.getGameDataService().selectFaction(gameService.getGameEngine().getFactionMap().get(Factions.values()[number - 1].name()));
                 gameService.getGameManagerService().newGame();
-                gameOperation = GameOperations.SHOW_STATS;
-                outputs.showStats();
+                gameOperation = GameOperations.OFFER;
+                offerActions.put("Aktivuj fázi rozhledu", () -> gameService.getGameManagerService().proceedLookoutPhase());
+                outputs.showOffer(offerActions.keySet());
             }
             default -> {
                 outputs.wrongChoice();

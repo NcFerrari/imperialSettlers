@@ -104,7 +104,7 @@ class ConsoleListenerTest {
 
     @Test
     void selectFaction_outOfRangeInput_shouldBeHandledAsInvalid() throws Exception {
-        setGameOperation(GameOperations.SHOW_STATS);
+        setGameOperation(GameOperations.OFFER);
         selectFactionMethod.invoke(consoleListener, "99");
 
         verify(outputs).wrongChoice();

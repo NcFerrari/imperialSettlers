@@ -5,6 +5,8 @@ import cz.games.lp.common.enums.Factions;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 @Slf4j
@@ -12,6 +14,7 @@ import java.util.stream.IntStream;
 public class Outputs {
 
     private final GameDataServiceImpl gameDataService;
+    private final AtomicInteger offerCounter = new AtomicInteger();
 
     public Outputs(GameDataServiceImpl gameDataService) {
         this.gameDataService = gameDataService;
@@ -45,5 +48,14 @@ public class Outputs {
         log.info("Suroviny:");
         gameDataService.getGameData().getOwnSupplies().values().forEach(supply -> log.info("- {}: {}", supply.getSources(), supply.getCount()));
         log.info("===============================================");
+    }
+
+    public void showOffer(Set<String> offerActionKeys) {
+        offerCounter.set(1);
+        log.debug("showOffer");
+        log.info("Zvolte akci:");
+        offerActionKeys.forEach(offerAction -> log.info("{}. {}", offerCounter.getAndIncrement(), offerAction));
+        log.info("{}. Zobraz aktuální stav", offerCounter.getAndIncrement());
+        log.info("{}. Začni novou hru", offerCounter.get());
     }
 }
