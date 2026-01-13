@@ -1,6 +1,6 @@
 package cz.games.lp.backend.engine.consolegame;
 
-import cz.games.lp.backend.serviceimpl.GameService;
+import cz.games.lp.backend.engine.GameEngine;
 import cz.games.lp.common.enums.Factions;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,38 +11,42 @@ import org.yaml.snakeyaml.parser.ParserException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
+import java.util.stream.Stream;
 
 @Slf4j
 @Component
 public class ConsoleListener {
 
-    private final Map<String, Runnable> offerActions = new LinkedHashMap<>();
+    private final Map<String, Runnable> phaseActions = new LinkedHashMap<>();
+    private final Map<String, Runnable> commonActions = new LinkedHashMap<>();
     private final Executor executor;
     private final ApplicationContext ctx;
     private final Outputs outputs;
-    private final GameService gameService;
+    private final GameEngine gameEngine;
     private GameOperations gameOperation;
 
-    public ConsoleListener(@Qualifier("consoleExecutor") Executor executor, ApplicationContext ctx, Outputs outputs, GameService gameService) {
+    public ConsoleListener(@Qualifier("consoleExecutor") Executor executor, ApplicationContext ctx, Outputs outputs, GameEngine gameEngine) {
         this.executor = executor;
         this.ctx = ctx;
         this.outputs = outputs;
-        this.gameService = gameService;
+        this.gameEngine = gameEngine;
+        commonActions.put("Zobraz aktuální stav", outputs::showCurrentStats);
     }
 
     public void startConsoleGame() {
         log.debug("startConsoleGame");
         outputs.initMessage();
-        gameOperation = GameOperations.SELECT_FACTION;
-        outputs.selectFactionMessage();
         executor.execute(this::cliRunner);
     }
 
     public void cliRunner() {
         log.debug("cliRunner");
+        outputs.selectFactionMessage();
+        gameOperation = GameOperations.SELECT_FACTION;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (!Thread.currentThread().isInterrupted()) {
                 String line = reader.readLine();
@@ -73,15 +77,17 @@ public class ConsoleListener {
         int number;
         try {
             number = Integer.parseInt(line);
-        } catch (ParserException e) {
+        } catch (NumberFormatException e) {
             outputs.wrongChoice();
             return;
         }
-        if (number > offerActions.size() || number < 0) {
+        number--;
+        if (number > phaseActions.size() + commonActions.size() || number < 0) {
             outputs.wrongChoice();
             return;
         }
-
+        Stream.of(phaseActions.values(), commonActions.values()).flatMap(Collection::stream).toList().get(number).run();
+        outputs.showOffer(phaseActions.keySet(), commonActions.keySet());
     }
 
     private void selectFaction(String line) {
@@ -89,11 +95,14 @@ public class ConsoleListener {
         switch (line) {
             case "1", "2", "3", "4", "5", "6", "7", "8" -> {
                 int number = Integer.parseInt(line);
-                gameService.getGameDataService().selectFaction(gameService.getGameEngine().getFactionMap().get(Factions.values()[number - 1].name()));
-                gameService.getGameManagerService().newGame();
+                gameEngine.getGameDataService().selectFaction(gameEngine.getSourceService().getFactionMap().get(Factions.values()[number - 1].name()));
+                gameEngine.getGameDataService().newGame();
                 gameOperation = GameOperations.OFFER;
-                offerActions.put("Aktivuj fázi rozhledu", () -> gameService.getGameManagerService().proceedLookoutPhase());
-                outputs.showOffer(offerActions.keySet());
+                phaseActions.put("Aktivuj fázi rozhledu", () -> {
+                    gameEngine.getGameDataService().proceedLookoutPhase();
+                    outputs.lookoutPhaseActivated();
+                });
+                outputs.showOffer(phaseActions.keySet(), commonActions.keySet());
             }
             default -> {
                 outputs.wrongChoice();

@@ -38,7 +38,7 @@ public class Outputs {
         log.info("Spatna volba!");
     }
 
-    public void showStats() {
+    public void showCurrentStats() {
         log.debug("showStats");
         log.info("===============================================");
         log.info("Zvolena frakce: {}", gameDataService.getGameData().getSelectedFaction());
@@ -50,12 +50,16 @@ public class Outputs {
         log.info("===============================================");
     }
 
-    public void showOffer(Set<String> offerActionKeys) {
+    public void showOffer(Set<String> offerActions, Set<String> commonActions) {
         offerCounter.set(1);
         log.debug("showOffer");
         log.info("Zvolte akci:");
-        offerActionKeys.forEach(offerAction -> log.info("{}. {}", offerCounter.getAndIncrement(), offerAction));
-        log.info("{}. Zobraz aktuální stav", offerCounter.getAndIncrement());
-        log.info("{}. Začni novou hru", offerCounter.get());
+        offerActions.forEach(offerAction -> log.info("{}. {}", offerCounter.getAndIncrement(), offerAction));
+        commonActions.forEach(commonAction -> log.info("{}. {}", offerCounter.getAndIncrement(), commonAction));
+    }
+
+    public void lookoutPhaseActivated() {
+        log.debug("lookoutPhaseActivated");
+        log.info("Fáze rozhledu");
     }
 }

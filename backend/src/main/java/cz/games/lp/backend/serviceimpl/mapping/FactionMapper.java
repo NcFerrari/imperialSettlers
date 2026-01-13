@@ -1,4 +1,4 @@
-package cz.games.lp.backend.engine.mapping;
+package cz.games.lp.backend.serviceimpl.mapping;
 
 import cz.games.lp.backend.data.FactionJSON;
 import cz.games.lp.common.dto.FactionDTO;

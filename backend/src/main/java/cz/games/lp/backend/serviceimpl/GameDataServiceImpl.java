@@ -23,4 +23,14 @@ public class GameDataServiceImpl implements GameDataService {
     public void selectFaction(FactionDTO faction) {
         gameData.setSelectedFaction(faction);
     }
+
+    @Override
+    public void newGame() {
+        gameData.newGame();
+    }
+
+    @Override
+    public void proceedLookoutPhase() {
+
+    }
 }

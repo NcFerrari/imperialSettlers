@@ -8,4 +8,8 @@ public interface GameDataService {
     GameData getGameData();
 
     void selectFaction(FactionDTO faction);
+
+    void newGame();
+
+    void proceedLookoutPhase();
 }

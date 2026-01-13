@@ -29,7 +29,7 @@ class OutputsTest {
         outputs.initMessage();
         outputs.selectFactionMessage();
         outputs.wrongChoice();
-        outputs.showStats();
+        outputs.showCurrentStats();
         assertTrue(true);
     }
 }
