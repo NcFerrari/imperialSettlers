@@ -42,7 +42,7 @@ class ConsoleListenerTest {
     private GameDataService gameDataService;
 
     private GameEngine gameService;
-    private Console consoleListener;
+    private ConsoleManager consoleListener;
 
     private Method selectFactionMethod;
 
@@ -50,7 +50,7 @@ class ConsoleListenerTest {
     void setUp() throws Exception {
 //        gameService = new GameEngine(gameEngine, gameDataService);
 //        consoleListener = new ConsoleListener(executor, ctx, outputss, gameService);
-        selectFactionMethod = Console.class
+        selectFactionMethod = ConsoleManager.class
                 .getDeclaredMethod("selectFaction", String.class);
         selectFactionMethod.setAccessible(true);
     }
@@ -153,7 +153,7 @@ class ConsoleListenerTest {
      * Pomocná metoda pro nastavení private pole gameOperation
      */
     private void setGameOperation(GameOperations operation) throws Exception {
-        var field = Console.class.getDeclaredField("gameOperation");
+        var field = ConsoleManager.class.getDeclaredField("gameOperation");
         field.setAccessible(true);
         field.set(consoleListener, operation);
     }

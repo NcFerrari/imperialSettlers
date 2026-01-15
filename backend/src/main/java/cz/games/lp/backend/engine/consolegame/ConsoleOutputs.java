@@ -1,22 +1,20 @@
 package cz.games.lp.backend.engine.consolegame;
 
-import cz.games.lp.backend.serviceimpl.GameDataServiceImpl;
-import cz.games.lp.common.enums.Factions;
+import cz.games.lp.gamecore.service.GameDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.IntStream;
 
 @Slf4j
 @Component
 public class ConsoleOutputs {
 
-    private final GameDataServiceImpl gameDataService;
+    private final GameDataService gameDataService;
     private final AtomicInteger offerCounter = new AtomicInteger();
 
-    public ConsoleOutputs(GameDataServiceImpl gameDataService) {
+    public ConsoleOutputs(GameDataService gameDataService) {
         this.gameDataService = gameDataService;
     }
 
@@ -25,12 +23,6 @@ public class ConsoleOutputs {
         log.info("----------------------------");
         log.info("START IMPERIAL SETTLERS GAME");
         log.info("----------------------------");
-    }
-
-    public void selectFactionMessage() {
-        log.debug("selectFactionMessage");
-        log.info("Vyberte si frakci:");
-        IntStream.range(0, Factions.values().length).forEach(i -> log.info("{}. {}", i + 1, Factions.values()[i].name()));
     }
 
     public void wrongChoice() {
@@ -50,16 +42,25 @@ public class ConsoleOutputs {
         log.info("===============================================");
     }
 
+    public void showStartOffer(Set<String> offerActions) {
+        log.debug("showStartOffer");
+        showSpecificOffer("Vyberte si frakci:", offerActions);
+    }
+
     public void showOffer(Set<String> offerActions, Set<String> commonActions) {
-        offerCounter.set(1);
         log.debug("showOffer");
-        log.info("Zvolte akci:");
-        offerActions.forEach(offerAction -> log.info("{}. {}", offerCounter.getAndIncrement(), offerAction));
+        showSpecificOffer("Zvolte akci:", offerActions);
         commonActions.forEach(commonAction -> log.info("{}. {}", offerCounter.getAndIncrement(), commonAction));
     }
 
-    public void lookoutPhaseActivated() {
-        log.debug("lookoutPhaseActivated");
-        log.info("Fáze rozhledu");
+    private void showSpecificOffer(String text, Set<String> offerActions) {
+        log.debug("showSpecificOffer");
+        log.info(text);
+        offerCounter.set(1);
+        offerActions.forEach(offerAction -> log.info("{}. {}", offerCounter.getAndIncrement(), offerAction));
+    }
+
+    public void showCards() {
+
     }
 }

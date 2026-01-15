@@ -1,6 +1,6 @@
 package cz.games.lp.backend.engine;
 
-import cz.games.lp.backend.engine.consolegame.Console;
+import cz.games.lp.backend.engine.consolegame.ConsoleManager;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,7 +16,7 @@ class GameApplicationTest {
 //    private SourceInit gameEngine;
 
     @Mock
-    private Console consoleListener;
+    private ConsoleManager consoleListener;
 
     @InjectMocks
     private GameApplication gameApplication;

@@ -1,13 +1,17 @@
 package cz.games.lp.backend.engine.consolegame;
 
-import cz.games.lp.backend.engine.GameEngine;
-import cz.games.lp.common.enums.Factions;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.Executor;
 import java.util.stream.Stream;
 
 @Slf4j
@@ -16,74 +20,84 @@ public class Console {
 
     private final Map<String, Runnable> phaseActions = new LinkedHashMap<>();
     private final Map<String, Runnable> commonActions = new LinkedHashMap<>();
+    private final ApplicationContext ctx;
     private final ConsoleOutputs consoleOutputs;
-    private final GameEngine gameEngine;
-    private final ConsoleInput consoleInput;
-    private GameOperations gameOperation;
+    private final Executor executor;
+    private boolean cliIsRunning;
 
-    public Console(ConsoleOutputs outputs, GameEngine gameEngine, ConsoleInput consoleInput) {
-        this.consoleOutputs = outputs;
-        this.gameEngine = gameEngine;
-        this.consoleInput = consoleInput;
-        commonActions.put("Zobraz aktuální stav", outputs::showCurrentStats);
-        commonActions.put("Začni novou hru", this::newGame);
+    public Console(ApplicationContext ctx, ConsoleOutputs consoleOutputs, @Qualifier("consoleExecutor") Executor executor) {
+        this.ctx = ctx;
+        this.consoleOutputs = consoleOutputs;
+        this.executor = executor;
     }
 
-    public void startConsoleGame() {
-        log.debug("startConsoleGame");
-        consoleInput.start();
+    public void executeConsoleInputLoop() {
+        log.debug("start");
+        cliIsRunning = true;
+        executor.execute(this::cliRunner);
     }
 
-    public void newGame() {
-        log.debug("newGame");
-        consoleOutputs.initMessage();
-        consoleOutputs.selectFactionMessage();
-        gameOperation = GameOperations.SELECT_FACTION;
-    }
-
-    private void game(String line) {
-        log.debug("game");
-        switch (gameOperation) {
-            case SELECT_FACTION -> selectFaction(line);
-            case OFFER -> offer(line);
+    private void cliRunner() {
+        log.debug("cliRunner");
+        if (!cliIsRunning) {
+            throw new IllegalArgumentException("CLI is not running. Call start() method first.");
+        }
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            while (cliIsRunning) {
+                String line = reader.readLine();
+                if (line == null) {
+                    continue;
+                }
+                int number;
+                try {
+                    number = Integer.parseInt(line);
+                } catch (NumberFormatException e) {
+                    consoleOutputs.wrongChoice();
+                    continue;
+                }
+                number--;
+                if (number >= phaseActions.size() + commonActions.size() || number < 0) {
+                    consoleOutputs.wrongChoice();
+                    continue;
+                }
+                if ("exit".equalsIgnoreCase(line.trim())) {
+                    SpringApplication.exit(ctx, () -> 0);
+                    break;
+                }
+                Stream.of(phaseActions.values(), commonActions.values()).flatMap(Collection::stream).toList().get(number).run();
+            }
+        } catch (Exception e) {
+            Thread.currentThread().interrupt();
+        } finally {
+            cliIsRunning = false;
         }
     }
 
-    private void offer(String line) {
-        log.debug("offer");
-        int number;
-        try {
-            number = Integer.parseInt(line);
-        } catch (NumberFormatException e) {
-            consoleOutputs.wrongChoice();
-            return;
-        }
-        number--;
-        if (number > phaseActions.size() + commonActions.size() || number < 0) {
-            consoleOutputs.wrongChoice();
-            return;
-        }
-        Stream.of(phaseActions.values(), commonActions.values()).flatMap(Collection::stream).toList().get(number).run();
+    public void addCommonAction(String key, Runnable runnable) {
+        log.debug("addCommonAction");
+        commonActions.put(key, runnable);
+    }
+
+    public void addPhaseAction(String key, Runnable runnable) {
+        log.debug("addPhaseAction");
+        phaseActions.put(key, runnable);
+    }
+
+    public void showFactionChoices() {
+        log.debug("showFactionChoices");
+        consoleOutputs.showStartOffer(phaseActions.keySet());
+    }
+
+    public void showChoices() {
+        log.debug("showChoices");
         consoleOutputs.showOffer(phaseActions.keySet(), commonActions.keySet());
     }
 
-    private void selectFaction(String line) {
-        log.debug("selectFaction");
-        switch (line) {
-            case "1", "2", "3", "4", "5", "6", "7", "8" -> {
-                int number = Integer.parseInt(line);
-                gameEngine.getGameDataService().selectFaction(gameEngine.getSourceService().getFactionMap().get(Factions.values()[number - 1].name()));
-                gameEngine.getGameDataService().newGame();
-                gameOperation = GameOperations.OFFER;
-                phaseActions.put("Aktivuj fázi rozhledu", () -> {
-                    gameEngine.getGameDataService().proceedLookoutPhase();
-                    consoleOutputs.lookoutPhaseActivated();
-                });
-            }
-            default -> {
-                consoleOutputs.wrongChoice();
-                consoleOutputs.selectFactionMessage();
-            }
-        }
+    public void clearPhaseActions() {
+        phaseActions.clear();
+    }
+
+    public void clearCommonActions() {
+        commonActions.clear();
     }
 }
