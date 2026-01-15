@@ -11,12 +11,12 @@ import java.util.stream.IntStream;
 
 @Slf4j
 @Component
-public class Outputs {
+public class ConsoleOutputs {
 
     private final GameDataServiceImpl gameDataService;
     private final AtomicInteger offerCounter = new AtomicInteger();
 
-    public Outputs(GameDataServiceImpl gameDataService) {
+    public ConsoleOutputs(GameDataServiceImpl gameDataService) {
         this.gameDataService = gameDataService;
     }
 

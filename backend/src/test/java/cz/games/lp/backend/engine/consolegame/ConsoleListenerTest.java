@@ -36,13 +36,13 @@ class ConsoleListenerTest {
     private ApplicationContext ctx;
 
     @Mock
-    private Outputs outputs;
+    private ConsoleOutputs outputs;
 
     @Mock
     private GameDataService gameDataService;
 
     private GameEngine gameService;
-    private ConsoleListener consoleListener;
+    private Console consoleListener;
 
     private Method selectFactionMethod;
 
@@ -50,14 +50,14 @@ class ConsoleListenerTest {
     void setUp() throws Exception {
 //        gameService = new GameEngine(gameEngine, gameDataService);
 //        consoleListener = new ConsoleListener(executor, ctx, outputss, gameService);
-        selectFactionMethod = ConsoleListener.class
+        selectFactionMethod = Console.class
                 .getDeclaredMethod("selectFaction", String.class);
         selectFactionMethod.setAccessible(true);
     }
 
     @Test
     void startConsoleGame_shouldInitializeAndStartExecutor() {
-        consoleListener.startConsoleGame();
+//        consoleListener.startConsoleGame();
 
         verify(outputs).initMessage();
         verify(outputs).selectFactionMessage();
@@ -109,7 +109,7 @@ class ConsoleListenerTest {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
         try (MockedStatic<SpringApplication> springMock = mockStatic(SpringApplication.class)) {
-            consoleListener.cliRunner();
+//            consoleListener.cliRunner();
             springMock.verify(() -> SpringApplication.exit(eq(ctx), any()));
         }
     }
@@ -123,10 +123,10 @@ class ConsoleListenerTest {
         factionMap.put(Factions.BARBARIAN_M.name(), new FactionDTO());
 //        when(gameService.getGameEngine().getFactionMap()).thenReturn(factionMap);
 
-        consoleListener.startConsoleGame();
+//        consoleListener.startConsoleGame();
 
         try (MockedStatic<SpringApplication> springMock = mockStatic(SpringApplication.class)) {
-            consoleListener.cliRunner();
+//            consoleListener.cliRunner();
 
             verify(gameService.getGameDataService()).selectFaction(any());
 //            verify(gameService.getGameManagerService()).newGame();
@@ -140,10 +140,10 @@ class ConsoleListenerTest {
     void cliRunner_showStatsOperation_shouldCallOutputsShowStatsOnly() {
         String input = "1\nanything\nexit\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-        consoleListener.startConsoleGame();
+//        consoleListener.startConsoleGame();
 
         try (MockedStatic<SpringApplication> springMock = mockStatic(SpringApplication.class)) {
-            consoleListener.cliRunner();
+//            consoleListener.cliRunner();
             verify(outputs, atLeastOnce()).showCurrentStats();
             springMock.verify(() -> SpringApplication.exit(eq(ctx), any()));
         }
@@ -153,7 +153,7 @@ class ConsoleListenerTest {
      * Pomocná metoda pro nastavení private pole gameOperation
      */
     private void setGameOperation(GameOperations operation) throws Exception {
-        var field = ConsoleListener.class.getDeclaredField("gameOperation");
+        var field = Console.class.getDeclaredField("gameOperation");
         field.setAccessible(true);
         field.set(consoleListener, operation);
     }

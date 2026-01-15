@@ -21,7 +21,7 @@ class OutputsTest {
     private GameData gameData;
 
     @InjectMocks
-    private Outputs outputs;
+    private ConsoleOutputs outputs;
 
     @Test
     void runAllOutputMethods() {

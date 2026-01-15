@@ -1,17 +1,13 @@
 package cz.games.lp.backend.engine;
 
-import cz.games.lp.backend.engine.consolegame.ConsoleListener;
+import cz.games.lp.backend.engine.consolegame.Console;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.concurrent.CompletableFuture;
-
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class GameApplicationTest {
@@ -20,7 +16,7 @@ class GameApplicationTest {
 //    private SourceInit gameEngine;
 
     @Mock
-    private ConsoleListener consoleListener;
+    private Console consoleListener;
 
     @InjectMocks
     private GameApplication gameApplication;
