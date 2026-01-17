@@ -1,6 +1,7 @@
 package cz.games.lp.backend;
 
 import cz.games.lp.backend.mapping.GameDataMapper;
+import cz.games.lp.backend.service.GameService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -14,9 +15,11 @@ import java.util.concurrent.CompletableFuture;
 public class GameOrchestrator {
 
     private final GameDataMapper gameDataMapper;
+    private final GameService gameService;
 
-    public GameOrchestrator(GameDataMapper gameDataMapper) {
+    public GameOrchestrator(GameDataMapper gameDataMapper, GameService gameService) {
         this.gameDataMapper = gameDataMapper;
+        this.gameService = gameService;
     }
 
     public void initializeGame() {
