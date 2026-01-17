@@ -10,11 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>backend</module>
-        <module>frontend</module>
-        <module>common</module>
-        <module>game-core</module>
-        <module>frontend-launcher</module>
+        
     </modules>
 
     <properties>
