@@ -2,8 +2,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD",
-      "WOOD"
+      "OBTAIN_WOOD",
+      "OBTAIN_WOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "bar001",
@@ -23,8 +23,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD",
-      "WOOD"
+      "OBTAIN_WOOD",
+      "OBTAIN_WOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "bar002",
@@ -44,8 +44,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD",
-      "WOOD"
+      "OBTAIN_WOOD",
+      "OBTAIN_WOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "bar003",
@@ -73,7 +73,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
@@ -93,7 +93,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
@@ -113,7 +113,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
@@ -209,7 +209,7 @@
       "BLACK"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
@@ -220,8 +220,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SWORD",
-      "SETTLER"
+      "OBTAIN_SWORD",
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "bar012",
@@ -243,8 +243,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SWORD",
-      "SETTLER"
+      "OBTAIN_SWORD",
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "bar013",
@@ -335,7 +335,7 @@
       "BLACK"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
@@ -384,8 +384,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "SETTLER"
+      "OBTAIN_SETTLER",
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "bar020",
@@ -405,8 +405,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "SETTLER"
+      "OBTAIN_SETTLER",
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "bar021",
@@ -433,7 +433,7 @@
     "colors": [
       "BLACK"
     ],
-    "condition": "BLACK_6",
+    "condition": "HAS_BLACK_COLOR_6_MAX",
     "dealSource": "WOOD",
     "orEffect": [],
     "sourcesForBuild": [
@@ -466,8 +466,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SWORD",
-      "STONE"
+      "OBTAIN_SWORD",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "bar024",
@@ -527,7 +527,7 @@
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "FOUR_SCORE_POINTS",
+    "cardEffectForPosition": "SCORE_FOUR_POINTS",
     "cardId": "bar027",
     "cardName": "Modla",
     "cardType": "FACTION",
@@ -607,8 +607,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "FOOD"
+      "OBTAIN_SETTLER",
+      "OBTAIN_FOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap001",
@@ -624,14 +624,14 @@
       "WOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "FOOD"
+      "OBTAIN_SETTLER",
+      "OBTAIN_FOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap002",
@@ -647,14 +647,14 @@
       "WOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "FOOD"
+      "OBTAIN_SETTLER",
+      "OBTAIN_FOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap003",
@@ -670,14 +670,14 @@
       "WOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FOOD",
-      "FOOD"
+      "OBTAIN_FOOD",
+      "OBTAIN_FOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap004",
@@ -693,14 +693,14 @@
       "FOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FOOD",
-      "FOOD"
+      "OBTAIN_FOOD",
+      "OBTAIN_FOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap005",
@@ -716,13 +716,13 @@
       "FOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER"
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap006",
@@ -731,7 +731,7 @@
     "colors": [
       "PINK"
     ],
-    "condition": "PINK_3",
+    "condition": "HAS_PINK_3_MAX",
     "dealSource": "SETTLER",
     "orEffect": [],
     "sourcesForBuild": [
@@ -739,13 +739,13 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER"
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap007",
@@ -754,7 +754,7 @@
     "colors": [
       "PINK"
     ],
-    "condition": "PINK_3",
+    "condition": "HAS_PINK_3_MAX",
     "dealSource": "SETTLER",
     "orEffect": [],
     "sourcesForBuild": [
@@ -762,7 +762,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -783,7 +783,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -798,7 +798,7 @@
     "colors": [
       "GRAY"
     ],
-    "condition": "SAMURAI_3",
+    "condition": "HAS_SAMURAI_3_MAX",
     "dealSource": "STONE",
     "orEffect": [],
     "sourcesForBuild": [
@@ -807,7 +807,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -822,8 +822,8 @@
     "colors": [
       "GRAY"
     ],
-    "condition": "SAMURAI_3",
-    "dealSource": "GOLD",
+    "condition": "HAS_SAMURAI_3_MAX",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -831,13 +831,13 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FACTION_CARD"
+      "OBTAIN_FACTION_CARD"
     ],
     "cardEffectForPosition": null,
     "cardId": "jap011",
@@ -846,17 +846,17 @@
     "colors": [
       "BLUE"
     ],
-    "condition": "FACTION_CARD_2",
+    "condition": "CHOICE_FROM_2_FACTION_CARDS",
     "dealSource": "CARD",
     "orEffect": [
-      "FACTION_CARD"
+      "OBTAIN_FACTION_CARD"
     ],
     "sourcesForBuild": [
       "STONE",
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -870,7 +870,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
@@ -878,7 +878,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -899,7 +899,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -920,7 +920,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -942,7 +942,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -963,7 +963,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -984,7 +984,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1005,7 +1005,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1019,14 +1019,14 @@
       "RED"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1047,7 +1047,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1068,7 +1068,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1089,7 +1089,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1103,20 +1103,20 @@
       "RED"
     ],
     "condition": null,
-    "dealSource": "SCORE_POINT",
+    "dealSource": "VICTORY_POINT",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "FACTION_CARD",
+    "cardEffectForPosition": "OBTAIN_FACTION_CARD",
     "cardId": "jap024",
     "cardName": "Dojo",
     "cardType": "FACTION",
@@ -1124,20 +1124,20 @@
       "RED"
     ],
     "condition": null,
-    "dealSource": "SCORE_POINT",
+    "dealSource": "VICTORY_POINT",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "FACTION_CARD",
+    "cardEffectForPosition": "OBTAIN_FACTION_CARD",
     "cardId": "jap025",
     "cardName": "Dojo",
     "cardType": "FACTION",
@@ -1145,20 +1145,20 @@
       "RED"
     ],
     "condition": null,
-    "dealSource": "SCORE_POINT",
+    "dealSource": "VICTORY_POINT",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "ACTION",
     "cardEffect": [],
-    "cardEffectForPosition": "TWO_SAMURAIS",
+    "cardEffectForPosition": "OBTAIN_TWO_SAMURAIS",
     "cardId": "jap026",
     "cardName": "Ninjové",
     "cardType": "FACTION",
@@ -1173,13 +1173,13 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
     "cardCategory": "ACTION",
     "cardEffect": [],
-    "cardEffectForPosition": "TWO_SAMURAIS",
+    "cardEffectForPosition": "OBTAIN_TWO_SAMURAIS",
     "cardId": "jap027",
     "cardName": "Ninjové",
     "cardType": "FACTION",
@@ -1194,7 +1194,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1215,7 +1215,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1236,7 +1236,7 @@
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1250,14 +1250,14 @@
       "RED"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "WOOD",
       "LOCATION"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT"
+      "VICTORY_POINT"
     ]
   },
   {
@@ -1309,7 +1309,7 @@
       "GRAY"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -1328,7 +1328,7 @@
       "GRAY"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -1456,7 +1456,7 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FACTION_CARD"
+      "OBTAIN_FACTION_CARD"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom011",
@@ -1465,10 +1465,10 @@
     "colors": [
       "BLUE"
     ],
-    "condition": "FACTION_CARD_2",
+    "condition": "CHOICE_FROM_2_FACTION_CARDS",
     "dealSource": "CARD",
     "orEffect": [
-      "FACTION_CARD"
+      "OBTAIN_FACTION_CARD"
     ],
     "sourcesForBuild": [
       "STONE",
@@ -1580,9 +1580,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "COMMON_CARD"
+      "OBTAIN_COMMON_CARD"
     ],
-    "cardEffectForPosition": "COMMON_CARD",
+    "cardEffectForPosition": "OBTAIN_COMMON_CARD",
     "cardId": "rom017",
     "cardName": "Legie",
     "cardType": "FACTION",
@@ -1601,9 +1601,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "COMMON_CARD"
+      "OBTAIN_COMMON_CARD"
     ],
-    "cardEffectForPosition": "COMMON_CARD",
+    "cardEffectForPosition": "OBTAIN_COMMON_CARD",
     "cardId": "rom018",
     "cardName": "Legie",
     "cardType": "FACTION",
@@ -1641,8 +1641,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD",
-      "STONE"
+      "OBTAIN_WOOD",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom020",
@@ -1663,8 +1663,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD",
-      "STONE"
+      "OBTAIN_WOOD",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom021",
@@ -1705,8 +1705,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "GOLD"
+      "OBTAIN_SETTLER",
+      "OBTAIN_COIN"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom023",
@@ -1731,8 +1731,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "GOLD"
+      "OBTAIN_SETTLER",
+      "OBTAIN_COIN"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom024",
@@ -1757,8 +1757,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "GOLD"
+      "OBTAIN_SETTLER",
+      "OBTAIN_COIN"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom025",
@@ -1783,8 +1783,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "SETTLER"
+      "OBTAIN_SETTLER",
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom026",
@@ -1805,8 +1805,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE",
-      "STONE"
+      "OBTAIN_STONE",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom027",
@@ -1828,8 +1828,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE",
-      "STONE"
+      "OBTAIN_STONE",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom028",
@@ -1851,7 +1851,7 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "GOLD"
+      "OBTAIN_COIN"
     ],
     "cardEffectForPosition": null,
     "cardId": "rom029",
@@ -1861,7 +1861,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -1892,7 +1892,7 @@
   {
     "cardCategory": "ACTION",
     "cardEffect": [],
-    "cardEffectForPosition": "TWO_CARDS",
+    "cardEffectForPosition": "OBTAIN_TWO_CARDS",
     "cardId": "egy001",
     "cardName": "Poušť",
     "cardType": "FACTION",
@@ -1908,7 +1908,7 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE"
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy002",
@@ -1917,7 +1917,7 @@
     "colors": [
       "GRAY"
     ],
-    "condition": "GRAY_3",
+    "condition": "HAS_GRAY_3_MAX",
     "dealSource": "CARD",
     "orEffect": [],
     "sourcesForBuild": [
@@ -1949,7 +1949,7 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SWORD"
+      "OBTAIN_SWORD"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy004",
@@ -1961,7 +1961,7 @@
     "condition": null,
     "dealSource": "SWORD",
     "orEffect": [
-      "TWO_SCORE_POINTS"
+      "SCORE_TWO_POINTS"
     ],
     "sourcesForBuild": [
       "FOOD",
@@ -1973,7 +1973,7 @@
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "TWO_SETTLERS",
+    "cardEffectForPosition": "OBTAIN_TWO_SETTLERS",
     "cardId": "egy005",
     "cardName": "Oáza",
     "cardType": "FACTION",
@@ -2087,8 +2087,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FOOD",
-      "SETTLER"
+      "OBTAIN_FOOD",
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy011",
@@ -2108,8 +2108,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FOOD",
-      "SETTLER"
+      "OBTAIN_FOOD",
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy012",
@@ -2156,7 +2156,7 @@
       "BLACK"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2176,7 +2176,7 @@
       "BLACK"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2256,7 +2256,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2275,7 +2275,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2294,7 +2294,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2314,7 +2314,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2334,7 +2334,7 @@
       "GOLD"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2384,8 +2384,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE",
-      "STONE"
+      "OBTAIN_STONE",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy026",
@@ -2406,8 +2406,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE",
-      "STONE"
+      "OBTAIN_STONE",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy027",
@@ -2428,8 +2428,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "GOLD",
-      "STONE"
+      "OBTAIN_COIN",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy028",
@@ -2439,7 +2439,7 @@
       "GRAY"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2450,8 +2450,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "GOLD",
-      "STONE"
+      "OBTAIN_COIN",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy029",
@@ -2461,7 +2461,7 @@
       "GRAY"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2472,8 +2472,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "GOLD",
-      "STONE"
+      "OBTAIN_COIN",
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "egy030",
@@ -2483,7 +2483,7 @@
       "GRAY"
     ],
     "condition": null,
-    "dealSource": "GOLD",
+    "dealSource": "COIN",
     "orEffect": [],
     "sourcesForBuild": [
       "STONE",
@@ -2501,7 +2501,7 @@
     "colors": [
       "GRAY"
     ],
-    "condition": "GRAY_6_CARD",
+    "condition": "HAS_GRAY_6_MAX_AND_GET_CARD",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -2510,7 +2510,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "STONE"
     ]
   },
@@ -2533,7 +2533,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "STONE"
     ]
   },
@@ -2547,7 +2547,7 @@
     "colors": [
       "BROWN"
     ],
-    "condition": "BROWN_6_CARD",
+    "condition": "HAS_BROWN_6_MAX_AND_GET_CARD",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -2579,7 +2579,7 @@
       "WOOD"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "WOOD"
     ]
   },
@@ -2601,7 +2601,7 @@
       "WOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "WOOD"
     ]
   },
@@ -2631,8 +2631,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD",
-      "WOOD"
+      "OBTAIN_WOOD",
+      "OBTAIN_WOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com007",
@@ -2656,9 +2656,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE"
+      "OBTAIN_STONE"
     ],
-    "cardEffectForPosition": "STONE",
+    "cardEffectForPosition": "OBTAIN_STONE",
     "cardId": "com008",
     "cardName": "Lom",
     "cardType": "COMMON",
@@ -2680,9 +2680,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE"
+      "OBTAIN_STONE"
     ],
-    "cardEffectForPosition": "STONE",
+    "cardEffectForPosition": "OBTAIN_STONE",
     "cardId": "com009",
     "cardName": "Lom",
     "cardType": "COMMON",
@@ -2704,9 +2704,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE"
+      "OBTAIN_STONE"
     ],
-    "cardEffectForPosition": "STONE",
+    "cardEffectForPosition": "OBTAIN_STONE",
     "cardId": "com010",
     "cardName": "Lom",
     "cardType": "COMMON",
@@ -2728,7 +2728,7 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "STONE"
+      "OBTAIN_STONE"
     ],
     "cardEffectForPosition": null,
     "cardId": "com011",
@@ -2737,7 +2737,7 @@
     "colors": [
       "GRAY"
     ],
-    "condition": "GRAY_3",
+    "condition": "HAS_GRAY_3_MAX",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -2753,9 +2753,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER"
+      "OBTAIN_SETTLER"
     ],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com012",
     "cardName": "Vesnice",
     "cardType": "COMMON",
@@ -2776,9 +2776,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER"
+      "OBTAIN_SETTLER"
     ],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com013",
     "cardName": "Vesnice",
     "cardType": "COMMON",
@@ -2799,9 +2799,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER"
+      "OBTAIN_SETTLER"
     ],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com014",
     "cardName": "Vesnice",
     "cardType": "COMMON",
@@ -2822,8 +2822,8 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER",
-      "SETTLER"
+      "OBTAIN_SETTLER",
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "com015",
@@ -2847,9 +2847,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "ANOTHER_PRODUCTION"
+      "PRODUCE_ANOTHER_PRODUCTION"
     ],
-    "cardEffectForPosition": "CARD",
+    "cardEffectForPosition": "OBTAIN_CARD",
     "cardId": "com016",
     "cardName": "Pracující sedláci",
     "cardType": "COMMON",
@@ -2866,13 +2866,13 @@
     ],
     "sourcesFromDestroy": [
       "SETTLER",
-      "GOLD"
+      "COIN"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SETTLER"
+      "OBTAIN_SETTLER"
     ],
     "cardEffectForPosition": null,
     "cardId": "com017",
@@ -2881,7 +2881,7 @@
     "colors": [
       "PINK"
     ],
-    "condition": "PINK_3",
+    "condition": "HAS_PINK_3_MAX",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -2897,7 +2897,7 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SWORD"
+      "OBTAIN_SWORD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com018",
@@ -2914,14 +2914,14 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "STONE"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SWORD"
+      "OBTAIN_SWORD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com019",
@@ -2938,14 +2938,14 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "STONE"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "SWORD"
+      "OBTAIN_SWORD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com020",
@@ -2962,7 +2962,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "STONE"
     ]
   },
@@ -2984,8 +2984,8 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
-      "GOLD"
+      "VICTORY_POINT",
+      "COIN"
     ]
   },
   {
@@ -3006,16 +3006,16 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
-      "GOLD"
+      "VICTORY_POINT",
+      "COIN"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FOOD"
+      "OBTAIN_FOOD"
     ],
-    "cardEffectForPosition": "FOOD",
+    "cardEffectForPosition": "OBTAIN_FOOD",
     "cardId": "com023",
     "cardName": "Obilné pole",
     "cardType": "COMMON",
@@ -3037,9 +3037,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FOOD"
+      "OBTAIN_FOOD"
     ],
-    "cardEffectForPosition": "FOOD",
+    "cardEffectForPosition": "OBTAIN_FOOD",
     "cardId": "com024",
     "cardName": "Obilné pole",
     "cardType": "COMMON",
@@ -3061,7 +3061,7 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "FOOD"
+      "OBTAIN_FOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com025",
@@ -3070,7 +3070,7 @@
     "colors": [
       "RED"
     ],
-    "condition": "RED_3",
+    "condition": "HAS_RED_3_MAX",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -3102,14 +3102,14 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "STONE"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "GOLD"
+      "OBTAIN_COIN"
     ],
     "cardEffectForPosition": null,
     "cardId": "com027",
@@ -3118,7 +3118,7 @@
     "colors": [
       "GOLD"
     ],
-    "condition": "GOLD_3",
+    "condition": "HAS_GOLD_3_MAX",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -3127,14 +3127,14 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "STONE"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "GOLD"
+      "OBTAIN_COIN"
     ],
     "cardEffectForPosition": null,
     "cardId": "com028",
@@ -3151,14 +3151,14 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "SETTLER"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD"
+      "OBTAIN_WOOD"
     ],
     "cardEffectForPosition": null,
     "cardId": "com029",
@@ -3167,7 +3167,7 @@
     "colors": [
       "BROWN"
     ],
-    "condition": "BROWN_3",
+    "condition": "HAS_BROWN_3_MAX",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -3198,8 +3198,8 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
-      "GOLD"
+      "VICTORY_POINT",
+      "COIN"
     ]
   },
   {
@@ -3220,8 +3220,8 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
-      "GOLD"
+      "VICTORY_POINT",
+      "COIN"
     ]
   },
   {
@@ -3242,7 +3242,7 @@
       "WOOD"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "WOOD"
     ]
   },
@@ -3308,7 +3308,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "STONE"
     ]
   },
@@ -3352,7 +3352,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "STONE"
     ]
   },
@@ -3375,7 +3375,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "STONE"
     ]
   },
@@ -3397,7 +3397,7 @@
       "FOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "SETTLER"
     ]
   },
@@ -3485,7 +3485,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "WOOD"
     ]
   },
@@ -3507,7 +3507,7 @@
       "WOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "WOOD"
     ]
   },
@@ -3529,7 +3529,7 @@
       "WOOD"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "WOOD"
     ]
   },
@@ -3602,7 +3602,7 @@
   {
     "cardCategory": "ACTION",
     "cardEffect": [],
-    "cardEffectForPosition": "CARD",
+    "cardEffectForPosition": "OBTAIN_CARD",
     "cardId": "com049",
     "cardName": "Krčma",
     "cardType": "COMMON",
@@ -3640,7 +3640,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "SETTLER"
     ]
   },
@@ -3663,7 +3663,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "SETTLER"
     ]
   },
@@ -3686,7 +3686,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "FOOD"
     ]
   },
@@ -3795,7 +3795,7 @@
     ],
     "sourcesFromDestroy": [
       "SETTLER",
-      "GOLD"
+      "COIN"
     ]
   },
   {
@@ -3880,16 +3880,16 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
-      "GOLD"
+      "VICTORY_POINT",
+      "COIN"
     ]
   },
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD"
+      "OBTAIN_WOOD"
     ],
-    "cardEffectForPosition": "WOOD",
+    "cardEffectForPosition": "OBTAIN_WOOD",
     "cardId": "com062",
     "cardName": "Dřevorubecká stezka",
     "cardType": "COMMON",
@@ -3911,9 +3911,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD"
+      "OBTAIN_WOOD"
     ],
-    "cardEffectForPosition": "WOOD",
+    "cardEffectForPosition": "OBTAIN_WOOD",
     "cardId": "com063",
     "cardName": "Dřevorubecká stezka",
     "cardType": "COMMON",
@@ -3935,9 +3935,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "WOOD"
+      "OBTAIN_WOOD"
     ],
-    "cardEffectForPosition": "WOOD",
+    "cardEffectForPosition": "OBTAIN_WOOD",
     "cardId": "com064",
     "cardName": "Dřevorubecká stezka",
     "cardType": "COMMON",
@@ -3959,9 +3959,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "CARD"
+      "OBTAIN_CARD"
     ],
-    "cardEffectForPosition": "CARD",
+    "cardEffectForPosition": "OBTAIN_CARD",
     "cardId": "com065",
     "cardName": "Strážní věž",
     "cardType": "COMMON",
@@ -3983,9 +3983,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "CARD"
+      "OBTAIN_CARD"
     ],
-    "cardEffectForPosition": "CARD",
+    "cardEffectForPosition": "OBTAIN_CARD",
     "cardId": "com066",
     "cardName": "Strážní věž",
     "cardType": "COMMON",
@@ -4007,9 +4007,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "CARD"
+      "OBTAIN_CARD"
     ],
-    "cardEffectForPosition": "CARD",
+    "cardEffectForPosition": "OBTAIN_CARD",
     "cardId": "com067",
     "cardName": "Strážní věž",
     "cardType": "COMMON",
@@ -4031,9 +4031,9 @@
   {
     "cardCategory": "PRODUCTION",
     "cardEffect": [
-      "CARD"
+      "OBTAIN_CARD"
     ],
-    "cardEffectForPosition": "CARD",
+    "cardEffectForPosition": "OBTAIN_CARD",
     "cardId": "com068",
     "cardName": "Strážní věž",
     "cardType": "COMMON",
@@ -4055,7 +4055,7 @@
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com069",
     "cardName": "Ruiny",
     "cardType": "COMMON",
@@ -4069,7 +4069,7 @@
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com070",
     "cardName": "Ruiny",
     "cardType": "COMMON",
@@ -4083,7 +4083,7 @@
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com071",
     "cardName": "Ruiny",
     "cardType": "COMMON",
@@ -4097,7 +4097,7 @@
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com072",
     "cardName": "Ruiny",
     "cardType": "COMMON",
@@ -4111,7 +4111,7 @@
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com073",
     "cardName": "Ruiny",
     "cardType": "COMMON",
@@ -4125,7 +4125,7 @@
   {
     "cardCategory": "PROPERTIES",
     "cardEffect": [],
-    "cardEffectForPosition": "SETTLER",
+    "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com074",
     "cardName": "Ruiny",
     "cardType": "COMMON",
@@ -4146,7 +4146,7 @@
     "colors": [
       "RED"
     ],
-    "condition": "RED_6_CARD",
+    "condition": "HAS_RED_6_MAX_AND_GET_CARD",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -4155,7 +4155,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "SCORE_POINT",
+      "VICTORY_POINT",
       "FOOD"
     ]
   },
@@ -4234,7 +4234,7 @@
     "colors": [
       "PINK"
     ],
-    "condition": "PINK_6_CARD",
+    "condition": "HAS_PINK_6_MAX_AND_GET_CARD",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -4266,7 +4266,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "STONE"
     ]
   },
@@ -4280,7 +4280,7 @@
     "colors": [
       "GOLD"
     ],
-    "condition": "GOLD_6_CARD",
+    "condition": "HAS_GOLD_COLOR_6_MAX_AND_GET_CARD",
     "dealSource": null,
     "orEffect": [],
     "sourcesForBuild": [
@@ -4289,7 +4289,7 @@
       "STONE"
     ],
     "sourcesFromDestroy": [
-      "GOLD",
+      "COIN",
       "STONE"
     ]
   },

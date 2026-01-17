@@ -83,9 +83,9 @@
       "SETTLER",
       "SWORD",
       "SHIELD",
-      "GOLD"
+      "COIN"
     ],
-    "saveSource": "GOLD"
+    "saveSource": "COIN"
   },
   {
     "faction": "EGYPT_M",
@@ -95,8 +95,8 @@
       "SETTLER",
       "SWORD",
       "SHIELD",
-      "GOLD"
+      "COIN"
     ],
-    "saveSource": "GOLD"
+    "saveSource": "COIN"
   }
 ]

@@ -4,22 +4,22 @@ import lombok.Getter;
 
 public enum CardEffects {
 
-    SWORD(Sources.SWORD),
-    SETTLER(Sources.SETTLER),
-    STONE(Sources.STONE),
-    WOOD(Sources.WOOD),
-    COMMON_CARD(Sources.COMMON_CARD),
-    FACTION_CARD(Sources.FACTION_CARD),
-    GOLD(Sources.GOLD),
-    FOOD(Sources.FOOD),
-    SCORE_POINT(Sources.SCORE_POINT),
-    CARD(Sources.CARD),
-    TWO_SCORE_POINTS(Sources.SCORE_POINT),
-    ANOTHER_PRODUCTION(null),
-    TWO_SAMURAIS(null),
-    TWO_CARDS(null),
-    TWO_SETTLERS(null),
-    FOUR_SCORE_POINTS(null);
+    OBTAIN_SWORD(Sources.SWORD),
+    OBTAIN_SETTLER(Sources.SETTLER),
+    OBTAIN_STONE(Sources.STONE),
+    OBTAIN_WOOD(Sources.WOOD),
+    OBTAIN_COMMON_CARD(Sources.COMMON_CARD),
+    OBTAIN_FACTION_CARD(Sources.FACTION_CARD),
+    OBTAIN_COIN(Sources.COIN),
+    OBTAIN_FOOD(Sources.FOOD),
+    SCORE_POINT(Sources.VICTORY_POINT),
+    OBTAIN_CARD(Sources.CARD),
+    SCORE_TWO_POINTS(Sources.VICTORY_POINT),
+    PRODUCE_ANOTHER_PRODUCTION(null),
+    OBTAIN_TWO_SAMURAIS(null),
+    OBTAIN_TWO_CARDS(null),
+    OBTAIN_TWO_SETTLERS(null),
+    SCORE_FOUR_POINTS(null);
 
     @Getter
     private final Sources source;

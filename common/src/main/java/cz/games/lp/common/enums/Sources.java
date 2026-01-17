@@ -8,11 +8,11 @@ public enum Sources {
     SETTLER,
     SWORD,
     SHIELD,
-    GOLD,
+    COIN,
     EGYPT_TOKEN,
     CARD,
     FACTION_CARD,
     COMMON_CARD,
-    SCORE_POINT,
+    VICTORY_POINT,
     LOCATION
 }
