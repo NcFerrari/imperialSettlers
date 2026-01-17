@@ -1,6 +1,6 @@
 package cz.games.lp.backend.engine.consolegame;
 
-import cz.games.lp.gamecore.service.GameDataService;
+import cz.games.lp.backend.engine.GameServices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +11,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class ConsoleOutputs {
 
-    private final GameDataService gameDataService;
+    private final GameServices gameServices;
     private final AtomicInteger offerCounter = new AtomicInteger();
 
-    public ConsoleOutputs(GameDataService gameDataService) {
-        this.gameDataService = gameDataService;
+    public ConsoleOutputs(GameServices gameServices) {
+        this.gameServices = gameServices;
     }
 
     public void initMessage() {
@@ -33,12 +33,12 @@ public class ConsoleOutputs {
     public void showCurrentStats() {
         log.debug("showStats");
         log.info("===============================================");
-        log.info("Zvolena frakce: {}", gameDataService.getGameData().getSelectedFaction());
-        log.info("Kolo: {}", gameDataService.getGameData().getRound());
-        log.info("Pocet bodu: {}", gameDataService.getGameData().getScorePoints());
-        log.info("Aktualni faze: {}", gameDataService.getGameData().getCurrentPhase());
+        log.info("Zvolena frakce: {}", gameServices.getGameData().getSelectedFaction());
+        log.info("Kolo: {}", gameServices.getGameData().getRound());
+        log.info("Pocet bodu: {}", gameServices.getGameData().getScorePoints());
+        log.info("Aktualni faze: {}", gameServices.getGameData().getCurrentPhase());
         log.info("Suroviny:");
-        gameDataService.getGameData().getOwnSupplies().values().forEach(supply -> log.info("- {}: {}", supply.getSources(), supply.getCount()));
+        gameServices.getGameData().getOwnSupplies().values().forEach(supply -> log.info("- {}: {}", supply.getSources(), supply.getCount()));
         log.info("===============================================");
     }
 
@@ -61,6 +61,12 @@ public class ConsoleOutputs {
     }
 
     public void showCards() {
-
+        log.debug("showCards");
+        log.info("===============================================");
+        log.info("Karty v ruce:");
+        gameServices.getGameData().getCardsInHand().forEach(card -> log.info(card.toString()));
+        log.info("Postavené lokace:");
+        gameServices.getGameData().getBuiltLocations().forEach(card -> log.info(card.toString()));
+        log.info("===============================================");
     }
 }

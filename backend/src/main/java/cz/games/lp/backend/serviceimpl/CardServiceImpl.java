@@ -13,4 +13,22 @@ public class CardServiceImpl implements CardService {
 
     @Getter
     private final Map<String, CardDTO> cardMap = new HashMap<>();
+
+    @Override
+    public void deal4Cards() {
+        dealFactionCard();
+        dealFactionCard();
+        dealCommonCard();
+        dealCommonCard();
+    }
+
+    @Override
+    public void dealFactionCard() {
+
+    }
+
+    @Override
+    public void dealCommonCard() {
+
+    }
 }

@@ -14,12 +14,4 @@ public class Supply {
     public Supply(Sources sources) {
         this.sources = sources;
     }
-
-    public void incrementCount() {
-        count++;
-    }
-
-    public void decrementCount() {
-        count--;
-    }
 }

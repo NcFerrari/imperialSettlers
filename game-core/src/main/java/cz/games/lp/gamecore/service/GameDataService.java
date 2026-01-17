@@ -14,6 +14,4 @@ public interface GameDataService {
     void selectFaction(FactionDTO faction);
 
     void newGame();
-
-    void proceedLookoutPhase();
 }

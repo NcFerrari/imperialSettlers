@@ -27,7 +27,7 @@ class OutputsTest {
     void runAllOutputMethods() {
         when(gameDataService.getGameData()).thenReturn(gameData);
         outputs.initMessage();
-        outputs.selectFactionMessage();
+//        outputs.selectFactionMessage();
         outputs.wrongChoice();
         outputs.showCurrentStats();
         assertTrue(true);

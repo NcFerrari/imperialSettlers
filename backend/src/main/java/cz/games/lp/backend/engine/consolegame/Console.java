@@ -48,6 +48,11 @@ public class Console {
                 if (line == null) {
                     continue;
                 }
+                if ("exit".equalsIgnoreCase(line.trim())) {
+                    cliIsRunning = false;
+                    SpringApplication.exit(ctx, () -> 0);
+                    break;
+                }
                 int number;
                 try {
                     number = Integer.parseInt(line);
@@ -59,10 +64,6 @@ public class Console {
                 if (number >= phaseActions.size() + commonActions.size() || number < 0) {
                     consoleOutputs.wrongChoice();
                     continue;
-                }
-                if ("exit".equalsIgnoreCase(line.trim())) {
-                    SpringApplication.exit(ctx, () -> 0);
-                    break;
                 }
                 Stream.of(phaseActions.values(), commonActions.values()).flatMap(Collection::stream).toList().get(number).run();
             }

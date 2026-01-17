@@ -1,8 +1,7 @@
 package cz.games.lp.backend.engine.consolegame;
 
-import cz.games.lp.backend.engine.GameEngine;
+import cz.games.lp.backend.engine.GameServices;
 import cz.games.lp.common.enums.Factions;
-import cz.games.lp.gamecore.service.GameDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -12,15 +11,13 @@ public class ConsoleManager {
 
     private final Factions[] factions = new Factions[]{Factions.BARBARIAN_F, Factions.BARBARIAN_M, Factions.JAPAN_F, Factions.JAPAN_M, Factions.ROMAN_F, Factions.ROMAN_M, Factions.EGYPT_F, Factions.EGYPT_M};
     private final ConsoleOutputs consoleOutputs;
-    private final GameEngine gameEngine;
+    private final GameServices gameServices;
     private final Console console;
-    private final GameDataService gameDataService;
 
-    public ConsoleManager(ConsoleOutputs consoleOutputs, GameEngine gameEngine, Console console, GameDataService gameDataService) {
+    public ConsoleManager(ConsoleOutputs consoleOutputs, GameServices gameServices, Console console) {
         this.consoleOutputs = consoleOutputs;
-        this.gameEngine = gameEngine;
+        this.gameServices = gameServices;
         this.console = console;
-        this.gameDataService = gameDataService;
     }
 
     private void initCommonActions() {
@@ -53,8 +50,8 @@ public class ConsoleManager {
         console.clearCommonActions();
         for (Factions faction : factions) {
             console.addPhaseAction(faction.name(), () -> {
-                gameEngine.getGameDataService().selectFaction(gameEngine.getFactionService().getFactionMap().get(faction));
-                gameDataService.newGame();
+                gameServices.getGameDataService().selectFaction(gameServices.getFactionService().getFactionMap().get(faction));
+                gameServices.getGameDataService().newGame();
                 initCommonActions();
                 lookoutPhase();
             });
