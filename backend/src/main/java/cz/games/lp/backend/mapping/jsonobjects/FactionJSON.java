@@ -11,7 +11,7 @@ import java.util.List;
 @ToString
 public class FactionJSON {
 
-    private String faction;
+    private String factionTitle;
     private List<String> factionProduction;
     private String saveSource;
 }

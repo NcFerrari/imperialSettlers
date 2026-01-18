@@ -8,7 +8,5 @@ public interface GameService {
 
     GameSessionService getGameSessionService();
 
-    PhaseService getPhaseService();
-
     PlayerService getPlayerService();
 }

@@ -22,9 +22,32 @@ public class GameOrchestrator {
         this.gameService = gameService;
     }
 
-    public void initializeGame() {
-        log.debug("initializeGame");
+    public void startGame() {
+        log.debug("startGame");
         prepareGameData();
+        initializePlayers();
+        initializeGame();
+        dealFirstFourCardsToPlayers();
+    }
+
+    private void dealFirstFourCardsToPlayers() {
+        log.debug("dealFirstFourCardsToPlayers");
+        gameService.getPlayerService().getPlayers().forEach(player -> {
+            gameService.getCardService().dealFactionCardToPlayer(player);
+            gameService.getCardService().dealFactionCardToPlayer(player);
+            gameService.getCardService().dealCommonCardToPlayer(player);
+            gameService.getCardService().dealCommonCardToPlayer(player);
+        });
+    }
+
+    private void initializeGame() {
+        log.debug("initializeGame");
+        gameService.getGameSessionService().newGame();
+    }
+
+    private void initializePlayers() {
+        log.debug("initializePlayers");
+        gameService.getPlayerService().addPlayers();
     }
 
     private void prepareGameData() {

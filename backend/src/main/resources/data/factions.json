@@ -1,6 +1,6 @@
 [
   {
-    "faction": "BARBARIAN_F",
+    "factionTitle": "BARBARIAN_F",
     "factionProduction": [
       "SETTLER",
       "SETTLER",
@@ -13,7 +13,7 @@
     "saveSource": "SETTLER"
   },
   {
-    "faction": "BARBARIAN_M",
+    "factionTitle": "BARBARIAN_M",
     "factionProduction": [
       "SETTLER",
       "SETTLER",
@@ -26,7 +26,7 @@
     "saveSource": "SETTLER"
   },
   {
-    "faction": "JAPAN_F",
+    "factionTitle": "JAPAN_F",
     "factionProduction": [
       "SETTLER",
       "SETTLER",
@@ -39,7 +39,7 @@
     "saveSource": "FOOD"
   },
   {
-    "faction": "JAPAN_M",
+    "factionTitle": "JAPAN_M",
     "factionProduction": [
       "SETTLER",
       "SETTLER",
@@ -52,7 +52,7 @@
     "saveSource": "FOOD"
   },
   {
-    "faction": "ROMAN_F",
+    "factionTitle": "ROMAN_F",
     "factionProduction": [
       "SETTLER",
       "SETTLER",
@@ -64,7 +64,7 @@
     "saveSource": "SWORD"
   },
   {
-    "faction": "ROMAN_M",
+    "factionTitle": "ROMAN_M",
     "factionProduction": [
       "SETTLER",
       "SETTLER",
@@ -76,7 +76,7 @@
     "saveSource": "SWORD"
   },
   {
-    "faction": "EGYPT_F",
+    "factionTitle": "EGYPT_F",
     "factionProduction": [
       "SETTLER",
       "SETTLER",
@@ -88,7 +88,7 @@
     "saveSource": "COIN"
   },
   {
-    "faction": "EGYPT_M",
+    "factionTitle": "EGYPT_M",
     "factionProduction": [
       "SETTLER",
       "SETTLER",

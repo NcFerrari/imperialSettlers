@@ -1,9 +1,8 @@
 package cz.games.lp.backend.controller;
 
 import cz.games.lp.backend.service.GameService;
-import lombok.NonNull;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
+import cz.games.lp.common.dto.PlayerDTO;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +16,8 @@ public class GameController {
         this.gameService = gameService;
     }
 
-    @PostMapping("/deal/faction-card")
-    public ResponseEntity<@NonNull String> dealFactionCard() {
-        return ResponseEntity.ok("Faction card dealt");
+    @GetMapping("/status")
+    public PlayerDTO getStatus() {
+        return gameService.getPlayerService().getPlayers().getFirst();
     }
 }

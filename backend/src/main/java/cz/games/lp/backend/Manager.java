@@ -21,6 +21,6 @@ public class Manager {
         log.debug("run");
         ApplicationContext context = SpringApplication.run(Manager.class, args);
         GameOrchestrator gameOrchestrator = context.getBean(GameOrchestrator.class);
-        gameOrchestrator.initializeGame();
+        gameOrchestrator.startGame();
     }
 }
