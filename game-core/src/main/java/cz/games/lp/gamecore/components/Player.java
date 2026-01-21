@@ -1,4 +1,4 @@
-package cz.games.lp.gamecore;
+package cz.games.lp.gamecore.components;
 
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.dto.FactionDTO;
@@ -22,7 +22,7 @@ public class Player {
     private FactionDTO faction;
     private int victoryPoints;
 
-    public Player(FactionDTO faction) {
-        this.faction = faction;
+    public void selectFaction() {
+
     }
 }

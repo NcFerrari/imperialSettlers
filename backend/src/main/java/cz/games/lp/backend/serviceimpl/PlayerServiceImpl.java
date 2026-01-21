@@ -1,36 +1,26 @@
 package cz.games.lp.backend.serviceimpl;
 
-import cz.games.lp.backend.service.CardService;
-import cz.games.lp.backend.service.FactionService;
 import cz.games.lp.backend.service.PlayerService;
-import cz.games.lp.gamecore.Player;
-import lombok.Getter;
-import lombok.Setter;
+import cz.games.lp.gamecore.GameManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.IntStream;
 
-@Getter
-@Setter
 @Slf4j
 @Service
 public class PlayerServiceImpl implements PlayerService {
 
-    private final List<Player> players = new ArrayList<>();
-    private final CardService cardService;
-    private final FactionService factionService;
+    private final GameManager gameManager;
 
-    private Player activePlayer;
-
-    public PlayerServiceImpl(CardService cardService, FactionService factionService) {
-        this.cardService = cardService;
-        this.factionService = factionService;
+    public PlayerServiceImpl(GameManager gameManager) {
+        this.gameManager = gameManager;
     }
 
     @Override
-    public void initializePlayers() {
-        log.debug("addPlayers");
+    public void initializePlayers(int playersCount) {
+        log.debug("initializePlayers");
+        IntStream.range(0, playersCount).forEach(i -> gameManager.addPlayer());
+        gameManager.setFirstPlayer();
     }
 }

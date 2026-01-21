@@ -1,17 +1,15 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.CardService;
-import cz.games.lp.gamecore.Player;
+import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.enums.CardTypes;
+import cz.games.lp.gamecore.catalogs.CardCatalog;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -19,25 +17,26 @@ import java.util.stream.IntStream;
 @Service
 public class CardServiceImpl implements CardService {
 
-    private static final int FACTION_CARD_COUNT = 30;
-    private static final int COMMON_CARD_COUNT = 84;
+    private final CardCatalog cardCatalog;
 
-    private Map<Player, List<String>> playerFactionCardDecks = new HashMap<>();
-    private List<String> commonCardDeck = new ArrayList<>();
+    public CardServiceImpl(CardCatalog cardCatalog) {
+        this.cardCatalog = cardCatalog;
+    }
+
+    @Override
+    public Map<String, CardDTO> getCardMap() {
+        log.debug("getCardMap");
+        return cardCatalog.cardMap();
+    }
 
     @Override
     public void prepareNewCommonCardDeck() {
         log.debug("prepareNewCommonCardDeck");
-        commonCardDeck.clear();
-        commonCardDeck = generateShuffledCardDeck(CardTypes.COMMON, COMMON_CARD_COUNT);
     }
 
     @Override
-    public void prepareNewFactionCardDecks(List<Player> players) {
+    public void prepareNewFactionCardDecks() {
         log.debug("prepareNewFactionCardDeck");
-        playerFactionCardDecks.clear();
-        playerFactionCardDecks = players.stream()
-                .collect(Collectors.toMap(Function.identity(), player -> generateShuffledCardDeck(player.getFaction().getFactionTitle().getCardPrefix(), FACTION_CARD_COUNT)));
     }
 
     @Override
@@ -48,7 +47,6 @@ public class CardServiceImpl implements CardService {
     @Override
     public void dealCommonCardToPlayer() {
         log.debug("dealCommonCardToPlayer");
-        dealCardToPlayer(commonCardDeck);
     }
 
     @Override

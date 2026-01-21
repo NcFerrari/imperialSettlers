@@ -1,4 +1,4 @@
-package cz.games.lp.gamecore;
+package cz.games.lp.gamecore.components;
 
 import cz.games.lp.common.dto.CardDTO;
 import lombok.Getter;

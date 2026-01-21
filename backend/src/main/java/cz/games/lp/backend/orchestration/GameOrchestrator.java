@@ -14,18 +14,20 @@ import java.util.concurrent.CompletableFuture;
 @Component
 public class GameOrchestrator {
 
-    private final GameDataMapper gameDataMapper;
     private final GameService gameService;
+    private final GameDataMapper gameDataMapper;
 
-    public GameOrchestrator(GameDataMapper gameDataMapper, GameService gameService) {
-        this.gameDataMapper = gameDataMapper;
+    public GameOrchestrator(GameService gameService, GameDataMapper gameDataMapper) {
         this.gameService = gameService;
+        this.gameDataMapper = gameDataMapper;
     }
 
     public void startGame() {
         log.debug("startGame");
         prepareGameData();
-        gameService.getPlayerService().initializePlayers();
+
+        gameService.getPlayerService().initializePlayers(1);
+        gameService.getFactionService().getRemainingFactions();
     }
 
     private void prepareGameData() {
