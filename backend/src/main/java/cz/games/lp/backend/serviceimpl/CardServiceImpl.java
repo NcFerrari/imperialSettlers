@@ -1,10 +1,8 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.CardService;
-import cz.games.lp.common.dto.CardDTO;
-import cz.games.lp.common.dto.PlayerDTO;
+import cz.games.lp.gamecore.Player;
 import cz.games.lp.common.enums.CardTypes;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +22,7 @@ public class CardServiceImpl implements CardService {
     private static final int FACTION_CARD_COUNT = 30;
     private static final int COMMON_CARD_COUNT = 84;
 
-    @Getter
-    private final Map<String, CardDTO> cardMap = new HashMap<>();
-    private Map<PlayerDTO, List<String>> playerFactionCardDecks = new HashMap<>();
+    private Map<Player, List<String>> playerFactionCardDecks = new HashMap<>();
     private List<String> commonCardDeck = new ArrayList<>();
 
     @Override
@@ -37,7 +33,7 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public void prepareNewFactionCardDecks(List<PlayerDTO> players) {
+    public void prepareNewFactionCardDecks(List<Player> players) {
         log.debug("prepareNewFactionCardDeck");
         playerFactionCardDecks.clear();
         playerFactionCardDecks = players.stream()
@@ -45,20 +41,23 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public void dealFactionCardToPlayer(PlayerDTO player) {
+    public void dealFactionCardToPlayer() {
         log.debug("dealFactionCardToPlayer");
-        dealCardToPlayer(player, playerFactionCardDecks.get(player));
     }
 
     @Override
-    public void dealCommonCardToPlayer(PlayerDTO player) {
+    public void dealCommonCardToPlayer() {
         log.debug("dealCommonCardToPlayer");
-        dealCardToPlayer(player, commonCardDeck);
+        dealCardToPlayer(commonCardDeck);
     }
 
-    private void dealCardToPlayer(PlayerDTO player, List<String> cardDeck) {
+    @Override
+    public void dealInitialCardsToPlayers() {
+        log.debug("dealInitialCardsToPlayers");
+    }
+
+    private void dealCardToPlayer(List<String> cardDeck) {
         log.debug("dealCardToPlayer");
-        player.getCardsInHand().add(getCardMap().get(cardDeck.getFirst()));
         cardDeck.removeFirst();
     }
 

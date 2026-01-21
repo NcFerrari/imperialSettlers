@@ -1,4 +1,4 @@
-package cz.games.lp.backend.mapping.jsonobjects;
+package cz.games.lp.backend.infrstructure.mapping.jsonobjects;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,7 +1,7 @@
-package cz.games.lp.backend.controller;
+package cz.games.lp.backend.api;
 
-import cz.games.lp.backend.service.GameService;
-import cz.games.lp.common.dto.PlayerDTO;
+import cz.games.lp.backend.service.agregates.GameService;
+import cz.games.lp.gamecore.Player;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +17,7 @@ public class GameController {
     }
 
     @GetMapping("/status")
-    public PlayerDTO getStatus() {
+    public Player getStatus() {
         return gameService.getPlayerService().getPlayers().getFirst();
     }
 }

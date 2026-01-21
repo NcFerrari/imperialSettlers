@@ -1,7 +1,7 @@
-package cz.games.lp.backend.mapping;
+package cz.games.lp.backend.infrstructure.mapping;
 
-import cz.games.lp.backend.mapping.jsonobjects.CardJSON;
-import cz.games.lp.backend.mapping.jsonobjects.FactionJSON;
+import cz.games.lp.backend.infrstructure.mapping.jsonobjects.CardJSON;
+import cz.games.lp.backend.infrstructure.mapping.jsonobjects.FactionJSON;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

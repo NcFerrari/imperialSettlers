@@ -1,6 +1,6 @@
-package cz.games.lp.backend.mapping.mappers;
+package cz.games.lp.backend.infrstructure.mapping.mappers;
 
-import cz.games.lp.backend.mapping.jsonobjects.CardJSON;
+import cz.games.lp.backend.infrstructure.mapping.jsonobjects.CardJSON;
 import cz.games.lp.common.dto.CardDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;

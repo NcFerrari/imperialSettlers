@@ -1,6 +1,6 @@
-package cz.games.lp.backend.mapping.mappers;
+package cz.games.lp.backend.infrstructure.mapping.mappers;
 
-import cz.games.lp.backend.mapping.jsonobjects.FactionJSON;
+import cz.games.lp.backend.infrstructure.mapping.jsonobjects.FactionJSON;
 import cz.games.lp.common.dto.FactionDTO;
 import cz.games.lp.common.enums.FactionTitles;
 import org.mapstruct.Mapper;

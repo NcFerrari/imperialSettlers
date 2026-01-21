@@ -1,4 +1,4 @@
-package cz.games.lp.backend.config;
+package cz.games.lp.backend.infrstructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import java.util.concurrent.Executor;
 
 @Configuration
 @EnableAsync
-public class AppConfig {
+public class AppBeans {
 
     @Bean
     public ObjectMapper objectMapper() {

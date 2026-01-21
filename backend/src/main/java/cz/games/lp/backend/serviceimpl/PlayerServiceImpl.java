@@ -3,8 +3,7 @@ package cz.games.lp.backend.serviceimpl;
 import cz.games.lp.backend.service.CardService;
 import cz.games.lp.backend.service.FactionService;
 import cz.games.lp.backend.service.PlayerService;
-import cz.games.lp.common.dto.FactionDTO;
-import cz.games.lp.common.dto.PlayerDTO;
+import cz.games.lp.gamecore.Player;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -19,11 +18,11 @@ import java.util.List;
 @Service
 public class PlayerServiceImpl implements PlayerService {
 
-    private final List<PlayerDTO> players = new ArrayList<>();
+    private final List<Player> players = new ArrayList<>();
     private final CardService cardService;
     private final FactionService factionService;
 
-    private PlayerDTO activePlayer;
+    private Player activePlayer;
 
     public PlayerServiceImpl(CardService cardService, FactionService factionService) {
         this.cardService = cardService;
@@ -31,27 +30,7 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public void resetPlayersStats() {
-        log.debug("resetPlayersStats");
-        players.forEach(player -> {
-            player.setVictoryPoints(0);
-            player.getOwnSources().replaceAll((source, value) -> 0);
-            player.getCardsInHand().clear();
-            player.getBuiltLocations().clear();
-        });
-        cardService.prepareNewFactionCardDecks(players);
-    }
-
-    @Override
-    public void addPlayers() {
+    public void initializePlayers() {
         log.debug("addPlayers");
-        FactionDTO faction = factionService.selectFaction();
-        addPlayer(faction);
-    }
-
-    private void addPlayer(FactionDTO faction) {
-        log.debug("addPlayer");
-        PlayerDTO player = new PlayerDTO(faction);
-        players.add(player);
     }
 }
