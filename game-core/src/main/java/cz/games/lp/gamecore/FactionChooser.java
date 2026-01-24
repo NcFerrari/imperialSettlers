@@ -1,6 +1,6 @@
 package cz.games.lp.gamecore;
 
-import cz.games.lp.common.enums.FactionTitles;
+import cz.games.lp.common.enums.FactionTypes;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -10,21 +10,21 @@ import java.util.stream.IntStream;
 public class FactionChooser {
 
     @Getter
-    public List<FactionTitles> remainingFactions;
+    public List<FactionTypes> remainingFactions;
 
     public void newGame() {
         remainingFactions = new ArrayList<>();
-        remainingFactions.add(FactionTitles.BARBARIAN_F);
-        remainingFactions.add(FactionTitles.BARBARIAN_M);
-        remainingFactions.add(FactionTitles.JAPAN_F);
-        remainingFactions.add(FactionTitles.JAPAN_M);
-        remainingFactions.add(FactionTitles.ROMAN_F);
-        remainingFactions.add(FactionTitles.ROMAN_M);
-        remainingFactions.add(FactionTitles.EGYPT_F);
-        remainingFactions.add(FactionTitles.EGYPT_M);
+        remainingFactions.add(FactionTypes.BARBARIAN_F);
+        remainingFactions.add(FactionTypes.BARBARIAN_M);
+        remainingFactions.add(FactionTypes.JAPAN_F);
+        remainingFactions.add(FactionTypes.JAPAN_M);
+        remainingFactions.add(FactionTypes.ROMAN_F);
+        remainingFactions.add(FactionTypes.ROMAN_M);
+        remainingFactions.add(FactionTypes.EGYPT_F);
+        remainingFactions.add(FactionTypes.EGYPT_M);
     }
 
-    public void removeFromChoice(FactionTitles faction) {
+    public void removeFromChoice(FactionTypes faction) {
         int factionIndex = remainingFactions.indexOf(faction);
         if (factionIndex % 2 == 1) {
             factionIndex--;

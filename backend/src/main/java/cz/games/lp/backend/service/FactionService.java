@@ -1,7 +1,7 @@
 package cz.games.lp.backend.service;
 
 import cz.games.lp.common.dto.FactionDTO;
-import cz.games.lp.common.enums.FactionTitles;
+import cz.games.lp.common.enums.FactionTypes;
 import cz.games.lp.gamecore.components.Player;
 
 import java.util.List;
@@ -9,13 +9,13 @@ import java.util.Map;
 
 public interface FactionService {
 
-    Map<FactionTitles, FactionDTO> getFactionMap();
+    Map<FactionTypes, FactionDTO> getFactionMap();
 
-    List<FactionTitles> getRemainingFactions();
+    List<FactionTypes> getRemainingFactions();
 
-    void removeSelectedFaction(FactionTitles faction);
+    void removeSelectedFaction(FactionTypes faction);
 
-    void selectFaction(Player player, FactionTitles faction);
+    void selectFaction(Player player, FactionTypes faction);
 
     void resetFactionSelection();
 }

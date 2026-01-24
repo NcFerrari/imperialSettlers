@@ -3,7 +3,7 @@ package cz.games.lp.common.enums;
 import lombok.Getter;
 
 @Getter
-public enum FactionTitles {
+public enum FactionTypes {
 
     BARBARIAN_F("barbarian_f", "barbarian_token", "barbarian", CardTypes.BARBARIAN),
     BARBARIAN_M("barbarian_m", "barbarian_token", "barbarian", CardTypes.BARBARIAN),
@@ -19,7 +19,7 @@ public enum FactionTitles {
     private final String factionCardPath;
     private final CardTypes cardTypes;
 
-    FactionTitles(String boardImage, String tokenImage, String factionCardPath, CardTypes cardTypes) {
+    FactionTypes(String boardImage, String tokenImage, String factionCardPath, CardTypes cardTypes) {
         this.boardImage = boardImage;
         this.tokenImage = tokenImage;
         this.factionCardPath = factionCardPath;

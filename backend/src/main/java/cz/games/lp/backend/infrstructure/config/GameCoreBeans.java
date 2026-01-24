@@ -1,6 +1,6 @@
 package cz.games.lp.backend.infrstructure.config;
 
-import cz.games.lp.common.enums.FactionTitles;
+import cz.games.lp.common.enums.FactionTypes;
 import cz.games.lp.gamecore.FactionChooser;
 import cz.games.lp.gamecore.GameManager;
 import cz.games.lp.gamecore.catalogs.CardCatalog;
@@ -21,7 +21,7 @@ public class GameCoreBeans {
 
     @Bean
     public FactionCatalog factionMap() {
-        return new FactionCatalog(new EnumMap<>(FactionTitles.class));
+        return new FactionCatalog(new EnumMap<>(FactionTypes.class));
     }
 
     @Bean

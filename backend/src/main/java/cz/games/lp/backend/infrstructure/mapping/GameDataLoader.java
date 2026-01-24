@@ -38,7 +38,7 @@ public class GameDataLoader {
     public void loadAllFactionsData() {
         log.debug("loadAllFactionData");
         List<FactionJSON> list = loadData(FactionJSON.class, "data/factions.json");
-        loadedFactions = list.stream().collect(Collectors.toMap(FactionJSON::getFactionTitle, Function.identity()));
+        loadedFactions = list.stream().collect(Collectors.toMap(FactionJSON::getFactionType, Function.identity()));
     }
 
     private <T> List<T> loadData(Class<T> clazz, String filePath) {

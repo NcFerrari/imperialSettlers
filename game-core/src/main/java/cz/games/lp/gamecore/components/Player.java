@@ -3,7 +3,7 @@ package cz.games.lp.gamecore.components;
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.dto.FactionDTO;
 import cz.games.lp.common.enums.CardCategories;
-import cz.games.lp.common.enums.FactionTitles;
+import cz.games.lp.common.enums.FactionTypes;
 import cz.games.lp.common.enums.Sources;
 import cz.games.lp.gamecore.GameManager;
 import lombok.AccessLevel;
@@ -47,7 +47,7 @@ public class Player {
 
     public void selectFaction(FactionDTO factionDTO) {
         setFaction(factionDTO);
-        factionCardDeck = new CardDeck(factionDTO.getFactionTitle().getCardPrefix(), gameManager.getFactionCardDeckCount(), gameManager);
+        factionCardDeck = new CardDeck(factionDTO.getFactionType().getCardPrefix(), gameManager.getFactionCardDeckCount(), gameManager);
     }
 
     public void setUpOwnSources() {
@@ -56,7 +56,7 @@ public class Player {
         }
         ownSources.clear();
         Stream.of(PLAYERS_SOURCES).forEach(source -> ownSources.put(source, 0));
-        if (EnumSet.of(FactionTitles.EGYPT_F, FactionTitles.EGYPT_M).contains(getFaction().getFactionTitle())) {
+        if (EnumSet.of(FactionTypes.EGYPT_F, FactionTypes.EGYPT_M).contains(getFaction().getFactionType())) {
             ownSources.put(Sources.EGYPT_TOKEN, 0);
         }
     }
