@@ -28,8 +28,7 @@ public class Player {
             Sources.FOOD,
             Sources.COIN,
             Sources.SWORD,
-            Sources.SHIELD,
-            Sources.LOCATION
+            Sources.SHIELD
     };
 
     private final Map<Sources, Integer> ownSources = new EnumMap<>(Sources.class);
