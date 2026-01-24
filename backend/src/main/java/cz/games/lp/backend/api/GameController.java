@@ -18,8 +18,13 @@ public class GameController {
         this.gameManager = gameManager;
     }
 
+    @GetMapping("/gameStatus")
+    public GameManager getGameStatus() {
+        return gameManager;
+    }
+
     @GetMapping("/playerStatus")
-    public Player getGameManager() {
+    public Player getPlayerStatus() {
         return gameManager.getCurrentPlayer();
     }
 

@@ -21,7 +21,15 @@ import java.util.stream.Stream;
 @Setter
 public class Player {
 
-    private static final Sources[] PLAYERS_SOURCES = new Sources[]{Sources.SETTLER, Sources.WOOD, Sources.STONE, Sources.FOOD, Sources.COIN, Sources.SWORD, Sources.SHIELD};
+    private static final Sources[] PLAYERS_SOURCES = new Sources[]{
+            Sources.SETTLER,
+            Sources.WOOD,
+            Sources.STONE,
+            Sources.FOOD,
+            Sources.COIN,
+            Sources.SWORD,
+            Sources.SHIELD
+    };
 
     private final Map<Sources, Integer> ownSources = new EnumMap<>(Sources.class);
     private final List<CardDTO> cardsInHand = new ArrayList<>();
