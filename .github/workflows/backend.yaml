@@ -129,6 +129,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git add backend/pom.xml frontend/pom.xml
           git commit -m "Bump backend to $NEW_VERSION and update dependent modules" || echo "No changes to commit"
+          git pull --rebase origin main
           git push https://$GH_PAT@github.com/NcFerrari/imperialSettlers.git HEAD
           git tag "backend-v$NEW_VERSION"
           git push https://$GH_PAT@github.com/NcFerrari/imperialSettlers.git "backend-v$NEW_VERSION"

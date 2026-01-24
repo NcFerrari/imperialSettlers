@@ -104,6 +104,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git add game-core/pom.xml backend/pom.xml
           git commit -m "Bump game-core to $NEW_VERSION and update dependent modules" || echo "No changes to commit"
+          git pull --rebase origin main
           git push https://$GH_PAT@github.com/NcFerrari/imperialSettlers.git HEAD
           git tag "game-core-v$NEW_VERSION"
           git push https://$GH_PAT@github.com/NcFerrari/imperialSettlers.git "game-core-v$NEW_VERSION"
