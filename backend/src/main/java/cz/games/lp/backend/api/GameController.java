@@ -1,6 +1,10 @@
 package cz.games.lp.backend.api;
 
-import cz.games.lp.backend.service.agregates.GameService;
+import cz.games.lp.common.dto.CardDTO;
+import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.components.Player;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,9 +12,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/game")
 public class GameController {
 
-    private final GameService gameService;
+    private final GameManager gameManager;
 
-    public GameController(GameService gameService) {
-        this.gameService = gameService;
+    public GameController(GameManager gameManager) {
+        this.gameManager = gameManager;
+    }
+
+    @GetMapping("/playerStatus")
+    public Player getGameManager() {
+        return gameManager.getCurrentPlayer();
+    }
+
+    @PostMapping("/dealFactionCard")
+    public CardDTO dealFactionCard() {
+        return gameManager.getCurrentPlayer().dealFactionCard();
+    }
+
+    @PostMapping("/dealCommonCard")
+    public CardDTO dealCommonCard() {
+        return gameManager.getCurrentPlayer().dealCommonCard();
     }
 }

@@ -2,13 +2,13 @@ package cz.games.lp.common.dto;
 
 import cz.games.lp.common.enums.FactionTitles;
 import cz.games.lp.common.enums.Sources;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
 @Getter
-@Setter
+@AllArgsConstructor
 public class FactionDTO {
 
     private FactionTitles factionTitle;

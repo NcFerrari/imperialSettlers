@@ -3,6 +3,7 @@ package cz.games.lp.gamecore;
 import cz.games.lp.common.enums.FactionTitles;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -12,21 +13,20 @@ public class FactionChooser {
     public List<FactionTitles> remainingFactions;
 
     public void newGame() {
-        remainingFactions = List.of(
-                FactionTitles.BARBARIAN_F,
-                FactionTitles.BARBARIAN_M,
-                FactionTitles.JAPAN_F,
-                FactionTitles.JAPAN_M,
-                FactionTitles.ROMAN_F,
-                FactionTitles.ROMAN_M,
-                FactionTitles.EGYPT_F,
-                FactionTitles.EGYPT_M
-        );
+        remainingFactions = new ArrayList<>();
+        remainingFactions.add(FactionTitles.BARBARIAN_F);
+        remainingFactions.add(FactionTitles.BARBARIAN_M);
+        remainingFactions.add(FactionTitles.JAPAN_F);
+        remainingFactions.add(FactionTitles.JAPAN_M);
+        remainingFactions.add(FactionTitles.ROMAN_F);
+        remainingFactions.add(FactionTitles.ROMAN_M);
+        remainingFactions.add(FactionTitles.EGYPT_F);
+        remainingFactions.add(FactionTitles.EGYPT_M);
     }
 
-    public void choiceFaction(FactionTitles faction) {
+    public void removeFromChoice(FactionTitles faction) {
         int factionIndex = remainingFactions.indexOf(faction);
-        if (factionIndex % 2 == 0) {
+        if (factionIndex % 2 == 1) {
             factionIndex--;
         }
         int index = factionIndex;

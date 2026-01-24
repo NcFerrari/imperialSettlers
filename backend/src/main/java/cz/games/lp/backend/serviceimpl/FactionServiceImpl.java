@@ -5,6 +5,7 @@ import cz.games.lp.common.dto.FactionDTO;
 import cz.games.lp.common.enums.FactionTitles;
 import cz.games.lp.gamecore.FactionChooser;
 import cz.games.lp.gamecore.catalogs.FactionCatalog;
+import cz.games.lp.gamecore.components.Player;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +39,19 @@ public class FactionServiceImpl implements FactionService {
     @Override
     public void removeSelectedFaction(FactionTitles faction) {
         log.debug("removeSelectedFaction");
-        factionChooser.choiceFaction(faction);
+        factionChooser.removeFromChoice(faction);
+    }
+
+    @Override
+    public void selectFaction(Player player, FactionTitles faction) {
+        log.debug("selectFaction");
+        player.selectFaction(getFactionMap().get(faction));
+        removeSelectedFaction(faction);
+    }
+
+    @Override
+    public void resetFactionSelection() {
+        log.debug("resetFactionSelection");
+        factionChooser.newGame();
     }
 }

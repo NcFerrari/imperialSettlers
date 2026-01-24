@@ -17,12 +17,16 @@ public enum FactionTitles {
     private final String boardImage;
     private final String tokenImage;
     private final String factionCardPath;
-    private final CardTypes cardPrefix;
+    private final CardTypes cardTypes;
 
-    FactionTitles(String boardImage, String tokenImage, String factionCardPath, CardTypes cardPrefix) {
+    FactionTitles(String boardImage, String tokenImage, String factionCardPath, CardTypes cardTypes) {
         this.boardImage = boardImage;
         this.tokenImage = tokenImage;
         this.factionCardPath = factionCardPath;
-        this.cardPrefix = cardPrefix;
+        this.cardTypes = cardTypes;
+    }
+
+    public String getCardPrefix() {
+        return cardTypes.getCardPrefix();
     }
 }
