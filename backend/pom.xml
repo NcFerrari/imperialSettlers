@@ -25,7 +25,7 @@
         <dependency>
             <groupId>cz.games.lp</groupId>
             <artifactId>game-core</artifactId>
-            <version>0.0.0</version>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>cz.games.lp</groupId>
