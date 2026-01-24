@@ -101,8 +101,8 @@ public class Player {
                 .stream()
                 .filter(card -> CardCategories.PRODUCTION.equals(card.getCardCategory()))
                 .forEach(card -> card.getCardEffect()
-                        .forEach(effect -> ownSources
-                                .merge(effect.getSource(), 1, Integer::sum)
+                        .forEach(effect ->
+                                ownSources.merge(effect.getSource(), 1, Integer::sum)
                         )
                 );
     }
