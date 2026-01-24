@@ -1,9 +1,11 @@
 [![Backend](https://github.com/NcFerrari/imperialSettlers/actions/workflows/backend.yaml/badge.svg)](https://github.com/NcFerrari/imperialSettlers/actions/workflows/backend.yaml)
+[![Game core](https://github.com/NcFerrari/imperialSettlers/actions/workflows/game-core.yml/badge.svg)](https://github.com/NcFerrari/imperialSettlers/actions/workflows/game-core.yml)
 
 Wiki: https://github.com/NcFerrari/imperialSettlers/wiki
 
 DashBoard: https://github.com/users/NcFerrari/projects/2
 
 Kanban: https://github.com/users/NcFerrari/projects/2/views/2
+
 
 Swagger: http://localhost:8888/swagger-ui/index.html
