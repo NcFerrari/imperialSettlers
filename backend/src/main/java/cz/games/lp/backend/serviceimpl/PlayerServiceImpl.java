@@ -6,6 +6,8 @@ import cz.games.lp.gamecore.components.Player;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 @Slf4j
@@ -26,9 +28,9 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public void setUpSourcesForPlayer(Player player) {
+    public void setUpSourcesForCurrentPlayer() {
         log.debug("setSourcesForPlayer");
-        player.setUpOwnSources();
+        gameManager.getCurrentPlayer().setUpOwnSources();
     }
 
     @Override
@@ -38,7 +40,7 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public void perfrormLookoutPhase() {
+    public void performLookoutPhase() {
         log.debug("perfrormLookoutPhase");
         gameManager.getPlayers().forEach(Player::performLookoutPhase);
     }
@@ -47,5 +49,26 @@ public class PlayerServiceImpl implements PlayerService {
     public void performProductionPhase() {
         log.debug("performProductionPhase");
         gameManager.getPlayers().forEach(Player::performProductionPhase);
+    }
+
+    @Override
+    public void nextPlayer() {
+        log.debug("nextPlayer");
+        gameManager.nextPlayer();
+    }
+
+    @Override
+    public Player getCurrentPlayer() {
+        return gameManager.getCurrentPlayer();
+    }
+
+    @Override
+    public Player getFirstPlayer() {
+        return gameManager.getFirstPlayer();
+    }
+
+    @Override
+    public List<Player> getPlayers() {
+        return gameManager.getPlayers();
     }
 }

@@ -1,5 +1,6 @@
 package cz.games.lp.backend.service;
 
+import cz.games.lp.common.dto.FactionDTO;
 import cz.games.lp.common.enums.FactionTypes;
 import cz.games.lp.gamecore.components.Player;
 
@@ -9,9 +10,9 @@ public interface FactionService {
 
     List<FactionTypes> getRemainingFactions();
 
-    void removeSelectedFaction(FactionTypes faction);
-
-    void selectFaction(Player player, FactionTypes faction);
-
     void resetFactionSelection();
+
+    FactionDTO getFactionFromCurrentPlayer();
+
+    void selectFactionForCurrentPlayer(FactionTypes faction);
 }
