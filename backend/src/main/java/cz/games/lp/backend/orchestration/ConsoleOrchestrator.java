@@ -22,7 +22,6 @@ public class ConsoleOrchestrator {
     private final ConsolePrinter consolePrinter;
     private final GameService gameService;
     private final GameManager gameManager;
-    private ConsoleStates currentConsoleState;
 
     public ConsoleOrchestrator(ConsoleUI consoleUI, ConsolePrinter consolePrinter, GameService gameService, GameManager gameManager) {
         this.consoleUI = consoleUI;
@@ -34,13 +33,12 @@ public class ConsoleOrchestrator {
     public void startConsoleGame() {
         log.debug("startConsoleGame");
         consoleUI.executeConsoleInputLoop();
-        currentConsoleState = ConsoleStates.START_GAME;
-        playGame();
+        playGame(ConsoleStates.START_GAME);
     }
 
-    private void playGame() {
+    private void playGame(ConsoleStates state) {
         log.debug("playGame");
-        switch (currentConsoleState) {
+        switch (state) {
             case START_GAME -> startGame();
             case PREPARE_PLAYERS -> preparePlayers();
             case SET_NEW_GAME -> newGame();
@@ -55,7 +53,7 @@ public class ConsoleOrchestrator {
         Map<String, Runnable> map = new HashMap<>();
         map.put("Zahajit fazi produkce", () -> {
             gameService.getPlayerService().performProductionPhase();
-            playGame();
+            playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
         });
         consoleUI.addActions(map);
         consoleUI.showActionChoices();
@@ -66,8 +64,7 @@ public class ConsoleOrchestrator {
         Map<String, Runnable> map = new HashMap<>();
         map.put("Zahajit fazi rozhledu", () -> {
             gameService.getPlayerService().perfrormLookoutPhase();
-            currentConsoleState = ConsoleStates.PERFORM_PRODUCTION_PHASE;
-            playGame();
+            playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
         });
         consoleUI.addActions(map);
         consoleUI.showActionChoices();
@@ -78,8 +75,7 @@ public class ConsoleOrchestrator {
         Map<String, Runnable> map = new HashMap<>();
         map.put("Rozdat pocatecni karty", () -> {
             gameService.getPlayerService().dealFirstCards();
-            currentConsoleState = ConsoleStates.PERFORM_LOOKOUT_PHASE;
-            playGame();
+            playGame(ConsoleStates.PERFORM_LOOKOUT_PHASE);
         });
         consoleUI.addActions(map);
         consoleUI.showActionChoices("Zvolte akci:");
@@ -89,20 +85,14 @@ public class ConsoleOrchestrator {
         log.debug("newGame");
         gameManager.newGame();
         gameManager.getPlayers().forEach(Player::newGame);
-        currentConsoleState = ConsoleStates.DEAL_FIRST_CARDS;
-        playGame();
+        initCommonActions();
+        playGame(ConsoleStates.DEAL_FIRST_CARDS);
     }
 
     private void preparePlayers() {
         log.debug("preparePlayers");
-        Player currentPlayer = gameManager.getCurrentPlayer();
-        consoleUI.clearCommonActions();
-        selectFaction(currentPlayer);
+        selectFaction(gameManager.getCurrentPlayer());
         gameManager.nextPlayer();
-        if (currentPlayer.equals(gameManager.getFirstPlayer())) {
-            initCommonActions();
-            currentConsoleState = ConsoleStates.SET_NEW_GAME;
-        }
     }
 
     private void selectFaction(Player player) {
@@ -114,7 +104,11 @@ public class ConsoleOrchestrator {
                         faction -> () -> {
                             gameService.getFactionService().selectFaction(player, faction);
                             gameService.getPlayerService().setUpSourcesForPlayer(player);
-                            playGame();
+                            if (gameManager.getCurrentPlayer().equals(gameManager.getFirstPlayer())) {
+                                playGame(ConsoleStates.SET_NEW_GAME);
+                                return;
+                            }
+                            playGame(ConsoleStates.SET_NEW_GAME);
                         },
                         (runnable, runnable2) -> runnable,
                         LinkedHashMap::new
@@ -126,12 +120,12 @@ public class ConsoleOrchestrator {
     private void startGame() {
         log.debug("startGame");
         consolePrinter.initMessage();
-        currentConsoleState = ConsoleStates.PREPARE_PLAYERS;
-        playGame();
+        playGame(ConsoleStates.PREPARE_PLAYERS);
     }
 
     private void initCommonActions() {
         log.debug("initCommonActions");
+        consoleUI.clearCommonActions();
         consoleUI.addCommonAction("Zobraz aktuální stav", () -> {
             consolePrinter.showCurrentStats();
             consoleUI.showActionChoices();
@@ -142,8 +136,7 @@ public class ConsoleOrchestrator {
         });
         consoleUI.addCommonAction("Začni novou hru", () -> {
             gameService.getFactionService().resetFactionSelection();
-            currentConsoleState = ConsoleStates.PREPARE_PLAYERS;
-            playGame();
+            playGame(ConsoleStates.PREPARE_PLAYERS);
         });
     }
 }

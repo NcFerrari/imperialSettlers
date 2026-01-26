@@ -4,6 +4,7 @@ import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.enums.CardTypes;
 import cz.games.lp.common.enums.RoundPhases;
 import cz.games.lp.gamecore.catalogs.CardCatalog;
+import cz.games.lp.gamecore.catalogs.FactionCatalog;
 import cz.games.lp.gamecore.components.CardDeck;
 import cz.games.lp.gamecore.components.Player;
 import lombok.AccessLevel;
@@ -11,6 +12,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -23,12 +25,11 @@ public class GameManager {
     @Getter(AccessLevel.NONE)
     private final Random random = new Random();
     private final List<Player> players = new ArrayList<>();
+    private final CardCatalog cardCatalog = new CardCatalog(new LinkedHashMap<>());
+    private final FactionCatalog factionCatalog = new FactionCatalog(new LinkedHashMap<>());
     private final CardDeck commonCardDeck;
     private Player currentPlayer;
     private Player firstPlayer;
-    @Setter
-    @Getter(AccessLevel.NONE)
-    private CardCatalog cardCatalog;
     @Setter
     private RoundPhases currentPhase;
     @Setter
