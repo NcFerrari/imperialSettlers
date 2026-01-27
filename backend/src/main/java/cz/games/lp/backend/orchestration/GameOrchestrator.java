@@ -1,7 +1,7 @@
 package cz.games.lp.backend.orchestration;
 
 import cz.games.lp.backend.infrstructure.mapping.GameDataMapper;
-import cz.games.lp.backend.service.agregates.GameServices;
+import cz.games.lp.backend.service.agregates.GamePartsServices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -14,12 +14,12 @@ import java.util.concurrent.CompletableFuture;
 @Component
 public class GameOrchestrator {
 
-    private final GameServices gameServices;
+    private final GamePartsServices gamePartsServices;
     private final GameDataMapper gameDataMapper;
     private final ConsoleOrchestrator consoleOrchestrator;
 
-    public GameOrchestrator(GameServices gameServices, GameDataMapper gameDataMapper, ConsoleOrchestrator consoleOrchestrator) {
-        this.gameServices = gameServices;
+    public GameOrchestrator(GamePartsServices gamePartsServices, GameDataMapper gameDataMapper, ConsoleOrchestrator consoleOrchestrator) {
+        this.gamePartsServices = gamePartsServices;
         this.gameDataMapper = gameDataMapper;
         this.consoleOrchestrator = consoleOrchestrator;
     }
@@ -27,7 +27,7 @@ public class GameOrchestrator {
     public void startGame() {
         log.debug("startGame");
         prepareGameData();
-        gameServices.getPlayerService().initializePlayers(1);
+        gamePartsServices.getPlayerService().initializePlayers(3);
         consoleOrchestrator.startConsoleGame();
     }
 

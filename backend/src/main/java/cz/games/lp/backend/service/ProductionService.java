@@ -4,5 +4,5 @@ import cz.games.lp.common.dto.CardDTO;
 
 public interface ProductionService {
 
-    void produceCard(CardDTO card);
+    void produceFromCard(CardDTO card);
 }

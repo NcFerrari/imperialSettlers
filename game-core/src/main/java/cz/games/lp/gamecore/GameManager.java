@@ -1,18 +1,12 @@
 package cz.games.lp.gamecore;
 
-import cz.games.lp.common.dto.CardDTO;
-import cz.games.lp.common.enums.CardTypes;
 import cz.games.lp.common.enums.RoundPhases;
-import cz.games.lp.gamecore.catalogs.CardCatalog;
-import cz.games.lp.gamecore.catalogs.FactionCatalog;
-import cz.games.lp.gamecore.components.CardDeck;
 import cz.games.lp.gamecore.components.Player;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -25,9 +19,8 @@ public class GameManager {
     @Getter(AccessLevel.NONE)
     private final Random random = new Random();
     private final List<Player> players = new ArrayList<>();
-    private final CardCatalog cardCatalog = new CardCatalog(new LinkedHashMap<>());
-    private final FactionCatalog factionCatalog = new FactionCatalog(new LinkedHashMap<>());
-    private final CardDeck commonCardDeck;
+    private final FactionManager factionManager = new FactionManager();
+    private final CardManager cardManager;
     private Player currentPlayer;
     private Player firstPlayer;
     @Setter
@@ -37,7 +30,7 @@ public class GameManager {
     private int currentPlayerIndex;
 
     public GameManager() {
-        commonCardDeck = new CardDeck(CardTypes.COMMON.getCardPrefix(), COMMON_CARD_DECK_COUNT, this);
+        cardManager = new CardManager(COMMON_CARD_DECK_COUNT);
     }
 
     public int getFactionCardDeckCount() {
@@ -47,7 +40,7 @@ public class GameManager {
     public void newGame() {
         currentPhase = RoundPhases.LOOKOUT;
         roundNumber = 1;
-        commonCardDeck.createNewCardDeck();
+        getCardManager().createNewCardDeck();
     }
 
     public void addPlayer() {
@@ -66,9 +59,5 @@ public class GameManager {
             currentPlayerIndex = 0;
         }
         currentPlayer = players.get(currentPlayerIndex);
-    }
-
-    public CardDTO getCard(String cardId) {
-        return cardCatalog.cardMap().get(cardId);
     }
 }

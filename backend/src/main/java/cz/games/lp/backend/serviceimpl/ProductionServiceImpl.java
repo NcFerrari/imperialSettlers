@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class ProductionServiceImpl implements ProductionService {
 
     @Override
-    public void produceCard(CardDTO card) {
+    public void produceFromCard(CardDTO card) {
 
     }
 }

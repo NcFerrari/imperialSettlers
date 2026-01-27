@@ -2,7 +2,6 @@ package cz.games.lp.gamecore.components;
 
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.dto.FactionDTO;
-import cz.games.lp.common.enums.CardCategories;
 import cz.games.lp.common.enums.FactionTypes;
 import cz.games.lp.common.enums.Sources;
 import cz.games.lp.gamecore.GameManager;
@@ -21,7 +20,7 @@ import java.util.stream.Stream;
 @Setter
 public class Player {
 
-    private static final Sources[] PLAYERS_SOURCES = new Sources[]{
+    private static final Sources[] PLAYERS_BASIC_SOURCES = new Sources[]{
             Sources.SETTLER,
             Sources.WOOD,
             Sources.STONE,
@@ -55,7 +54,7 @@ public class Player {
 
     public void selectFaction(FactionDTO factionDTO) {
         setFaction(factionDTO);
-        factionCardDeck = new CardDeck(factionDTO.getFactionType().getCardPrefix(), gameManager.getFactionCardDeckCount(), gameManager);
+        factionCardDeck = new CardDeck(factionDTO.getFactionType().getCardPrefix(), gameManager.getFactionCardDeckCount(), gameManager.getCardManager());
     }
 
     public void setUpOwnSources() {
@@ -63,63 +62,34 @@ public class Player {
             return;
         }
         ownSources.clear();
-        Stream.of(PLAYERS_SOURCES).forEach(source -> ownSources.put(source, 0));
+        Stream.of(PLAYERS_BASIC_SOURCES).forEach(source -> ownSources.put(source, 0));
         if (EnumSet.of(FactionTypes.EGYPT_F, FactionTypes.EGYPT_M).contains(getFaction().getFactionType())) {
             ownSources.put(Sources.EGYPT_TOKEN, 0);
         }
     }
 
-    public CardDTO dealFactionCard() {
-        return dealCard(factionCardDeck);
-    }
-
-    public CardDTO dealCommonCard() {
-        return dealCard(gameManager.getCommonCardDeck());
-    }
-
-    private CardDTO dealCard(CardDeck cardDeck) {
-        CardDTO newCard = cardDeck.dealNextCard();
-        if (newCard != null) {
-            cardsInHand.add(newCard);
-        }
-        return newCard;
-    }
-
-    public void dealFirstCards() {
-        dealFactionCard();
-        dealFactionCard();
-        dealCommonCard();
-        dealCommonCard();
-    }
-
-    public void performLookoutPhase() {
-        dealFactionCard();
-        dealCommonCard();
-        dealCommonCard();
-    }
-
-    public void performProductionPhase() {
-        productionFromCards();
-        productionFromDeals();
-        productionFromFactionBoard();
-    }
-
-    private void productionFromCards() {
-        builtLocations
-                .stream()
-                .filter(card -> CardCategories.PRODUCTION.equals(card.getCardCategory()))
-                .forEach(card -> card.getCardEffect()
-                        .forEach(effect ->
-                                ownSources.merge(effect.getSource(), 1, Integer::sum)
-                        )
-                );
-    }
-
-    private void productionFromDeals() {
-        deals.forEach(card -> ownSources.merge(card.getDealSource(), 1, Integer::sum));
-    }
-
-    private void productionFromFactionBoard() {
-        faction.getFactionProduction().forEach(source -> ownSources.merge(source, 1, Integer::sum));
-    }
+//    public void performProductionPhase() {
+//        productionFromCards();
+//        productionFromDeals();
+//        productionFromFactionBoard();
+//    }
+//
+//    private void productionFromCards() {
+//        builtLocations
+//                .stream()
+//                .filter(card -> CardCategories.PRODUCTION.equals(card.getCardCategory()))
+//                .forEach(card -> card.getCardEffect()
+//                        .forEach(effect ->
+//                                ownSources.merge(effect.getSource(), 1, Integer::sum)
+//                        )
+//                );
+//    }
+//
+//    private void productionFromDeals() {
+//        deals.forEach(card -> ownSources.merge(card.getDealSource(), 1, Integer::sum));
+//    }
+//
+//    private void productionFromFactionBoard() {
+//        faction.getFactionProduction().forEach(source -> ownSources.merge(source, 1, Integer::sum));
+//    }
 }

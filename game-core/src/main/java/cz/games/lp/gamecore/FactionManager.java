@@ -1,18 +1,21 @@
 package cz.games.lp.gamecore;
 
 import cz.games.lp.common.enums.FactionTypes;
+import cz.games.lp.gamecore.catalogs.FactionCatalog;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class FactionChooser {
+@Getter
+public class FactionManager {
 
-    @Getter
-    public List<FactionTypes> remainingFactions;
+    private final FactionCatalog factionCatalog = new FactionCatalog(new LinkedHashMap<>());
+    private List<FactionTypes> remainingFactions;
 
-    public void newGame() {
+    public void resetFactionSelection() {
         remainingFactions = new ArrayList<>();
         remainingFactions.add(FactionTypes.BARBARIAN_F);
         remainingFactions.add(FactionTypes.BARBARIAN_M);

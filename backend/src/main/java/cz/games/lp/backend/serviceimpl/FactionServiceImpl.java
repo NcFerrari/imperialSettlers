@@ -1,9 +1,10 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.FactionService;
+import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.common.dto.FactionDTO;
 import cz.games.lp.common.enums.FactionTypes;
-import cz.games.lp.gamecore.FactionChooser;
+import cz.games.lp.gamecore.FactionManager;
 import cz.games.lp.gamecore.GameManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,41 +15,43 @@ import java.util.List;
 @Service
 public class FactionServiceImpl implements FactionService {
 
-    private final FactionChooser factionChooser;
+    private final FactionManager factionManager;
+    private final PlayerService playerService;
     private final GameManager gameManager;
 
-    public FactionServiceImpl(FactionChooser factionChooser, GameManager gameManager) {
-        this.factionChooser = factionChooser;
+    public FactionServiceImpl(FactionManager factionManager, PlayerService playerService, GameManager gameManager) {
+        this.factionManager = factionManager;
+        this.playerService = playerService;
         this.gameManager = gameManager;
     }
 
     @Override
     public List<FactionTypes> getRemainingFactions() {
         log.debug("getRemainingFactions");
-        return factionChooser.getRemainingFactions();
+        return factionManager.getRemainingFactions();
     }
 
     private void removeSelectedFaction(FactionTypes faction) {
         log.debug("removeSelectedFaction");
-        factionChooser.removeFromChoice(faction);
+        factionManager.removeFromChoice(faction);
     }
 
     @Override
     public void resetFactionSelection() {
         log.debug("resetFactionSelection");
-        factionChooser.newGame();
+        factionManager.resetFactionSelection();
     }
 
     @Override
     public FactionDTO getFactionFromCurrentPlayer() {
         log.debug("getFactionFromCurrentPlayer");
-        return gameManager.getCurrentPlayer().getFaction();
+        return playerService.getCurrentPlayer().getFaction();
     }
 
     @Override
     public void selectFactionForCurrentPlayer(FactionTypes faction) {
         log.debug("selectFactionForCurrentPlayer");
-        gameManager.getCurrentPlayer().selectFaction(gameManager.getFactionCatalog().factionMap().get(faction));
+        playerService.getCurrentPlayer().selectFaction(gameManager.getFactionManager().getFactionCatalog().factionMap().get(faction));
         removeSelectedFaction(faction);
     }
 }

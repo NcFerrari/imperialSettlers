@@ -7,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.stream.IntStream;
 
 @Slf4j
@@ -23,32 +22,14 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public void initializePlayers(int playersCount) {
         log.debug("initializePlayers");
-        IntStream.range(0, playersCount).forEach(i -> gameManager.addPlayer());
+        IntStream.range(0, Math.min(4, playersCount)).forEach(i -> gameManager.addPlayer());
         gameManager.setFirstPlayer();
     }
 
     @Override
     public void setUpSourcesForCurrentPlayer() {
         log.debug("setSourcesForPlayer");
-        gameManager.getCurrentPlayer().setUpOwnSources();
-    }
-
-    @Override
-    public void dealFirstCards() {
-        log.debug("dealFirstCards");
-        gameManager.getPlayers().forEach(Player::dealFirstCards);
-    }
-
-    @Override
-    public void performLookoutPhase() {
-        log.debug("perfrormLookoutPhase");
-        gameManager.getPlayers().forEach(Player::performLookoutPhase);
-    }
-
-    @Override
-    public void performProductionPhase() {
-        log.debug("performProductionPhase");
-        gameManager.getPlayers().forEach(Player::performProductionPhase);
+        getCurrentPlayer().setUpOwnSources();
     }
 
     @Override
@@ -70,5 +51,10 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public List<Player> getPlayers() {
         return gameManager.getPlayers();
+    }
+
+    @Override
+    public boolean allPlayersHaveBeenProcessed() {
+        return getCurrentPlayer().equals(getFirstPlayer());
     }
 }

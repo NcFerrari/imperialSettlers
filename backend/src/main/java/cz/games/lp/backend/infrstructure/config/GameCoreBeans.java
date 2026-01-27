@@ -1,6 +1,7 @@
 package cz.games.lp.backend.infrstructure.config;
 
-import cz.games.lp.gamecore.FactionChooser;
+import cz.games.lp.gamecore.CardManager;
+import cz.games.lp.gamecore.FactionManager;
 import cz.games.lp.gamecore.GameManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +15,14 @@ public class GameCoreBeans {
     }
 
     @Bean
-    public FactionChooser factionChooser() {
-        FactionChooser factionChooser = new FactionChooser();
-        factionChooser.newGame();
-        return factionChooser;
+    public CardManager cardManager() {
+        return gameManager().getCardManager();
+    }
+
+    @Bean
+    public FactionManager factionChooser() {
+        FactionManager factionManager = new FactionManager();
+        factionManager.resetFactionSelection();
+        return factionManager;
     }
 }

@@ -1,6 +1,8 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.CardService;
+import cz.games.lp.backend.service.PlayerService;
+import cz.games.lp.gamecore.CardManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -8,9 +10,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class CardServiceImpl implements CardService {
 
+    private final CardManager cardManager;
+    private final PlayerService playerService;
+
+    public CardServiceImpl(CardManager cardManager, PlayerService playerService) {
+        this.cardManager = cardManager;
+        this.playerService = playerService;
+    }
 
     @Override
-    public void dealInitialCardsToPlayers() {
+    public void dealFactionCardToCurrentPlayer() {
+        log.debug("dealFactionCardToCurrentPlayer");
+    }
 
+    @Override
+    public void dealCommonCardToCurrentPlayer() {
+        log.debug("dealCommonCardToCurrentPlayer");
+    }
+
+    @Override
+    public void dealFirstCardsToAllPlayers() {
+        log.debug("dealFirstCardsToAllPlayers");
+        cardManager.dealFirstCardsToAllPlayers(playerService.getPlayers());
     }
 }
