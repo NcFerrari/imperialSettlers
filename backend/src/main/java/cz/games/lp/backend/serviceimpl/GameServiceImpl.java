@@ -12,12 +12,10 @@ import org.springframework.stereotype.Service;
 public class GameServiceImpl implements GameService {
 
     private final GameManager gameManager;
-    private final PlayerService playerService;
     private final CardManager cardManager;
 
-    public GameServiceImpl(GameManager gameManager, PlayerService playerService, CardManager cardManager) {
+    public GameServiceImpl(GameManager gameManager, PlayerService ignoredPlayerService, CardManager cardManager) {
         this.gameManager = gameManager;
-        this.playerService = playerService;
         this.cardManager = cardManager;
     }
 

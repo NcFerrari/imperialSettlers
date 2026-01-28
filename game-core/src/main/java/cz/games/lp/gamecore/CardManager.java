@@ -8,7 +8,6 @@ import cz.games.lp.gamecore.components.Player;
 import lombok.Getter;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.stream.IntStream;
 
 @Getter
@@ -16,9 +15,11 @@ public class CardManager {
 
     private final CardCatalog cardCatalog = new CardCatalog(new LinkedHashMap<>());
     private final CardDeck commonCardDeck;
+    private final GameManager gameManager;
 
-    public CardManager(int commonCardDeckCount) {
+    public CardManager(int commonCardDeckCount, GameManager gameManager) {
         commonCardDeck = new CardDeck(CardTypes.COMMON.getCardPrefix(), commonCardDeckCount, this);
+        this.gameManager = gameManager;
     }
 
     public CardDTO getCard(String cardId) {
@@ -29,18 +30,29 @@ public class CardManager {
         commonCardDeck.createNewCardDeck();
     }
 
-    public void dealFirstCardsToAllPlayers(List<Player> players) {
-        players.forEach(player -> {
-            IntStream.range(0, 2).forEach(i -> dealFactionCard(player));
-            IntStream.range(0, 2).forEach(i -> dealCommonCard(player));
-        });
+    public void performLookoutPhase() {
+        dealCardsToAllPlayers(1, 2);
     }
 
-    private void dealFactionCard(Player player) {
+    public void dealFirstCardsToAllPlayers() {
+        dealCardsToAllPlayers(2, 2);
+    }
+
+    private void dealCardsToAllPlayers(int factionCardCount, int commonCardCount) {
+        IntStream.range(0, factionCardCount).forEach(i -> dealFactionCard(gameManager.getCurrentPlayer()));
+        IntStream.range(0, commonCardCount).forEach(i -> dealCommonCard(gameManager.getCurrentPlayer()));
+        gameManager.nextPlayer();
+        if (gameManager.allPlayersHaveBeenProcessed()) {
+            return;
+        }
+        dealCardsToAllPlayers(factionCardCount, commonCardCount);
+    }
+
+    public void dealFactionCard(Player player) {
         dealCard(player, player.getFactionCardDeck());
     }
 
-    private void dealCommonCard(Player player) {
+    public void dealCommonCard(Player player) {
         dealCard(player, commonCardDeck);
     }
 
@@ -49,9 +61,5 @@ public class CardManager {
         if (card != null) {
             player.getCardsInHand().add(card);
         }
-    }
-
-    public void performLookoutPhase() {
-
     }
 }

@@ -30,7 +30,7 @@ public class GameManager {
     private int currentPlayerIndex;
 
     public GameManager() {
-        cardManager = new CardManager(COMMON_CARD_DECK_COUNT);
+        cardManager = new CardManager(COMMON_CARD_DECK_COUNT, this);
     }
 
     public int getFactionCardDeckCount() {
@@ -59,5 +59,9 @@ public class GameManager {
             currentPlayerIndex = 0;
         }
         currentPlayer = players.get(currentPlayerIndex);
+    }
+
+    public boolean allPlayersHaveBeenProcessed() {
+        return getCurrentPlayer().equals(getFirstPlayer());
     }
 }

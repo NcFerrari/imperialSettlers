@@ -55,6 +55,6 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public boolean allPlayersHaveBeenProcessed() {
-        return getCurrentPlayer().equals(getFirstPlayer());
+        return gameManager.allPlayersHaveBeenProcessed();
     }
 }

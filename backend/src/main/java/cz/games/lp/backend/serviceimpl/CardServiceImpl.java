@@ -21,16 +21,18 @@ public class CardServiceImpl implements CardService {
     @Override
     public void dealFactionCardToCurrentPlayer() {
         log.debug("dealFactionCardToCurrentPlayer");
+        cardManager.dealFactionCard(playerService.getCurrentPlayer());
     }
 
     @Override
     public void dealCommonCardToCurrentPlayer() {
         log.debug("dealCommonCardToCurrentPlayer");
+        cardManager.dealCommonCard(playerService.getCurrentPlayer());
     }
 
     @Override
     public void dealFirstCardsToAllPlayers() {
         log.debug("dealFirstCardsToAllPlayers");
-        cardManager.dealFirstCardsToAllPlayers(playerService.getPlayers());
+        cardManager.dealFirstCardsToAllPlayers();
     }
 }
