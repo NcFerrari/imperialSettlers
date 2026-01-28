@@ -1,5 +1,6 @@
 package cz.games.lp.backend.api;
 
+import cz.games.lp.backend.service.CardService;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.gamecore.GameManager;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -17,10 +17,12 @@ public class GameController {
 
     private final GameManager gameManager;
     private final GamePartsServices gamePartsServices;
+    private final CardService cardService;
 
-    public GameController(GameManager gameManager, GamePartsServices gamePartsServices) {
+    public GameController(GameManager gameManager, GamePartsServices gamePartsServices, CardService cardService) {
         this.gameManager = gameManager;
         this.gamePartsServices = gamePartsServices;
+        this.cardService = cardService;
     }
 
     @GetMapping("/gameStatus")
@@ -40,13 +42,11 @@ public class GameController {
 
     @PostMapping("/dealFactionCard")
     public CardDTO dealFactionCard() {
-//        return gameManager.getCurrentPlayer().dealFactionCard();
-        return null;
+        return cardService.dealFactionCardToCurrentPlayer();
     }
 
     @PostMapping("/dealCommonCard")
     public CardDTO dealCommonCard() {
-//        return gameManager.getCurrentPlayer().dealCommonCard();
-        return null;
+        return cardService.dealCommonCardToCurrentPlayer();
     }
 }

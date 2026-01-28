@@ -48,18 +48,20 @@ public class CardManager {
         dealCardsToAllPlayers(factionCardCount, commonCardCount);
     }
 
-    public void dealFactionCard(Player player) {
-        dealCard(player, player.getFactionCardDeck());
+    public CardDTO dealFactionCard(Player player) {
+        return dealCard(player, player.getFactionCardDeck());
     }
 
-    public void dealCommonCard(Player player) {
-        dealCard(player, commonCardDeck);
+    public CardDTO dealCommonCard(Player player) {
+        return dealCard(player, commonCardDeck);
     }
 
-    private void dealCard(Player player, CardDeck cardDeck) {
+    private CardDTO dealCard(Player player, CardDeck cardDeck) {
         CardDTO card = cardDeck.dealNextCard();
         if (card != null) {
             player.getCardsInHand().add(card);
+            return card;
         }
+        return null;
     }
 }

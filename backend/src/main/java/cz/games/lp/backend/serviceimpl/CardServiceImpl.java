@@ -2,6 +2,7 @@ package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.CardService;
 import cz.games.lp.backend.service.PlayerService;
+import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.gamecore.CardManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,15 +20,15 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public void dealFactionCardToCurrentPlayer() {
+    public CardDTO dealFactionCardToCurrentPlayer() {
         log.debug("dealFactionCardToCurrentPlayer");
-        cardManager.dealFactionCard(playerService.getCurrentPlayer());
+        return cardManager.dealFactionCard(playerService.getCurrentPlayer());
     }
 
     @Override
-    public void dealCommonCardToCurrentPlayer() {
+    public CardDTO dealCommonCardToCurrentPlayer() {
         log.debug("dealCommonCardToCurrentPlayer");
-        cardManager.dealCommonCard(playerService.getCurrentPlayer());
+        return cardManager.dealCommonCard(playerService.getCurrentPlayer());
     }
 
     @Override

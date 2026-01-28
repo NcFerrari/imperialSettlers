@@ -1,7 +1,6 @@
 package cz.games.lp.backend.orchestration;
 
 import cz.games.lp.backend.infrstructure.console.ConsoleStates;
-import cz.games.lp.backend.service.agregates.ActionServices;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
 import cz.games.lp.common.enums.FactionTypes;
@@ -20,12 +19,10 @@ public class ConsoleOrchestrator {
     private final Map<String, Runnable> actionsMap = new LinkedHashMap<>();
     private final ConsoleServices consoleServices;
     private final GamePartsServices gamePartsServices;
-    private final ActionServices actionServices;
 
-    public ConsoleOrchestrator(ConsoleServices consoleServices, GamePartsServices gamePartsServices, ActionServices actionServices) {
+    public ConsoleOrchestrator(ConsoleServices consoleServices, GamePartsServices gamePartsServices) {
         this.consoleServices = consoleServices;
         this.gamePartsServices = gamePartsServices;
-        this.actionServices = actionServices;
     }
 
     public void startConsoleGame() {
@@ -127,7 +124,7 @@ public class ConsoleOrchestrator {
 
     private void fillMap(String actionTitle, Runnable runnable) {
         log.debug("fillMap");
-        actionsMap.put(actionTitle, runnable::run);
+        actionsMap.put(actionTitle, runnable);
     }
 
     private void addAction(String title) {
