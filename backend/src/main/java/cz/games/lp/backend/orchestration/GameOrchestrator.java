@@ -27,7 +27,7 @@ public class GameOrchestrator {
     public void startGame() {
         log.debug("startGame");
         prepareGameData();
-        gamePartsServices.getPlayerService().initializePlayers(3);
+        gamePartsServices.getPlayerService().initializePlayers(1);
         consoleOrchestrator.startConsoleGame();
     }
 

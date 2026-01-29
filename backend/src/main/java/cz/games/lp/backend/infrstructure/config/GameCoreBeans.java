@@ -17,7 +17,7 @@ public class GameCoreBeans {
 
     @Bean
     public ProductionActions productionActions() {
-        return new ProductionActions();
+        return new ProductionActions(gameManager(), cardActions());
     }
 
     @Bean

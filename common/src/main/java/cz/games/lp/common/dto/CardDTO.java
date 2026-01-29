@@ -8,13 +8,17 @@ import cz.games.lp.common.enums.Conditions;
 import cz.games.lp.common.enums.Sources;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
 
+@Setter
 @Getter
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class CardDTO {
 
     private CardCategories cardCategory;

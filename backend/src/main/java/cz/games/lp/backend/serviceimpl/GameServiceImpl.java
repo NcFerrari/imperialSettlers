@@ -42,6 +42,7 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public int getFactionCardDeckCount() {
+        log.debug("getFactionCardDeckCount");
         return gameManager.getFactionCardDeckCount();
     }
 }

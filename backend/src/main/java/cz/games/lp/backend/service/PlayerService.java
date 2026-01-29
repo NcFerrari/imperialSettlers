@@ -14,8 +14,6 @@ public interface PlayerService {
 
     Player getCurrentPlayer();
 
-    Player getFirstPlayer();
-
     List<Player> getPlayers();
 
     boolean allPlayersHaveBeenProcessed();

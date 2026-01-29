@@ -3,7 +3,9 @@ package cz.games.lp.backend.orchestration;
 import cz.games.lp.backend.infrstructure.console.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
+import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.enums.FactionTypes;
+import cz.games.lp.common.enums.Sources;
 import cz.games.lp.gamecore.components.Player;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -46,6 +48,7 @@ public class ConsoleOrchestrator {
 
     private void performActionsPhase() {
         log.debug("performActionsPhase");
+        consoleServices.getConsoleUI().showActionChoices();
     }
 
     private void performProductionPhase() {
@@ -83,7 +86,11 @@ public class ConsoleOrchestrator {
         gamePartsServices.getGameService().newGame();
         gamePartsServices.getPlayerService().getPlayers().forEach(Player::newGame);
         initCommonActions();
-        playGame(ConsoleStates.DEAL_FIRST_CARDS);
+        CardDTO card = new CardDTO();
+        card.setDealSource(Sources.CARD);
+        gamePartsServices.getPlayerService().getCurrentPlayer().getDeals().clear();
+        gamePartsServices.getPlayerService().getCurrentPlayer().getDeals().add(card);
+        playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
     }
 
     private void initCommonActions() {

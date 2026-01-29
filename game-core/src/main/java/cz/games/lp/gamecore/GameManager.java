@@ -1,6 +1,7 @@
 package cz.games.lp.gamecore;
 
 import cz.games.lp.common.enums.RoundPhases;
+import cz.games.lp.common.enums.Sources;
 import cz.games.lp.gamecore.actions.FactionActions;
 import cz.games.lp.gamecore.components.Player;
 import lombok.AccessLevel;
@@ -16,6 +17,15 @@ public class GameManager {
 
     private static final int FACTION_CARD_DECK_COUNT = 30;
     private static final int COMMON_CARD_DECK_COUNT = 84;
+    private static final Sources[] PLAYERS_BASIC_SOURCES = new Sources[]{
+            Sources.SETTLER,
+            Sources.WOOD,
+            Sources.STONE,
+            Sources.FOOD,
+            Sources.COIN,
+            Sources.SWORD,
+            Sources.SHIELD
+    };
 
     @Getter(AccessLevel.NONE)
     private final Random random = new Random();
@@ -37,8 +47,12 @@ public class GameManager {
         return FACTION_CARD_DECK_COUNT;
     }
 
+    public Sources[] getplayersBasicSources() {
+        return PLAYERS_BASIC_SOURCES;
+    }
+
     public void newGame() {
-        currentPhase = RoundPhases.LOOKOUT;
+        setCurrentPhase(RoundPhases.LOOKOUT);
         roundNumber = 1;
     }
 

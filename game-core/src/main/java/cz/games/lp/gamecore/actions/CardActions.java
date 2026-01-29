@@ -2,6 +2,7 @@ package cz.games.lp.gamecore.actions;
 
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.enums.CardTypes;
+import cz.games.lp.common.enums.RoundPhases;
 import cz.games.lp.gamecore.GameManager;
 import cz.games.lp.gamecore.catalogs.CardCatalog;
 import cz.games.lp.gamecore.components.CardDeck;
@@ -32,6 +33,7 @@ public class CardActions {
     }
 
     public void performLookoutPhase() {
+        gameManager.setCurrentPhase(RoundPhases.LOOKOUT);
         dealCardsToAllPlayers(1, 2);
     }
 

@@ -43,15 +43,9 @@ public class FactionServiceImpl implements FactionService {
     }
 
     @Override
-    public FactionDTO getFactionFromCurrentPlayer() {
-        log.debug("getFactionFromCurrentPlayer");
-        return playerService.getCurrentPlayer().getFaction();
-    }
-
-    @Override
     public void selectFactionForCurrentPlayer(FactionTypes faction) {
         log.debug("selectFactionForCurrentPlayer");
-        playerService.getCurrentPlayer().selectFaction(gameManager.getFactionActions().getFactionCatalog().factionMap().get(faction));
+        playerService.getCurrentPlayer().setFaction(gameManager.getFactionActions().getFactionCatalog().factionMap().get(faction));
         removeSelectedFaction(faction);
     }
 }

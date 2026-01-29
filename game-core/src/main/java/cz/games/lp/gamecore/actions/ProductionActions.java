@@ -1,5 +1,63 @@
 package cz.games.lp.gamecore.actions;
 
+import cz.games.lp.common.dto.CardDTO;
+import cz.games.lp.common.enums.CardCategories;
+import cz.games.lp.common.enums.RoundPhases;
+import cz.games.lp.common.enums.Sources;
+import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.components.Player;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProductionActions {
 
+    private final List<Sources> sourceChoice = new ArrayList<>();
+    private final GameManager gameManager;
+    private final CardActions cardActions;
+
+    public ProductionActions(GameManager gameManager, CardActions cardActions) {
+        this.gameManager = gameManager;
+        this.cardActions = cardActions;
+    }
+
+    public void performProductionPhase() {
+        gameManager.setCurrentPhase(RoundPhases.PRODUCTION);
+        gameManager.getPlayers().forEach(player -> {
+            productionFromCards(player);
+            productionFromDeals(player);
+            productionFromFactionBoard(player);
+        });
+    }
+
+    private void productionFromCards(Player player) {
+        player.getBuiltLocations()
+                .stream()
+                .filter(card -> CardCategories.PRODUCTION.equals(card.getCardCategory()))
+                .forEach(card -> processProductionEffectsFromCard(player, card));
+    }
+
+    private void productionFromDeals(Player player) {
+        player.getDeals().forEach(card -> processProduction(player, card.getDealSource()));
+    }
+
+    private void productionFromFactionBoard(Player player) {
+        player.getFaction().getFactionProduction().forEach(source -> processProduction(player, source));
+    }
+
+    private void processProductionEffectsFromCard(Player player, CardDTO card) {
+        card.getCardEffect().forEach(effect -> processProduction(player, effect.getSource()));
+    }
+
+    private List<Sources> processProduction(Player player, Sources source) {
+        sourceChoice.clear();
+        switch (source) {
+            case FACTION_CARD -> cardActions.dealFactionCard(player);
+            case COMMON_CARD -> cardActions.dealCommonCard(player);
+            case VICTORY_POINT -> player.addVictoryPoint();
+            case CARD -> sourceChoice.addAll(List.of(Sources.FACTION_CARD, Sources.COMMON_CARD));
+            default -> player.getOwnSources().computeIfPresent(source, (sourceInMap, value) -> value + 1);
+        }
+        return sourceChoice;
+    }
 }

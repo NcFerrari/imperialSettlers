@@ -41,6 +41,6 @@ public class CardServiceImpl implements CardService {
     @Override
     public void generateNewFactionCardDeck(int factionCardDeckCount) {
         log.debug("generateNewFactionCardDeck");
-        playerService.getCurrentPlayer().addFactionCardDeck(new CardDeck(playerService.getCurrentPlayer().getFaction().getFactionType().getCardPrefix(), factionCardDeckCount, cardActions));
+        playerService.getCurrentPlayer().setFactionCardDeck(new CardDeck(playerService.getCurrentPlayer().getFaction().getFactionType().getCardPrefix(), factionCardDeckCount, cardActions));
     }
 }

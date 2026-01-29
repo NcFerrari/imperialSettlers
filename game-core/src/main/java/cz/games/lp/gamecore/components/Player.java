@@ -20,16 +20,6 @@ import java.util.stream.Stream;
 @Setter
 public class Player {
 
-    private static final Sources[] PLAYERS_BASIC_SOURCES = new Sources[]{
-            Sources.SETTLER,
-            Sources.WOOD,
-            Sources.STONE,
-            Sources.FOOD,
-            Sources.COIN,
-            Sources.SWORD,
-            Sources.SHIELD
-    };
-
     private final Map<Sources, Integer> ownSources = new EnumMap<>(Sources.class);
     private final List<CardDTO> cardsInHand = new ArrayList<>();
     private final List<CardDTO> builtLocations = new ArrayList<>();
@@ -49,15 +39,7 @@ public class Player {
         cardsInHand.clear();
         builtLocations.clear();
         factionCardDeck.createNewCardDeck();
-        victoryPoints = 0;
-    }
-
-    public void selectFaction(FactionDTO factionDTO) {
-        setFaction(factionDTO);
-    }
-
-    public void addFactionCardDeck(CardDeck cardDeck) {
-        factionCardDeck = cardDeck;
+        setVictoryPoints(0);
     }
 
     public void setUpOwnSources() {
@@ -65,9 +47,13 @@ public class Player {
             return;
         }
         ownSources.clear();
-        Stream.of(PLAYERS_BASIC_SOURCES).forEach(source -> ownSources.put(source, 0));
+        Stream.of(gameManager.getplayersBasicSources()).forEach(source -> ownSources.put(source, 0));
         if (EnumSet.of(FactionTypes.EGYPT_F, FactionTypes.EGYPT_M).contains(getFaction().getFactionType())) {
             ownSources.put(Sources.EGYPT_TOKEN, 0);
         }
+    }
+
+    public void addVictoryPoint() {
+        victoryPoints++;
     }
 }

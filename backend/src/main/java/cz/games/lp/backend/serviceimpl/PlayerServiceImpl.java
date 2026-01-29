@@ -44,11 +44,6 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public Player getFirstPlayer() {
-        return gameManager.getFirstPlayer();
-    }
-
-    @Override
     public List<Player> getPlayers() {
         return gameManager.getPlayers();
     }
