@@ -9,14 +9,24 @@ public class ProductionServiceImpl implements ProductionService {
     @Override
     public void performProductionPhase() {
 
+        productionFromCards();
+        productionFromDeals();
+        productionFromFactionBoard();
+
+    }
+
+    private void productionFromCards() {
+
+    }
+
+    private void productionFromDeals() {
+    }
+
+    private void productionFromFactionBoard() {
+
     }
 }
 
-//public void performProductionPhase() {
-//        productionFromCards();
-//        productionFromDeals();
-//        productionFromFactionBoard();
-//    }
 //
 //    private void productionFromCards() {
 //        builtLocations

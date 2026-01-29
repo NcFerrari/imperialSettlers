@@ -1,6 +1,7 @@
 package cz.games.lp.gamecore;
 
 import cz.games.lp.common.enums.RoundPhases;
+import cz.games.lp.gamecore.actions.FactionActions;
 import cz.games.lp.gamecore.components.Player;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -19,8 +20,7 @@ public class GameManager {
     @Getter(AccessLevel.NONE)
     private final Random random = new Random();
     private final List<Player> players = new ArrayList<>();
-    private final FactionManager factionManager = new FactionManager();
-    private final CardManager cardManager;
+    private final FactionActions factionActions = new FactionActions();
     private Player currentPlayer;
     private Player firstPlayer;
     @Setter
@@ -29,8 +29,8 @@ public class GameManager {
     private int roundNumber;
     private int currentPlayerIndex;
 
-    public GameManager() {
-        cardManager = new CardManager(COMMON_CARD_DECK_COUNT, this);
+    public int getCommonCardDeckCount() {
+        return COMMON_CARD_DECK_COUNT;
     }
 
     public int getFactionCardDeckCount() {
@@ -40,7 +40,6 @@ public class GameManager {
     public void newGame() {
         currentPhase = RoundPhases.LOOKOUT;
         roundNumber = 1;
-        getCardManager().createNewCardDeck();
     }
 
     public void addPlayer() {

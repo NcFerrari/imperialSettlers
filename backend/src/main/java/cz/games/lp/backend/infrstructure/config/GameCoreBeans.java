@@ -1,8 +1,9 @@
 package cz.games.lp.backend.infrstructure.config;
 
-import cz.games.lp.gamecore.CardManager;
-import cz.games.lp.gamecore.FactionManager;
+import cz.games.lp.gamecore.actions.CardActions;
+import cz.games.lp.gamecore.actions.FactionActions;
 import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.actions.ProductionActions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,14 +16,19 @@ public class GameCoreBeans {
     }
 
     @Bean
-    public CardManager cardManager() {
-        return gameManager().getCardManager();
+    public ProductionActions productionActions() {
+        return new ProductionActions();
     }
 
     @Bean
-    public FactionManager factionChooser() {
-        FactionManager factionManager = new FactionManager();
-        factionManager.resetFactionSelection();
-        return factionManager;
+    public CardActions cardActions() {
+        return new CardActions(gameManager().getCommonCardDeckCount(), gameManager());
+    }
+
+    @Bean
+    public FactionActions factionActions() {
+        FactionActions factionActions = new FactionActions();
+        factionActions.resetFactionSelection();
+        return factionActions;
     }
 }

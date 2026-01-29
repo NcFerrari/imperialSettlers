@@ -54,7 +54,7 @@ public class Player {
 
     public void selectFaction(FactionDTO factionDTO) {
         setFaction(factionDTO);
-        factionCardDeck = new CardDeck(factionDTO.getFactionType().getCardPrefix(), gameManager.getFactionCardDeckCount(), gameManager.getCardManager());
+        factionCardDeck = new CardDeck(factionDTO.getFactionType().getCardPrefix(), gameManager.getFactionCardDeckCount(), cardActions);
     }
 
     public void setUpOwnSources() {

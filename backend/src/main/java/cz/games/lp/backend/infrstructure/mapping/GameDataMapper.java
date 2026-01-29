@@ -24,7 +24,7 @@ public class GameDataMapper {
     public CompletableFuture<String> mapAllCardsData() {
         log.debug("mapAllCards");
         mappingServices.getGameDataLoader().loadAllCardsData();
-        mappingServices.getCardMapper().mapToCardDTO(mappingServices.getGameDataLoader().getLoadedCards(), gameManager.getCardManager().getCardCatalog().cardMap());
+        mappingServices.getCardMapper().mapToCardDTO(mappingServices.getGameDataLoader().getLoadedCards(), gameManager.getCardActions().getCardCatalog().cardMap());
         return CompletableFuture.completedFuture("loading cards ...");
     }
 
@@ -32,7 +32,7 @@ public class GameDataMapper {
     public CompletableFuture<String> mapAllFactions() {
         log.debug("mapAllFactions");
         mappingServices.getGameDataLoader().loadAllFactionsData();
-        mappingServices.getFactionMapper().mapToFactionDTO(mappingServices.getGameDataLoader().getLoadedFactions(), gameManager.getFactionManager().getFactionCatalog().factionMap());
+        mappingServices.getFactionMapper().mapToFactionDTO(mappingServices.getGameDataLoader().getLoadedFactions(), gameManager.getFactionActions().getFactionCatalog().factionMap());
         return CompletableFuture.completedFuture("loading factions ...");
     }
 }

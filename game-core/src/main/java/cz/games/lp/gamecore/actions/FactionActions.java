@@ -1,4 +1,4 @@
-package cz.games.lp.gamecore;
+package cz.games.lp.gamecore.actions;
 
 import cz.games.lp.common.enums.FactionTypes;
 import cz.games.lp.gamecore.catalogs.FactionCatalog;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 @Getter
-public class FactionManager {
+public class FactionActions {
 
     private final FactionCatalog factionCatalog = new FactionCatalog(new LinkedHashMap<>());
     private List<FactionTypes> remainingFactions;

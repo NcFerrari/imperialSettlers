@@ -1,7 +1,7 @@
 package cz.games.lp.gamecore.components;
 
 import cz.games.lp.common.dto.CardDTO;
-import cz.games.lp.gamecore.CardManager;
+import cz.games.lp.gamecore.actions.CardActions;
 import lombok.Getter;
 
 import java.util.Collections;
@@ -11,15 +11,15 @@ import java.util.stream.IntStream;
 
 public class CardDeck {
 
-    private final CardManager cardManager;
+    private final CardActions cardActions;
     private final String cardPrefix;
     private final int cardCount;
     @Getter
     private List<Integer> cards;
 
-    public CardDeck(String cardPrefix, int cardCount, CardManager cardManager) {
+    public CardDeck(String cardPrefix, int cardCount, CardActions cardActions) {
         this.cardPrefix = cardPrefix;
-        this.cardManager = cardManager;
+        this.cardActions = cardActions;
         this.cardCount = cardCount;
     }
 
@@ -34,7 +34,6 @@ public class CardDeck {
         }
         String cardId = cardPrefix + (cards.getFirst() < 10 ? "00" : "0") + cards.getFirst();
         cards.removeFirst();
-        return cardManager.getCard(cardId);
+        return cardActions.getCard(cardId);
     }
-
 }
