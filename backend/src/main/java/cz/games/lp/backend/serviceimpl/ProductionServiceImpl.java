@@ -1,6 +1,7 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.ProductionService;
+import cz.games.lp.common.enums.ProductionStatus;
 import cz.games.lp.gamecore.actions.ProductionActions;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class ProductionServiceImpl implements ProductionService {
     }
 
     @Override
-    public void performProductionPhase() {
-        productionActions.performProductionPhase();
+    public ProductionStatus performProductionPhase() {
+        return productionActions.performProductionPhase();
     }
 }

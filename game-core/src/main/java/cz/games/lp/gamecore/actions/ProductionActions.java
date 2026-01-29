@@ -2,6 +2,7 @@ package cz.games.lp.gamecore.actions;
 
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.enums.CardCategories;
+import cz.games.lp.common.enums.ProductionStatus;
 import cz.games.lp.common.enums.RoundPhases;
 import cz.games.lp.common.enums.Sources;
 import cz.games.lp.gamecore.GameManager;
@@ -15,19 +16,22 @@ public class ProductionActions {
     private final List<Sources> sourceChoice = new ArrayList<>();
     private final GameManager gameManager;
     private final CardActions cardActions;
+    private ProductionStatus productionStatus = ProductionStatus.PRODUCE_FROM_FACTION_LOCATIONS;
 
     public ProductionActions(GameManager gameManager, CardActions cardActions) {
         this.gameManager = gameManager;
         this.cardActions = cardActions;
     }
 
-    public void performProductionPhase() {
+    public ProductionStatus performProductionPhase() {
         gameManager.setCurrentPhase(RoundPhases.PRODUCTION);
-        gameManager.getPlayers().forEach(player -> {
-            productionFromCards(player);
-            productionFromDeals(player);
-            productionFromFactionBoard(player);
-        });
+        switch (productionStatus) {
+            case ProductionStatus.PRODUCE_FROM_FACTION_LOCATIONS -> productionFromCards(player);
+            case ProductionStatus.PRODUCE_FROM_DEALS -> productionFromDeals(player);
+            case ProductionStatus.PRODUCE_FROM_FACTION_BOARD -> productionFromFactionBoard(player);
+            case ProductionStatus.PRODUCE_FROM_COMMON_LOCATIONS -> productionFromCards(player);
+        }
+        return productionStatus;
     }
 
     private void productionFromCards(Player player) {

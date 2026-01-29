@@ -5,6 +5,7 @@ import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.enums.FactionTypes;
+import cz.games.lp.common.enums.ProductionStatus;
 import cz.games.lp.common.enums.Sources;
 import cz.games.lp.gamecore.components.Player;
 import lombok.extern.slf4j.Slf4j;
@@ -55,8 +56,10 @@ public class ConsoleOrchestrator {
         log.debug("performProductionPhase");
         fillMap("Zahajit fazi produkce",
                 () -> {
-                    gamePartsServices.getGameService().performProductionPhase();
-                    playGame(ConsoleStates.PERFORM_ACTIONS_PHASE);
+                    ProductionStatus productionStatus = gamePartsServices.getGameService().performProductionPhase();
+                    if (ProductionStatus.ENDS.equals(productionStatus)) {
+                        playGame(ConsoleStates.PERFORM_ACTIONS_PHASE);
+                    }
                 });
         addAction(ACTION_TITLE);
     }
@@ -86,10 +89,13 @@ public class ConsoleOrchestrator {
         gamePartsServices.getGameService().newGame();
         gamePartsServices.getPlayerService().getPlayers().forEach(Player::newGame);
         initCommonActions();
+        gamePartsServices.getPlayerService().getCurrentPlayer().getDeals().clear();
         CardDTO card = new CardDTO();
         card.setDealSource(Sources.CARD);
-        gamePartsServices.getPlayerService().getCurrentPlayer().getDeals().clear();
         gamePartsServices.getPlayerService().getCurrentPlayer().getDeals().add(card);
+        CardDTO card2 = new CardDTO();
+        card2.setDealSource(Sources.CARD);
+        gamePartsServices.getPlayerService().getCurrentPlayer().getDeals().add(card2);
         playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
     }
 

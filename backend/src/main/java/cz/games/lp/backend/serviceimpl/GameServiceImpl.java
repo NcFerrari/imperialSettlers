@@ -2,6 +2,7 @@ package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.GameService;
 import cz.games.lp.backend.service.ProductionService;
+import cz.games.lp.common.enums.ProductionStatus;
 import cz.games.lp.gamecore.actions.CardActions;
 import cz.games.lp.gamecore.GameManager;
 import lombok.extern.slf4j.Slf4j;
@@ -35,9 +36,9 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public void performProductionPhase() {
+    public ProductionStatus performProductionPhase() {
         log.debug("performProductionPhase");
-        productionService.performProductionPhase();
+        return productionService.performProductionPhase();
     }
 
     @Override
