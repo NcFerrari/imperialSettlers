@@ -2,6 +2,7 @@ package cz.games.lp.backend.infrstructure.mapping;
 
 import cz.games.lp.backend.service.agregates.MappingServices;
 import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.actions.CardActions;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -14,17 +15,19 @@ public class GameDataMapper {
 
     private final GameManager gameManager;
     private final MappingServices mappingServices;
+    private final CardActions cardActions;
 
-    public GameDataMapper(GameManager gameManager, MappingServices mappingServices) {
+    public GameDataMapper(GameManager gameManager, MappingServices mappingServices, CardActions cardActions) {
         this.gameManager = gameManager;
         this.mappingServices = mappingServices;
+        this.cardActions = cardActions;
     }
 
     @Async("thread")
     public CompletableFuture<String> mapAllCardsData() {
         log.debug("mapAllCards");
         mappingServices.getGameDataLoader().loadAllCardsData();
-        mappingServices.getCardMapper().mapToCardDTO(mappingServices.getGameDataLoader().getLoadedCards(), gameManager.getCardActions().getCardCatalog().cardMap());
+        mappingServices.getCardMapper().mapToCardDTO(mappingServices.getGameDataLoader().getLoadedCards(), cardActions.getCardCatalog().cardMap());
         return CompletableFuture.completedFuture("loading cards ...");
     }
 

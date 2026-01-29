@@ -39,4 +39,9 @@ public class GameServiceImpl implements GameService {
         log.debug("performProductionPhase");
         productionService.performProductionPhase();
     }
+
+    @Override
+    public int getFactionCardDeckCount() {
+        return gameManager.getFactionCardDeckCount();
+    }
 }

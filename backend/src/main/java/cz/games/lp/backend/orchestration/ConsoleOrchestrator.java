@@ -109,12 +109,13 @@ public class ConsoleOrchestrator {
         gamePartsServices.getFactionService().getRemainingFactions()
                 .forEach(faction -> actionsMap.put(faction.name(), () -> actionsWhenChooseFaction(faction)));
         addAction("Vyberte si frakci:");
-        gamePartsServices.getPlayerService().nextPlayer();
     }
 
     private void actionsWhenChooseFaction(FactionTypes faction) {
         gamePartsServices.getFactionService().selectFactionForCurrentPlayer(faction);
+        gamePartsServices.getCardService().generateNewFactionCardDeck(gamePartsServices.getGameService().getFactionCardDeckCount());
         gamePartsServices.getPlayerService().setUpSourcesForCurrentPlayer();
+        gamePartsServices.getPlayerService().nextPlayer();
         if (gamePartsServices.getPlayerService().allPlayersHaveBeenProcessed()) {
             playGame(ConsoleStates.SET_NEW_GAME);
             return;

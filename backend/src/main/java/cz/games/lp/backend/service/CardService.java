@@ -9,4 +9,6 @@ public interface CardService {
     CardDTO dealCommonCardToCurrentPlayer();
 
     void dealFirstCardsToAllPlayers();
+
+    void generateNewFactionCardDeck(int factionCardDeckCount);
 }

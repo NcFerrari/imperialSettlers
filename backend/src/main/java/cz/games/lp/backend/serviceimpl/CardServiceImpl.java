@@ -4,6 +4,7 @@ import cz.games.lp.backend.service.CardService;
 import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.gamecore.actions.CardActions;
+import cz.games.lp.gamecore.components.CardDeck;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -35,5 +36,11 @@ public class CardServiceImpl implements CardService {
     public void dealFirstCardsToAllPlayers() {
         log.debug("dealFirstCardsToAllPlayers");
         cardActions.dealFirstCardsToAllPlayers();
+    }
+
+    @Override
+    public void generateNewFactionCardDeck(int factionCardDeckCount) {
+        log.debug("generateNewFactionCardDeck");
+        playerService.getCurrentPlayer().addFactionCardDeck(new CardDeck(playerService.getCurrentPlayer().getFaction().getFactionType().getCardPrefix(), factionCardDeckCount, cardActions));
     }
 }

@@ -7,4 +7,6 @@ public interface GameService {
     void performLookoutPhase();
 
     void performProductionPhase();
+
+    int getFactionCardDeckCount();
 }
