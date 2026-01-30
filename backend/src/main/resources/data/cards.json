@@ -1,6 +1,6 @@
 [
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD",
       "OBTAIN_WOOD"
@@ -21,7 +21,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD",
       "OBTAIN_WOOD"
@@ -42,7 +42,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD",
       "OBTAIN_WOOD"
@@ -63,7 +63,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar004",
@@ -83,7 +83,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar005",
@@ -103,7 +103,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar006",
@@ -123,7 +123,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar007",
@@ -142,7 +142,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar008",
@@ -161,7 +161,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar009",
@@ -180,7 +180,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar010",
@@ -199,7 +199,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar011",
@@ -218,7 +218,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SWORD",
       "OBTAIN_SETTLER"
@@ -241,7 +241,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SWORD",
       "OBTAIN_SETTLER"
@@ -264,7 +264,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar014",
@@ -285,7 +285,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar015",
@@ -306,7 +306,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar016",
@@ -325,7 +325,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar017",
@@ -344,7 +344,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar018",
@@ -363,7 +363,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar019",
@@ -382,7 +382,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_SETTLER"
@@ -403,7 +403,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_SETTLER"
@@ -424,7 +424,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "bar022",
@@ -444,7 +444,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar023",
@@ -464,7 +464,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SWORD",
       "OBTAIN_STONE"
@@ -486,7 +486,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar025",
@@ -505,7 +505,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar026",
@@ -525,7 +525,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_FOUR_POINTS",
     "cardId": "bar027",
@@ -546,7 +546,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar028",
@@ -566,7 +566,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar029",
@@ -586,7 +586,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "bar030",
@@ -605,7 +605,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_FOOD"
@@ -628,7 +628,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_FOOD"
@@ -651,7 +651,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_FOOD"
@@ -674,7 +674,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FOOD",
       "OBTAIN_FOOD"
@@ -697,7 +697,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FOOD",
       "OBTAIN_FOOD"
@@ -720,7 +720,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER"
     ],
@@ -743,7 +743,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER"
     ],
@@ -766,7 +766,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap008",
@@ -787,7 +787,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "SCORE_POINT"
     ],
@@ -811,7 +811,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "SCORE_POINT"
     ],
@@ -835,7 +835,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FACTION_CARD"
     ],
@@ -860,7 +860,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap012",
@@ -882,7 +882,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap013",
@@ -903,7 +903,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap014",
@@ -924,7 +924,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap015",
@@ -946,7 +946,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap016",
@@ -967,7 +967,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap017",
@@ -988,7 +988,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap018",
@@ -1009,7 +1009,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap019",
@@ -1030,7 +1030,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap020",
@@ -1051,7 +1051,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap021",
@@ -1072,7 +1072,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap022",
@@ -1093,7 +1093,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap023",
@@ -1114,7 +1114,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_FACTION_CARD",
     "cardId": "jap024",
@@ -1135,7 +1135,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_FACTION_CARD",
     "cardId": "jap025",
@@ -1156,7 +1156,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_TWO_SAMURAIS",
     "cardId": "jap026",
@@ -1177,7 +1177,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_TWO_SAMURAIS",
     "cardId": "jap027",
@@ -1198,7 +1198,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap028",
@@ -1219,7 +1219,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap029",
@@ -1240,7 +1240,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "jap030",
@@ -1261,7 +1261,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom001",
@@ -1280,7 +1280,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom002",
@@ -1299,7 +1299,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom003",
@@ -1318,7 +1318,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom004",
@@ -1337,7 +1337,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom005",
@@ -1356,7 +1356,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom006",
@@ -1375,7 +1375,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom007",
@@ -1394,7 +1394,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom008",
@@ -1414,7 +1414,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom009",
@@ -1434,7 +1434,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom010",
@@ -1454,7 +1454,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FACTION_CARD"
     ],
@@ -1478,7 +1478,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom012",
@@ -1498,7 +1498,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom013",
@@ -1518,7 +1518,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom014",
@@ -1538,7 +1538,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom015",
@@ -1558,7 +1558,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom016",
@@ -1578,7 +1578,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_COMMON_CARD"
     ],
@@ -1599,7 +1599,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_COMMON_CARD"
     ],
@@ -1620,7 +1620,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom019",
@@ -1639,7 +1639,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD",
       "OBTAIN_STONE"
@@ -1661,7 +1661,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD",
       "OBTAIN_STONE"
@@ -1683,7 +1683,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom022",
@@ -1703,7 +1703,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_COIN"
@@ -1729,7 +1729,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_COIN"
@@ -1755,7 +1755,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_COIN"
@@ -1781,7 +1781,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_SETTLER"
@@ -1803,7 +1803,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE",
       "OBTAIN_STONE"
@@ -1826,7 +1826,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE",
       "OBTAIN_STONE"
@@ -1849,7 +1849,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_COIN"
     ],
@@ -1870,7 +1870,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "rom030",
@@ -1890,7 +1890,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_TWO_CARDS",
     "cardId": "egy001",
@@ -1906,7 +1906,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE"
     ],
@@ -1927,7 +1927,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy003",
@@ -1947,7 +1947,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SWORD"
     ],
@@ -1971,7 +1971,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_TWO_SETTLERS",
     "cardId": "egy005",
@@ -1990,7 +1990,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy006",
@@ -2009,7 +2009,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy007",
@@ -2028,7 +2028,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy008",
@@ -2047,7 +2047,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy009",
@@ -2065,7 +2065,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy010",
@@ -2085,7 +2085,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FOOD",
       "OBTAIN_SETTLER"
@@ -2106,7 +2106,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FOOD",
       "OBTAIN_SETTLER"
@@ -2127,7 +2127,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy013",
@@ -2146,7 +2146,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy014",
@@ -2166,7 +2166,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy015",
@@ -2186,7 +2186,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy016",
@@ -2206,7 +2206,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy017",
@@ -2226,7 +2226,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy018",
@@ -2246,7 +2246,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy019",
@@ -2265,7 +2265,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "FACTION_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy020",
@@ -2284,7 +2284,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy021",
@@ -2304,7 +2304,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy022",
@@ -2324,7 +2324,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy023",
@@ -2344,7 +2344,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy024",
@@ -2363,7 +2363,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "FACTION_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "egy025",
@@ -2382,7 +2382,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE",
       "OBTAIN_STONE"
@@ -2404,7 +2404,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE",
       "OBTAIN_STONE"
@@ -2426,7 +2426,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_COIN",
       "OBTAIN_STONE"
@@ -2448,7 +2448,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_COIN",
       "OBTAIN_STONE"
@@ -2470,7 +2470,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "FACTION_PRODUCTION",
     "cardEffect": [
       "OBTAIN_COIN",
       "OBTAIN_STONE"
@@ -2492,7 +2492,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com001",
@@ -2515,7 +2515,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com002",
@@ -2538,7 +2538,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com003",
@@ -2561,7 +2561,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com004",
@@ -2584,7 +2584,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com005",
@@ -2606,7 +2606,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com006",
@@ -2629,7 +2629,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD",
       "OBTAIN_WOOD"
@@ -2654,7 +2654,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE"
     ],
@@ -2678,7 +2678,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE"
     ],
@@ -2702,7 +2702,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE"
     ],
@@ -2726,7 +2726,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_STONE"
     ],
@@ -2751,7 +2751,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER"
     ],
@@ -2774,7 +2774,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER"
     ],
@@ -2797,7 +2797,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER"
     ],
@@ -2820,7 +2820,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER",
       "OBTAIN_SETTLER"
@@ -2845,7 +2845,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "PRODUCE_ANOTHER_PRODUCTION"
     ],
@@ -2870,7 +2870,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SETTLER"
     ],
@@ -2895,7 +2895,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SWORD"
     ],
@@ -2919,7 +2919,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SWORD"
     ],
@@ -2943,7 +2943,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_SWORD"
     ],
@@ -2967,7 +2967,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com021",
@@ -2989,7 +2989,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com022",
@@ -3011,7 +3011,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FOOD"
     ],
@@ -3035,7 +3035,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FOOD"
     ],
@@ -3059,7 +3059,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_FOOD"
     ],
@@ -3084,7 +3084,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "SCORE_POINT"
     ],
@@ -3107,7 +3107,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_COIN"
     ],
@@ -3132,7 +3132,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_COIN"
     ],
@@ -3156,7 +3156,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD"
     ],
@@ -3181,7 +3181,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com030",
@@ -3203,7 +3203,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com031",
@@ -3225,7 +3225,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com032",
@@ -3247,7 +3247,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com033",
@@ -3269,7 +3269,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com034",
@@ -3291,7 +3291,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com035",
@@ -3313,7 +3313,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com036",
@@ -3334,7 +3334,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com037",
@@ -3357,7 +3357,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com038",
@@ -3380,7 +3380,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com039",
@@ -3402,7 +3402,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com040",
@@ -3423,7 +3423,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com041",
@@ -3445,7 +3445,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com042",
@@ -3467,7 +3467,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com043",
@@ -3490,7 +3490,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com044",
@@ -3512,7 +3512,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com045",
@@ -3534,7 +3534,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com046",
@@ -3556,7 +3556,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com047",
@@ -3578,7 +3578,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com048",
@@ -3600,7 +3600,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_CARD",
     "cardId": "com049",
@@ -3622,7 +3622,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com050",
@@ -3645,7 +3645,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com051",
@@ -3668,7 +3668,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com052",
@@ -3691,7 +3691,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com053",
@@ -3713,7 +3713,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com054",
@@ -3735,7 +3735,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com055",
@@ -3757,7 +3757,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com056",
@@ -3778,7 +3778,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com057",
@@ -3799,7 +3799,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com058",
@@ -3820,7 +3820,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com059",
@@ -3841,7 +3841,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com060",
@@ -3862,7 +3862,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com061",
@@ -3885,7 +3885,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD"
     ],
@@ -3909,7 +3909,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD"
     ],
@@ -3933,7 +3933,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_WOOD"
     ],
@@ -3957,7 +3957,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_CARD"
     ],
@@ -3981,7 +3981,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_CARD"
     ],
@@ -4005,7 +4005,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_CARD"
     ],
@@ -4029,7 +4029,7 @@
     ]
   },
   {
-    "cardCategory": "PRODUCTION",
+    "cardCategory": "COMMON_PRODUCTION",
     "cardEffect": [
       "OBTAIN_CARD"
     ],
@@ -4053,7 +4053,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com069",
@@ -4067,7 +4067,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com070",
@@ -4081,7 +4081,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com071",
@@ -4095,7 +4095,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com072",
@@ -4109,7 +4109,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com073",
@@ -4123,7 +4123,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "OBTAIN_SETTLER",
     "cardId": "com074",
@@ -4137,7 +4137,7 @@
     "sourcesFromDestroy": []
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com075",
@@ -4160,7 +4160,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com076",
@@ -4181,7 +4181,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com077",
@@ -4202,7 +4202,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com078",
@@ -4225,7 +4225,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com079",
@@ -4248,7 +4248,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com080",
@@ -4271,7 +4271,7 @@
     ]
   },
   {
-    "cardCategory": "PROPERTIES",
+    "cardCategory": "COMMON_PROPERTIES",
     "cardEffect": [],
     "cardEffectForPosition": "SCORE_POINT",
     "cardId": "com081",
@@ -4294,7 +4294,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com082",
@@ -4315,7 +4315,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com083",
@@ -4336,7 +4336,7 @@
     ]
   },
   {
-    "cardCategory": "ACTION",
+    "cardCategory": "COMMON_ACTION",
     "cardEffect": [],
     "cardEffectForPosition": null,
     "cardId": "com084",

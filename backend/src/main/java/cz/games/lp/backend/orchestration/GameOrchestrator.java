@@ -33,8 +33,18 @@ public class GameOrchestrator {
 
     private void prepareGameData() {
         log.debug("prepareGameData");
+        prepareCardData();
+        prepareFactionData();
+    }
+
+    private void prepareCardData() {
+        log.debug("prepareCardData");
         CompletableFuture<String> mappingCardsFromJSONFuture = gameDataMapper.mapAllCardsData();
         mappingCardsFromJSONFuture.join();
+    }
+
+    private void prepareFactionData() {
+        log.debug("prepareFactionData");
         CompletableFuture<String> mappingFactionsFromJSONFuture = gameDataMapper.mapAllFactions();
         mappingFactionsFromJSONFuture.join();
     }

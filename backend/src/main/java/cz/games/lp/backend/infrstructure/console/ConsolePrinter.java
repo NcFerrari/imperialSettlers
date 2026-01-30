@@ -57,7 +57,7 @@ public class ConsolePrinter {
         separator();
         separator();
         log.info("Postavené lokace:");
-        gameManager.getCurrentPlayer().getBuiltLocations().forEach(card -> log.info(card.toString()));
+        gameManager.getCurrentPlayer().getBuiltLocations().values().forEach(card -> log.info(card.toString()));
         separator();
     }
 
