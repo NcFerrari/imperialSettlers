@@ -2,6 +2,7 @@ package cz.games.lp.gamecore.components;
 
 import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.common.dto.FactionDTO;
+import cz.games.lp.common.enums.CardCategories;
 import cz.games.lp.common.enums.FactionTypes;
 import cz.games.lp.common.enums.Sources;
 import cz.games.lp.gamecore.GameManager;
@@ -22,7 +23,7 @@ public class Player {
 
     private final Map<Sources, Integer> ownSources = new EnumMap<>(Sources.class);
     private final List<CardDTO> cardsInHand = new ArrayList<>();
-    private final List<CardDTO> builtLocations = new ArrayList<>();
+    private final Map<CardCategories, List<CardDTO>> builtLocations = new EnumMap<>(CardCategories.class);
     private final List<CardDTO> deals = new ArrayList<>();
     @Getter(AccessLevel.NONE)
     private final GameManager gameManager;

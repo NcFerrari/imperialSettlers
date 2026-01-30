@@ -26,42 +26,42 @@ public class ProductionActions {
     public ProductionStatus performProductionPhase() {
         gameManager.setCurrentPhase(RoundPhases.PRODUCTION);
         switch (productionStatus) {
-            case ProductionStatus.PRODUCE_FROM_FACTION_LOCATIONS -> productionFromCards(player);
-            case ProductionStatus.PRODUCE_FROM_DEALS -> productionFromDeals(player);
-            case ProductionStatus.PRODUCE_FROM_FACTION_BOARD -> productionFromFactionBoard(player);
-            case ProductionStatus.PRODUCE_FROM_COMMON_LOCATIONS -> productionFromCards(player);
+            case ProductionStatus.PRODUCE_FROM_FACTION_LOCATIONS -> productionFromCards();
+//            case ProductionStatus.PRODUCE_FROM_DEALS -> productionFromDeals();
+//            case ProductionStatus.PRODUCE_FROM_FACTION_BOARD -> productionFromFactionBoard();
+//            case ProductionStatus.PRODUCE_FROM_COMMON_LOCATIONS -> productionFromCards();
         }
         return productionStatus;
     }
 
-    private void productionFromCards(Player player) {
-        player.getBuiltLocations()
-                .stream()
-                .filter(card -> CardCategories.PRODUCTION.equals(card.getCardCategory()))
-                .forEach(card -> processProductionEffectsFromCard(player, card));
+    private void productionFromCards() {
+//        gameManager.getCurrentPlayer().getBuiltLocations()
+//                .stream()
+//                .filter(card -> CardCategories.PRODUCTION.equals(card.getCardCategory()))
+//                .forEach(card -> processProductionEffectsFromCard(player, card));
     }
 
-    private void productionFromDeals(Player player) {
-        player.getDeals().forEach(card -> processProduction(player, card.getDealSource()));
-    }
-
-    private void productionFromFactionBoard(Player player) {
-        player.getFaction().getFactionProduction().forEach(source -> processProduction(player, source));
-    }
-
-    private void processProductionEffectsFromCard(Player player, CardDTO card) {
-        card.getCardEffect().forEach(effect -> processProduction(player, effect.getSource()));
-    }
-
-    private List<Sources> processProduction(Player player, Sources source) {
-        sourceChoice.clear();
-        switch (source) {
-            case FACTION_CARD -> cardActions.dealFactionCard(player);
-            case COMMON_CARD -> cardActions.dealCommonCard(player);
-            case VICTORY_POINT -> player.addVictoryPoint();
-            case CARD -> sourceChoice.addAll(List.of(Sources.FACTION_CARD, Sources.COMMON_CARD));
-            default -> player.getOwnSources().computeIfPresent(source, (sourceInMap, value) -> value + 1);
-        }
-        return sourceChoice;
-    }
+//    private void productionFromDeals() {
+//        player.getDeals().forEach(card -> processProduction(player, card.getDealSource()));
+//    }
+//
+//    private void productionFromFactionBoard() {
+//        player.getFaction().getFactionProduction().forEach(source -> processProduction(player, source));
+//    }
+//
+//    private void processProductionEffectsFromCard(CardDTO card) {
+//        card.getCardEffect().forEach(effect -> processProduction(player, effect.getSource()));
+//    }
+//
+//    private List<Sources> processProduction(Sources source) {
+//        sourceChoice.clear();
+//        switch (source) {
+//            case FACTION_CARD -> cardActions.dealFactionCard(player);
+//            case COMMON_CARD -> cardActions.dealCommonCard(player);
+//            case VICTORY_POINT -> player.addVictoryPoint();
+//            case CARD -> sourceChoice.addAll(List.of(Sources.FACTION_CARD, Sources.COMMON_CARD));
+//            default -> player.getOwnSources().computeIfPresent(source, (sourceInMap, value) -> value + 1);
+//        }
+//        return sourceChoice;
+//    }
 }

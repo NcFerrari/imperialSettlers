@@ -2,7 +2,10 @@ package cz.games.lp.common.enums;
 
 public enum CardCategories {
 
-    PRODUCTION,
-    PROPERTIES,
-    ACTION
+    FACTION_PRODUCTION,
+    FACTION_PROPERTIES,
+    FACTION_ACTION,
+    COMMON_PRODUCTION,
+    COMMON_PROPERTIES,
+    COMMON_ACTION
 }
