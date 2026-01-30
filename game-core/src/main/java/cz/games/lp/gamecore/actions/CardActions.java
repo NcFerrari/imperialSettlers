@@ -35,6 +35,13 @@ public class CardActions {
     public void performLookoutPhase() {
         gameManager.setCurrentPhase(RoundPhases.LOOKOUT);
         dealCardsToAllPlayers(1, 2);
+        //mocking
+        Player player = gameManager.getCurrentPlayer();
+        cardCatalog.cardMap()
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getKey().startsWith(player.getFaction().getFactionType().getCardTypes().getCardPrefix()))
+                .forEach(entry -> player.getBuiltLocations().get(entry.getValue().getCardCategory()).add(entry.getValue()));
     }
 
     public void dealFirstCardsToAllPlayers() {

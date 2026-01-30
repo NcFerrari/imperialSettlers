@@ -33,12 +33,13 @@ public class Player {
 
     public Player(GameManager gameManager) {
         this.gameManager = gameManager;
+        Stream.of(CardCategories.values()).forEach(category -> builtLocations.put(category, new ArrayList<>()));
     }
 
     public void newGame() {
         ownSources.replaceAll((sources, value) -> 0);
         cardsInHand.clear();
-        builtLocations.clear();
+        builtLocations.forEach((key, value) -> value.clear());
         factionCardDeck.createNewCardDeck();
         setVictoryPoints(0);
     }
