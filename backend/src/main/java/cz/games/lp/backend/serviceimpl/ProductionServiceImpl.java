@@ -1,7 +1,7 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.ProductionService;
-import cz.games.lp.common.enums.ProductionStatus;
+import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import cz.games.lp.gamecore.actions.ProductionActions;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,5 @@
 package cz.games.lp.gamecore.components;
 
-import cz.games.lp.common.dto.CardDTO;
 import cz.games.lp.gamecore.actions.CardActions;
 import lombok.Getter;
 
@@ -28,7 +27,7 @@ public class CardDeck {
         Collections.shuffle(cards);
     }
 
-    public CardDTO dealNextCard() {
+    public Card dealNextCard() {
         if (cards.isEmpty()) {
             return null;
         }

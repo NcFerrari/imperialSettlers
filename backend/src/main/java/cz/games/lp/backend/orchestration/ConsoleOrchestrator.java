@@ -3,8 +3,8 @@ package cz.games.lp.backend.orchestration;
 import cz.games.lp.backend.infrstructure.console.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
-import cz.games.lp.common.enums.FactionTypes;
-import cz.games.lp.common.enums.ProductionStatus;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
+import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import cz.games.lp.gamecore.components.Player;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -86,7 +86,7 @@ public class ConsoleOrchestrator {
 
     private void newGame() {
         log.debug("newGame");
-        gamePartsServices.getGameService().newGame();
+//        gamePartsServices.getGameService().newGame();
         gamePartsServices.getPlayerService().getPlayers().forEach(Player::newGame);
         initCommonActions();
         playGame(ConsoleStates.DEAL_FIRST_CARDS);

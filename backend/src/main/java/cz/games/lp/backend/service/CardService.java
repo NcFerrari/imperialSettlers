@@ -1,12 +1,12 @@
 package cz.games.lp.backend.service;
 
-import cz.games.lp.common.dto.CardDTO;
+import cz.games.lp.gamecore.components.Card;
 
 public interface CardService {
 
-    CardDTO dealFactionCardToCurrentPlayer();
+    Card dealFactionCardToCurrentPlayer();
 
-    CardDTO dealCommonCardToCurrentPlayer();
+    Card dealCommonCardToCurrentPlayer();
 
     void dealFirstCardsToAllPlayers();
 

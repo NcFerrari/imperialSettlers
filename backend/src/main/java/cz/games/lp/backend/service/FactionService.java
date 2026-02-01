@@ -1,6 +1,6 @@
 package cz.games.lp.backend.service;
 
-import cz.games.lp.common.enums.FactionTypes;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
 
 import java.util.List;
 

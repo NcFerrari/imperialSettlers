@@ -1,11 +1,9 @@
 package cz.games.lp.gamecore.components;
 
-import cz.games.lp.common.dto.CardDTO;
-import cz.games.lp.common.dto.FactionDTO;
-import cz.games.lp.common.enums.CardCategories;
-import cz.games.lp.common.enums.FactionTypes;
-import cz.games.lp.common.enums.Sources;
-import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.components.enums.CardCategories;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
+import cz.games.lp.gamecore.components.enums.Sources;
+import cz.games.lp.gamecore.GameRoom;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,17 +20,17 @@ import java.util.stream.Stream;
 public class Player {
 
     private final Map<Sources, Integer> ownSources = new EnumMap<>(Sources.class);
-    private final List<CardDTO> cardsInHand = new ArrayList<>();
-    private final Map<CardCategories, List<CardDTO>> builtLocations = new EnumMap<>(CardCategories.class);
-    private final List<CardDTO> deals = new ArrayList<>();
+    private final List<Card> cardsInHand = new ArrayList<>();
+    private final Map<CardCategories, List<Card>> builtLocations = new EnumMap<>(CardCategories.class);
+    private final List<Card> deals = new ArrayList<>();
     @Getter(AccessLevel.NONE)
-    private final GameManager gameManager;
+    private final GameRoom gameRoom;
     private CardDeck factionCardDeck;
-    private FactionDTO faction;
+    private Faction faction;
     private int victoryPoints;
 
-    public Player(GameManager gameManager) {
-        this.gameManager = gameManager;
+    public Player(GameRoom gameRoom) {
+        this.gameRoom = gameRoom;
         Stream.of(CardCategories.values()).forEach(category -> builtLocations.put(category, new ArrayList<>()));
     }
 
@@ -49,7 +47,7 @@ public class Player {
             return;
         }
         ownSources.clear();
-        Stream.of(gameManager.getplayersBasicSources()).forEach(source -> ownSources.put(source, 0));
+        Stream.of(gameRoom.getplayersBasicSources()).forEach(source -> ownSources.put(source, 0));
         if (EnumSet.of(FactionTypes.EGYPT_F, FactionTypes.EGYPT_M).contains(getFaction().getFactionType())) {
             ownSources.put(Sources.EGYPT_TOKEN, 0);
         }

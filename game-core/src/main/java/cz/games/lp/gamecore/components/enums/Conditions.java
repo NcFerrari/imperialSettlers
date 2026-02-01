@@ -1,4 +1,4 @@
-package cz.games.lp.common.enums;
+package cz.games.lp.gamecore.components.enums;
 
 import lombok.Getter;
 

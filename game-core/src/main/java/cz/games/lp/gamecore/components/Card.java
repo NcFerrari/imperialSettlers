@@ -1,11 +1,11 @@
-package cz.games.lp.common.dto;
+package cz.games.lp.gamecore.components;
 
-import cz.games.lp.common.enums.CardCategories;
-import cz.games.lp.common.enums.CardEffects;
-import cz.games.lp.common.enums.CardTypes;
-import cz.games.lp.common.enums.Colors;
-import cz.games.lp.common.enums.Conditions;
-import cz.games.lp.common.enums.Sources;
+import cz.games.lp.gamecore.components.enums.CardCategories;
+import cz.games.lp.gamecore.components.enums.CardEffects;
+import cz.games.lp.gamecore.components.enums.CardTypes;
+import cz.games.lp.gamecore.components.enums.Colors;
+import cz.games.lp.gamecore.components.enums.Conditions;
+import cz.games.lp.gamecore.components.enums.Sources;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +19,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class CardDTO {
+public class Card {
 
     private CardCategories cardCategory;
     private List<CardEffects> cardEffect;

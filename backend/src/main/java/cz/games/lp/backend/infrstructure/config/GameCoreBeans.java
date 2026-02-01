@@ -1,34 +1,36 @@
 package cz.games.lp.backend.infrstructure.config;
 
+import cz.games.lp.gamecore.GameRoom;
 import cz.games.lp.gamecore.actions.CardActions;
 import cz.games.lp.gamecore.actions.FactionActions;
-import cz.games.lp.gamecore.GameManager;
 import cz.games.lp.gamecore.actions.ProductionActions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 @Configuration
 public class GameCoreBeans {
 
     @Bean
-    public GameManager gameManager() {
-        return new GameManager();
+    public Map<UUID, GameRoom> gameRooms() {
+        return new HashMap<>();
     }
 
     @Bean
     public ProductionActions productionActions() {
-        return new ProductionActions(gameManager(), cardActions());
+        return new ProductionActions();
     }
 
     @Bean
     public CardActions cardActions() {
-        return new CardActions(gameManager().getCommonCardDeckCount(), gameManager());
+        return new CardActions();
     }
 
     @Bean
     public FactionActions factionActions() {
-        FactionActions factionActions = new FactionActions();
-        factionActions.resetFactionSelection();
-        return factionActions;
+        return new FactionActions();
     }
 }

@@ -1,8 +1,7 @@
 package cz.games.lp.gamecore;
 
-import cz.games.lp.common.enums.RoundPhases;
-import cz.games.lp.common.enums.Sources;
-import cz.games.lp.gamecore.actions.FactionActions;
+import cz.games.lp.gamecore.components.enums.RoundPhases;
+import cz.games.lp.gamecore.components.enums.Sources;
 import cz.games.lp.gamecore.components.Player;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -11,9 +10,10 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 @Getter
-public class GameManager {
+public class GameRoom {
 
     private static final int FACTION_CARD_DECK_COUNT = 30;
     private static final int COMMON_CARD_DECK_COUNT = 84;
@@ -26,11 +26,11 @@ public class GameManager {
             Sources.SWORD,
             Sources.SHIELD
     };
+    private final UUID id = UUID.randomUUID();
 
     @Getter(AccessLevel.NONE)
     private final Random random = new Random();
     private final List<Player> players = new ArrayList<>();
-    private final FactionActions factionActions = new FactionActions();
     private Player currentPlayer;
     private Player firstPlayer;
     @Setter

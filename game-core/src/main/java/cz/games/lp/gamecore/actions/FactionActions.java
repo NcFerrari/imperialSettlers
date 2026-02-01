@@ -1,6 +1,6 @@
 package cz.games.lp.gamecore.actions;
 
-import cz.games.lp.common.enums.FactionTypes;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.catalogs.FactionCatalog;
 import lombok.Getter;
 
@@ -14,6 +14,10 @@ public class FactionActions {
 
     private final FactionCatalog factionCatalog = new FactionCatalog(new LinkedHashMap<>());
     private List<FactionTypes> remainingFactions;
+
+    public FactionActions() {
+        resetFactionSelection();
+    }
 
     public void resetFactionSelection() {
         remainingFactions = new ArrayList<>();

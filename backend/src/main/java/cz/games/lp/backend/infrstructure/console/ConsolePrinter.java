@@ -1,6 +1,6 @@
 package cz.games.lp.backend.infrstructure.console;
 
-import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.GameRoom;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -14,11 +14,6 @@ public class ConsolePrinter {
     private static final String SEPARATOR = "===============================================";
     private final AtomicInteger atomicInteger = new AtomicInteger();
     private String choiceTitle = "";
-    private final GameManager gameManager;
-
-    public ConsolePrinter(GameManager gameManager) {
-        this.gameManager = gameManager;
-    }
 
     public void initMessage() {
         log.debug("startConsoleGame");
@@ -35,12 +30,12 @@ public class ConsolePrinter {
     public void showCurrentStats() {
         log.debug("showStats");
         separator();
-        log.info("Zvolena frakce: {}", gameManager.getCurrentPlayer().getFaction());
-        log.info("Kolo: {}", gameManager.getRoundNumber());
-        log.info("Pocet bodu: {}", gameManager.getCurrentPlayer().getVictoryPoints());
-        log.info("Aktualni faze: {}", gameManager.getCurrentPhase());
-        log.info("Suroviny:");
-        gameManager.getCurrentPlayer().getOwnSources().forEach((source, value) -> log.info("- {}: {}", source, value));
+//        log.info("Zvolena frakce: {}", gameRoom.getCurrentPlayer().getFaction());
+//        log.info("Kolo: {}", gameRoom.getRoundNumber());
+//        log.info("Pocet bodu: {}", gameRoom.getCurrentPlayer().getVictoryPoints());
+//        log.info("Aktualni faze: {}", gameRoom.getCurrentPhase());
+//        log.info("Suroviny:");
+//        gameRoom.getCurrentPlayer().getOwnSources().forEach((source, value) -> log.info("- {}: {}", source, value));
         separator();
     }
 
@@ -53,11 +48,11 @@ public class ConsolePrinter {
         log.debug("showCards");
         separator();
         log.info("Karty v ruce:");
-        gameManager.getCurrentPlayer().getCardsInHand().forEach(card -> log.info(card.toString()));
-        separator();
-        separator();
-        log.info("Postavené lokace:");
-        gameManager.getCurrentPlayer().getBuiltLocations().values().forEach(card -> log.info(card.toString()));
+//        gameRoom.getCurrentPlayer().getCardsInHand().forEach(card -> log.info(card.toString()));
+//        separator();
+//        separator();
+//        log.info("Postavené lokace:");
+//        gameRoom.getCurrentPlayer().getBuiltLocations().values().forEach(card -> log.info(card.toString()));
         separator();
     }
 

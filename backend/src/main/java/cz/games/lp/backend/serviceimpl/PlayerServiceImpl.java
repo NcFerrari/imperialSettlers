@@ -1,7 +1,7 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.PlayerService;
-import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.GameRoom;
 import cz.games.lp.gamecore.components.Player;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -13,17 +13,11 @@ import java.util.stream.IntStream;
 @Service
 public class PlayerServiceImpl implements PlayerService {
 
-    private final GameManager gameManager;
-
-    public PlayerServiceImpl(GameManager gameManager) {
-        this.gameManager = gameManager;
-    }
-
     @Override
-    public void initializePlayers(int playersCount) {
+    public void initializePlayers(GameRoom gameRoom, int playersCount) {
         log.debug("initializePlayers");
-        IntStream.range(0, Math.min(4, playersCount)).forEach(i -> gameManager.addPlayer());
-        gameManager.setFirstPlayer();
+        IntStream.range(0, Math.min(4, playersCount)).forEach(i -> gameRoom.addPlayer());
+        gameRoom.setFirstPlayer();
     }
 
     @Override
@@ -35,21 +29,24 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public void nextPlayer() {
         log.debug("nextPlayer");
-        gameManager.nextPlayer();
+//        gameRoom.nextPlayer();
     }
 
     @Override
     public Player getCurrentPlayer() {
-        return gameManager.getCurrentPlayer();
+//        return gameRoom.getCurrentPlayer();
+        return null;
     }
 
     @Override
     public List<Player> getPlayers() {
-        return gameManager.getPlayers();
+//        return gameRoom.getPlayers();
+        return null;
     }
 
     @Override
     public boolean allPlayersHaveBeenProcessed() {
-        return gameManager.allPlayersHaveBeenProcessed();
+//        return gameRoom.allPlayersHaveBeenProcessed();
+        return false;
     }
 }

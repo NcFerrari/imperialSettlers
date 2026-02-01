@@ -2,7 +2,7 @@ package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.CardService;
 import cz.games.lp.backend.service.PlayerService;
-import cz.games.lp.common.dto.CardDTO;
+import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.actions.CardActions;
 import cz.games.lp.gamecore.components.CardDeck;
 import lombok.extern.slf4j.Slf4j;
@@ -21,13 +21,13 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public CardDTO dealFactionCardToCurrentPlayer() {
+    public Card dealFactionCardToCurrentPlayer() {
         log.debug("dealFactionCardToCurrentPlayer");
         return cardActions.dealFactionCard(playerService.getCurrentPlayer());
     }
 
     @Override
-    public CardDTO dealCommonCardToCurrentPlayer() {
+    public Card dealCommonCardToCurrentPlayer() {
         log.debug("dealCommonCardToCurrentPlayer");
         return cardActions.dealCommonCard(playerService.getCurrentPlayer());
     }

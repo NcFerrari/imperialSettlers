@@ -2,10 +2,9 @@ package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.FactionService;
 import cz.games.lp.backend.service.PlayerService;
-import cz.games.lp.common.dto.FactionDTO;
-import cz.games.lp.common.enums.FactionTypes;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.actions.FactionActions;
-import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.GameRoom;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +16,10 @@ public class FactionServiceImpl implements FactionService {
 
     private final FactionActions factionActions;
     private final PlayerService playerService;
-    private final GameManager gameManager;
 
-    public FactionServiceImpl(FactionActions factionActions, PlayerService playerService, GameManager gameManager) {
+    public FactionServiceImpl(FactionActions factionActions, PlayerService playerService) {
         this.factionActions = factionActions;
         this.playerService = playerService;
-        this.gameManager = gameManager;
     }
 
     @Override
@@ -45,7 +42,7 @@ public class FactionServiceImpl implements FactionService {
     @Override
     public void selectFactionForCurrentPlayer(FactionTypes faction) {
         log.debug("selectFactionForCurrentPlayer");
-        playerService.getCurrentPlayer().setFaction(gameManager.getFactionActions().getFactionCatalog().factionMap().get(faction));
+//        playerService.getCurrentPlayer().setFaction(gameRoom.getFactionActions().getFactionCatalog().factionMap().get(faction));
         removeSelectedFaction(faction);
     }
 }

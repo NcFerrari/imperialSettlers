@@ -1,9 +1,9 @@
 package cz.games.lp.gamecore.catalogs;
 
-import cz.games.lp.common.dto.FactionDTO;
-import cz.games.lp.common.enums.FactionTypes;
+import cz.games.lp.gamecore.components.Faction;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
 
 import java.util.Map;
 
-public record FactionCatalog(Map<FactionTypes, FactionDTO> factionMap) {
+public record FactionCatalog(Map<FactionTypes, Faction> factionMap) {
 }

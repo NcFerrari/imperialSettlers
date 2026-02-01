@@ -1,9 +1,9 @@
 package cz.games.lp.gamecore.actions;
 
-import cz.games.lp.common.dto.CardDTO;
-import cz.games.lp.common.enums.CardTypes;
-import cz.games.lp.common.enums.RoundPhases;
-import cz.games.lp.gamecore.GameManager;
+import cz.games.lp.gamecore.components.Card;
+import cz.games.lp.gamecore.components.enums.CardTypes;
+import cz.games.lp.gamecore.components.enums.RoundPhases;
+import cz.games.lp.gamecore.GameRoom;
 import cz.games.lp.gamecore.catalogs.CardCatalog;
 import cz.games.lp.gamecore.components.CardDeck;
 import cz.games.lp.gamecore.components.Player;
@@ -16,32 +16,25 @@ import java.util.stream.IntStream;
 public class CardActions {
 
     private final CardCatalog cardCatalog = new CardCatalog(new LinkedHashMap<>());
-    private final CardDeck commonCardDeck;
-    private final GameManager gameManager;
 
-    public CardActions(int commonCardDeckCount, GameManager gameManager) {
-        commonCardDeck = new CardDeck(CardTypes.COMMON.getCardPrefix(), commonCardDeckCount, this);
-        this.gameManager = gameManager;
-    }
-
-    public CardDTO getCard(String cardId) {
+    public Card getCard(String cardId) {
         return cardCatalog.cardMap().get(cardId);
     }
 
     public void createNewCardDeck() {
-        commonCardDeck.createNewCardDeck();
+//        commonCardDeck.createNewCardDeck();
     }
 
     public void performLookoutPhase() {
-        gameManager.setCurrentPhase(RoundPhases.LOOKOUT);
-        dealCardsToAllPlayers(1, 2);
-        //mocking
-        Player player = gameManager.getCurrentPlayer();
-        cardCatalog.cardMap()
-                .entrySet()
-                .stream()
-                .filter(entry -> entry.getKey().startsWith(player.getFaction().getFactionType().getCardTypes().getCardPrefix()))
-                .forEach(entry -> player.getBuiltLocations().get(entry.getValue().getCardCategory()).add(entry.getValue()));
+//        gameRoom.setCurrentPhase(RoundPhases.LOOKOUT);
+//        dealCardsToAllPlayers(1, 2);
+//        //mocking
+//        Player player = gameRoom.getCurrentPlayer();
+//        cardCatalog.cardMap()
+//                .entrySet()
+//                .stream()
+//                .filter(entry -> entry.getKey().startsWith(player.getFaction().getFactionType().getCardTypes().getCardPrefix()))
+//                .forEach(entry -> player.getBuiltLocations().get(entry.getValue().getCardCategory()).add(entry.getValue()));
     }
 
     public void dealFirstCardsToAllPlayers() {
@@ -49,25 +42,26 @@ public class CardActions {
     }
 
     private void dealCardsToAllPlayers(int factionCardCount, int commonCardCount) {
-        IntStream.range(0, factionCardCount).forEach(i -> dealFactionCard(gameManager.getCurrentPlayer()));
-        IntStream.range(0, commonCardCount).forEach(i -> dealCommonCard(gameManager.getCurrentPlayer()));
-        gameManager.nextPlayer();
-        if (gameManager.allPlayersHaveBeenProcessed()) {
-            return;
-        }
-        dealCardsToAllPlayers(factionCardCount, commonCardCount);
+//        IntStream.range(0, factionCardCount).forEach(i -> dealFactionCard(gameRoom.getCurrentPlayer()));
+//        IntStream.range(0, commonCardCount).forEach(i -> dealCommonCard(gameRoom.getCurrentPlayer()));
+//        gameRoom.nextPlayer();
+//        if (gameRoom.allPlayersHaveBeenProcessed()) {
+//            return;
+//        }
+//        dealCardsToAllPlayers(factionCardCount, commonCardCount);
     }
 
-    public CardDTO dealFactionCard(Player player) {
+    public Card dealFactionCard(Player player) {
         return dealCard(player, player.getFactionCardDeck());
     }
 
-    public CardDTO dealCommonCard(Player player) {
-        return dealCard(player, commonCardDeck);
+    public Card dealCommonCard(Player player) {
+        return null;
+//        return dealCard(player, commonCardDeck);
     }
 
-    private CardDTO dealCard(Player player, CardDeck cardDeck) {
-        CardDTO card = cardDeck.dealNextCard();
+    private Card dealCard(Player player, CardDeck cardDeck) {
+        Card card = cardDeck.dealNextCard();
         if (card != null) {
             player.getCardsInHand().add(card);
             return card;
