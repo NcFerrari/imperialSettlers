@@ -4,6 +4,7 @@ import cz.games.lp.backend.service.GameService;
 import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.backend.service.ProductionService;
 import cz.games.lp.gamecore.GameRoom;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import cz.games.lp.gamecore.actions.CardActions;
 import lombok.extern.slf4j.Slf4j;
@@ -19,21 +20,18 @@ public class GameServiceImpl implements GameService {
     private final CardActions cardActions;
     private final ProductionService productionService;
     private final Map<UUID, GameRoom> gameRooms;
-    private final PlayerService playerService;
 
-    public GameServiceImpl(CardActions cardActions, ProductionService productionService, Map<UUID, GameRoom> gameRooms, PlayerService playerService) {
+    public GameServiceImpl(CardActions cardActions, ProductionService productionService, Map<UUID, GameRoom> gameRooms) {
         this.cardActions = cardActions;
         this.productionService = productionService;
         this.gameRooms = gameRooms;
-        this.playerService = playerService;
     }
 
     @Override
-    public UUID createNewGameRoom(int countOfPlayers) {
+    public UUID createNewGameRoom() {
         log.debug("createNewGameRoom");
         GameRoom gameRoom = new GameRoom();
         gameRooms.put(gameRoom.getId(), gameRoom);
-        playerService.initializePlayers(gameRoom, countOfPlayers);
         return gameRoom.getId();
     }
 
@@ -68,5 +66,10 @@ public class GameServiceImpl implements GameService {
     @Override
     public GameRoom getGameRoom(UUID roomUUID) {
         return gameRooms.get(roomUUID);
+    }
+
+    @Override
+    public void actionsWhenChooseFaction(FactionTypes faction) {
+
     }
 }

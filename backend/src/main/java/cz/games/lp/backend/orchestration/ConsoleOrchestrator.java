@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Slf4j
 @Component
@@ -20,14 +21,16 @@ public class ConsoleOrchestrator {
     private final Map<String, Runnable> actionsMap = new LinkedHashMap<>();
     private final ConsoleServices consoleServices;
     private final GamePartsServices gamePartsServices;
+    private UUID uuid;
 
     public ConsoleOrchestrator(ConsoleServices consoleServices, GamePartsServices gamePartsServices) {
         this.consoleServices = consoleServices;
         this.gamePartsServices = gamePartsServices;
     }
 
-    public void startConsoleGame() {
+    public void startConsoleGame(UUID uuid) {
         log.debug("startConsoleGame");
+        this.uuid = uuid;
         consoleServices.getConsoleUI().executeConsoleInputLoop();
         playGame(ConsoleStates.START_GAME);
     }
@@ -104,7 +107,7 @@ public class ConsoleOrchestrator {
             consoleServices.getConsoleUI().showActionChoices();
         });
         consoleServices.getConsoleUI().addCommonAction("Začni novou hru", () -> {
-            gamePartsServices.getFactionService().resetFactionSelection();
+            gamePartsServices.getFactionService().resetFactionSelection(uuid);
             consoleServices.getConsoleUI().clearCommonActions();
             playGame(ConsoleStates.SELECT_FACTIONS);
         });
@@ -112,13 +115,13 @@ public class ConsoleOrchestrator {
 
     private void selectFactionsForAllPlayers() {
         log.debug("prepareCurrentPlayer");
-        gamePartsServices.getFactionService().getRemainingFactions()
-                .forEach(faction -> actionsMap.put(faction.name(), () -> actionsWhenChooseFaction(faction)));
+        gamePartsServices.getFactionService().getRemainingFactions(uuid)
+                .forEach(faction -> actionsMap.put(faction.name(), () -> gamePartsServices.getGameService().actionsWhenChooseFaction(faction)));
         addAction("Vyberte si frakci:");
     }
 
     private void actionsWhenChooseFaction(FactionTypes faction) {
-        gamePartsServices.getFactionService().selectFactionForCurrentPlayer(faction);
+        gamePartsServices.getFactionService().selectFactionForCurrentPlayer(uuid, faction);
         gamePartsServices.getCardService().generateNewFactionCardDeck(gamePartsServices.getGameService().getFactionCardDeckCount());
         gamePartsServices.getPlayerService().setUpSourcesForCurrentPlayer();
         gamePartsServices.getPlayerService().nextPlayer();

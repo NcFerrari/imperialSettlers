@@ -1,48 +1,40 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.FactionService;
-import cz.games.lp.backend.service.PlayerService;
+import cz.games.lp.backend.service.GameService;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
-import cz.games.lp.gamecore.actions.FactionActions;
-import cz.games.lp.gamecore.GameRoom;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
 public class FactionServiceImpl implements FactionService {
 
-    private final FactionActions factionActions;
-    private final PlayerService playerService;
+    private final GameService gameService;
 
-    public FactionServiceImpl(FactionActions factionActions, PlayerService playerService) {
-        this.factionActions = factionActions;
-        this.playerService = playerService;
+    public FactionServiceImpl(GameService gameService) {
+        this.gameService = gameService;
     }
 
     @Override
-    public List<FactionTypes> getRemainingFactions() {
+    public List<FactionTypes> getRemainingFactions(UUID uuid) {
         log.debug("getRemainingFactions");
-        return factionActions.getRemainingFactions();
-    }
-
-    private void removeSelectedFaction(FactionTypes faction) {
-        log.debug("removeSelectedFaction");
-        factionActions.removeFromChoice(faction);
+        return gameService.getGameRoom(uuid).getRemainingFactions();
     }
 
     @Override
-    public void resetFactionSelection() {
+    public void resetFactionSelection(UUID uuid) {
         log.debug("resetFactionSelection");
-        factionActions.resetFactionSelection();
+        gameService.getGameRoom(uuid).resetFactionSelection();
     }
 
     @Override
-    public void selectFactionForCurrentPlayer(FactionTypes faction) {
+    public void selectFactionForCurrentPlayer(UUID uuid, FactionTypes faction) {
         log.debug("selectFactionForCurrentPlayer");
 //        playerService.getCurrentPlayer().setFaction(gameRoom.getFactionActions().getFactionCatalog().factionMap().get(faction));
-        removeSelectedFaction(faction);
+        gameService.getGameRoom(uuid).removeFromChoice(faction);
     }
 }

@@ -5,6 +5,7 @@ import cz.games.lp.backend.service.agregates.GamePartsServices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -27,8 +28,9 @@ public class GameOrchestrator {
     public void startGame() {
         log.debug("startGame");
         prepareGameData();
-        gamePartsServices.getGameService().createNewGameRoom(3);
-        consoleOrchestrator.startConsoleGame();
+        UUID uuid = gamePartsServices.getGameService().createNewGameRoom();
+        gamePartsServices.getPlayerService().initializePlayers(uuid, 3);
+        consoleOrchestrator.startConsoleGame(uuid);
     }
 
     private void prepareGameData() {

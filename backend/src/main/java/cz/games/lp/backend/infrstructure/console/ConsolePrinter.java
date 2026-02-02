@@ -18,7 +18,7 @@ public class ConsolePrinter {
     public void initMessage() {
         log.debug("startConsoleGame");
         log.info("----------------------------");
-        log.info("START IMPERIAL SETTLERS GAME");
+        log.info("HRAJEME HRU OSADNICI IMPERIA");
         log.info("----------------------------");
     }
 

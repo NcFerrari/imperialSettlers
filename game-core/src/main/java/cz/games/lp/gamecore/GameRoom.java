@@ -1,5 +1,6 @@
 package cz.games.lp.gamecore;
 
+import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.RoundPhases;
 import cz.games.lp.gamecore.components.enums.Sources;
 import cz.games.lp.gamecore.components.Player;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 @Getter
 public class GameRoom {
@@ -27,6 +29,7 @@ public class GameRoom {
             Sources.SHIELD
     };
     private final UUID id = UUID.randomUUID();
+    private final List<FactionTypes> remainingFactions = new ArrayList<>();
 
     @Getter(AccessLevel.NONE)
     private final Random random = new Random();
@@ -76,5 +79,26 @@ public class GameRoom {
 
     public boolean allPlayersHaveBeenProcessed() {
         return getCurrentPlayer().equals(getFirstPlayer());
+    }
+
+    public void resetFactionSelection() {
+        remainingFactions.clear();
+        remainingFactions.add(FactionTypes.BARBARIAN_F);
+        remainingFactions.add(FactionTypes.BARBARIAN_M);
+        remainingFactions.add(FactionTypes.JAPAN_F);
+        remainingFactions.add(FactionTypes.JAPAN_M);
+        remainingFactions.add(FactionTypes.ROMAN_F);
+        remainingFactions.add(FactionTypes.ROMAN_M);
+        remainingFactions.add(FactionTypes.EGYPT_F);
+        remainingFactions.add(FactionTypes.EGYPT_M);
+    }
+
+    public void removeFromChoice(FactionTypes faction) {
+        int factionIndex = remainingFactions.indexOf(faction);
+        if (factionIndex % 2 == 1) {
+            factionIndex--;
+        }
+        int index = factionIndex;
+        IntStream.range(0, 2).forEach(i -> remainingFactions.remove(index));
     }
 }
