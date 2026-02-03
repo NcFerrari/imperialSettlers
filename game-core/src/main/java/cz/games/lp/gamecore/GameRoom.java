@@ -1,9 +1,12 @@
 package cz.games.lp.gamecore;
 
+import cz.games.lp.gamecore.actions.CardActions;
+import cz.games.lp.gamecore.components.CardDeck;
+import cz.games.lp.gamecore.components.Player;
+import cz.games.lp.gamecore.components.Faction;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.RoundPhases;
 import cz.games.lp.gamecore.components.enums.Sources;
-import cz.games.lp.gamecore.components.Player;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,13 +44,43 @@ public class GameRoom {
     @Setter
     private int roundNumber;
     private int currentPlayerIndex;
+    private CardDeck commonDecks;
+
+    public GameRoom() {
+        resetFactionSelection();
+    }
+
+    public void resetFactionSelection() {
+        remainingFactions.clear();
+        remainingFactions.add(FactionTypes.BARBARIAN_F);
+        remainingFactions.add(FactionTypes.BARBARIAN_M);
+        remainingFactions.add(FactionTypes.JAPAN_F);
+        remainingFactions.add(FactionTypes.JAPAN_M);
+        remainingFactions.add(FactionTypes.ROMAN_F);
+        remainingFactions.add(FactionTypes.ROMAN_M);
+        remainingFactions.add(FactionTypes.EGYPT_F);
+        remainingFactions.add(FactionTypes.EGYPT_M);
+    }
+
+    public void removeFromChoice(FactionTypes faction) {
+        int factionIndex = remainingFactions.indexOf(faction);
+        if (factionIndex % 2 == 1) {
+            factionIndex--;
+        }
+        int index = factionIndex;
+        IntStream.range(0, 2).forEach(i -> remainingFactions.remove(index));
+    }
+
+    public void actionsWhenChooseFaction(Faction faction, CardActions cardActions) {
+        getCurrentPlayer().setFaction(faction);
+        removeFromChoice(faction.getFactionType());
+        getCurrentPlayer().setFactionCardDeck(new CardDeck(getCurrentPlayer().getFaction().getFactionType().getCardPrefix(), FACTION_CARD_DECK_COUNT, cardActions));
+        getCurrentPlayer().setUpOwnSources();
+        nextPlayer();
+    }
 
     public int getCommonCardDeckCount() {
         return COMMON_CARD_DECK_COUNT;
-    }
-
-    public int getFactionCardDeckCount() {
-        return FACTION_CARD_DECK_COUNT;
     }
 
     public Sources[] getplayersBasicSources() {
@@ -55,7 +88,6 @@ public class GameRoom {
     }
 
     public void newGame() {
-        setCurrentPhase(RoundPhases.LOOKOUT);
         roundNumber = 1;
     }
 
@@ -79,26 +111,5 @@ public class GameRoom {
 
     public boolean allPlayersHaveBeenProcessed() {
         return getCurrentPlayer().equals(getFirstPlayer());
-    }
-
-    public void resetFactionSelection() {
-        remainingFactions.clear();
-        remainingFactions.add(FactionTypes.BARBARIAN_F);
-        remainingFactions.add(FactionTypes.BARBARIAN_M);
-        remainingFactions.add(FactionTypes.JAPAN_F);
-        remainingFactions.add(FactionTypes.JAPAN_M);
-        remainingFactions.add(FactionTypes.ROMAN_F);
-        remainingFactions.add(FactionTypes.ROMAN_M);
-        remainingFactions.add(FactionTypes.EGYPT_F);
-        remainingFactions.add(FactionTypes.EGYPT_M);
-    }
-
-    public void removeFromChoice(FactionTypes faction) {
-        int factionIndex = remainingFactions.indexOf(faction);
-        if (factionIndex % 2 == 1) {
-            factionIndex--;
-        }
-        int index = factionIndex;
-        IntStream.range(0, 2).forEach(i -> remainingFactions.remove(index));
     }
 }

@@ -31,18 +31,6 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public void setUpSourcesForCurrentPlayer() {
-        log.debug("setSourcesForPlayer");
-        getCurrentPlayer().setUpOwnSources();
-    }
-
-    @Override
-    public void nextPlayer() {
-        log.debug("nextPlayer");
-//        gameRoom.nextPlayer();
-    }
-
-    @Override
     public Player getCurrentPlayer() {
 //        return gameRoom.getCurrentPlayer();
         return null;
@@ -55,8 +43,7 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public boolean allPlayersHaveBeenProcessed() {
-//        return gameRoom.allPlayersHaveBeenProcessed();
-        return false;
+    public boolean allPlayersHaveBeenProcessed(UUID uuid) {
+        return gameService.getGameRoom(uuid).allPlayersHaveBeenProcessed();
     }
 }

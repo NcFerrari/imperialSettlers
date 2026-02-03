@@ -10,6 +10,4 @@ public interface FactionService {
     List<FactionTypes> getRemainingFactions(UUID uuid);
 
     void resetFactionSelection(UUID uuid);
-
-    void selectFactionForCurrentPlayer(UUID uuid, FactionTypes faction);
 }

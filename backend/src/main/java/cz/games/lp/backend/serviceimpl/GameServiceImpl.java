@@ -1,9 +1,9 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.GameService;
-import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.backend.service.ProductionService;
 import cz.games.lp.gamecore.GameRoom;
+import cz.games.lp.gamecore.actions.FactionActions;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import cz.games.lp.gamecore.actions.CardActions;
@@ -20,11 +20,13 @@ public class GameServiceImpl implements GameService {
     private final CardActions cardActions;
     private final ProductionService productionService;
     private final Map<UUID, GameRoom> gameRooms;
+    private final FactionActions factionActions;
 
-    public GameServiceImpl(CardActions cardActions, ProductionService productionService, Map<UUID, GameRoom> gameRooms) {
+    public GameServiceImpl(CardActions cardActions, ProductionService productionService, Map<UUID, GameRoom> gameRooms, FactionActions factionActions) {
         this.cardActions = cardActions;
         this.productionService = productionService;
         this.gameRooms = gameRooms;
+        this.factionActions = factionActions;
     }
 
     @Override
@@ -33,10 +35,6 @@ public class GameServiceImpl implements GameService {
         GameRoom gameRoom = new GameRoom();
         gameRooms.put(gameRoom.getId(), gameRoom);
         return gameRoom.getId();
-    }
-
-    public void newGame() {
-//        cardActions.createNewCardDeck();
     }
 
     @Override
@@ -52,13 +50,6 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public int getFactionCardDeckCount() {
-        log.debug("getFactionCardDeckCount");
-//        return gameRoom.getFactionCardDeckCount();
-        return 0;
-    }
-
-    @Override
     public Map<UUID, GameRoom> getGameRooms() {
         return gameRooms;
     }
@@ -69,7 +60,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public void actionsWhenChooseFaction(FactionTypes faction) {
-
+    public void actionsWhenChooseFaction(UUID uuid, FactionTypes faction) {
+        getGameRoom(uuid).actionsWhenChooseFaction(factionActions.getFactionCatalog().factionMap().get(faction), cardActions);
     }
 }

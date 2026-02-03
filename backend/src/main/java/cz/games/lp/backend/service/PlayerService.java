@@ -9,13 +9,9 @@ public interface PlayerService {
 
     void initializePlayers(UUID uuid, int playersCount);
 
-    void setUpSourcesForCurrentPlayer();
-
-    void nextPlayer();
-
     Player getCurrentPlayer();
 
     List<Player> getPlayers();
 
-    boolean allPlayersHaveBeenProcessed();
+    boolean allPlayersHaveBeenProcessed(UUID uuid);
 }

@@ -15,11 +15,9 @@ public interface GameService {
 
     ProductionStatus performProductionPhase();
 
-    int getFactionCardDeckCount();
-
     Map<UUID, GameRoom> getGameRooms();
 
     GameRoom getGameRoom(UUID roomUUID);
 
-    void actionsWhenChooseFaction(FactionTypes faction);
+    void actionsWhenChooseFaction(UUID uuid, FactionTypes faction);
 }

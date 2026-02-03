@@ -2,6 +2,8 @@ package cz.games.lp.backend.service;
 
 import cz.games.lp.gamecore.components.Card;
 
+import java.util.UUID;
+
 public interface CardService {
 
     Card dealFactionCardToCurrentPlayer();
@@ -10,5 +12,5 @@ public interface CardService {
 
     void dealFirstCardsToAllPlayers();
 
-    void generateNewFactionCardDeck(int factionCardDeckCount);
+    void generateNewCommonCardDeck(UUID uuid);
 }

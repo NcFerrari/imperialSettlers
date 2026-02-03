@@ -30,11 +30,4 @@ public class FactionServiceImpl implements FactionService {
         log.debug("resetFactionSelection");
         gameService.getGameRoom(uuid).resetFactionSelection();
     }
-
-    @Override
-    public void selectFactionForCurrentPlayer(UUID uuid, FactionTypes faction) {
-        log.debug("selectFactionForCurrentPlayer");
-//        playerService.getCurrentPlayer().setFaction(gameRoom.getFactionActions().getFactionCatalog().factionMap().get(faction));
-        gameService.getGameRoom(uuid).removeFromChoice(faction);
-    }
 }

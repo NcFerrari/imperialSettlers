@@ -8,6 +8,8 @@ import cz.games.lp.gamecore.components.CardDeck;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Slf4j
 @Service
 public class CardServiceImpl implements CardService {
@@ -39,8 +41,8 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public void generateNewFactionCardDeck(int factionCardDeckCount) {
-        log.debug("generateNewFactionCardDeck");
-        playerService.getCurrentPlayer().setFactionCardDeck(new CardDeck(playerService.getCurrentPlayer().getFaction().getFactionType().getCardPrefix(), factionCardDeckCount, cardActions));
+    public void generateNewCommonCardDeck(UUID uuid) {
+        log.debug("newGame");
+        cardActions.createNewCardDeck();
     }
 }

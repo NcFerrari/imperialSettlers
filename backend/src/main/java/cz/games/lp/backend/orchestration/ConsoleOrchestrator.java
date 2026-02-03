@@ -3,9 +3,8 @@ package cz.games.lp.backend.orchestration;
 import cz.games.lp.backend.infrstructure.console.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
-import cz.games.lp.gamecore.components.enums.FactionTypes;
-import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import cz.games.lp.gamecore.components.Player;
+import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -89,7 +88,7 @@ public class ConsoleOrchestrator {
 
     private void newGame() {
         log.debug("newGame");
-//        gamePartsServices.getGameService().newGame();
+        gamePartsServices.getCardService().generateNewCommonCardDeck(uuid);
         gamePartsServices.getPlayerService().getPlayers().forEach(Player::newGame);
         initCommonActions();
         playGame(ConsoleStates.DEAL_FIRST_CARDS);
@@ -116,20 +115,15 @@ public class ConsoleOrchestrator {
     private void selectFactionsForAllPlayers() {
         log.debug("prepareCurrentPlayer");
         gamePartsServices.getFactionService().getRemainingFactions(uuid)
-                .forEach(faction -> actionsMap.put(faction.name(), () -> gamePartsServices.getGameService().actionsWhenChooseFaction(faction)));
+                .forEach(faction -> actionsMap.put(faction.name(), () -> {
+                    gamePartsServices.getGameService().actionsWhenChooseFaction(uuid, faction);
+                    if (gamePartsServices.getPlayerService().allPlayersHaveBeenProcessed(uuid)) {
+                        playGame(ConsoleStates.SET_NEW_GAME);
+                        return;
+                    }
+                    playGame(ConsoleStates.SELECT_FACTIONS);
+                }));
         addAction("Vyberte si frakci:");
-    }
-
-    private void actionsWhenChooseFaction(FactionTypes faction) {
-        gamePartsServices.getFactionService().selectFactionForCurrentPlayer(uuid, faction);
-        gamePartsServices.getCardService().generateNewFactionCardDeck(gamePartsServices.getGameService().getFactionCardDeckCount());
-        gamePartsServices.getPlayerService().setUpSourcesForCurrentPlayer();
-        gamePartsServices.getPlayerService().nextPlayer();
-        if (gamePartsServices.getPlayerService().allPlayersHaveBeenProcessed()) {
-            playGame(ConsoleStates.SET_NEW_GAME);
-            return;
-        }
-        playGame(ConsoleStates.SELECT_FACTIONS);
     }
 
     private void fillMap(String actionTitle, Runnable runnable) {
