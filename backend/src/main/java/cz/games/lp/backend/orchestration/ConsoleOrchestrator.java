@@ -89,7 +89,7 @@ public class ConsoleOrchestrator {
     private void newGame() {
         log.debug("newGame");
         gamePartsServices.getCardService().generateNewCommonCardDeck(uuid);
-        gamePartsServices.getPlayerService().getPlayers().forEach(Player::newGame);
+//        gamePartsServices.getPlayerService().getPlayers().forEach(Player::newGame);
         initCommonActions();
         playGame(ConsoleStates.DEAL_FIRST_CARDS);
     }

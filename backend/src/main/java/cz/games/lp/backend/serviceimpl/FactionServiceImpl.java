@@ -28,6 +28,6 @@ public class FactionServiceImpl implements FactionService {
     @Override
     public void resetFactionSelection(UUID uuid) {
         log.debug("resetFactionSelection");
-        gameService.getGameRoom(uuid).resetFactionSelection();
+//        gameService.getGameRoom(uuid).resetFactionSelection();
     }
 }

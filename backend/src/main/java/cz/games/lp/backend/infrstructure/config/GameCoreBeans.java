@@ -1,6 +1,6 @@
 package cz.games.lp.backend.infrstructure.config;
 
-import cz.games.lp.gamecore.GameRoom;
+import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.actions.CardActions;
 import cz.games.lp.gamecore.actions.FactionActions;
 import cz.games.lp.gamecore.actions.ProductionActions;

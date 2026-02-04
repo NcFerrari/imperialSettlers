@@ -48,7 +48,8 @@ public class CardActions {
     }
 
     public Card dealFactionCard(Player player) {
-        return dealCard(player, player.getFactionCardDeck());
+//        return dealCard(player, player.getFactionCardDeck());
+        return null;
     }
 
     public Card dealCommonCard(Player player) {
@@ -56,12 +57,12 @@ public class CardActions {
 //        return dealCard(player, commonCardDeck);
     }
 
-    private Card dealCard(Player player, CardDeck cardDeck) {
-        Card card = cardDeck.dealNextCard();
-        if (card != null) {
-            player.getCardsInHand().add(card);
-            return card;
-        }
-        return null;
-    }
+//    private Card dealCard(Player player, CardDeck cardDeck) {
+//        Card card = cardDeck.dealNextCard();
+//        if (card != null) {
+//            player.getCardsInHand().add(card);
+//            return card;
+//        }
+//        return null;
+//    }
 }

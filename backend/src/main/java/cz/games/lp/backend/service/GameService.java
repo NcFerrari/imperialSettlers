@@ -1,6 +1,6 @@
 package cz.games.lp.backend.service;
 
-import cz.games.lp.gamecore.GameRoom;
+import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.ProductionStatus;
 

@@ -26,8 +26,8 @@ public class PlayerServiceImpl implements PlayerService {
         if (!gameService.getGameRoom(uuid).getPlayers().isEmpty()) {
             return;
         }
-        IntStream.range(0, Math.min(4, playersCount)).forEach(i -> gameService.getGameRoom(uuid).addPlayer());
-        gameService.getGameRoom(uuid).setFirstPlayer();
+//        IntStream.range(0, Math.min(4, playersCount)).forEach(i -> gameService.getGameRoom(uuid).addPlayer());
+//        gameService.getGameRoom(uuid).setFirstPlayer();
     }
 
     @Override
@@ -44,6 +44,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public boolean allPlayersHaveBeenProcessed(UUID uuid) {
-        return gameService.getGameRoom(uuid).allPlayersHaveBeenProcessed();
+//        return gameService.getGameRoom(uuid).allPlayersHaveBeenProcessed();
+        return false;
     }
 }

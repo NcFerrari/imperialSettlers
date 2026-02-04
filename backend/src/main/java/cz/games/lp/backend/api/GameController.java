@@ -2,7 +2,7 @@ package cz.games.lp.backend.api;
 
 import cz.games.lp.backend.service.CardService;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
-import cz.games.lp.gamecore.GameRoom;
+import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.components.Player;
 import org.springframework.web.bind.annotation.GetMapping;
