@@ -3,6 +3,7 @@ package cz.games.lp.backend.service;
 import cz.games.lp.gamecore.actions.GameRoomActions;
 import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
+import cz.games.lp.gamecore.components.enums.ProductionStatus;
 
 import java.util.List;
 import java.util.Set;
@@ -23,4 +24,8 @@ public interface GameService {
     void newGame(UUID roomID);
 
     void dealFirstCardsToAllPlayers(UUID roomID);
+
+    void performLookoutPhase(UUID roomID);
+
+    ProductionStatus performProductionPhase();
 }

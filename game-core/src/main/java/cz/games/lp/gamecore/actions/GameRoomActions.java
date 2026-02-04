@@ -71,6 +71,19 @@ public class GameRoomActions {
     }
 
     public void dealFirstCardsToAllPlayers(UUID roomID) {
-        getRoom(roomID).getPlayers().forEach(player -> cardActions.dealCardsToPlayers(player, 2, 2));
+        getRoom(roomID).getPlayers().forEach(player -> {
+            cardActions.dealFactionCards(player);
+            cardActions.dealFactionCards(player);
+            cardActions.dealCommonCards(player, getRoom(roomID));
+            cardActions.dealCommonCards(player, getRoom(roomID));
+        });
+    }
+
+    public void performLookoutPhase(UUID roomID) {
+        getRoom(roomID).getPlayers().forEach(player -> {
+            cardActions.dealFactionCards(player);
+            cardActions.dealCommonCards(player, getRoom(roomID));
+            cardActions.dealCommonCards(player, getRoom(roomID));
+        });
     }
 }

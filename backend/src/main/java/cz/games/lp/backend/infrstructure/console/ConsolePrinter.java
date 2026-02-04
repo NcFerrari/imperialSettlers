@@ -1,5 +1,6 @@
 package cz.games.lp.backend.infrstructure.console;
 
+import cz.games.lp.gamecore.components.GameRoom;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -26,15 +27,15 @@ public class ConsolePrinter {
         log.info("Spatna volba!");
     }
 
-    public void showCurrentStats() {
+    public void showCurrentStats(GameRoom gameRoom) {
         log.debug("showStats");
         separator();
-//        log.info("Zvolena frakce: {}", gameRoom.getCurrentPlayer().getFaction());
-//        log.info("Kolo: {}", gameRoom.getRoundNumber());
-//        log.info("Pocet bodu: {}", gameRoom.getCurrentPlayer().getVictoryPoints());
-//        log.info("Aktualni faze: {}", gameRoom.getCurrentPhase());
-//        log.info("Suroviny:");
-//        gameRoom.getCurrentPlayer().getOwnSources().forEach((source, value) -> log.info("- {}: {}", source, value));
+        log.info("Zvolena frakce: {}", gameRoom.getCurrentPlayer().getFaction());
+        log.info("Kolo: {}", gameRoom.getRoundNumber());
+        log.info("Pocet bodu: {}", gameRoom.getCurrentPlayer().getVictoryPoints());
+        log.info("Aktualni faze: {}", gameRoom.getCurrentPhase());
+        log.info("Suroviny:");
+        gameRoom.getCurrentPlayer().getOwnSources().forEach((source, value) -> log.info("- {}: {}", source, value));
         separator();
     }
 
@@ -43,15 +44,15 @@ public class ConsolePrinter {
         log.info("Game over immediately");
     }
 
-    public void showCards() {
+    public void showCards(GameRoom gameRoom) {
         log.debug("showCards");
         separator();
         log.info("Karty v ruce:");
-//        gameRoom.getCurrentPlayer().getCardsInHand().forEach(card -> log.info(card.toString()));
-//        separator();
-//        separator();
-//        log.info("Postavené lokace:");
-//        gameRoom.getCurrentPlayer().getBuiltLocations().values().forEach(card -> log.info(card.toString()));
+        gameRoom.getCurrentPlayer().getCardsInHand().forEach(card -> log.info(card.toString()));
+        separator();
+        separator();
+        log.info("Postavené lokace:");
+        gameRoom.getCurrentPlayer().getBuiltLocations().values().forEach(card -> log.info(card.toString()));
         separator();
     }
 

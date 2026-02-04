@@ -6,6 +6,7 @@ import cz.games.lp.backend.service.GameService;
 import cz.games.lp.gamecore.actions.GameRoomActions;
 import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
+import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -61,5 +62,16 @@ public class GameServiceImpl implements GameService {
     public void dealFirstCardsToAllPlayers(UUID roomID) {
         log.debug("dealFirstCardsToAllPlayers");
         gameRoomActions.dealFirstCardsToAllPlayers(roomID);
+    }
+
+    @Override
+    public void performLookoutPhase(UUID roomID) {
+        log.debug("performLookoutPhase");
+        gameRoomActions.performLookoutPhase(roomID);
+    }
+
+    @Override
+    public ProductionStatus performProductionPhase() {
+        return null;
     }
 }

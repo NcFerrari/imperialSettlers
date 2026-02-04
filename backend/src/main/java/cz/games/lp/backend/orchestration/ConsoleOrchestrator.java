@@ -4,6 +4,7 @@ import cz.games.lp.backend.infrstructure.console.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
+import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -90,48 +91,44 @@ public class ConsoleOrchestrator {
         addAction(ACTION_CHOOSER_TITLE);
     }
 
-    private void performActionsPhase() {
-        log.debug("performActionsPhase");
-//        consoleServices.getConsoleUI().showActionChoices();
+    private void performLookoutPhase() {
+        log.debug("performLookoutPhase");
+        fillMap("Zahajit fazi rozhledu", () -> {
+            gamePartsServices.getGameService().performLookoutPhase(roomID);
+            playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
+        });
+        addAction(ACTION_CHOOSER_TITLE);
     }
 
     private void performProductionPhase() {
-//        log.debug("performProductionPhase");
-//        fillMap("Zahajit fazi produkce",
-//                () -> {
-//                    ProductionStatus productionStatus = gamePartsServices.getGameService().performProductionPhase();
-//                    if (ProductionStatus.ENDS.equals(productionStatus)) {
-//                        playGame(ConsoleStates.PERFORM_ACTIONS_PHASE);
-//                        return;
-//                    }
-//                    playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
-//                });
-//        addAction(ACTION_TITLE);
+        log.debug("performProductionPhase");
+        fillMap("Zahajit fazi produkce", () -> {
+            ProductionStatus productionStatus = gamePartsServices.getGameService().performProductionPhase();
+            if (ProductionStatus.ENDS.equals(productionStatus)) {
+                playGame(ConsoleStates.PERFORM_ACTIONS_PHASE);
+                return;
+            }
+            playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
+        });
+        addAction(ACTION_CHOOSER_TITLE);
     }
 
-    private void performLookoutPhase() {
-//        log.debug("performLookoutPhase");
-//        fillMap("Zahajit fazi rozhledu",
-//                () -> {
-//                    gamePartsServices.getGameService().performLookoutPhase();
-//                    playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
-//                });
-//        addAction(ACTION_TITLE);
+    private void performActionsPhase() {
+        log.debug("performActionsPhase");
     }
 
     private void initCommonActions() {
         log.debug("initCommonActions");
         consoleServices.getConsoleUI().clearCommonActions();
         consoleServices.getConsoleUI().addCommonAction("Zobraz aktuální stav", () -> {
-            consoleServices.getConsolePrinter().showCurrentStats();
+            consoleServices.getConsolePrinter().showCurrentStats(gamePartsServices.getGameService().getRoom(roomID));
             consoleServices.getConsoleUI().showActionChoices();
         });
         consoleServices.getConsoleUI().addCommonAction("Zobraz karty", () -> {
-            consoleServices.getConsolePrinter().showCards();
+            consoleServices.getConsolePrinter().showCards(gamePartsServices.getGameService().getRoom(roomID));
             consoleServices.getConsoleUI().showActionChoices();
         });
         consoleServices.getConsoleUI().addCommonAction("Nová hra", () -> {
-//            gamePartsServices.getFactionService().resetFactionSelection(uuid);
             consoleServices.getConsoleUI().clearCommonActions();
             playGame(ConsoleStates.SET_NEW_GAME);
         });

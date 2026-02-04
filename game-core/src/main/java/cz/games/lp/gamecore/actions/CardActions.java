@@ -3,6 +3,7 @@ package cz.games.lp.gamecore.actions;
 import cz.games.lp.gamecore.catalogs.CardCatalog;
 import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.components.CardDeck;
+import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.components.Player;
 import lombok.Getter;
 
@@ -24,44 +25,21 @@ public class CardActions {
         cardDeck.getCards().addAll(integers);
     }
 
-    public void dealCardsToPlayers(Player player, int factionCardCount, int commonCardCount) {
-        IntStream.range(0, factionCardCount).forEach(i -> dealFactionCard(player));
-        IntStream.range(0, commonCardCount).forEach(i -> dealCommonCard(player));
-    }
-
-    private void dealFactionCard(Player player) {
+    public void dealFactionCards(Player player) {
         dealCard(player, player.getFactionCardDeck());
     }
 
-    private void dealCommonCard(Player player) {
-//        dealCard(player, commonCardDeck);
+    public void dealCommonCards(Player player, GameRoom room) {
+        dealCard(player, room.getCommonCardDeck());
     }
 
-    private Card dealCard(Player player, CardDeck cardDeck) {
-//        Card card = cardDeck.dealNextCard();
-//        if (card != null) {
-//            player.getCardsInHand().add(card);
-//            return card;
-//        }
-        return null;
+    private void dealCard(Player player, CardDeck cardDeck) {
+        int cardNumber = cardDeck.getCards().getFirst();
+        String cardKey = cardDeck.getCardPrefix().getCardPrefix() + (cardNumber < 10 ? "00" : "0") + cardNumber;
+        Card card = cardCatalog.cardMap().get(cardKey);
+        if (card != null) {
+            player.getCardsInHand().add(card);
+            cardDeck.getCards().removeFirst();
+        }
     }
-
-    public Card getCard(String cardId) {
-//        return cardCatalog.cardMap().get(cardId);
-        return null;
-    }
-
-    public void performLookoutPhase() {
-//        gameRoom.setCurrentPhase(RoundPhases.LOOKOUT);
-//        dealCardsToAllPlayers(1, 2);
-//        //mocking
-//        Player player = gameRoom.getCurrentPlayer();
-//        cardCatalog.cardMap()
-//                .entrySet()
-//                .stream()
-//                .filter(entry -> entry.getKey().startsWith(player.getFaction().getFactionType().getCardTypes().getCardPrefix()))
-//                .forEach(entry -> player.getBuiltLocations().get(entry.getValue().getCardCategory()).add(entry.getValue()));
-    }
-
-
 }
