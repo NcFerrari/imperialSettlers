@@ -1,23 +1,26 @@
 package cz.games.lp.backend.service;
 
+import cz.games.lp.gamecore.actions.GameRoomActions;
 import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
-import cz.games.lp.gamecore.components.enums.ProductionStatus;
 
-import java.util.Map;
+import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 public interface GameService {
 
+    GameRoomActions getGameRoomActions();
+
     UUID createNewGameRoom();
 
-    void performLookoutPhase();
+    Set<UUID> getRooms();
 
-    ProductionStatus performProductionPhase();
+    GameRoom getRoom(UUID roomID);
 
-    Map<UUID, GameRoom> getGameRooms();
+    List<FactionTypes> getRemainingFactions(UUID roomID);
 
-    GameRoom getGameRoom(UUID roomUUID);
+    void newGame(UUID roomID);
 
-    void actionsWhenChooseFaction(UUID uuid, FactionTypes faction);
+    void dealFirstCardsToAllPlayers(UUID roomID);
 }

@@ -14,9 +14,4 @@ public class Faction {
     private FactionTypes factionType;
     private List<Sources> factionProduction;
     private Sources saveSource;
-
-    @Override
-    public String toString() {
-        return factionType.name();
-    }
 }

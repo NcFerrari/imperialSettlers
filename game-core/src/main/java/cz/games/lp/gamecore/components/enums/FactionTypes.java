@@ -26,7 +26,7 @@ public enum FactionTypes {
         this.cardTypes = cardTypes;
     }
 
-    public String getCardPrefix() {
-        return cardTypes.getCardPrefix();
+    public CardTypes getCardPrefix() {
+        return cardTypes;
     }
 }

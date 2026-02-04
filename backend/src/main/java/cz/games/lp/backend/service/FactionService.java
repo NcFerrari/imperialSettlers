@@ -1,13 +1,19 @@
 package cz.games.lp.backend.service;
 
+import cz.games.lp.gamecore.actions.FactionActions;
+import cz.games.lp.gamecore.components.Faction;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 
 import java.util.List;
-import java.util.UUID;
+import java.util.Map;
 
 public interface FactionService {
 
-    List<FactionTypes> getRemainingFactions(UUID uuid);
+    Map<FactionTypes, Faction> factionMap();
 
-    void resetFactionSelection(UUID uuid);
+    FactionActions getFactionActions();
+
+    void resetFactionSelection(List<FactionTypes> remainingFactions);
+
+    void removeFromChoice(List<FactionTypes> remainingFactions, FactionTypes factionType);
 }

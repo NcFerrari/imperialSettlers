@@ -1,66 +1,65 @@
 package cz.games.lp.backend.serviceimpl;
 
+import cz.games.lp.backend.service.CardService;
+import cz.games.lp.backend.service.FactionService;
 import cz.games.lp.backend.service.GameService;
-import cz.games.lp.backend.service.ProductionService;
+import cz.games.lp.gamecore.actions.GameRoomActions;
 import cz.games.lp.gamecore.components.GameRoom;
-import cz.games.lp.gamecore.actions.FactionActions;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
-import cz.games.lp.gamecore.components.enums.ProductionStatus;
-import cz.games.lp.gamecore.actions.CardActions;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.Map;
+import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
+@Getter
 @Slf4j
 @Service
 public class GameServiceImpl implements GameService {
 
-    private final CardActions cardActions;
-    private final ProductionService productionService;
-    private final Map<UUID, GameRoom> gameRooms;
-    private final FactionActions factionActions;
+    private final GameRoomActions gameRoomActions;
+    private final FactionService factionService;
 
-    public GameServiceImpl(CardActions cardActions, ProductionService productionService, Map<UUID, GameRoom> gameRooms, FactionActions factionActions) {
-        this.cardActions = cardActions;
-        this.productionService = productionService;
-        this.gameRooms = gameRooms;
-        this.factionActions = factionActions;
+    public GameServiceImpl(FactionService factionService, CardService cardService) {
+        gameRoomActions = new GameRoomActions(factionService.getFactionActions(), cardService.getCardActions());
+        this.factionService = factionService;
     }
 
     @Override
     public UUID createNewGameRoom() {
         log.debug("createNewGameRoom");
-        GameRoom gameRoom = new GameRoom();
-        gameRooms.put(gameRoom.getId(), gameRoom);
-        return gameRoom.getId();
+        return gameRoomActions.createNewGameRoom();
     }
 
     @Override
-    public void performLookoutPhase() {
-        log.debug("performLookoutPhase");
-        cardActions.performLookoutPhase();
+    public Set<UUID> getRooms() {
+        log.debug("getRooms");
+        return gameRoomActions.getRooms();
     }
 
     @Override
-    public ProductionStatus performProductionPhase() {
-        log.debug("performProductionPhase");
-        return productionService.performProductionPhase();
+    public GameRoom getRoom(UUID roomID) {
+        log.debug("getRoom");
+        return gameRoomActions.getRoom(roomID);
     }
 
     @Override
-    public Map<UUID, GameRoom> getGameRooms() {
-        return gameRooms;
+    public List<FactionTypes> getRemainingFactions(UUID roomID) {
+        log.debug("getRemainingFactions");
+        return gameRoomActions.getRemainingFactions(roomID);
     }
 
     @Override
-    public GameRoom getGameRoom(UUID roomUUID) {
-        return gameRooms.get(roomUUID);
+    public void newGame(UUID roomID) {
+        log.debug("newGame");
+        gameRoomActions.newGame(roomID);
     }
 
     @Override
-    public void actionsWhenChooseFaction(UUID uuid, FactionTypes faction) {
-        getGameRoom(uuid).actionsWhenChooseFaction(factionActions.getFactionCatalog().factionMap().get(faction), cardActions);
+    public void dealFirstCardsToAllPlayers(UUID roomID) {
+        log.debug("dealFirstCardsToAllPlayers");
+        gameRoomActions.dealFirstCardsToAllPlayers(roomID);
     }
 }

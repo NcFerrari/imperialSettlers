@@ -1,6 +1,7 @@
 package cz.games.lp.gamecore.actions;
 
 import cz.games.lp.gamecore.catalogs.FactionCatalog;
+import cz.games.lp.gamecore.components.CardDeck;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 import lombok.Getter;
 
@@ -32,5 +33,9 @@ public class FactionActions {
         }
         int index = factionIndex;
         IntStream.range(0, 2).forEach(i -> remainingFactions.remove(index));
+    }
+
+    public void setFactionToCardDeck(CardDeck factionCardDeck, FactionTypes factionType) {
+        factionCardDeck.setCardPrefix(factionType.getCardPrefix());
     }
 }

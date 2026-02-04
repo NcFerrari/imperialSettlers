@@ -1,16 +1,13 @@
 package cz.games.lp.backend.service;
 
+import cz.games.lp.gamecore.actions.CardActions;
 import cz.games.lp.gamecore.components.Card;
 
-import java.util.UUID;
+import java.util.Map;
 
 public interface CardService {
 
-    Card dealFactionCardToCurrentPlayer();
+    Map<String, Card> cardMap();
 
-    Card dealCommonCardToCurrentPlayer();
-
-    void dealFirstCardsToAllPlayers();
-
-    void generateNewCommonCardDeck(UUID uuid);
+    CardActions getCardActions();
 }

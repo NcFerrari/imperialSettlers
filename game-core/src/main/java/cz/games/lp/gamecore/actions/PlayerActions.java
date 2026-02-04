@@ -1,16 +1,20 @@
 package cz.games.lp.gamecore.actions;
 
-import cz.games.lp.gamecore.components.CardDeck;
 import cz.games.lp.gamecore.components.Player;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.Sources;
 
+import java.util.Collections;
+import java.util.EnumSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public record PlayerActions(GameRoomActions gameRoomActions) {
 
+    private static final int MAXIMUM_PLAYERS = 4;
     private static final Sources[] PLAYERS_BASIC_SOURCES = new Sources[]{
             Sources.SETTLER,
             Sources.WOOD,
@@ -21,24 +25,61 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
             Sources.SHIELD
     };
 
-    public void addPlayers(UUID uuid, int countOfPlayers) {
-        IntStream.range(0, countOfPlayers).forEach(i -> gameRoomActions.getRoom(uuid).getPlayers().add(new Player()));
-        gameRoomActions.setFirstAndCurrentPlayer(uuid);
+    public List<UUID> addPlayers(UUID roomID, int playerCount) {
+        if (!gameRoomActions.getRoom(roomID).getPlayers().isEmpty()) {
+            return Collections.emptyList();
+        }
+        IntStream.range(0, Math.min(MAXIMUM_PLAYERS, playerCount)).forEach(i -> gameRoomActions.getRoom(roomID).getPlayers().add(new Player()));
+        gameRoomActions.setFirstAndCurrentPlayer(roomID);
+        return gameRoomActions.getRoom(roomID).getPlayers().stream().map(Player::getPlayerID).toList();
     }
 
-    public void initCurrentPlayer(UUID uuid, FactionTypes factionTypes) {
-        Player currentPlayer = gameRoomActions.getRoom(uuid).getCurrentPlayer();
-        currentPlayer.setFactionCardDeck(new CardDeck(factionTypes.getCardPrefix(), CardDeck.FACTION_CARD_DECK_COUNT));
-        currentPlayer.setFaction(gameRoomActions.getFactionActions().getFactionCatalog().factionMap().get(factionTypes));
-        currentPlayer.setUpOwnSources(PLAYERS_BASIC_SOURCES);
-        gameRoomActions.getFactionActions().removeFromChoice(gameRoomActions.getRoom(uuid).getRemainingFactions(), factionTypes);
+    public List<Player> getPlayers(UUID roomID) {
+        return gameRoomActions.getRoom(roomID).getPlayers();
     }
 
-    public void newGameForPlayers(UUID uuid) {
-        gameRoomActions.getRoom(uuid).getPlayers().forEach(Player::newGame);
+    public Player getPlayer(UUID roomID, UUID playerID) {
+        Optional<Player> possiblePlayer = gameRoomActions.getRoom(roomID).getPlayers().stream().filter(player -> playerID.equals(player.getPlayerID())).findFirst();
+        return possiblePlayer.orElse(null);
     }
 
-    public List<Player> getPlayers(UUID uuid) {
-        return gameRoomActions.getRoom(uuid).getPlayers();
+    public boolean allPlayersHaveBeenProcessed(UUID roomID) {
+        return gameRoomActions.getRoom(roomID).getCurrentPlayer().equals(gameRoomActions.getRoom(roomID).getFirstPlayer());
+    }
+
+    public void initPlayerAndUpdateGameService(UUID roomID, UUID playerID, FactionTypes factionType) {
+        Player player = getPlayer(roomID, playerID);
+        if (player == null) {
+            return;
+        }
+        player.setFaction(gameRoomActions.getFactionActions().getFactionCatalog().factionMap().get(factionType));
+        gameRoomActions.getFactionActions().setFactionToCardDeck(player.getFactionCardDeck(), factionType);
+        player.getFactionCardDeck().getCards().clear();
+        setUpOwnSources(roomID, playerID);
+    }
+
+    private void setUpOwnSources(UUID roomID, UUID playerID) {
+        Player player = getPlayer(roomID, playerID);
+        if (player == null || player.getFaction() == null) {
+            return;
+        }
+        player.getOwnSources().clear();
+        Stream.of(PLAYERS_BASIC_SOURCES).forEach(source -> player.getOwnSources().put(source, 0));
+        if (EnumSet.of(FactionTypes.EGYPT_F, FactionTypes.EGYPT_M).contains(player.getFaction().getFactionType())) {
+            player.getOwnSources().put(Sources.EGYPT_TOKEN, 0);
+        }
+    }
+
+    public void newGameForPlayers(UUID roomID) {
+        gameRoomActions.getRoom(roomID).getPlayers().forEach(this::newGame);
+    }
+
+    private void newGame(Player player) {
+        player.getOwnSources().replaceAll((sources, value) -> 0);
+        player.getCardsInHand().clear();
+        player.getBuiltLocations().forEach((key, value) -> value.clear());
+        player.getDeals().clear();
+        player.setVictoryPoints(0);
+        gameRoomActions.getCardActions().createNewCardDeck(player.getFactionCardDeck());
     }
 }

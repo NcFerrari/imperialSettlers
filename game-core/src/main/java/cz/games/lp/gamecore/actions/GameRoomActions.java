@@ -1,52 +1,62 @@
 package cz.games.lp.gamecore.actions;
 
 import cz.games.lp.gamecore.components.GameRoom;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.RoundPhases;
 import lombok.Getter;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.UUID;
 
 public class GameRoomActions {
 
     @Getter
     private final FactionActions factionActions;
-    private final Map<UUID, GameRoom> gameRooms = new HashMap<>();
+    @Getter
+    private final CardActions cardActions;
     private final Random random = new Random();
+    private final Map<UUID, GameRoom> gameRooms = new HashMap<>();
 
-    public GameRoomActions(FactionActions factionActions) {
+    public GameRoomActions(FactionActions factionActions, CardActions cardActions) {
         this.factionActions = factionActions;
-    }
-
-    public void newGame(UUID uuid) {
-        GameRoom gameRoom = gameRooms.get(uuid);
-        gameRoom.setRoundNumber(1);
-        gameRoom.setCurrentPhase(RoundPhases.LOOKOUT);
-        factionActions.resetFactionSelection(gameRoom.getRemainingFactions());
+        this.cardActions = cardActions;
     }
 
     public UUID createNewGameRoom() {
-        UUID uuid = UUID.randomUUID();
         GameRoom newGameRoom = new GameRoom();
         factionActions.resetFactionSelection(newGameRoom.getRemainingFactions());
-        gameRooms.put(uuid, newGameRoom);
-        return uuid;
+        gameRooms.put(newGameRoom.getRoomID(), newGameRoom);
+        return newGameRoom.getRoomID();
     }
 
-    public GameRoom getRoom(UUID uuid) {
-        return gameRooms.get(uuid);
+    public Set<UUID> getRooms() {
+        return gameRooms.keySet();
     }
 
-    public void setFirstAndCurrentPlayer(UUID uuid) {
-        GameRoom gameRoom = gameRooms.get(uuid);
+    public void newGame(UUID roomID) {
+        GameRoom gameRoom = gameRooms.get(roomID);
+        gameRoom.setRoundNumber(1);
+        gameRoom.setCurrentPhase(RoundPhases.LOOKOUT);
+        cardActions.createNewCardDeck(gameRoom.getCommonCardDeck());
+    }
+
+    public GameRoom getRoom(UUID roomID) {
+        return gameRooms.get(roomID);
+    }
+
+    public void setFirstAndCurrentPlayer(UUID roomID) {
+        GameRoom gameRoom = getRoom(roomID);
         gameRoom.setCurrentPlayerIndex(random.nextInt(gameRoom.getPlayers().size()));
-        nextPlayer(gameRoom);
+        nextPlayer(roomID);
         gameRoom.setFirstPlayer(gameRoom.getCurrentPlayer());
     }
 
-    public void nextPlayer(GameRoom gameRoom) {
+    public void nextPlayer(UUID roomID) {
+        GameRoom gameRoom = getRoom(roomID);
         int index = gameRoom.getCurrentPlayerIndex();
         index++;
         if (index >= gameRoom.getPlayers().size()) {
@@ -56,20 +66,11 @@ public class GameRoomActions {
         gameRoom.setCurrentPlayerIndex(index);
     }
 
-//    public void actionsWhenChooseFaction(Faction faction, CardActions cardActions) {
-//        getCurrentPlayer().setFaction(faction);
+    public List<FactionTypes> getRemainingFactions(UUID roomID) {
+        return getRoom(roomID).getRemainingFactions();
+    }
 
-    /// /        removeFromChoice(faction.getFactionType());
-//        getCurrentPlayer().setFactionCardDeck(new CardDeck(getCurrentPlayer().getFaction().getFactionType().getCardPrefix(), 1, cardActions));
-//        getCurrentPlayer().setUpOwnSources();
-//        nextPlayer();
-//    }
-//
-//
-//
-//
-//
-//    public boolean allPlayersHaveBeenProcessed() {
-//        return getCurrentPlayer().equals(getFirstPlayer());
-//    }
+    public void dealFirstCardsToAllPlayers(UUID roomID) {
+        getRoom(roomID).getPlayers().forEach(player -> cardActions.dealCardsToPlayers(player, 2, 2));
+    }
 }

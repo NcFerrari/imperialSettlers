@@ -1,17 +1,22 @@
 package cz.games.lp.backend.service;
 
 import cz.games.lp.gamecore.components.Player;
+import cz.games.lp.gamecore.components.enums.FactionTypes;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface PlayerService {
 
-    void initializePlayers(UUID uuid, int playersCount);
+    List<UUID> addPlayers(UUID roomID, int playerCount);
 
-    Player getCurrentPlayer();
+    List<Player> getPlayers(UUID roomID);
 
-    List<Player> getPlayers();
+    Player getPlayer(UUID roomID, UUID playerID);
 
-    boolean allPlayersHaveBeenProcessed(UUID uuid);
+    void initPlayerAndUpdateGameRoom(UUID roomID, UUID playerID, FactionTypes factionType);
+
+    boolean allPlayersHaveBeenProcessed(UUID roomID);
+
+    void newGameForAllPlayers(UUID roomID);
 }

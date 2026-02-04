@@ -1,48 +1,24 @@
 package cz.games.lp.backend.serviceimpl;
 
 import cz.games.lp.backend.service.CardService;
-import cz.games.lp.backend.service.PlayerService;
-import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.actions.CardActions;
-import cz.games.lp.gamecore.components.CardDeck;
+import cz.games.lp.gamecore.components.Card;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
+import java.util.Map;
 
+@Getter
 @Slf4j
 @Service
 public class CardServiceImpl implements CardService {
 
-    private final CardActions cardActions;
-    private final PlayerService playerService;
-
-    public CardServiceImpl(CardActions cardActions, PlayerService playerService) {
-        this.cardActions = cardActions;
-        this.playerService = playerService;
-    }
+    private final CardActions cardActions = new CardActions();
 
     @Override
-    public Card dealFactionCardToCurrentPlayer() {
-        log.debug("dealFactionCardToCurrentPlayer");
-        return cardActions.dealFactionCard(playerService.getCurrentPlayer());
-    }
-
-    @Override
-    public Card dealCommonCardToCurrentPlayer() {
-        log.debug("dealCommonCardToCurrentPlayer");
-        return cardActions.dealCommonCard(playerService.getCurrentPlayer());
-    }
-
-    @Override
-    public void dealFirstCardsToAllPlayers() {
-        log.debug("dealFirstCardsToAllPlayers");
-        cardActions.dealFirstCardsToAllPlayers();
-    }
-
-    @Override
-    public void generateNewCommonCardDeck(UUID uuid) {
-        log.debug("newGame");
-        cardActions.createNewCardDeck();
+    public Map<String, Card> cardMap() {
+        log.debug("cardMap");
+        return cardActions.getCardCatalog().cardMap();
     }
 }

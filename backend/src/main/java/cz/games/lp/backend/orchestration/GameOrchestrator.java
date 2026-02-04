@@ -28,9 +28,9 @@ public class GameOrchestrator {
     public void startGame() {
         log.debug("startGame");
         prepareGameData();
-        UUID uuid = gamePartsServices.getGameService().createNewGameRoom();
-        gamePartsServices.getPlayerService().initializePlayers(uuid, 3);
-        consoleOrchestrator.startConsoleGame(uuid);
+        UUID roomID = gamePartsServices.getGameService().createNewGameRoom();
+        gamePartsServices.getPlayerService().addPlayers(roomID, 1);
+        consoleOrchestrator.startConsoleGame(roomID);
     }
 
     private void prepareGameData() {
