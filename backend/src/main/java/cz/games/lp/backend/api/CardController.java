@@ -1,11 +1,15 @@
 package cz.games.lp.backend.api;
 
 import cz.games.lp.backend.service.GameService;
+import org.jspecify.annotations.NonNull;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -19,12 +23,14 @@ public class CardController {
     }
 
     @PostMapping("/dealFirstCards")
-    public void dealFirstCards(@RequestParam("roomID") UUID roomID) {
-        gameService.dealFirstCardsToAllPlayers(roomID);
+    public ResponseEntity<@NonNull Map<UUID, List<String>>> dealFirstCards(@RequestParam("roomID") UUID roomID) {
+        Map<UUID, List<String>> cardMap = gameService.dealFirstCardsToAllPlayers(roomID);
+        return cardMap == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(cardMap);
     }
 
     @PostMapping("/performLookoutPhase")
-    public void performLookoutPhase(@RequestParam("roomID") UUID roomID) {
-        gameService.performLookoutPhase(roomID);
+    public ResponseEntity<@NonNull Map<UUID, List<String>>> performLookoutPhase(@RequestParam("roomID") UUID roomID) {
+        Map<UUID, List<String>> cardMap = gameService.performLookoutPhase(roomID);
+        return cardMap == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(cardMap);
     }
 }

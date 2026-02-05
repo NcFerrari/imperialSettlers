@@ -5,12 +5,14 @@ import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.RoundPhases;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 public class GameRoomActions {
 
@@ -70,20 +72,22 @@ public class GameRoomActions {
         return getRoom(roomID).getRemainingFactions();
     }
 
-    public void dealFirstCardsToAllPlayers(UUID roomID) {
-        getRoom(roomID).getPlayers().forEach(player -> {
-            cardActions.dealFactionCards(player);
-            cardActions.dealFactionCards(player);
-            cardActions.dealCommonCards(player, getRoom(roomID));
-            cardActions.dealCommonCards(player, getRoom(roomID));
-        });
+    public Map<UUID, List<String>> dealFirstCardsToAllPlayers(UUID roomID) {
+        return dealFactionAndCommonCards(roomID, 2);
     }
 
-    public void performLookoutPhase(UUID roomID) {
+    public Map<UUID, List<String>> performLookoutPhase(UUID roomID) {
+        return dealFactionAndCommonCards(roomID, 1);
+    }
+
+    private Map<UUID, List<String>> dealFactionAndCommonCards(UUID roomID, int factionCards) {
+        Map<UUID, List<String>> playerMap = new HashMap<>();
         getRoom(roomID).getPlayers().forEach(player -> {
-            cardActions.dealFactionCards(player);
-            cardActions.dealCommonCards(player, getRoom(roomID));
-            cardActions.dealCommonCards(player, getRoom(roomID));
+            List<String> cardIDs = new ArrayList<>();
+            IntStream.range(0, factionCards).forEach(i -> cardIDs.add(cardActions.dealFactionCards(player)));
+            IntStream.range(0, 2).forEach(i -> cardIDs.add(cardActions.dealCommonCards(player, getRoom(roomID))));
+            playerMap.put(player.getPlayerID(), cardIDs);
         });
+        return playerMap;
     }
 }

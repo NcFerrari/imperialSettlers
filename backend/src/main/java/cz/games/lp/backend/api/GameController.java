@@ -28,13 +28,15 @@ public class GameController {
     }
 
     @PostMapping("/createNewRoom")
-    public UUID createNewGameRoom() {
-        return gameService.createNewGameRoom();
+    public ResponseEntity<@NonNull UUID> createNewGameRoom() {
+        UUID roomID = gameService.createNewGameRoom();
+        return roomID == null ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.ok(roomID);
     }
 
     @GetMapping("/rooms")
-    public Set<UUID> getExistingRooms() {
-        return gameService.getRooms();
+    public ResponseEntity<@NonNull Set<UUID>> getExistingRooms() {
+        Set<UUID> roomIDs = gameService.getRooms();
+        return roomIDs == null ? ResponseEntity.status(HttpStatus.NOT_FOUND).build() : ResponseEntity.ok(roomIDs);
     }
 
     @GetMapping("/getRoom")

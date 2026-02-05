@@ -5,6 +5,7 @@ import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -22,7 +23,7 @@ public interface GameService {
 
     void newGame(UUID roomID);
 
-    void dealFirstCardsToAllPlayers(UUID roomID);
+    Map<UUID, List<String>> dealFirstCardsToAllPlayers(UUID roomID);
 
-    void performLookoutPhase(UUID roomID);
+    Map<UUID, List<String>> performLookoutPhase(UUID roomID);
 }

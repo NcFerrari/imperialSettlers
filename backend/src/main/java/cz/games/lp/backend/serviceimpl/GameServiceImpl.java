@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -58,14 +59,14 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public void dealFirstCardsToAllPlayers(UUID roomID) {
+    public Map<UUID, List<String>> dealFirstCardsToAllPlayers(UUID roomID) {
         log.debug("dealFirstCardsToAllPlayers");
-        gameRoomActions.dealFirstCardsToAllPlayers(roomID);
+        return gameRoomActions.dealFirstCardsToAllPlayers(roomID);
     }
 
     @Override
-    public void performLookoutPhase(UUID roomID) {
+    public Map<UUID, List<String>> performLookoutPhase(UUID roomID) {
         log.debug("performLookoutPhase");
-        gameRoomActions.performLookoutPhase(roomID);
+        return gameRoomActions.performLookoutPhase(roomID);
     }
 }

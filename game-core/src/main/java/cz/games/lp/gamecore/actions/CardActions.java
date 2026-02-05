@@ -25,21 +25,23 @@ public class CardActions {
         cardDeck.getCards().addAll(integers);
     }
 
-    public void dealFactionCards(Player player) {
-        dealCard(player, player.getFactionCardDeck());
+    public String dealFactionCards(Player player) {
+        return dealCard(player, player.getFactionCardDeck());
     }
 
-    public void dealCommonCards(Player player, GameRoom room) {
-        dealCard(player, room.getCommonCardDeck());
+    public String dealCommonCards(Player player, GameRoom room) {
+        return dealCard(player, room.getCommonCardDeck());
     }
 
-    private void dealCard(Player player, CardDeck cardDeck) {
+    private String dealCard(Player player, CardDeck cardDeck) {
         int cardNumber = cardDeck.getCards().getFirst();
         String cardKey = cardDeck.getCardPrefix().getCardPrefix() + (cardNumber < 10 ? "00" : "0") + cardNumber;
         Card card = cardCatalog.cardMap().get(cardKey);
         if (card != null) {
             player.getCardsInHand().add(card);
             cardDeck.getCards().removeFirst();
+            return cardKey;
         }
+        return null;
     }
 }
