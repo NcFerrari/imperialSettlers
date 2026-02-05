@@ -3,6 +3,7 @@ package cz.games.lp.backend.api;
 import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.gamecore.components.Player;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
+import org.jspecify.annotations.NonNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,9 +37,9 @@ public class PlayerController {
     }
 
     @GetMapping("/getPlayer")
-    public ResponseEntity<Player> getPlayer(@RequestParam("roomID") UUID roomID, @RequestParam("playerID") UUID playerID) {
+    public ResponseEntity<@NonNull Player> getPlayer(@RequestParam("roomID") UUID roomID, @RequestParam("playerID") UUID playerID) {
         Player player = playerService.getPlayer(roomID, playerID);
-        return player == null ? ResponseEntity.status(HttpStatus.NOT_FOUND).body(null) : ResponseEntity.ok(player);
+        return player == null ? ResponseEntity.status(HttpStatus.NOT_FOUND).build() : ResponseEntity.ok(player);
     }
 
     @PutMapping("/initPlayer")

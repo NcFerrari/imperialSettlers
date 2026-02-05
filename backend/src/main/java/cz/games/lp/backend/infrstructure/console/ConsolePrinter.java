@@ -23,7 +23,6 @@ public class ConsolePrinter {
     }
 
     public void wrongChoice() {
-        log.debug("wrongChoice");
         log.info("Spatna volba!");
     }
 
@@ -40,7 +39,6 @@ public class ConsolePrinter {
     }
 
     public void exiting() {
-        log.debug("exiting");
         log.info("Game over immediately");
     }
 

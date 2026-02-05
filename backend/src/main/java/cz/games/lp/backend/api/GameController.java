@@ -2,6 +2,7 @@ package cz.games.lp.backend.api;
 
 import cz.games.lp.backend.service.agregates.GamePartsServices;
 import cz.games.lp.gamecore.components.GameRoom;
+import org.jspecify.annotations.NonNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,8 +35,8 @@ public class GameController {
     }
 
     @GetMapping("/getRoom")
-    public ResponseEntity<GameRoom> getGameRoom(@RequestParam("roomID") UUID roomID) {
+    public ResponseEntity<@NonNull GameRoom> getGameRoom(@RequestParam("roomID") UUID roomID) {
         GameRoom gameRoom = gamePartsServices.getGameService().getRoom(roomID);
-        return gameRoom == null ? ResponseEntity.status(HttpStatus.NOT_FOUND).body(null) : ResponseEntity.ok(gameRoom);
+        return gameRoom == null ? ResponseEntity.status(HttpStatus.NOT_FOUND).build() : ResponseEntity.ok(gameRoom);
     }
 }

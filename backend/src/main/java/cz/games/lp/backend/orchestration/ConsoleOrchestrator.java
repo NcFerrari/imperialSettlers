@@ -61,6 +61,7 @@ public class ConsoleOrchestrator {
     }
 
     private void processAfterSelectFaction(FactionTypes factionType) {
+        log.debug("processAfterSelectFaction");
         UUID playerID = gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getPlayerID();
         gamePartsServices.getPlayerService().initPlayerAndUpdateGameRoom(roomID, playerID, factionType);
         gamePartsServices.getFactionService().removeFromChoice(gamePartsServices.getGameService().getRemainingFactions(roomID), factionType);
@@ -103,7 +104,7 @@ public class ConsoleOrchestrator {
     private void performProductionPhase() {
         log.debug("performProductionPhase");
         fillMap("Zahajit fazi produkce", () -> {
-            ProductionStatus productionStatus = gamePartsServices.getGameService().performProductionPhase();
+            ProductionStatus productionStatus = gamePartsServices.getProductionService().performProductionPhase();
             if (ProductionStatus.ENDS.equals(productionStatus)) {
                 playGame(ConsoleStates.PERFORM_ACTIONS_PHASE);
                 return;
