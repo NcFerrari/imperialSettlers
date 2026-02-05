@@ -1,12 +1,20 @@
 package cz.games.lp.gamecore.actions;
 
+import cz.games.lp.gamecore.components.Card;
+import cz.games.lp.gamecore.components.CardDeck;
+import cz.games.lp.gamecore.components.Faction;
 import cz.games.lp.gamecore.components.Player;
+import cz.games.lp.gamecore.components.enums.CardCategories;
+import cz.games.lp.gamecore.components.enums.CardTypes;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.Sources;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.IntStream;
@@ -75,11 +83,26 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
     }
 
     private void newGame(Player player) {
+        resetStats(player);
+        gameRoomActions.getCardActions().createNewCardDeck(player.getFactionCardDeck());
+    }
+
+    public void resetAllPlayersForSelectingFaction(UUID roomID) {
+        getPlayers(roomID).forEach(this::resetForSelectingFaction);
+    }
+
+    private void resetForSelectingFaction(Player player) {
+        resetStats(player);
+        player.getFactionCardDeck().getCards().clear();
+        player.getFactionCardDeck().setCardPrefix(CardTypes.FACTION);
+        player.setFaction(null);
+    }
+
+    private void resetStats(Player player) {
         player.getOwnSources().replaceAll((sources, value) -> 0);
         player.getCardsInHand().clear();
         player.getBuiltLocations().forEach((key, value) -> value.clear());
         player.getDeals().clear();
         player.setVictoryPoints(0);
-        gameRoomActions.getCardActions().createNewCardDeck(player.getFactionCardDeck());
     }
 }

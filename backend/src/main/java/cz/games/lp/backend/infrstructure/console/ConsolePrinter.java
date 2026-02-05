@@ -29,7 +29,7 @@ public class ConsolePrinter {
     public void showCurrentStats(GameRoom gameRoom) {
         log.debug("showStats");
         separator();
-        log.info("Zvolena frakce: {}", gameRoom.getCurrentPlayer().getFaction());
+        log.info("Zvolena frakce: {}", gameRoom.getCurrentPlayer().getFaction().getFactionType());
         log.info("Kolo: {}", gameRoom.getRoundNumber());
         log.info("Pocet bodu: {}", gameRoom.getCurrentPlayer().getVictoryPoints());
         log.info("Aktualni faze: {}", gameRoom.getCurrentPhase());

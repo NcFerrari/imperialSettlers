@@ -19,4 +19,6 @@ public interface PlayerService {
     boolean allPlayersHaveBeenProcessed(UUID roomID);
 
     void newGameForAllPlayers(UUID roomID);
+
+    void resetAllPlayersForSelectingFaction(UUID roomID);
 }

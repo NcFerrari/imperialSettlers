@@ -56,6 +56,7 @@ public class ConsoleOrchestrator {
 
     private void selectFactionsForAllPlayers() {
         log.debug("selectFactionsForAllPlayers");
+        gamePartsServices.getPlayerService().resetAllPlayersForSelectingFaction(roomID);
         gamePartsServices.getGameService().getRemainingFactions(roomID).forEach(factionType -> fillMap(factionType.name(), () -> processAfterSelectFaction(factionType)));
         addAction(FACTION_CHOOSER_TITLE);
     }
