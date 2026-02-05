@@ -91,7 +91,7 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
         getPlayers(roomID).forEach(this::resetForSelectingFaction);
     }
 
-    private void resetForSelectingFaction(Player player) {
+    public void resetForSelectingFaction(Player player) {
         resetStats(player);
         player.getFactionCardDeck().getCards().clear();
         player.getFactionCardDeck().setCardPrefix(CardTypes.FACTION);

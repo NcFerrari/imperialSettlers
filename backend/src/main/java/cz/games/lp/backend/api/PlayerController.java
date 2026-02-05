@@ -1,5 +1,7 @@
 package cz.games.lp.backend.api;
 
+import cz.games.lp.backend.service.FactionService;
+import cz.games.lp.backend.service.GameService;
 import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.gamecore.components.Player;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
@@ -21,9 +23,13 @@ import java.util.UUID;
 public class PlayerController {
 
     private final PlayerService playerService;
+    private final FactionService factionService;
+    private final GameService gameService;
 
-    public PlayerController(PlayerService playerService) {
+    public PlayerController(PlayerService playerService, FactionService factionService, GameService gameService) {
         this.playerService = playerService;
+        this.factionService = factionService;
+        this.gameService = gameService;
     }
 
     @PostMapping("/addPlayers")
@@ -42,8 +48,10 @@ public class PlayerController {
         return player == null ? ResponseEntity.status(HttpStatus.NOT_FOUND).build() : ResponseEntity.ok(player);
     }
 
-    @PutMapping("/initPlayer")
-    public void initPlayer(@RequestParam("roomID") UUID roomID, @RequestParam("playerID") UUID playerID, @RequestParam("faction") FactionTypes faction) {
-        playerService.initPlayerAndUpdateGameRoom(roomID, playerID, faction);
+    @PutMapping("/selectFactionForPlayer")
+    public void selectFactionForPlayer(@RequestParam("roomID") UUID roomID, @RequestParam("playerID") UUID playerID, @RequestParam("factionType") FactionTypes factionType) {
+        playerService.resetPlayerForSelectingFaction(roomID, playerID);
+        playerService.initPlayerAndUpdateGameRoom(roomID, playerID, factionType);
+        factionService.removeFromChoice(gameService.getRemainingFactions(roomID), factionType);
     }
 }

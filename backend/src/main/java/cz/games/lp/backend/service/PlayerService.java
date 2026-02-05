@@ -21,4 +21,6 @@ public interface PlayerService {
     void newGameForAllPlayers(UUID roomID);
 
     void resetAllPlayersForSelectingFaction(UUID roomID);
+
+    void resetPlayerForSelectingFaction(UUID roomID, UUID playerID);
 }

@@ -64,4 +64,10 @@ public class PlayerServiceImpl implements PlayerService {
         log.debug("resetAllPlayersForSelectingFaction");
         playerActions.resetAllPlayersForSelectingFaction(roomID);
     }
+
+    @Override
+    public void resetPlayerForSelectingFaction(UUID roomID, UUID playerID) {
+        log.debug("resetPlayerForSelectingFaction");
+        playerActions.resetForSelectingFaction(playerActions.getPlayer(roomID, playerID));
+    }
 }
