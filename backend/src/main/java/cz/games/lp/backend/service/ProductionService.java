@@ -1,8 +1,8 @@
 package cz.games.lp.backend.service;
 
-import cz.games.lp.gamecore.components.enums.ProductionStatus;
+import java.util.UUID;
 
 public interface ProductionService {
 
-    ProductionStatus performProductionPhase();
+    void performProductionPhase(UUID roomID);
 }

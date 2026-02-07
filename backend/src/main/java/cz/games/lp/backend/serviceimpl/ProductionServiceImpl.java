@@ -1,10 +1,12 @@
 package cz.games.lp.backend.serviceimpl;
 
+import cz.games.lp.backend.service.GameService;
 import cz.games.lp.backend.service.ProductionService;
 import cz.games.lp.gamecore.actions.ProductionActions;
-import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -12,13 +14,13 @@ public class ProductionServiceImpl implements ProductionService {
 
     private final ProductionActions productionActions;
 
-    public ProductionServiceImpl() {
-        productionActions = new ProductionActions();
+    public ProductionServiceImpl(GameService gameService) {
+        productionActions = new ProductionActions(gameService.getGameRoomActions());
     }
 
     @Override
-    public ProductionStatus performProductionPhase() {
+    public void performProductionPhase(UUID roomID) {
         log.debug("performProductionPhase");
-        return productionActions.performProductionPhase();
+        productionActions.performProductionPhase(roomID);
     }
 }

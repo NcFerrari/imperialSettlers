@@ -3,12 +3,14 @@ package cz.games.lp.backend.orchestration;
 import cz.games.lp.backend.infrstructure.console.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
+import cz.games.lp.gamecore.components.Card;
+import cz.games.lp.gamecore.components.enums.CardCategories;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
-import cz.games.lp.gamecore.components.enums.ProductionStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -104,14 +106,13 @@ public class ConsoleOrchestrator {
 
     private void performProductionPhase() {
         log.debug("performProductionPhase");
-        fillMap("Zahajit fazi produkce", () -> {
-            ProductionStatus productionStatus = gamePartsServices.getProductionService().performProductionPhase();
-            if (ProductionStatus.ENDS.equals(productionStatus)) {
-                playGame(ConsoleStates.PERFORM_ACTIONS_PHASE);
-                return;
-            }
-            playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
-        });
+        List<Card> cards = gamePartsServices.getCardService().getCardActions().getCardCatalog().cardMap().values()
+                .stream()
+                .filter(card -> CardCategories.FACTION_PRODUCTION.equals(card.getCardCategory())
+                        && card.getCardId().contains(gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getFaction().getFactionType().getCardPrefix().getCardPrefix()))
+                .toList();
+        gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getBuiltLocations().put(CardCategories.FACTION_PRODUCTION, cards);
+        fillMap("Zahajit fazi produkce", () -> gamePartsServices.getProductionService().performProductionPhase(roomID));
         addAction(ACTION_CHOOSER_TITLE);
     }
 
