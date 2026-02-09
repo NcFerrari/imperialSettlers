@@ -117,10 +117,7 @@ public class ConsoleOrchestrator {
         cards.getFirst().setSamurai(true);
         cards.get(2).setSamurai(true);
         gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getBuiltLocations().put(CardCategories.FACTION_PRODUCTION, cards);
-        fillMap("Zahajit fazi produkce", () -> {
-            gamePartsServices.getProductionService().performProductionPhase(roomID).forEach((key, value) -> value.forEach(produceResult -> produceResult.source().forEach(source -> log.info("karta {} produkuje: {}", produceResult.card().getCardId(), source))));
-            playGame(ConsoleStates.PERFORM_ACTIONS_PHASE);
-        });
+        fillMap("Zahajit fazi produkce", () -> gamePartsServices.getProductionService().performProductionPhase(roomID).forEach((key, value) -> value.forEach(produceResult -> produceResult.source().forEach(source -> log.info("karta {} produkuje: {}", produceResult.cardID(), source)))));
         addAction(ACTION_CHOOSER_TITLE);
     }
 
