@@ -5,7 +5,6 @@ import lombok.Getter;
 @Getter
 public enum Conditions {
 
-    CHOICE_FROM_2_FACTION_CARDS(null, 2, null),
     HAS_SAMURAI_3_MAX(null, 3, null),
     HAS_PINK_3_MAX(Colors.PINK, 3, null),
     HAS_GRAY_3_MAX(Colors.GRAY, 3, null),
@@ -21,11 +20,11 @@ public enum Conditions {
 
     private final Colors color;
     private final int limit;
-    private final Sources source;
+    private final Sources additionalSource;
 
-    Conditions(Colors color, int limit, Sources source) {
+    Conditions(Colors color, int limit, Sources additionalSource) {
         this.color = color;
         this.limit = limit;
-        this.source = source;
+        this.additionalSource = additionalSource;
     }
 }

@@ -1,5 +1,6 @@
 package cz.games.lp.backend.service;
 
+import cz.games.lp.gamecore.actions.PlayerActions;
 import cz.games.lp.gamecore.components.Player;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 
@@ -7,6 +8,8 @@ import java.util.List;
 import java.util.UUID;
 
 public interface PlayerService {
+
+    PlayerActions getPlayerActions();
 
     List<UUID> addPlayers(UUID roomID, int playerCount);
 

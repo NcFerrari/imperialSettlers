@@ -846,7 +846,7 @@
     "colors": [
       "BLUE"
     ],
-    "condition": "CHOICE_FROM_2_FACTION_CARDS",
+    "condition": null,
     "dealSource": "CARD",
     "orEffect": [
       "OBTAIN_FACTION_CARD"
@@ -1465,7 +1465,7 @@
     "colors": [
       "BLUE"
     ],
-    "condition": "CHOICE_FROM_2_FACTION_CARDS",
+    "condition": null,
     "dealSource": "CARD",
     "orEffect": [
       "OBTAIN_FACTION_CARD"

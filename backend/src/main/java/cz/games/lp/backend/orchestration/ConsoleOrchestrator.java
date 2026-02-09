@@ -9,6 +9,7 @@ import cz.games.lp.gamecore.components.enums.FactionTypes;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -110,14 +111,22 @@ public class ConsoleOrchestrator {
                 .stream()
                 .filter(card -> CardCategories.FACTION_PRODUCTION.equals(card.getCardCategory())
                         && card.getCardId().contains(gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getFaction().getFactionType().getCardPrefix().getCardPrefix()))
+                .map(card -> card.toBuilder().build())
+                .sorted(Comparator.comparing(Card::getCardId))
                 .toList();
+        cards.getFirst().setSamurai(true);
+        cards.get(2).setSamurai(true);
         gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getBuiltLocations().put(CardCategories.FACTION_PRODUCTION, cards);
-        fillMap("Zahajit fazi produkce", () -> gamePartsServices.getProductionService().performProductionPhase(roomID));
+        fillMap("Zahajit fazi produkce", () -> {
+            gamePartsServices.getProductionService().performProductionPhase(roomID).forEach((key, value) -> value.forEach(produceResult -> produceResult.source().forEach(source -> log.info("karta {} produkuje: {}", produceResult.card().getCardId(), source))));
+            playGame(ConsoleStates.PERFORM_ACTIONS_PHASE);
+        });
         addAction(ACTION_CHOOSER_TITLE);
     }
 
     private void performActionsPhase() {
         log.debug("performActionsPhase");
+        log.info(":)");
     }
 
     private void initCommonActions() {

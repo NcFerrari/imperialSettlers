@@ -6,7 +6,9 @@ import cz.games.lp.gamecore.components.enums.CardTypes;
 import cz.games.lp.gamecore.components.enums.Colors;
 import cz.games.lp.gamecore.components.enums.Conditions;
 import cz.games.lp.gamecore.components.enums.Sources;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +21,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder(toBuilder = true)
 public class Card {
 
     private CardCategories cardCategory;
@@ -33,4 +36,5 @@ public class Card {
     private List<CardEffects> orEffect;
     private List<Sources> sourcesForBuild;
     private List<Sources> sourcesFromDestroy;
+    private boolean samurai;
 }
