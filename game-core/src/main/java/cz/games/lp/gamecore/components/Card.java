@@ -6,7 +6,6 @@ import cz.games.lp.gamecore.components.enums.CardTypes;
 import cz.games.lp.gamecore.components.enums.Colors;
 import cz.games.lp.gamecore.components.enums.Conditions;
 import cz.games.lp.gamecore.components.enums.Sources;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
