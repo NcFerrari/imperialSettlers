@@ -64,6 +64,7 @@ public class ConsoleOrchestrator {
         gamePartsServices.getGameService().getRemainingFactions(roomID).forEach(factionType ->
                 gamePossibleChoices.put(factionType.name(), () -> {
                     gamePartsServices.getPlayerService().initPlayerAndUpdateGameRoom(roomID, playerID, factionType);
+                    gamePartsServices.getFactionService().getFactionActions().resetFactionSelection(gamePartsServices.getGameService().getRoom(roomID).getRemainingFactions());
                     playGame(ConsoleStates.SET_NEW_GAME);
                 }));
         addAction(FACTION_CHOOSER_TITLE);
@@ -74,6 +75,7 @@ public class ConsoleOrchestrator {
         gamePartsServices.getGameService().newGame(roomID);
         gamePartsServices.getPlayerService().newGameForAllPlayers(roomID);
         initCommonActions();
+        mockData();
         playGame(ConsoleStates.DEAL_FIRST_CARDS);
     }
 
@@ -97,6 +99,17 @@ public class ConsoleOrchestrator {
 
     private void performProductionPhase() {
         log.debug("performProductionPhase");
+        gamePossibleChoices.put("Zahajit fazi produkce", () -> gamePartsServices.getProductionService().performProductionPhase(roomID).get(playerID).forEach(produceResult -> {
+            if (produceResult.orSource() == null) {
+                log.info("karta {} produkuje: {}", produceResult.cardID(), produceResult.source());
+            } else {
+                addAction(ACTION_CHOOSER_TITLE);
+            }
+        }));
+        addAction(ACTION_CHOOSER_TITLE);
+    }
+
+    private void mockData() {
         List<Card> cards = gamePartsServices.getCardService().getCardActions().getCardCatalog().cardMap().values()
                 .stream()
                 .filter(card -> CardCategories.FACTION_PRODUCTION.equals(card.getCardCategory())
@@ -107,16 +120,7 @@ public class ConsoleOrchestrator {
         cards.getFirst().setSamurai(true);
         cards.get(2).setSamurai(true);
         gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getBuiltLocations().put(CardCategories.FACTION_PRODUCTION, cards);
-        gamePossibleChoices.put("Zahajit fazi produkce", () -> gamePartsServices.getProductionService().performProductionPhase(roomID).get(playerID).forEach(produceResult -> {
-            if (produceResult.orSource() == null) {
-                log.info("karta {} produkuje: {}", produceResult.cardID(), produceResult.source());
-            } else {
-                gamePossibleChoices.put("jedna", null);
-                gamePossibleChoices.put("dva", null);
-                addAction(ACTION_CHOOSER_TITLE);
-            }
-        }));
-        addAction(ACTION_CHOOSER_TITLE);
+        gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getBuiltLocations().get(CardCategories.COMMON_PROPERTIES).add(gamePartsServices.getCardService().getCardActions().getCardCatalog().cardMap().get("com078").toBuilder().build());
     }
 
     private void performActionsPhase() {

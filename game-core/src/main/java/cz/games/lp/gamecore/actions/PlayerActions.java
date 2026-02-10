@@ -5,6 +5,7 @@ import cz.games.lp.gamecore.components.enums.CardTypes;
 import cz.games.lp.gamecore.components.enums.FactionTypes;
 import cz.games.lp.gamecore.components.enums.Sources;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
@@ -38,7 +39,7 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
     public UUID addPlayer(UUID roomID) {
         Player player = new Player();
         gameRoomActions.getRoom(roomID).getPlayers().add(player);
-        if(gameRoomActions.getRoom(roomID).getPlayers().size() == 1) {
+        if (gameRoomActions.getRoom(roomID).getPlayers().size() == 1) {
             gameRoomActions.setFirstAndCurrentPlayer(roomID);
         }
         return player.getPlayerID();
@@ -100,7 +101,7 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
     private void resetStats(Player player) {
         player.getOwnSources().replaceAll((sources, value) -> 0);
         player.getCardsInHand().clear();
-        player.getBuiltLocations().forEach((key, value) -> value.clear());
+        player.getBuiltLocations().replaceAll((key, value) -> new ArrayList<>());
         player.getDeals().clear();
         player.setVictoryPoints(0);
     }
