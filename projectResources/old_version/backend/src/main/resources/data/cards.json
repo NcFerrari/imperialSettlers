@@ -1,0 +1,4156 @@
+[
+  {
+    "cardEffect": [
+      "WOOD",
+      "WOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "bar001",
+    "cardName": "Prales",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": "WOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "WOOD",
+      "WOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "bar002",
+    "cardName": "Prales",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": "WOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "WOOD",
+      "WOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "bar003",
+    "cardName": "Prales",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": "WOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar004",
+    "cardName": "Barbarský oltář",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar005",
+    "cardName": "Barbarský oltář",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar006",
+    "cardName": "Barbarský oltář",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar007",
+    "cardName": "Nájezd",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "WOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar008",
+    "cardName": "Nájezd",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "WOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar009",
+    "cardName": "Nájezd",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "WOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar010",
+    "cardName": "Záškodníci",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar011",
+    "cardName": "Záškodníci",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SWORD",
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "bar012",
+    "cardName": "Hlídková věž",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SWORD",
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "bar013",
+    "cardName": "Hlídková věž",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar014",
+    "cardName": "Temný oltář",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar015",
+    "cardName": "Temný oltář",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar016",
+    "cardName": "Tlupa",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar017",
+    "cardName": "Tlupa",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar018",
+    "cardName": "Sebranka",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar019",
+    "cardName": "Sebranka",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "bar020",
+    "cardName": "Osada",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "bar021",
+    "cardName": "Osada",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SCORE_POINT",
+    "cardId": "bar022",
+    "cardName": "Hradiště",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": "BLACK_6",
+    "dealSource": "WOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar023",
+    "cardName": "Výprava",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SWORD",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "bar024",
+    "cardName": "Kamenolom",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar025",
+    "cardName": "Směnný obchod",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar026",
+    "cardName": "Zápasiště",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "FOUR_SCORE_POINTS",
+    "cardId": "bar027",
+    "cardName": "Modla",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "PURPLE"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar028",
+    "cardName": "Mise",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar029",
+    "cardName": "Hranice",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "bar030",
+    "cardName": "Loupežníci",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "FOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap001",
+    "cardName": "Farma",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "FOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap002",
+    "cardName": "Farma",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "FOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap003",
+    "cardName": "Farma",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "FOOD",
+      "FOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap004",
+    "cardName": "Rýžová pole",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "FOOD",
+      "FOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap005",
+    "cardName": "Rýžová pole",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap006",
+    "cardName": "Dům gejš",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": "PINK_3",
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap007",
+    "cardName": "Dům gejš",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": "PINK_3",
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap008",
+    "cardName": "Pevnost",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SCORE_POINT"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap009",
+    "cardName": "Daimyův hrad",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": "SAMURAI_3",
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SCORE_POINT"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap010",
+    "cardName": "Daimyův hrad",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": "SAMURAI_3",
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [
+      "FACTION_CARD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "jap011",
+    "cardName": "Buddhův chrám",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": "FACTION_CARD_2",
+    "dealSource": "CARD",
+    "orEffect": [
+      "FACTION_CARD"
+    ],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap012",
+    "cardName": "Herna",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap013",
+    "cardName": "Brána",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap014",
+    "cardName": "Brána",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap015",
+    "cardName": "Svatyně",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap016",
+    "cardName": "Stánky",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap017",
+    "cardName": "Stánky",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap018",
+    "cardName": "Stánky",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap019",
+    "cardName": "Vyjednavač",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap020",
+    "cardName": "Přípravna saké",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap021",
+    "cardName": "Obchodní stezka",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap022",
+    "cardName": "Obchodní stezka",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap023",
+    "cardName": "Obchodní stezka",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "SCORE_POINT",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "FACTION_CARD",
+    "cardId": "jap024",
+    "cardName": "Dojo",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "SCORE_POINT",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "FACTION_CARD",
+    "cardId": "jap025",
+    "cardName": "Dojo",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "SCORE_POINT",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "TWO_SAMURAIS",
+    "cardId": "jap026",
+    "cardName": "Ninjové",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "TWO_SAMURAIS",
+    "cardId": "jap027",
+    "cardName": "Ninjové",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap028",
+    "cardName": "Škola sumo",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap029",
+    "cardName": "Mistr mečíř",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "jap030",
+    "cardName": "Škola diplomacie",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom001",
+    "cardName": "Sochařská dílna",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom002",
+    "cardName": "Sochařská dílna",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom003",
+    "cardName": "Sochařův učeň",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom004",
+    "cardName": "Sochařův učeň",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom005",
+    "cardName": "Sochařův učeň",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom006",
+    "cardName": "Gladiátorská škola",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom007",
+    "cardName": "Gladiátorská škola",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom008",
+    "cardName": "Konstruktéři",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom009",
+    "cardName": "Zahrady",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom010",
+    "cardName": "Zvědové",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "FACTION_CARD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom011",
+    "cardName": "Architekt",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": "FACTION_CARD_2",
+    "dealSource": "CARD",
+    "orEffect": [
+      "FACTION_CARD"
+    ],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom012",
+    "cardName": "Státní správa",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom013",
+    "cardName": "Státní správa",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom014",
+    "cardName": "Státní správa",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom015",
+    "cardName": "Velitelství",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom016",
+    "cardName": "Velitelství",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "COMMON_CARD"
+    ],
+    "cardEffectForPosition": "COMMON_CARD",
+    "cardId": "rom017",
+    "cardName": "Legie",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "COMMON_CARD"
+    ],
+    "cardEffectForPosition": "COMMON_CARD",
+    "cardId": "rom018",
+    "cardName": "Legie",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom019",
+    "cardName": "Skladiště",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": "FOOD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "WOOD",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom020",
+    "cardName": "Stavitel",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "WOOD",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom021",
+    "cardName": "Stavitel",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom022",
+    "cardName": "Římské opevnění",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "GOLD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom023",
+    "cardName": "Obchodní kolonie",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED",
+      "BROWN",
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "GOLD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom024",
+    "cardName": "Obchodní kolonie",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED",
+      "BROWN",
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "GOLD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom025",
+    "cardName": "Obchodní kolonie",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED",
+      "BROWN",
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom026",
+    "cardName": "Římská kasárna",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "STONE",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom027",
+    "cardName": "Kameník",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "STONE",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom028",
+    "cardName": "Kameník",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "GOLD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "rom029",
+    "cardName": "Římská banka",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "rom030",
+    "cardName": "Kolos",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "TWO_CARDS",
+    "cardId": "egy001",
+    "cardName": "Poušť",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy002",
+    "cardName": "Oltář Bastet",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": "GRAY_3",
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy003",
+    "cardName": "Stavitel vozů",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "SWORD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy004",
+    "cardName": "Faraónova garda",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [
+      "TWO_SCORE_POINTS"
+    ],
+    "sourcesForBuild": [
+      "FOOD",
+      "FOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "TWO_SETTLERS",
+    "cardId": "egy005",
+    "cardName": "Oáza",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy006",
+    "cardName": "Otrokář",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy007",
+    "cardName": "Královská lázeň",
+    "cardType": "ACTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy008",
+    "cardName": "Královská lázeň",
+    "cardType": "ACTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy009",
+    "cardName": "Zlatý bazar",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy010",
+    "cardName": "Chovatel škorpionů",
+    "cardType": "ACTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": "SWORD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "FOOD",
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy011",
+    "cardName": "Karavana",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "FOOD",
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy012",
+    "cardName": "Karavana",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "CARD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy013",
+    "cardName": "Chrám boha Ra",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy014",
+    "cardName": "Útočiště",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy015",
+    "cardName": "Útočiště",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy016",
+    "cardName": "Alej Sfing",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy017",
+    "cardName": "Alej Sfing",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy018",
+    "cardName": "Alej Sfing",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "SETTLER",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy019",
+    "cardName": "Sfinga",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy020",
+    "cardName": "Sfinga",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy021",
+    "cardName": "Zlatník",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy022",
+    "cardName": "Zlatník",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy023",
+    "cardName": "Zlatník",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy024",
+    "cardName": "Otroci",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "egy025",
+    "cardName": "Otroci",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "STONE",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy026",
+    "cardName": "Kamenolom",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "STONE",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy027",
+    "cardName": "Kamenolom",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "STONE",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "LOCATION"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "GOLD",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy028",
+    "cardName": "Pyramida",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "GOLD",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy029",
+    "cardName": "Pyramida",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [
+      "GOLD",
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "egy030",
+    "cardName": "Pyramida",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": "GOLD",
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SCORE_POINT",
+    "cardId": "com001",
+    "cardName": "Socha",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": "GRAY_6_CARD",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com002",
+    "cardName": "Dodavatel",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SCORE_POINT",
+    "cardId": "com003",
+    "cardName": "Sklad dřeva",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": "BROWN_6_CARD",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com004",
+    "cardName": "Tesařská dílna",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com005",
+    "cardName": "Pranýř",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com006",
+    "cardName": "Větrný mlýn",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "WOOD",
+      "WOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com007",
+    "cardName": "Starý les",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "STONE"
+    ],
+    "cardEffectForPosition": "STONE",
+    "cardId": "com008",
+    "cardName": "Lom",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "STONE",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [
+      "STONE"
+    ],
+    "cardEffectForPosition": "STONE",
+    "cardId": "com009",
+    "cardName": "Lom",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "STONE",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [
+      "STONE"
+    ],
+    "cardEffectForPosition": "STONE",
+    "cardId": "com010",
+    "cardName": "Lom",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "STONE",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [
+      "STONE"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com011",
+    "cardName": "Sutiny",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": "GRAY_3",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "STONE",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER"
+    ],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com012",
+    "cardName": "Vesnice",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "SETTLER"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER"
+    ],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com013",
+    "cardName": "Vesnice",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "SETTLER"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER"
+    ],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com014",
+    "cardName": "Vesnice",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER",
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com015",
+    "cardName": "Městečko",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "SETTLER"
+    ]
+  },
+  {
+    "cardEffect": [
+      "ANOTHER_PRODUCTION"
+    ],
+    "cardEffectForPosition": "CARD",
+    "cardId": "com016",
+    "cardName": "Pracující sedláci",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "GOLD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SETTLER"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com017",
+    "cardName": "Maminčiny lázně",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": "PINK_3",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SWORD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com018",
+    "cardName": "Zbrojíř",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SWORD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com019",
+    "cardName": "Zbrojíř",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SWORD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com020",
+    "cardName": "Zbrojíř",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com021",
+    "cardName": "Zlatý důl",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "GOLD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com022",
+    "cardName": "Zlatý důl",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "GOLD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "FOOD"
+    ],
+    "cardEffectForPosition": "FOOD",
+    "cardId": "com023",
+    "cardName": "Obilné pole",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "FOOD"
+    ],
+    "sourcesFromDestroy": [
+      "FOOD",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "FOOD"
+    ],
+    "cardEffectForPosition": "FOOD",
+    "cardId": "com024",
+    "cardName": "Obilné pole",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "FOOD"
+    ],
+    "sourcesFromDestroy": [
+      "FOOD",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "FOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com025",
+    "cardName": "Panská pole",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": "RED_3",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "FOOD",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "SCORE_POINT"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com026",
+    "cardName": "Monument",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "PURPLE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [
+      "GOLD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com027",
+    "cardName": "Cech obchodníků",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": "GOLD_3",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [
+      "GOLD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com028",
+    "cardName": "Zlatonosný potok",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "SETTLER"
+    ]
+  },
+  {
+    "cardEffect": [
+      "WOOD"
+    ],
+    "cardEffectForPosition": null,
+    "cardId": "com029",
+    "cardName": "Dodavatel dřeva",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": "BROWN_3",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com030",
+    "cardName": "Zlatnická dílna",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "GOLD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com031",
+    "cardName": "Zlatnická dílna",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "GOLD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com032",
+    "cardName": "Tržiště",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com033",
+    "cardName": "Uhelný důl",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com034",
+    "cardName": "Zedník",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com035",
+    "cardName": "Zedník",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com036",
+    "cardName": "Dvorní sochař",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com037",
+    "cardName": "Cech zedníků",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com038",
+    "cardName": "Cech zedníků",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com039",
+    "cardName": "Misionáři",
+    "cardType": "ACTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD",
+      "FOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "SETTLER"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com040",
+    "cardName": "Kolonisté",
+    "cardType": "ACTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com041",
+    "cardName": "Potulní kejklíři",
+    "cardType": "ACTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com042",
+    "cardName": "Dřevorubci",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com043",
+    "cardName": "Tesař",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com044",
+    "cardName": "Truhlář",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com045",
+    "cardName": "Truhlář",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com046",
+    "cardName": "Hrad",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "CARD",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com047",
+    "cardName": "Hrad",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "CARD",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com048",
+    "cardName": "Hrad",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "CARD",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "CARD",
+    "cardId": "com049",
+    "cardName": "Krčma",
+    "cardType": "ACTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "CARD",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com050",
+    "cardName": "Kasárna",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "SETTLER"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com051",
+    "cardName": "Kasárna",
+    "cardType": "ACTION",
+    "colors": [
+      "BLACK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "SETTLER"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com052",
+    "cardName": "Cukrář",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com053",
+    "cardName": "Chovatel prasat",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com054",
+    "cardName": "Chovatel prasat",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com055",
+    "cardName": "Chovatel prasat",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com056",
+    "cardName": "Sládek",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com057",
+    "cardName": "Císařský posel",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "FOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "GOLD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com058",
+    "cardName": "Nový les",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com059",
+    "cardName": "Nový les",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com060",
+    "cardName": "Nový les",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com061",
+    "cardName": "Hanzovní dům",
+    "cardType": "ACTION",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "GOLD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "WOOD"
+    ],
+    "cardEffectForPosition": "WOOD",
+    "cardId": "com062",
+    "cardName": "Dřevorubecká stezka",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "WOOD"
+    ],
+    "cardEffectForPosition": "WOOD",
+    "cardId": "com063",
+    "cardName": "Dřevorubecká stezka",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "WOOD"
+    ],
+    "cardEffectForPosition": "WOOD",
+    "cardId": "com064",
+    "cardName": "Dřevorubecká stezka",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "CARD"
+    ],
+    "cardEffectForPosition": "CARD",
+    "cardId": "com065",
+    "cardName": "Strážní věž",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "CARD",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "CARD"
+    ],
+    "cardEffectForPosition": "CARD",
+    "cardId": "com066",
+    "cardName": "Strážní věž",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "CARD",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "CARD"
+    ],
+    "cardEffectForPosition": "CARD",
+    "cardId": "com067",
+    "cardName": "Strážní věž",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "CARD",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [
+      "CARD"
+    ],
+    "cardEffectForPosition": "CARD",
+    "cardId": "com068",
+    "cardName": "Strážní věž",
+    "cardType": "PRODUCTION",
+    "colors": [
+      "BLUE"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "CARD",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com069",
+    "cardName": "Ruiny",
+    "cardType": "PROPERTIES",
+    "colors": [],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com070",
+    "cardName": "Ruiny",
+    "cardType": "PROPERTIES",
+    "colors": [],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com071",
+    "cardName": "Ruiny",
+    "cardType": "PROPERTIES",
+    "colors": [],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com072",
+    "cardName": "Ruiny",
+    "cardType": "PROPERTIES",
+    "colors": [],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com073",
+    "cardName": "Ruiny",
+    "cardType": "PROPERTIES",
+    "colors": [],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SETTLER",
+    "cardId": "com074",
+    "cardName": "Ruiny",
+    "cardType": "PROPERTIES",
+    "colors": [],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [],
+    "sourcesFromDestroy": []
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SCORE_POINT",
+    "cardId": "com075",
+    "cardName": "Pekař",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "RED"
+    ],
+    "condition": "RED_6_CARD",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SCORE_POINT",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com076",
+    "cardName": "Pila",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com077",
+    "cardName": "Pila",
+    "cardType": "ACTION",
+    "colors": [
+      "BROWN"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "WOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com078",
+    "cardName": "Zájezdní hostinec",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SCORE_POINT",
+    "cardId": "com079",
+    "cardName": "Rynek",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "PINK"
+    ],
+    "condition": "PINK_6_CARD",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "CARD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com080",
+    "cardName": "Obchodník Matyáš",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": "SCORE_POINT",
+    "cardId": "com081",
+    "cardName": "Noclehárna",
+    "cardType": "PROPERTIES",
+    "colors": [
+      "GOLD"
+    ],
+    "condition": "GOLD_6_CARD",
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "STONE",
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "GOLD",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com082",
+    "cardName": "Lovec Jeník",
+    "cardType": "ACTION",
+    "colors": [
+      "RED"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "WOOD",
+      "FOOD"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com083",
+    "cardName": "Povrchový důl",
+    "cardType": "ACTION",
+    "colors": [
+      "GRAY"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "STONE"
+    ],
+    "sourcesFromDestroy": [
+      "STONE",
+      "STONE"
+    ]
+  },
+  {
+    "cardEffect": [],
+    "cardEffectForPosition": null,
+    "cardId": "com084",
+    "cardName": "Nosiči",
+    "cardType": "ACTION",
+    "colors": [
+      "PINK"
+    ],
+    "condition": null,
+    "dealSource": null,
+    "orEffect": [],
+    "sourcesForBuild": [
+      "WOOD",
+      "WOOD"
+    ],
+    "sourcesFromDestroy": [
+      "SETTLER",
+      "STONE"
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+# Soubory IDE
+.idea/
+*.iml
+
+# Build složky
+dist/
+build/
+
+# Logy
+*.log

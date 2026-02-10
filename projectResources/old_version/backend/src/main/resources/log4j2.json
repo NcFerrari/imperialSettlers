@@ -1,0 +1,53 @@
+{
+  "Configuration": {
+    "status": "WARN",
+    "Appenders": {
+      "Console": {
+        "name": "Console",
+        "target": "SYSTEM_OUT",
+        "PatternLayout": {
+          "pattern": "[%d{yyyy-MM-dd HH:mm:ss}] %-5level (%c{1}) : %msg%n"
+        }
+      },
+      "RollingFile": {
+        "name": "FileLogger",
+        "fileName": "logs/app.log",
+        "filePattern": "logs/app-%d{yyyy-MM-dd}.log",
+        "PatternLayout": {
+          "pattern": "[%d{yyyy-MM-dd HH:mm:ss}] %-5level (%c{1}) : %msg%n"
+        },
+        "Policies": {
+          "TimeBasedTriggeringPolicy": {
+            "interval": "1"
+          }
+        }
+      }
+    },
+    "Loggers": {
+      "Logger": {
+        "name": "com.example",
+        "level": "debug",
+        "additivity": false,
+        "AppenderRef": [
+          {
+            "ref": "Console"
+          },
+          {
+            "ref": "FileLogger"
+          }
+        ]
+      },
+      "Root": {
+        "level": "info",
+        "AppenderRef": [
+          {
+            "ref": "Console"
+          },
+          {
+            "ref": "FileLogger"
+          }
+        ]
+      }
+    }
+  }
+}
