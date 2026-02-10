@@ -77,6 +77,7 @@ public class GameRoomActions {
     }
 
     public Map<UUID, List<String>> performLookoutPhase(UUID roomID) {
+        getRoom(roomID).setCurrentPhase(RoundPhases.LOOKOUT);
         return dealFactionAndCommonCards(roomID, 1);
     }
 

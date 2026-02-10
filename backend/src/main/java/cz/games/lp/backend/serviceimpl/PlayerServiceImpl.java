@@ -30,6 +30,12 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
+    public UUID addPlayer(UUID roomID) {
+        log.debug("addPlayer");
+        return playerActions.addPlayer(roomID);
+    }
+
+    @Override
     public List<Player> getPlayers(UUID roomID) {
         log.debug("getPlayers");
         return playerActions.getPlayers(roomID);
@@ -44,13 +50,7 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public void initPlayerAndUpdateGameRoom(UUID roomID, UUID playerID, FactionTypes factionType) {
         log.debug("initPlayerAndUpdateGameService");
-        playerActions.initPlayerAndUpdateGameService(roomID, playerID, factionType);
-    }
-
-    @Override
-    public boolean allPlayersHaveBeenProcessed(UUID roomID) {
-        log.debug("allPlayersHaveBeenProcessed");
-        return playerActions.allPlayersHaveBeenProcessed(roomID);
+        playerActions.initPlayerAndUpdateGameRoom(roomID, playerID, factionType);
     }
 
     @Override

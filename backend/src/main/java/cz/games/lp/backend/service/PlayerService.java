@@ -13,13 +13,13 @@ public interface PlayerService {
 
     List<UUID> addPlayers(UUID roomID, int playerCount);
 
+    UUID addPlayer(UUID roomID);
+
     List<Player> getPlayers(UUID roomID);
 
     Player getPlayer(UUID roomID, UUID playerID);
 
     void initPlayerAndUpdateGameRoom(UUID roomID, UUID playerID, FactionTypes factionType);
-
-    boolean allPlayersHaveBeenProcessed(UUID roomID);
 
     void newGameForAllPlayers(UUID roomID);
 

@@ -1,0 +1,407 @@
+{
+  "info": {
+    "_postman_id": "e8160dea-3eb9-4d01-a744-9e7409e301e1",
+    "name": "Imperial Settlers",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30250092"
+  },
+  "item": [
+    {
+      "name": "catalogs",
+      "item": [
+        {
+          "name": "cardCatalog",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/catalogs/cards",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "catalogs",
+                "cards"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "factionCatalog",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/catalogs/factions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "catalogs",
+                "factions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getCard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/catalogs/card?cardID=jap001",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "catalogs",
+                "card"
+              ],
+              "query": [
+                {
+                  "key": "cardID",
+                  "value": "jap001"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getFaction",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/catalogs/faction?factionType=JAPAN_M",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "catalogs",
+                "faction"
+              ],
+              "query": [
+                {
+                  "key": "factionType",
+                  "value": "JAPAN_M"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "gameRequests",
+      "item": [
+        {
+          "name": "createNewRoom",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/game/createNewRoom",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "game",
+                "createNewRoom"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getRooms",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/game/rooms",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "game",
+                "rooms"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getRoom",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/game/getRoom?roomID=eb893002-3fbe-40d5-8c4e-9c3322e4a62d",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "game",
+                "getRoom"
+              ],
+              "query": [
+                {
+                  "key": "roomID",
+                  "value": "eb893002-3fbe-40d5-8c4e-9c3322e4a62d"
+                },
+                {
+                  "key": "roomID",
+                  "value": "4ee7297e-5e6c-4286-ba0d-6067ccfa8ca5",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "newGame",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/game/newGame?roomID=06c04f0d-170f-42af-92f7-b471dd7ab758",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "game",
+                "newGame"
+              ],
+              "query": [
+                {
+                  "key": "roomID",
+                  "value": "06c04f0d-170f-42af-92f7-b471dd7ab758",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "playerRequests",
+      "item": [
+        {
+          "name": "addPlayers",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/player/addPlayers?roomID=06c04f0d-170f-42af-92f7-b471dd7ab758&playerCount=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "player",
+                "addPlayers"
+              ],
+              "query": [
+                {
+                  "key": "roomID",
+                  "value": "06c04f0d-170f-42af-92f7-b471dd7ab758"
+                },
+                {
+                  "key": "playerCount",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getPlayers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/player/getPlayers?roomID=0e9fe68f-4f61-480a-9266-e39c30b1fb40",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "player",
+                "getPlayers"
+              ],
+              "query": [
+                {
+                  "key": "roomID",
+                  "value": "0e9fe68f-4f61-480a-9266-e39c30b1fb40"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getPlayer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/player/getPlayer?roomID=acb2f147-3108-44e7-9564-0e6dc3a7472d&playerID=c06625c4-1130-450d-867a-3275d4a4577c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "player",
+                "getPlayer"
+              ],
+              "query": [
+                {
+                  "key": "roomID",
+                  "value": "acb2f147-3108-44e7-9564-0e6dc3a7472d"
+                },
+                {
+                  "key": "playerID",
+                  "value": "c06625c4-1130-450d-867a-3275d4a4577c"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "selectFactionForPlayer",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/player/selectFactionForPlayer?roomID=06c04f0d-170f-42af-92f7-b471dd7ab758&playerID=7a07d3f1-cf29-49c9-b9fb-2dfeadd815d3&factionType=BARBARIAN_F",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "player",
+                "selectFactionForPlayer"
+              ],
+              "query": [
+                {
+                  "key": "roomID",
+                  "value": "06c04f0d-170f-42af-92f7-b471dd7ab758"
+                },
+                {
+                  "key": "playerID",
+                  "value": "7a07d3f1-cf29-49c9-b9fb-2dfeadd815d3"
+                },
+                {
+                  "key": "factionType",
+                  "value": "BARBARIAN_F"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "cardRequests",
+      "item": [
+        {
+          "name": "dealFirstCards",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/card/dealFirstCards?roomID=5c4e4195-d36e-4b8b-bd76-12db79d2cb77",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "card",
+                "dealFirstCards"
+              ],
+              "query": [
+                {
+                  "key": "roomID",
+                  "value": "5c4e4195-d36e-4b8b-bd76-12db79d2cb77"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "performLookoutPhase",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/api/card/performLookoutPhase?roomID=06c04f0d-170f-42af-92f7-b471dd7ab758",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "api",
+                "card",
+                "performLookoutPhase"
+              ],
+              "query": [
+                {
+                  "key": "roomID",
+                  "value": "06c04f0d-170f-42af-92f7-b471dd7ab758",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

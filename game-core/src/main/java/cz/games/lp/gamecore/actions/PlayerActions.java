@@ -30,9 +30,18 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
         if (!gameRoomActions.getRoom(roomID).getPlayers().isEmpty()) {
             return Collections.emptyList();
         }
-        IntStream.range(0, Math.min(MAXIMUM_PLAYERS, playerCount)).forEach(i -> gameRoomActions.getRoom(roomID).getPlayers().add(new Player()));
+        IntStream.range(0, Math.min(MAXIMUM_PLAYERS, playerCount)).forEach(i -> addPlayer(roomID));
         gameRoomActions.setFirstAndCurrentPlayer(roomID);
         return gameRoomActions.getRoom(roomID).getPlayers().stream().map(Player::getPlayerID).toList();
+    }
+
+    public UUID addPlayer(UUID roomID) {
+        Player player = new Player();
+        gameRoomActions.getRoom(roomID).getPlayers().add(player);
+        if(gameRoomActions.getRoom(roomID).getPlayers().size() == 1) {
+            gameRoomActions.setFirstAndCurrentPlayer(roomID);
+        }
+        return player.getPlayerID();
     }
 
     public List<Player> getPlayers(UUID roomID) {
@@ -44,11 +53,7 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
         return possiblePlayer.orElse(null);
     }
 
-    public boolean allPlayersHaveBeenProcessed(UUID roomID) {
-        return gameRoomActions.getRoom(roomID).getCurrentPlayer().equals(gameRoomActions.getRoom(roomID).getFirstPlayer());
-    }
-
-    public void initPlayerAndUpdateGameService(UUID roomID, UUID playerID, FactionTypes factionType) {
+    public void initPlayerAndUpdateGameRoom(UUID roomID, UUID playerID, FactionTypes factionType) {
         Player player = getPlayer(roomID, playerID);
         if (player == null) {
             return;
@@ -57,6 +62,7 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
         gameRoomActions.getFactionActions().setFactionToCardDeck(player.getFactionCardDeck(), factionType);
         player.getFactionCardDeck().getCards().clear();
         setUpOwnSources(roomID, playerID);
+        gameRoomActions.getFactionActions().removeFromChoice(gameRoomActions.getRemainingFactions(roomID), factionType);
     }
 
     private void setUpOwnSources(UUID roomID, UUID playerID) {

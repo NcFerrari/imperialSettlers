@@ -11,19 +11,18 @@ import cz.games.lp.gamecore.components.enums.Sources;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions playerActions, CardActions cardActions) {
 
-    public Map<Player, List<ProduceResult>> performProductionPhase(UUID roomID) {
+    public Map<UUID, List<ProduceResult>> performProductionPhase(UUID roomID) {
         gameRoomActions.getRoom(roomID).setCurrentPhase(RoundPhases.PRODUCTION);
         return produceFactionProductionCards(roomID);
     }
 
-    private Map<Player, List<ProduceResult>> produceFactionProductionCards(UUID roomID) {
-        return gameRoomActions.getRoom(roomID).getPlayers().stream().collect(Collectors.toMap(Function.identity(), player -> producePlayerCards(player, roomID)));
+    private Map<UUID, List<ProduceResult>> produceFactionProductionCards(UUID roomID) {
+        return gameRoomActions.getRoom(roomID).getPlayers().stream().collect(Collectors.toMap(Player::getPlayerID, player -> producePlayerCards(player, roomID)));
     }
 
     private List<ProduceResult> producePlayerCards(Player player, UUID roomID) {

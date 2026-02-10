@@ -25,7 +25,7 @@ public class ProductionServiceImpl implements ProductionService {
     }
 
     @Override
-    public Map<Player, List<ProduceResult>> performProductionPhase(UUID roomID) {
+    public Map<UUID, List<ProduceResult>> performProductionPhase(UUID roomID) {
         log.debug("performProductionPhase");
         return productionActions.performProductionPhase(roomID);
     }

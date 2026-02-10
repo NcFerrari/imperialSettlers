@@ -5,7 +5,6 @@ import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
 import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.components.enums.CardCategories;
-import cz.games.lp.gamecore.components.enums.FactionTypes;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -25,15 +24,17 @@ public class ConsoleOrchestrator {
     private final ConsoleServices consoleServices;
     private final GamePartsServices gamePartsServices;
     private UUID roomID;
+    private UUID playerID;
 
     public ConsoleOrchestrator(ConsoleServices consoleServices, GamePartsServices gamePartsServices) {
         this.consoleServices = consoleServices;
         this.gamePartsServices = gamePartsServices;
     }
 
-    public void startConsoleGame(UUID roomID) {
+    public void startConsoleGame(UUID roomID, UUID playerID) {
         log.debug("startConsoleGame");
         this.roomID = roomID;
+        this.playerID = playerID;
         consoleServices.getConsoleUI().executeConsoleInputLoop();
         playGame(ConsoleStates.START_GAME);
     }
@@ -60,23 +61,12 @@ public class ConsoleOrchestrator {
     private void selectFactionsForAllPlayers() {
         log.debug("selectFactionsForAllPlayers");
         gamePartsServices.getPlayerService().resetAllPlayersForSelectingFaction(roomID);
-        gamePartsServices.getGameService().getRemainingFactions(roomID).forEach(factionType -> fillMap(factionType.name(), () -> processAfterSelectFaction(factionType)));
+        gamePartsServices.getGameService().getRemainingFactions(roomID).forEach(factionType ->
+                gamePossibleChoices.put(factionType.name(), () -> {
+                    gamePartsServices.getPlayerService().initPlayerAndUpdateGameRoom(roomID, playerID, factionType);
+                    playGame(ConsoleStates.SET_NEW_GAME);
+                }));
         addAction(FACTION_CHOOSER_TITLE);
-    }
-
-    private void processAfterSelectFaction(FactionTypes factionType) {
-        log.debug("processAfterSelectFaction");
-        UUID playerID = gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getPlayerID();
-        gamePartsServices.getPlayerService().initPlayerAndUpdateGameRoom(roomID, playerID, factionType);
-        gamePartsServices.getFactionService().removeFromChoice(gamePartsServices.getGameService().getRemainingFactions(roomID), factionType);
-        gamePartsServices.getGameService().getGameRoomActions().nextPlayer(roomID);
-        if (gamePartsServices.getPlayerService().
-                allPlayersHaveBeenProcessed(roomID)) {
-            playGame(ConsoleStates.SET_NEW_GAME);
-            gamePartsServices.getFactionService().resetFactionSelection(gamePartsServices.getGameService().getRemainingFactions(roomID));
-            return;
-        }
-        playGame(ConsoleStates.SELECT_FACTIONS);
     }
 
     private void newGame() {
@@ -89,7 +79,7 @@ public class ConsoleOrchestrator {
 
     private void dealFirstCards() {
         log.debug("dealFirstCards");
-        fillMap("Rozdat pocatecni karty", () -> {
+        gamePossibleChoices.put("Rozdat pocatecni karty", () -> {
             gamePartsServices.getGameService().dealFirstCardsToAllPlayers(roomID);
             playGame(ConsoleStates.PERFORM_LOOKOUT_PHASE);
         });
@@ -98,7 +88,7 @@ public class ConsoleOrchestrator {
 
     private void performLookoutPhase() {
         log.debug("performLookoutPhase");
-        fillMap("Zahajit fazi rozhledu", () -> {
+        gamePossibleChoices.put("Zahajit fazi rozhledu", () -> {
             gamePartsServices.getGameService().performLookoutPhase(roomID);
             playGame(ConsoleStates.PERFORM_PRODUCTION_PHASE);
         });
@@ -117,7 +107,15 @@ public class ConsoleOrchestrator {
         cards.getFirst().setSamurai(true);
         cards.get(2).setSamurai(true);
         gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getBuiltLocations().put(CardCategories.FACTION_PRODUCTION, cards);
-        fillMap("Zahajit fazi produkce", () -> gamePartsServices.getProductionService().performProductionPhase(roomID).forEach((key, value) -> value.forEach(produceResult -> produceResult.source().forEach(source -> log.info("karta {} produkuje: {}", produceResult.cardID(), source)))));
+        gamePossibleChoices.put("Zahajit fazi produkce", () -> gamePartsServices.getProductionService().performProductionPhase(roomID).get(playerID).forEach(produceResult -> {
+            if (produceResult.orSource() == null) {
+                log.info("karta {} produkuje: {}", produceResult.cardID(), produceResult.source());
+            } else {
+                gamePossibleChoices.put("jedna", null);
+                gamePossibleChoices.put("dva", null);
+                addAction(ACTION_CHOOSER_TITLE);
+            }
+        }));
         addAction(ACTION_CHOOSER_TITLE);
     }
 
@@ -145,11 +143,6 @@ public class ConsoleOrchestrator {
             consoleServices.getConsoleUI().clearCommonActions();
             playGame(ConsoleStates.SELECT_FACTIONS);
         });
-    }
-
-    private void fillMap(String actionTitle, Runnable runnable) {
-        log.debug("fillMap");
-        gamePossibleChoices.put(actionTitle, runnable);
     }
 
     private void addAction(String title) {
