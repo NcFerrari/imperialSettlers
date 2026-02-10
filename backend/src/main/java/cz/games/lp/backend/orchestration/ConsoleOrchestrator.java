@@ -1,6 +1,6 @@
 package cz.games.lp.backend.orchestration;
 
-import cz.games.lp.backend.infrstructure.console.ConsoleStates;
+import cz.games.lp.backend.infrastructure.console.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
 import cz.games.lp.gamecore.components.Card;

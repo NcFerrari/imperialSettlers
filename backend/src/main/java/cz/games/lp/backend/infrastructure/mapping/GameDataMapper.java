@@ -1,4 +1,4 @@
-package cz.games.lp.backend.infrstructure.mapping;
+package cz.games.lp.backend.infrastructure.mapping;
 
 import cz.games.lp.backend.service.agregates.GamePartsServices;
 import cz.games.lp.backend.service.agregates.MappingServices;

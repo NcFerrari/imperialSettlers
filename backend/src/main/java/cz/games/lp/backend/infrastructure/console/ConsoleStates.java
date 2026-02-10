@@ -1,4 +1,4 @@
-package cz.games.lp.backend.infrstructure.console;
+package cz.games.lp.backend.infrastructure.console;
 
 public enum ConsoleStates {
     START_GAME,

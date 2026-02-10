@@ -1,4 +1,4 @@
-package cz.games.lp.backend.infrstructure.config;
+package cz.games.lp.backend.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package cz.games.lp.backend.infrstructure.console;
+package cz.games.lp.backend.infrastructure.console;
 
 import cz.games.lp.gamecore.components.GameRoom;
 import lombok.extern.slf4j.Slf4j;
