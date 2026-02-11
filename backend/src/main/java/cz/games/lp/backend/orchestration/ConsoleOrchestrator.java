@@ -3,6 +3,7 @@ package cz.games.lp.backend.orchestration;
 import cz.games.lp.backend.infrastructure.console.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
+import cz.games.lp.gamecore.actions.ProduceResult;
 import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.components.enums.CardCategories;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +21,7 @@ public class ConsoleOrchestrator {
 
     private static final String ACTION_CHOOSER_TITLE = "Zvolte akci:";
     private static final String FACTION_CHOOSER_TITLE = "Vyberte si frakci:";
+    private static final String SOURCE_CHOOSER_TITLE = "Zvolte si zdroj produkce:";
     private final Map<String, Runnable> gamePossibleChoices = new LinkedHashMap<>();
     private final ConsoleServices consoleServices;
     private final GamePartsServices gamePartsServices;
@@ -99,14 +101,32 @@ public class ConsoleOrchestrator {
 
     private void performProductionPhase() {
         log.debug("performProductionPhase");
-        gamePossibleChoices.put("Zahajit fazi produkce", () -> gamePartsServices.getProductionService().performProductionPhase(roomID).get(playerID).forEach(produceResult -> {
-            if (produceResult.orSource() == null) {
-                log.info("karta {} produkuje: {}", produceResult.cardID(), produceResult.source());
-            } else {
-                addAction(ACTION_CHOOSER_TITLE);
-            }
-        }));
+        gamePossibleChoices.put("Zahajit fazi produkce", () -> produceOneCard(0, gamePartsServices.getProductionService().performProductionPhase(roomID).get(playerID)));
         addAction(ACTION_CHOOSER_TITLE);
+    }
+
+    private void produceOneCard(int produceResultIndex, List<ProduceResult> produceResults) {
+        if (produceResultIndex == produceResults.size()) {
+            System.out.println("piča:)");
+            return;
+        }
+        ProduceResult produceResult = produceResults.get(produceResultIndex);
+        if (produceResult.orSource().isEmpty()) {
+            log.info("karta {} produkuje: {}", produceResult.cardID(), produceResult.source());
+            produceOneCard(produceResultIndex + 1, produceResults);
+        } else {
+            gamePossibleChoices.put("Buď:" + produceResult.source(), () -> {
+                produceResult.orSource().clear();
+                produceOneCard(produceResultIndex, produceResults);
+            });
+            gamePossibleChoices.put("Nebo:" + produceResult.orSource(), () -> {
+                produceResult.source().clear();
+                produceResult.source().addAll(produceResult.orSource());
+                produceResult.orSource().clear();
+                produceOneCard(produceResultIndex, produceResults);
+            });
+            addAction(SOURCE_CHOOSER_TITLE);
+        }
     }
 
     private void mockData() {

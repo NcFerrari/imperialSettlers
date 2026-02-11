@@ -8,6 +8,7 @@ import cz.games.lp.gamecore.components.enums.Conditions;
 import cz.games.lp.gamecore.components.enums.RoundPhases;
 import cz.games.lp.gamecore.components.enums.Sources;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -30,12 +31,25 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
     }
 
     private ProduceResult produceFromSingleCard(Card card, UUID roomID, UUID playerID) {
-        if (!card.getOrEffect().isEmpty()) {
-            return new ProduceResult(card.getCardId(), getSourcesFromEffects(card.getCardEffect()), getSourcesFromEffects(card.getOrEffect()));
-        }
         List<Sources> sourcesList = card.getCondition() != null ? conditionProcess(card, roomID, playerID) : getSourcesFromEffects(card.getCardEffect());
-        playerActions.getPlayer(roomID, playerID).getOwnSources().merge(sourcesList.getFirst(), sourcesList.size(), Integer::sum);
-        return new ProduceResult(card.getCardId(), sourcesList, null);
+        if (card.getOrEffect().isEmpty()) {
+            sourcesList
+                    .stream()
+                    .filter(source -> !List.of(Sources.CARD, Sources.LOCATION).contains(source))
+                    .forEach(source -> {
+                        switch (source) {
+                            case Sources.FACTION_CARD ->
+                                    cardActions.dealFactionCard(playerActions.getPlayer(roomID, playerID));
+                            case Sources.COMMON_CARD ->
+                                    cardActions.dealCommonCard(playerActions.getPlayer(roomID, playerID), gameRoomActions.getRoom(roomID));
+                            case Sources.VICTORY_POINT ->
+                                    playerActions.addVictoryPointToPlayer(playerActions.getPlayer(roomID, playerID));
+                            default ->
+                                    playerActions.getPlayer(roomID, playerID).getOwnSources().merge(source, 1, Integer::sum);
+                        }
+                    });
+        }
+        return new ProduceResult(card.getCardId(), sourcesList, getSourcesFromEffects(card.getOrEffect()));
     }
 
     private List<Sources> conditionProcess(Card card, UUID roomID, UUID playerID) {
@@ -44,18 +58,18 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
             predicate = Card::isSamurai;
         }
 
-        return cardActions.getPlayerLocations(playerActions.getPlayer(roomID, playerID))
+        return new ArrayList<>(cardActions.getPlayerLocations(playerActions.getPlayer(roomID, playerID))
                 .stream()
                 .filter(predicate)
                 .limit(card.getCondition().getLimit())
                 .map(c -> card.getCardEffect().getFirst().getSource())
-                .toList();
+                .toList());
     }
 
     private List<Sources> getSourcesFromEffects(List<CardEffects> effectList) {
-        return effectList
+        return new ArrayList<>(effectList
                 .stream()
                 .map(CardEffects::getSource)
-                .toList();
+                .toList());
     }
 }

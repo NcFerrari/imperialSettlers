@@ -105,4 +105,8 @@ public record PlayerActions(GameRoomActions gameRoomActions) {
         player.getDeals().clear();
         player.setVictoryPoints(0);
     }
+
+    public void addVictoryPointToPlayer(Player player) {
+        player.setVictoryPoints(player.getVictoryPoints() + 1);
+    }
 }

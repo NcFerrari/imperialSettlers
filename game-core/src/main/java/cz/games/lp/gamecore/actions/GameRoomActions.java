@@ -85,8 +85,8 @@ public class GameRoomActions {
         Map<UUID, List<String>> playerMap = new HashMap<>();
         getRoom(roomID).getPlayers().forEach(player -> {
             List<String> cardIDs = new ArrayList<>();
-            IntStream.range(0, factionCards).forEach(i -> cardIDs.add(cardActions.dealFactionCards(player)));
-            IntStream.range(0, 2).forEach(i -> cardIDs.add(cardActions.dealCommonCards(player, getRoom(roomID))));
+            IntStream.range(0, factionCards).forEach(i -> cardIDs.add(cardActions.dealFactionCard(player)));
+            IntStream.range(0, 2).forEach(i -> cardIDs.add(cardActions.dealCommonCard(player, getRoom(roomID))));
             playerMap.put(player.getPlayerID(), cardIDs);
         });
         return playerMap;

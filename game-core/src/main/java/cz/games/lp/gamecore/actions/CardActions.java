@@ -25,11 +25,11 @@ public class CardActions {
         cardDeck.getCards().addAll(integers);
     }
 
-    public String dealFactionCards(Player player) {
+    public String dealFactionCard(Player player) {
         return dealCard(player, player.getFactionCardDeck());
     }
 
-    public String dealCommonCards(Player player, GameRoom room) {
+    public String dealCommonCard(Player player, GameRoom room) {
         return dealCard(player, room.getCommonCardDeck());
     }
 
