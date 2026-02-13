@@ -3,11 +3,13 @@ package cz.games.lp.backend.serviceimpl;
 import cz.games.lp.backend.service.CardService;
 import cz.games.lp.gamecore.actions.CardActions;
 import cz.games.lp.gamecore.components.Card;
+import cz.games.lp.gamecore.components.Player;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
+import java.util.UUID;
 
 @Getter
 @Slf4j
@@ -20,5 +22,17 @@ public class CardServiceImpl implements CardService {
     public Map<String, Card> cardMap() {
         log.debug("cardMap");
         return cardActions.getCardCatalog().cardMap();
+    }
+
+    @Override
+    public Card getNewPlayerCard(Player player, int cardNumber) {
+        log.debug("getNewPlayerCard");
+        return cardActions.getNewPlayerCard(player, cardNumber);
+    }
+
+    @Override
+    public String dealCardToPlayer(Player player, int cardNumber, boolean shuffleRestOfCards) {
+        log.debug("dealCardToPlayer");
+        return cardActions.dealCardToPlayer(player, cardNumber, shuffleRestOfCards);
     }
 }

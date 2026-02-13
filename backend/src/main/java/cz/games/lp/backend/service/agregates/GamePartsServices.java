@@ -5,6 +5,7 @@ import cz.games.lp.backend.service.FactionService;
 import cz.games.lp.backend.service.GameService;
 import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.backend.service.ProductionService;
+import cz.games.lp.backend.service.SourceService;
 
 public interface GamePartsServices {
 
@@ -17,4 +18,6 @@ public interface GamePartsServices {
     GameService getGameService();
 
     ProductionService getProductionService();
+
+    SourceService getSourceService();
 }

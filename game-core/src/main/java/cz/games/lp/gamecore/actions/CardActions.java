@@ -33,14 +33,25 @@ public class CardActions {
         return dealCard(player, room.getCommonCardDeck());
     }
 
+    public String dealCardToPlayer(Player player, int cardNumber, boolean shuffleRestOfCards) {
+        String cardId = dealCard(player, player.getFactionCardDeck(), cardNumber);
+        if (shuffleRestOfCards) {
+            Collections.shuffle(player.getFactionCardDeck().getCards());
+        }
+        return cardId;
+    }
+
     private String dealCard(Player player, CardDeck cardDeck) {
-        int cardNumber = cardDeck.getCards().getFirst();
-        String cardKey = cardDeck.getCardPrefix().getCardPrefix() + (cardNumber < 10 ? "00" : "0") + cardNumber;
-        Card card = cardCatalog.cardMap().get(cardKey);
+        return dealCard(player, cardDeck, cardDeck.getCards().getFirst());
+    }
+
+    private String dealCard(Player player, CardDeck cardDeck, int cardNumber) {
+        String cardId = cardDeck.getCardPrefix().getCardPrefix() + (cardNumber < 10 ? "00" : "0") + cardNumber;
+        Card card = cardCatalog.cardMap().get(cardId);
         if (card != null) {
             player.getCardsInHand().add(card);
-            cardDeck.getCards().removeFirst();
-            return cardKey;
+            cardDeck.getCards().remove((Integer) cardNumber);
+            return cardId;
         }
         return null;
     }
@@ -50,5 +61,9 @@ public class CardActions {
                 .stream()
                 .flatMap(List::stream)
                 .toList();
+    }
+
+    public Card getNewPlayerCard(Player player, int cardNumber) {
+        return cardCatalog.cardMap().get(player.getFactionCardDeck().getCardPrefix().getCardPrefix() + (cardNumber < 10 ? "00" : "0") + cardNumber);
     }
 }

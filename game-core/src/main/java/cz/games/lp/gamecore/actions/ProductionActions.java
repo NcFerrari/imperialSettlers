@@ -15,41 +15,39 @@ import java.util.UUID;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions playerActions, CardActions cardActions) {
+public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions playerActions, CardActions cardActions,
+                                SourceActions sourceActions) {
 
-    public Map<UUID, List<ProduceResult>> performProductionPhase(UUID roomID) {
+    public Map<UUID, List<ProduceChoice>> performProductionPhase(UUID roomID) {
         gameRoomActions.getRoom(roomID).setCurrentPhase(RoundPhases.PRODUCTION);
         return produceFactionProductionCards(roomID);
     }
 
-    private Map<UUID, List<ProduceResult>> produceFactionProductionCards(UUID roomID) {
+    private Map<UUID, List<ProduceChoice>> produceFactionProductionCards(UUID roomID) {
         return gameRoomActions.getRoom(roomID).getPlayers().stream().collect(Collectors.toMap(Player::getPlayerID, player -> producePlayerCards(player, roomID)));
     }
 
-    private List<ProduceResult> producePlayerCards(Player player, UUID roomID) {
+    private List<ProduceChoice> producePlayerCards(Player player, UUID roomID) {
         return player.getBuiltLocations().get(CardCategories.FACTION_PRODUCTION).stream().map(card -> produceFromSingleCard(card, roomID, player.getPlayerID())).toList();
     }
 
-    private ProduceResult produceFromSingleCard(Card card, UUID roomID, UUID playerID) {
+    private ProduceChoice produceFromSingleCard(Card card, UUID roomID, UUID playerID) {
         List<Sources> sourcesList = card.getCondition() != null ? conditionProcess(card, roomID, playerID) : getSourcesFromEffects(card.getCardEffect());
+        Player player = playerActions.getPlayer(roomID, playerID);
         if (card.getOrEffect().isEmpty()) {
             sourcesList
                     .stream()
-                    .filter(source -> !List.of(Sources.CARD, Sources.LOCATION).contains(source))
+                    .filter(source -> !List.of(Sources.FACTION_CARD, Sources.CARD).contains(source))
                     .forEach(source -> {
                         switch (source) {
-                            case Sources.FACTION_CARD ->
-                                    cardActions.dealFactionCard(playerActions.getPlayer(roomID, playerID));
+                            case Sources.VICTORY_POINT -> playerActions.addVictoryPointToPlayer(player);
                             case Sources.COMMON_CARD ->
-                                    cardActions.dealCommonCard(playerActions.getPlayer(roomID, playerID), gameRoomActions.getRoom(roomID));
-                            case Sources.VICTORY_POINT ->
-                                    playerActions.addVictoryPointToPlayer(playerActions.getPlayer(roomID, playerID));
-                            default ->
-                                    playerActions.getPlayer(roomID, playerID).getOwnSources().merge(source, 1, Integer::sum);
+                                    cardActions.dealCommonCard(player, gameRoomActions.getRoom(roomID));
+                            default -> player.getOwnSources().merge(source, 1, Integer::sum);
                         }
                     });
         }
-        return new ProduceResult(card.getCardId(), sourcesList, getSourcesFromEffects(card.getOrEffect()));
+        return new ProduceChoice(card.getCardId(), sourcesList, getSourcesFromEffects(card.getOrEffect()));
     }
 
     private List<Sources> conditionProcess(Card card, UUID roomID, UUID playerID) {

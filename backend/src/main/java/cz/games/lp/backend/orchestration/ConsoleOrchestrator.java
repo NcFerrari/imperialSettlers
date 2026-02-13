@@ -3,9 +3,11 @@ package cz.games.lp.backend.orchestration;
 import cz.games.lp.backend.infrastructure.console.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
-import cz.games.lp.gamecore.actions.ProduceResult;
+import cz.games.lp.gamecore.actions.ProduceChoice;
 import cz.games.lp.gamecore.components.Card;
+import cz.games.lp.gamecore.components.Player;
 import cz.games.lp.gamecore.components.enums.CardCategories;
+import cz.games.lp.gamecore.components.enums.Sources;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 @Slf4j
 @Component
@@ -105,31 +108,58 @@ public class ConsoleOrchestrator {
         addAction(ACTION_CHOOSER_TITLE);
     }
 
-    private void produceOneCard(int produceResultIndex, List<ProduceResult> produceResults) {
-        if (produceResultIndex == produceResults.size()) {
-            System.out.println("piča:)");
+    private void produceDeals() {
+        log.debug("produceDeals");
+        addAction(ACTION_CHOOSER_TITLE);
+    }
+
+    private void produceOneCard(int produceChoiceIndex, List<ProduceChoice> produceChoices) {
+        log.debug("produceOneCard");
+        if (produceChoiceIndex == produceChoices.size()) {
+            produceDeals();
             return;
         }
-        ProduceResult produceResult = produceResults.get(produceResultIndex);
-        if (produceResult.orSource().isEmpty()) {
-            log.info("karta {} produkuje: {}", produceResult.cardID(), produceResult.source());
-            produceOneCard(produceResultIndex + 1, produceResults);
+        ProduceChoice produceChoice = produceChoices.get(produceChoiceIndex);
+        if (produceChoice.orSource().isEmpty()) {
+            log.info("karta {} produkuje: {}", produceChoice.cardID(), produceChoice.source());
+            produceOneCard(produceChoiceIndex + 1, produceChoices);
         } else {
-            gamePossibleChoices.put("Buď:" + produceResult.source(), () -> {
-                produceResult.orSource().clear();
-                produceOneCard(produceResultIndex, produceResults);
-            });
-            gamePossibleChoices.put("Nebo:" + produceResult.orSource(), () -> {
-                produceResult.source().clear();
-                produceResult.source().addAll(produceResult.orSource());
-                produceResult.orSource().clear();
-                produceOneCard(produceResultIndex, produceResults);
-            });
-            addAction(SOURCE_CHOOSER_TITLE);
+            orEffectFilled(produceChoice, () -> produceOneCard(produceChoiceIndex, produceChoices));
         }
     }
 
+    private void orEffectFilled(ProduceChoice produceChoice, Runnable runnable) {
+        log.debug("orEffectFilled");
+        Player player = gamePartsServices.getPlayerService().getPlayer(roomID, playerID);
+        if (Sources.FACTION_CARD.equals(produceChoice.source().getFirst()) && Sources.FACTION_CARD.equals(produceChoice.orSource().getFirst())) {
+            IntStream.range(0, 2).forEach(i -> {
+                int cardNumber = player.getFactionCardDeck().getCards().get(i);
+                Card card = gamePartsServices.getCardService().getNewPlayerCard(player, cardNumber);
+                gamePossibleChoices.put(card.toString(), () -> {
+                    gamePartsServices.getCardService().dealCardToPlayer(player, cardNumber, true);
+                    produceChoice.orSource().clear();
+                    runnable.run();
+                });
+            });
+        } else {
+            gamePossibleChoices.put("" + produceChoice.source(), () -> {
+                gamePartsServices.getSourceService().giveSourcesToPlayer(player, produceChoice.source());
+                produceChoice.orSource().clear();
+                runnable.run();
+            });
+            gamePossibleChoices.put("" + produceChoice.orSource(), () -> {
+                gamePartsServices.getSourceService().giveSourcesToPlayer(player, produceChoice.orSource());
+                produceChoice.source().clear();
+                produceChoice.source().addAll(produceChoice.orSource());
+                produceChoice.orSource().clear();
+                runnable.run();
+            });
+        }
+        addAction(SOURCE_CHOOSER_TITLE);
+    }
+
     private void mockData() {
+        log.debug("mockData");
         List<Card> cards = gamePartsServices.getCardService().getCardActions().getCardCatalog().cardMap().values()
                 .stream()
                 .filter(card -> CardCategories.FACTION_PRODUCTION.equals(card.getCardCategory())
@@ -137,10 +167,7 @@ public class ConsoleOrchestrator {
                 .map(card -> card.toBuilder().build())
                 .sorted(Comparator.comparing(Card::getCardId))
                 .toList();
-        cards.getFirst().setSamurai(true);
-        cards.get(2).setSamurai(true);
         gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getBuiltLocations().put(CardCategories.FACTION_PRODUCTION, cards);
-        gamePartsServices.getGameService().getRoom(roomID).getCurrentPlayer().getBuiltLocations().get(CardCategories.COMMON_PROPERTIES).add(gamePartsServices.getCardService().getCardActions().getCardCatalog().cardMap().get("com078").toBuilder().build());
     }
 
     private void performActionsPhase() {

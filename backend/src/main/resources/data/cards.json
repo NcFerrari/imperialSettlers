@@ -1961,7 +1961,8 @@
     "condition": null,
     "dealSource": "SWORD",
     "orEffect": [
-      "SCORE_TWO_POINTS"
+      "SCORE_POINT",
+      "SCORE_POINT"
     ],
     "sourcesForBuild": [
       "FOOD",

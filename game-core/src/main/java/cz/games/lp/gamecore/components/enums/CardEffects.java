@@ -14,7 +14,6 @@ public enum CardEffects {
     OBTAIN_FOOD(Sources.FOOD),
     SCORE_POINT(Sources.VICTORY_POINT),
     OBTAIN_CARD(Sources.CARD),
-    SCORE_TWO_POINTS(Sources.VICTORY_POINT),
     PRODUCE_ANOTHER_PRODUCTION(null),
     OBTAIN_TWO_SAMURAIS(null),
     OBTAIN_TWO_CARDS(null),
