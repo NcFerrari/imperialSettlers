@@ -17,6 +17,7 @@ import java.util.stream.Stream;
 public class ConsoleUI {
 
     private final Map<String, Runnable> actions = new LinkedHashMap<>();
+    private final Map<String, Runnable> cachedActions = new LinkedHashMap<>();
     private final Map<String, Runnable> commonActions = new LinkedHashMap<>();
     private final ConsolePrinter consolePrinter;
     private final Executor executor;
@@ -48,7 +49,7 @@ public class ConsoleUI {
                 }
                 int number = validateChoice(line);
                 if (number > -1) {
-                    Stream.of(actions.values(), commonActions.values()).flatMap(Collection::stream).toList().get(number).run();
+                    Stream.of(cachedActions.values(), commonActions.values()).flatMap(Collection::stream).toList().get(number).run();
                 }
             }
         } catch (Exception e) {
@@ -64,7 +65,7 @@ public class ConsoleUI {
         try {
             number = Integer.parseInt(line);
             number--;
-            if (number >= actions.size() + commonActions.size() || number < 0) {
+            if (number >= cachedActions.size() + commonActions.size() || number < 0) {
                 throw new NumberFormatException();
             }
             return number;
@@ -85,20 +86,22 @@ public class ConsoleUI {
         commonActions.clear();
     }
 
-    public void addActions(Map<String, Runnable> mapOfActions) {
-        log.debug("addPhaseAction");
-        actions.clear();
-        actions.putAll(mapOfActions);
+    public void putAction(String key, Runnable runnable) {
+        log.debug("putAction");
+        actions.put(key, runnable);
     }
 
     public void showActionChoices(String text) {
         log.debug("showActionChoices {}", text);
         consolePrinter.setChoiceTitle(text);
+        cachedActions.clear();
+        cachedActions.putAll(actions);
+        actions.clear();
         showActionChoices();
     }
 
     public void showActionChoices() {
         log.debug("showActionChoices");
-        consolePrinter.showInput(Stream.concat(actions.keySet().stream(), commonActions.keySet().stream()).toList());
+        consolePrinter.showInput(Stream.concat(cachedActions.keySet().stream(), commonActions.keySet().stream()).toList());
     }
 }

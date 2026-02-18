@@ -47,7 +47,7 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
                         }
                     });
         }
-        return new ProduceChoice(card.getCardId(), sourcesList, getSourcesFromEffects(card.getOrEffect()));
+        return new ProduceChoice(card.getCardId(), sourcesList, getSourcesFromEffects(card.getOrEffect()), null);
     }
 
     private List<Sources> conditionProcess(Card card, UUID roomID, UUID playerID) {
@@ -69,5 +69,23 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
                 .stream()
                 .map(CardEffects::getSource)
                 .toList());
+    }
+
+    public Map<UUID, List<ProduceChoice>> produceDeals(UUID roomID) {
+        return gameRoomActions.getRoom(roomID).getPlayers().stream().collect(Collectors.toMap(Player::getPlayerID, this::produceDeals));
+    }
+
+    private List<ProduceChoice> produceDeals(Player player) {
+        player.getDeals()
+                .stream()
+                .filter(card -> !Sources.CARD.equals(card.getDealSource()))
+                .forEach(card -> {
+                    if (Sources.VICTORY_POINT.equals(card.getDealSource())) {
+                        playerActions.addVictoryPointToPlayer(player);
+                    } else {
+                        player.getOwnSources().merge(card.getDealSource(), 1, Integer::sum);
+                    }
+                });
+        return player.getDeals().stream().map(card -> new ProduceChoice(card.getCardId(), null, null, card.getDealSource())).toList();
     }
 }

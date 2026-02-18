@@ -1,5 +1,6 @@
 package cz.games.lp.backend.infrastructure.console;
 
+import cz.games.lp.gamecore.actions.ProduceChoice;
 import cz.games.lp.gamecore.components.GameRoom;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -49,6 +50,10 @@ public class ConsolePrinter {
         gameRoom.getCurrentPlayer().getCardsInHand().forEach(card -> log.info(card.toString()));
         separator();
         separator();
+        log.info("Dohody:");
+        gameRoom.getCurrentPlayer().getDeals().forEach(deal -> log.info(deal.toString()));
+        separator();
+        separator();
         log.info("Postavené lokace:");
         gameRoom.getCurrentPlayer().getBuiltLocations().values().forEach(card -> log.info(card.toString()));
         separator();
@@ -70,5 +75,9 @@ public class ConsolePrinter {
 
     private void separator() {
         log.info(SEPARATOR);
+    }
+
+    public void dealProduceInfo(ProduceChoice produceChoice) {
+        log.info("karta {} produkuje z dohody: {}", produceChoice.cardID(), produceChoice.deal());
     }
 }

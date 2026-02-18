@@ -29,4 +29,10 @@ public class ProductionServiceImpl implements ProductionService {
         log.debug("performProductionPhase");
         return productionActions.performProductionPhase(roomID);
     }
+
+    @Override
+    public Map<UUID, List<ProduceChoice>> produceDeals(UUID roomID) {
+        log.debug("produceDeals");
+        return productionActions.produceDeals(roomID);
+    }
 }

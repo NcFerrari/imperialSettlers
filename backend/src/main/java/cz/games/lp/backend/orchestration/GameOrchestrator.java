@@ -2,7 +2,6 @@ package cz.games.lp.backend.orchestration;
 
 import cz.games.lp.backend.infrastructure.mapping.GameDataMapper;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
-import cz.games.lp.gamecore.components.enums.CardCategories;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -30,9 +29,7 @@ public class GameOrchestrator {
         log.debug("startGame");
         prepareGameData();
         UUID roomID = gamePartsServices.getGameService().createNewGameRoom();
-        log.info("room ID = {}", roomID);
         UUID playerID = gamePartsServices.getPlayerService().addPlayer(roomID);
-        log.info("player ID = {}", playerID);
         consoleOrchestrator.startConsoleGame(roomID, playerID);
     }
 
