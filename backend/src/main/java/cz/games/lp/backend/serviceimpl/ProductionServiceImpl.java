@@ -41,4 +41,9 @@ public class ProductionServiceImpl implements ProductionService {
         log.debug("produceFactionBoard");
         return productionActions.produceFactionBoard(roomID);
     }
+
+    @Override
+    public Map<UUID, List<ProduceChoice>> produceCommonCards(UUID roomID) {
+        return productionActions.produceCommonCards(roomID);
+    }
 }

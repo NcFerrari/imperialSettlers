@@ -54,7 +54,8 @@ public class ProductionOrchestrator {
                 gamePartsServices.getProductionService().produceFactionBoard(roomID).get(playerID).source().forEach(source -> log.info("Frakční deska produkuje {}", source));
                 doProduce(ProductionStates.COMMON_CARDS_PRODUCE);
             }
-            case COMMON_CARDS_PRODUCE -> consoleServices.getConsoleUI().showActionChoices("a");
+            case COMMON_CARDS_PRODUCE ->
+                    gamePartsServices.getProductionService().produceCommonCards(roomID).get(playerID).forEach(produceChoice -> log.info("Karta {} produkuje: {}", produceChoice.cardID(), produceChoice.source()));
         }
     }
 

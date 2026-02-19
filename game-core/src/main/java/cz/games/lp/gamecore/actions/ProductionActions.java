@@ -11,6 +11,7 @@ import cz.games.lp.gamecore.components.enums.Sources;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -28,18 +29,28 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
                 ));
     }
 
+    public Map<UUID, List<ProduceChoice>> produceCommonCards(UUID roomID) {
+        return gameRoomActions.getRoom(roomID).getPlayers()
+                .stream()
+                .collect(Collectors.toMap(
+                        Player::getPlayerID,
+                        player -> player.getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).stream().map(card -> produceFromSingleCard(card, roomID, player.getPlayerID())).toList()
+                ));
+    }
+
     private ProduceChoice produceFromSingleCard(Card card, UUID roomID, UUID playerID) {
         List<Sources> sourcesList = card.getCondition() != null ? conditionProcess(card, roomID, playerID) : getSourcesFromEffects(card.getCardEffect());
         Player player = playerActions.getPlayer(roomID, playerID);
         if (card.getOrEffect().isEmpty()) {
             sourcesList
                     .stream()
-                    .filter(source -> !List.of(Sources.FACTION_CARD, Sources.CARD).contains(source))
+                    .filter(source -> !Objects.equals(Sources.CARD, source))
                     .forEach(source -> {
                         switch (source) {
                             case Sources.VICTORY_POINT -> playerActions.addVictoryPointToPlayer(player);
                             case Sources.COMMON_CARD ->
                                     cardActions.dealCommonCard(player, gameRoomActions.getRoom(roomID));
+                            case Sources.FACTION_CARD -> cardActions.dealFactionCard(player);
                             default -> player.getOwnSources().merge(source, 1, Integer::sum);
                         }
                     });
@@ -90,6 +101,9 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
         gameRoomActions.getRoom(roomID).getPlayers().forEach(player -> player.getFaction().getFactionProduction().forEach(source -> player.getOwnSources().merge(source, 1, Integer::sum)));
         return gameRoomActions.getRoom(roomID).getPlayers()
                 .stream()
-                .collect(Collectors.toMap(Player::getPlayerID, player -> new ProduceChoice(null, player.getFaction().getFactionProduction(), null, null)));
+                .collect(Collectors.toMap(
+                        Player::getPlayerID,
+                        player -> new ProduceChoice(null, player.getFaction().getFactionProduction(), null, null)
+                ));
     }
 }

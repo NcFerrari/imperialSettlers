@@ -3,11 +3,11 @@ package cz.games.lp.backend.orchestration;
 import cz.games.lp.backend.orchestration.enums.ConsoleStates;
 import cz.games.lp.backend.service.agregates.ConsoleServices;
 import cz.games.lp.backend.service.agregates.GamePartsServices;
+import cz.games.lp.gamecore.components.enums.CardCategories;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
-import java.util.stream.Stream;
 
 @Slf4j
 @Component
@@ -103,8 +103,11 @@ public class ConsoleOrchestrator {
 
     private void mockData() {
         log.debug("mockData");
-        String[] cardIDs = {"bar008", "jap025", "jap026", "jap010", "jap003", "jap005", "jap009", "jap015"};
-        Stream.of(cardIDs).forEach(cardID -> gamePartsServices.getPlayerService().getPlayer(roomID, playerID).getDeals().add(gamePartsServices.getCardService().cardMap().get(cardID)));
+        gamePartsServices.getCardService().cardMap().values()
+                .stream()
+                .filter(card -> CardCategories.COMMON_PRODUCTION.equals(card.getCardCategory()))
+                .filter(card -> !card.getCardId().equals("com016"))
+                .forEach(card -> gamePartsServices.getPlayerService().getPlayer(roomID, playerID).getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).add(card));
     }
 
     private void performActionsPhase() {

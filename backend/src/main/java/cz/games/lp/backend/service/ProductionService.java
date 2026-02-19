@@ -13,4 +13,6 @@ public interface ProductionService {
     Map<UUID, List<ProduceChoice>> produceDeals(UUID roomID);
 
     Map<UUID, ProduceChoice> produceFactionBoard(UUID roomID);
+
+    Map<UUID, List<ProduceChoice>> produceCommonCards(UUID roomID);
 }
