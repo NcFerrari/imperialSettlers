@@ -25,14 +25,20 @@ public class ProductionServiceImpl implements ProductionService {
     }
 
     @Override
-    public Map<UUID, List<ProduceChoice>> performProductionPhase(UUID roomID) {
+    public Map<UUID, List<ProduceChoice>> produceFactionCards(UUID roomID) {
         log.debug("performProductionPhase");
-        return productionActions.performProductionPhase(roomID);
+        return productionActions.produceFactionCards(roomID);
     }
 
     @Override
     public Map<UUID, List<ProduceChoice>> produceDeals(UUID roomID) {
         log.debug("produceDeals");
         return productionActions.produceDeals(roomID);
+    }
+
+    @Override
+    public Map<UUID, ProduceChoice> produceFactionBoard(UUID roomID) {
+        log.debug("produceFactionBoard");
+        return productionActions.produceFactionBoard(roomID);
     }
 }

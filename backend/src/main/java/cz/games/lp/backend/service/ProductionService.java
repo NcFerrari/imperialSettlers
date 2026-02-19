@@ -8,7 +8,9 @@ import java.util.UUID;
 
 public interface ProductionService {
 
-    Map<UUID, List<ProduceChoice>> performProductionPhase(UUID roomID);
+    Map<UUID, List<ProduceChoice>> produceFactionCards(UUID roomID);
 
     Map<UUID, List<ProduceChoice>> produceDeals(UUID roomID);
+
+    Map<UUID, ProduceChoice> produceFactionBoard(UUID roomID);
 }

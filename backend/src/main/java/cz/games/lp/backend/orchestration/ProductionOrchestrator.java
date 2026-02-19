@@ -21,6 +21,8 @@ public class ProductionOrchestrator {
     private static final String SOURCE_CHOOSER_TITLE = "Zvolte si zdroj produkce:";
     private final GamePartsServices gamePartsServices;
     private final ConsoleServices consoleServices;
+    private List<ProduceChoice> produceChoices;
+    private Player player;
     private UUID roomID;
     private UUID playerID;
 
@@ -33,21 +35,30 @@ public class ProductionOrchestrator {
         log.debug("performProduction");
         this.roomID = roomID;
         this.playerID = playerID;
+        player = gamePartsServices.getPlayerService().getPlayer(roomID, playerID);
         doProduce(ProductionStates.FACTION_CARDS_PRODUCE);
     }
 
     private void doProduce(ProductionStates productionState) {
         log.debug("doProduce");
         switch (productionState) {
-            case FACTION_CARDS_PRODUCE ->
-                    produceOneCard(0, gamePartsServices.getProductionService().performProductionPhase(roomID).get(playerID));
-            case DEALS_PRODUCE -> produceDeals();
-//            case FACTION_BOARD_PRODUCE ->
-//            case COMMON_CARDS_PRODUCE ->
+            case FACTION_CARDS_PRODUCE -> {
+                produceChoices = gamePartsServices.getProductionService().produceFactionCards(roomID).get(playerID);
+                produceOneCard(0);
+            }
+            case DEALS_PRODUCE -> {
+                produceChoices = gamePartsServices.getProductionService().produceDeals(roomID).get(playerID);
+                produceDeal(0);
+            }
+            case FACTION_BOARD_PRODUCE -> {
+                gamePartsServices.getProductionService().produceFactionBoard(roomID).get(playerID).source().forEach(source -> log.info("Frakční deska produkuje {}", source));
+                doProduce(ProductionStates.COMMON_CARDS_PRODUCE);
+            }
+            case COMMON_CARDS_PRODUCE -> consoleServices.getConsoleUI().showActionChoices("a");
         }
     }
 
-    private void produceOneCard(int produceChoiceIndex, List<ProduceChoice> produceChoices) {
+    private void produceOneCard(int produceChoiceIndex) {
         log.debug("produceOneCard");
         if (produceChoiceIndex == produceChoices.size()) {
             doProduce(ProductionStates.DEALS_PRODUCE);
@@ -56,15 +67,14 @@ public class ProductionOrchestrator {
         ProduceChoice produceChoice = produceChoices.get(produceChoiceIndex);
         if (produceChoice.orSource().isEmpty()) {
             log.info("karta {} produkuje: {}", produceChoice.cardID(), produceChoice.source());
-            produceOneCard(produceChoiceIndex + 1, produceChoices);
+            produceOneCard(produceChoiceIndex + 1);
         } else {
-            orEffectFilled(produceChoice, () -> produceOneCard(produceChoiceIndex, produceChoices));
+            orEffectFilled(produceChoice, () -> produceOneCard(produceChoiceIndex));
         }
     }
 
     private void orEffectFilled(ProduceChoice produceChoice, Runnable runnable) {
         log.debug("orEffectFilled");
-        Player player = gamePartsServices.getPlayerService().getPlayer(roomID, playerID);
         if (Sources.FACTION_CARD.equals(produceChoice.source().getFirst()) && Sources.FACTION_CARD.equals(produceChoice.orSource().getFirst())) {
             IntStream.range(0, 2).forEach(i -> {
                 int cardNumber = player.getFactionCardDeck().getCards().get(i);
@@ -92,24 +102,27 @@ public class ProductionOrchestrator {
         consoleServices.getConsoleUI().showActionChoices(SOURCE_CHOOSER_TITLE);
     }
 
-    //TODO: separate loop into recursion method
-    private void produceDeals() {
-        log.debug("produceDeals");
-        gamePartsServices.getProductionService().produceDeals(roomID).get(playerID).forEach(produceChoice -> {
-            if (Sources.CARD.equals(produceChoice.deal())) {
-                Player player = gamePartsServices.getPlayerService().getPlayer(roomID, playerID);
-                consoleServices.getConsoleUI().putAction("Frakční karta", () -> {
-                    gamePartsServices.getCardService().dealFactionCardToPlayer(player);
-                    consoleServices.getConsolePrinter().dealProduceInfo(produceChoice);
-                });
-                consoleServices.getConsoleUI().putAction("Běžná karta", () -> {
-                    gamePartsServices.getCardService().dealCommonCardToPlayer(player, gamePartsServices.getGameService().getRoom(roomID));
-                    consoleServices.getConsolePrinter().dealProduceInfo(produceChoice);
-                });
-                consoleServices.getConsoleUI().showActionChoices(SOURCE_CHOOSER_TITLE);
-            } else {
-                consoleServices.getConsolePrinter().dealProduceInfo(produceChoice);
-            }
-        });
+    private void produceDeal(int dealIndex) {
+        log.debug("produceDeal");
+        if (dealIndex == produceChoices.size()) {
+            doProduce(ProductionStates.FACTION_BOARD_PRODUCE);
+            return;
+        }
+        if (Sources.CARD.equals(produceChoices.get(dealIndex).deal())) {
+            consoleServices.getConsoleUI().putAction("Frakční karta", () -> {
+                gamePartsServices.getCardService().dealFactionCardToPlayer(player);
+                consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(dealIndex));
+                produceDeal(dealIndex + 1);
+            });
+            consoleServices.getConsoleUI().putAction("Běžná karta", () -> {
+                gamePartsServices.getCardService().dealCommonCardToPlayer(player, gamePartsServices.getGameService().getRoom(roomID));
+                consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(dealIndex));
+                produceDeal(dealIndex + 1);
+            });
+            consoleServices.getConsoleUI().showActionChoices(SOURCE_CHOOSER_TITLE);
+        } else {
+            consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(dealIndex));
+            produceDeal(dealIndex + 1);
+        }
     }
 }

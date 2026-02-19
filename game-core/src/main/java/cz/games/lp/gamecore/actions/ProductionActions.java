@@ -18,17 +18,14 @@ import java.util.stream.Collectors;
 public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions playerActions, CardActions cardActions,
                                 SourceActions sourceActions) {
 
-    public Map<UUID, List<ProduceChoice>> performProductionPhase(UUID roomID) {
+    public Map<UUID, List<ProduceChoice>> produceFactionCards(UUID roomID) {
         gameRoomActions.getRoom(roomID).setCurrentPhase(RoundPhases.PRODUCTION);
-        return produceFactionProductionCards(roomID);
-    }
-
-    private Map<UUID, List<ProduceChoice>> produceFactionProductionCards(UUID roomID) {
-        return gameRoomActions.getRoom(roomID).getPlayers().stream().collect(Collectors.toMap(Player::getPlayerID, player -> producePlayerCards(player, roomID)));
-    }
-
-    private List<ProduceChoice> producePlayerCards(Player player, UUID roomID) {
-        return player.getBuiltLocations().get(CardCategories.FACTION_PRODUCTION).stream().map(card -> produceFromSingleCard(card, roomID, player.getPlayerID())).toList();
+        return gameRoomActions.getRoom(roomID).getPlayers()
+                .stream()
+                .collect(Collectors.toMap(
+                        Player::getPlayerID,
+                        player -> player.getBuiltLocations().get(CardCategories.FACTION_PRODUCTION).stream().map(card -> produceFromSingleCard(card, roomID, player.getPlayerID())).toList()
+                ));
     }
 
     private ProduceChoice produceFromSingleCard(Card card, UUID roomID, UUID playerID) {
@@ -87,5 +84,12 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
                     }
                 });
         return player.getDeals().stream().map(card -> new ProduceChoice(card.getCardId(), null, null, card.getDealSource())).toList();
+    }
+
+    public Map<UUID, ProduceChoice> produceFactionBoard(UUID roomID) {
+        gameRoomActions.getRoom(roomID).getPlayers().forEach(player -> player.getFaction().getFactionProduction().forEach(source -> player.getOwnSources().merge(source, 1, Integer::sum)));
+        return gameRoomActions.getRoom(roomID).getPlayers()
+                .stream()
+                .collect(Collectors.toMap(Player::getPlayerID, player -> new ProduceChoice(null, player.getFaction().getFactionProduction(), null, null)));
     }
 }
