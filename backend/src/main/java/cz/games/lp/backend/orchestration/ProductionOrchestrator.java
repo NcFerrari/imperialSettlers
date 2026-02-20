@@ -44,33 +44,39 @@ public class ProductionOrchestrator {
         switch (productionState) {
             case FACTION_CARDS_PRODUCE -> {
                 produceChoices = gamePartsServices.getProductionService().produceFactionCards(roomID).get(playerID);
-                produceOneCard(0);
+                produceOneCard(0, () -> doProduce(ProductionStates.DEALS_PRODUCE));
             }
             case DEALS_PRODUCE -> {
                 produceChoices = gamePartsServices.getProductionService().produceDeals(roomID).get(playerID);
                 produceDeal(0);
             }
             case FACTION_BOARD_PRODUCE -> {
-                gamePartsServices.getProductionService().produceFactionBoard(roomID).get(playerID).source().forEach(source -> log.info("Frakční deska produkuje {}", source));
+                gamePartsServices.getProductionService().produceFactionBoard(roomID).get(playerID).source().forEach(source -> consoleServices.getConsolePrinter().factionBoardProduction(source));
                 doProduce(ProductionStates.COMMON_CARDS_PRODUCE);
             }
-            case COMMON_CARDS_PRODUCE ->
-                    gamePartsServices.getProductionService().produceCommonCards(roomID).get(playerID).forEach(produceChoice -> log.info("Karta {} produkuje: {}", produceChoice.cardID(), produceChoice.source()));
+            case COMMON_CARDS_PRODUCE -> {
+                produceChoices = gamePartsServices.getProductionService().produceCommonCards(roomID).get(playerID);
+                produceOneCard(0, () -> consoleServices.getConsoleUI().showActionChoices("akce"));
+            }
         }
     }
 
-    private void produceOneCard(int produceChoiceIndex) {
+    private void produceOneCard(int produceChoiceIndex, Runnable nextProduction) {
         log.debug("produceOneCard");
         if (produceChoiceIndex == produceChoices.size()) {
-            doProduce(ProductionStates.DEALS_PRODUCE);
+            nextProduction.run();
             return;
         }
         ProduceChoice produceChoice = produceChoices.get(produceChoiceIndex);
         if (produceChoice.orSource().isEmpty()) {
-            log.info("karta {} produkuje: {}", produceChoice.cardID(), produceChoice.source());
-            produceOneCard(produceChoiceIndex + 1);
+            if (Sources.CARD.equals(produceChoices.get(produceChoiceIndex).source().getFirst())) {
+                cardSourceProduce(produceChoiceIndex, () -> produceOneCard(produceChoiceIndex + 1, nextProduction));
+            } else {
+                consoleServices.getConsolePrinter().cardProduction(produceChoice.cardID(), produceChoice.source());
+                produceOneCard(produceChoiceIndex + 1, nextProduction);
+            }
         } else {
-            orEffectFilled(produceChoice, () -> produceOneCard(produceChoiceIndex));
+            orEffectFilled(produceChoice, () -> produceOneCard(produceChoiceIndex, nextProduction));
         }
     }
 
@@ -110,20 +116,24 @@ public class ProductionOrchestrator {
             return;
         }
         if (Sources.CARD.equals(produceChoices.get(dealIndex).deal())) {
-            consoleServices.getConsoleUI().putAction("Frakční karta", () -> {
-                gamePartsServices.getCardService().dealFactionCardToPlayer(player);
-                consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(dealIndex));
-                produceDeal(dealIndex + 1);
-            });
-            consoleServices.getConsoleUI().putAction("Běžná karta", () -> {
-                gamePartsServices.getCardService().dealCommonCardToPlayer(player, gamePartsServices.getGameService().getRoom(roomID));
-                consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(dealIndex));
-                produceDeal(dealIndex + 1);
-            });
-            consoleServices.getConsoleUI().showActionChoices(SOURCE_CHOOSER_TITLE);
+            cardSourceProduce(dealIndex, () -> produceDeal(dealIndex + 1));
         } else {
             consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(dealIndex));
             produceDeal(dealIndex + 1);
         }
+    }
+
+    private void cardSourceProduce(int index, Runnable nextProduction) {
+        consoleServices.getConsoleUI().putAction("Frakční karta", () -> {
+            gamePartsServices.getCardService().dealFactionCardToPlayer(player);
+            consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(index));
+            nextProduction.run();
+        });
+        consoleServices.getConsoleUI().putAction("Běžná karta", () -> {
+            gamePartsServices.getCardService().dealCommonCardToPlayer(player, gamePartsServices.getGameService().getRoom(roomID));
+            consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(index));
+            nextProduction.run();
+        });
+        consoleServices.getConsoleUI().showActionChoices(SOURCE_CHOOSER_TITLE);
     }
 }

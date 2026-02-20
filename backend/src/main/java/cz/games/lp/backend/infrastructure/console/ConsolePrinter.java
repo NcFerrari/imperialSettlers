@@ -2,6 +2,7 @@ package cz.games.lp.backend.infrastructure.console;
 
 import cz.games.lp.gamecore.actions.ProduceChoice;
 import cz.games.lp.gamecore.components.GameRoom;
+import cz.games.lp.gamecore.components.enums.Sources;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -79,5 +80,13 @@ public class ConsolePrinter {
 
     public void dealProduceInfo(ProduceChoice produceChoice) {
         log.info("karta {} produkuje z dohody: {}", produceChoice.cardID(), produceChoice.deal());
+    }
+
+    public void factionBoardProduction(Sources source) {
+        log.info("Frakční deska produkuje {}", source);
+    }
+
+    public void cardProduction(String cardID, List<Sources> sources) {
+        log.info("Karta {} produkuje: {}", cardID, sources);
     }
 }
