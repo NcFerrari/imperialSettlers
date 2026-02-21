@@ -41,6 +41,12 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
     private ProduceChoice produceFromSingleCard(Card card, UUID roomID, UUID playerID) {
         List<Sources> sourcesList = card.getCondition() != null ? conditionProcess(card, roomID, playerID) : getSourcesFromEffects(card.getCardEffect());
         Player player = playerActions.getPlayer(roomID, playerID);
+        if (CardEffects.PRODUCE_ANOTHER_PRODUCTION.equals(card.getCardEffect().getFirst())) {
+            ProduceChoice produceChoice = new ProduceChoice(card.getCardId(), null, null, null);
+            produceChoice.setProduceAnotherProduction(true);
+            produceChoice.getAllBuiltProductions();
+            return produceChoice;
+        }
         if (card.getOrEffect().isEmpty()) {
             sourcesList
                     .stream()

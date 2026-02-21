@@ -79,7 +79,7 @@ public class ConsolePrinter {
     }
 
     public void dealProduceInfo(ProduceChoice produceChoice) {
-        log.info("karta {} produkuje z dohody: {}", produceChoice.cardID(), produceChoice.deal());
+        log.info("karta {} produkuje z dohody: {}", produceChoice.getCardID(), produceChoice.getDeal());
     }
 
     public void factionBoardProduction(Sources source) {

@@ -97,7 +97,7 @@ public class ConsoleOrchestrator {
 
     public void performProductionPhase() {
         log.debug("performProductionPhase");
-        consoleServices.getConsoleUI().putAction("Zahajit fazi produkce", () -> productionOrchestrator.performProduction(roomID, playerID));
+        consoleServices.getConsoleUI().putAction("Zahajit fazi produkce", () -> productionOrchestrator.performProduction(roomID, playerID, () -> playGame(ConsoleStates.PERFORM_ACTIONS_PHASE)));
         consoleServices.getConsoleUI().showActionChoices(ACTION_CHOOSER_TITLE);
     }
 
@@ -106,7 +106,6 @@ public class ConsoleOrchestrator {
         gamePartsServices.getCardService().cardMap().values()
                 .stream()
                 .filter(card -> CardCategories.COMMON_PRODUCTION.equals(card.getCardCategory()))
-                .filter(card -> !card.getCardId().equals("com016"))
                 .forEach(card -> gamePartsServices.getPlayerService().getPlayer(roomID, playerID).getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).add(card));
     }
 
