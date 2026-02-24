@@ -1,4 +1,4 @@
-package cz.games.lp.backend.service.agregates;
+package cz.games.lp.backend.service.unifiedservices;
 
 import cz.games.lp.backend.service.CardService;
 import cz.games.lp.backend.service.FactionService;

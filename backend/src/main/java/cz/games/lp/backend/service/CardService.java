@@ -20,4 +20,6 @@ public interface CardService {
     String dealFactionCardToPlayer(Player player);
 
     String dealCommonCardToPlayer(Player player, GameRoom gameRoom);
+
+    Card getCardByID(String cardID);
 }

@@ -1,6 +1,6 @@
 package cz.games.lp.backend.infrastructure.console;
 
-import cz.games.lp.gamecore.actions.ProduceChoice;
+import cz.games.lp.gamecore.actions.ProduceReport;
 import cz.games.lp.gamecore.components.GameRoom;
 import cz.games.lp.gamecore.components.enums.Sources;
 import lombok.extern.slf4j.Slf4j;
@@ -78,8 +78,8 @@ public class ConsolePrinter {
         log.info(SEPARATOR);
     }
 
-    public void dealProduceInfo(ProduceChoice produceChoice) {
-        log.info("karta {} produkuje z dohody: {}", produceChoice.getCardID(), produceChoice.getDeal());
+    public void dealProduceInfo(ProduceReport produceReport) {
+        log.info("karta {} produkuje z dohody: {}", produceReport.getCardID(), produceReport.getDeal());
     }
 
     public void factionBoardProduction(Sources source) {

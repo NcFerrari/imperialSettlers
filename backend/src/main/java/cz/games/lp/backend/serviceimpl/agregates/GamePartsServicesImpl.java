@@ -6,7 +6,7 @@ import cz.games.lp.backend.service.GameService;
 import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.backend.service.ProductionService;
 import cz.games.lp.backend.service.SourceService;
-import cz.games.lp.backend.service.agregates.GamePartsServices;
+import cz.games.lp.backend.service.unifiedservices.GamePartsServices;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 

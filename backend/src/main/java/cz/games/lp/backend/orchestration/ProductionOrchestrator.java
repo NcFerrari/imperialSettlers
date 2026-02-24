@@ -1,9 +1,9 @@
 package cz.games.lp.backend.orchestration;
 
 import cz.games.lp.backend.orchestration.enums.ProductionStates;
-import cz.games.lp.backend.service.agregates.ConsoleServices;
-import cz.games.lp.backend.service.agregates.GamePartsServices;
-import cz.games.lp.gamecore.actions.ProduceChoice;
+import cz.games.lp.backend.service.unifiedservices.ConsoleServices;
+import cz.games.lp.backend.service.unifiedservices.GamePartsServices;
+import cz.games.lp.gamecore.actions.ProduceReport;
 import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.components.Player;
 import cz.games.lp.gamecore.components.enums.Sources;
@@ -19,9 +19,10 @@ import java.util.stream.IntStream;
 public class ProductionOrchestrator {
 
     private static final String SOURCE_CHOOSER_TITLE = "Zvolte si zdroj produkce:";
+    private static final String REPEAT_PRODUCTION_CHOICE_TITLE = "Zvolte kartu, kterou chcete produkovat znovu:";
     private final GamePartsServices gamePartsServices;
     private final ConsoleServices consoleServices;
-    private List<ProduceChoice> produceChoices;
+    private List<ProduceReport> produceReports;
     private Player player;
     private UUID roomID;
     private UUID playerID;
@@ -45,97 +46,129 @@ public class ProductionOrchestrator {
         log.debug("doProduce");
         switch (productionState) {
             case FACTION_CARDS_PRODUCE -> {
-                produceChoices = gamePartsServices.getProductionService().produceFactionCards(roomID).get(playerID);
-                produceOneCard(0, () -> doProduce(ProductionStates.DEALS_PRODUCE));
+                produceReports = gamePartsServices.getProductionService().produceFactionCards(roomID).get(playerID);
+                printAllCardsProduction(0, () -> doProduce(ProductionStates.DEALS_PRODUCE));
             }
             case DEALS_PRODUCE -> {
-                produceChoices = gamePartsServices.getProductionService().produceDeals(roomID).get(playerID);
-                produceDeal(0);
+//                produceReports = gamePartsServices.getProductionService().produceDeals(roomID).get(playerID);
+//                printDeals(0);
+                doProduce(ProductionStates.FACTION_BOARD_PRODUCE);
             }
             case FACTION_BOARD_PRODUCE -> {
                 gamePartsServices.getProductionService().produceFactionBoard(roomID).get(playerID).getSource().forEach(source -> consoleServices.getConsolePrinter().factionBoardProduction(source));
                 doProduce(ProductionStates.COMMON_CARDS_PRODUCE);
             }
             case COMMON_CARDS_PRODUCE -> {
-                produceChoices = gamePartsServices.getProductionService().produceCommonCards(roomID).get(playerID);
-                produceOneCard(0, methodAfterProduction);
+                produceReports = gamePartsServices.getProductionService().produceCommonCards(roomID).get(playerID);
+                printAllCardsProduction(0, methodAfterProduction);
             }
         }
     }
 
-    private void produceOneCard(int produceChoiceIndex, Runnable nextProduction) {
-        log.debug("produceOneCard");
-        if (produceChoiceIndex == produceChoices.size()) {
+    public void printAllCardsProduction(int produceReportIndex, Runnable nextProduction) {
+        log.debug("produceAllCards");
+        if (produceReportIndex == produceReports.size()) {
             nextProduction.run();
             return;
         }
-        ProduceChoice produceChoice = produceChoices.get(produceChoiceIndex);
-        if (produceChoice.getOrSource() == null || produceChoice.getOrSource().isEmpty()) {
-            if (produceChoices.get(produceChoiceIndex).isProduceAnotherProduction()) {
-
-            } else if (Sources.CARD.equals(produceChoices.get(produceChoiceIndex).getSource().getFirst())) {
-                cardSourceProduce(produceChoiceIndex, () -> produceOneCard(produceChoiceIndex + 1, nextProduction));
-            } else {
-                consoleServices.getConsolePrinter().cardProduction(produceChoice.getCardID(), produceChoice.getSource());
-                produceOneCard(produceChoiceIndex + 1, nextProduction);
-            }
-        } else {
-            orEffectFilled(produceChoice, () -> produceOneCard(produceChoiceIndex, nextProduction));
-        }
+        printOneCardProduction(produceReports.get(produceReportIndex), () -> printAllCardsProduction(produceReportIndex + 1, nextProduction));
     }
 
-    private void orEffectFilled(ProduceChoice produceChoice, Runnable runnable) {
+    private void printOneCardProduction(ProduceReport produceReport, Runnable nextProduction) {
+        log.debug("produceOneCard");
+        if (produceReport.getOrSource().isEmpty()) {
+            if (Sources.CARD.equals(produceReport.getSource().getFirst())) {
+//                cardSourceProduce();
+                if (nextProduction != null) {
+                    nextProduction.run();
+                }
+            } else {
+                consoleServices.getConsolePrinter().cardProduction(produceReport.getCardID(), produceReport.getSource());
+                if (nextProduction != null) {
+                    nextProduction.run();
+                }
+            }
+        } else {
+            orEffectFilled(produceReport, () -> printOneCardProduction(produceReport, nextProduction));
+        }
+    }
+//    private void produceOneCard(int produceChoiceIndex, Runnable nextProduction) {
+//        log.debug("produceOneCard");
+//        if (produceChoiceIndex == produceChoices.size()) {
+//            nextProduction.run();
+//            return;
+//        }
+//        ProduceChoice produceChoice = produceChoices.get(produceChoiceIndex);
+//        if (produceChoice.getOrSource() == null || produceChoice.getOrSource().isEmpty()) {
+//            if (produceChoices.get(produceChoiceIndex).isProduceAnotherProduction()) {
+//                produceChoices.get(produceChoiceIndex).getAllBuiltProductions().forEach(cardID -> consoleServices.getConsoleUI().putAction(cardID, () -> {
+//                    gamePartsServices.getProductionService().produceFromSingleCard(cardID, roomID, playerID);
+//                    produceOneCard(produceChoiceIndex + 1, nextProduction);
+//                }));
+//                consoleServices.getConsoleUI().showActionChoices(REPEAT_PRODUCTION_CHOICE_TITLE);
+//            } else if (Sources.CARD.equals(produceChoices.get(produceChoiceIndex).getSource().getFirst())) {
+//                cardSourceProduce(produceChoiceIndex, () -> produceOneCard(produceChoiceIndex + 1, nextProduction));
+//            } else {
+//                consoleServices.getConsolePrinter().cardProduction(produceChoice.getCardID(), produceChoice.getSource());
+//                produceOneCard(produceChoiceIndex + 1, nextProduction);
+//            }
+//        } else {
+//            orEffectFilled(produceChoice, () -> produceOneCard(produceChoiceIndex, nextProduction));
+//        }
+//    }
+
+    private void orEffectFilled(ProduceReport produceReport, Runnable printOneCardProductionAction) {
         log.debug("orEffectFilled");
-        if (Sources.FACTION_CARD.equals(produceChoice.getSource().getFirst()) && Sources.FACTION_CARD.equals(produceChoice.getOrSource().getFirst())) {
+        if (Sources.FACTION_CARD.equals(produceReport.getSource().getFirst()) && Sources.FACTION_CARD.equals(produceReport.getOrSource().getFirst())) {
             IntStream.range(0, 2).forEach(i -> {
                 int cardNumber = player.getFactionCardDeck().getCards().get(i);
                 Card card = gamePartsServices.getCardService().getNewPlayerCard(player, cardNumber);
                 consoleServices.getConsoleUI().putAction(card.toString(), () -> {
                     gamePartsServices.getCardService().dealCardToPlayer(player, cardNumber, true);
-                    produceChoice.getOrSource().clear();
-                    runnable.run();
+                    produceReport.getOrSource().clear();
+                    printOneCardProductionAction.run();
                 });
             });
         } else {
-            consoleServices.getConsoleUI().putAction("" + produceChoice.getSource(), () -> {
-                gamePartsServices.getSourceService().giveSourcesToPlayer(player, produceChoice.getSource());
-                produceChoice.getOrSource().clear();
-                runnable.run();
+            consoleServices.getConsoleUI().putAction("" + produceReport.getSource(), () -> {
+                gamePartsServices.getSourceService().giveSourcesToPlayer(player, produceReport.getSource());
+                produceReport.getOrSource().clear();
+                printOneCardProductionAction.run();
             });
-            consoleServices.getConsoleUI().putAction("" + produceChoice.getOrSource(), () -> {
-                gamePartsServices.getSourceService().giveSourcesToPlayer(player, produceChoice.getOrSource());
-                produceChoice.getSource().clear();
-                produceChoice.getSource().addAll(produceChoice.getOrSource());
-                produceChoice.getOrSource().clear();
-                runnable.run();
+            consoleServices.getConsoleUI().putAction("" + produceReport.getOrSource(), () -> {
+                gamePartsServices.getSourceService().giveSourcesToPlayer(player, produceReport.getOrSource());
+                produceReport.getSource().clear();
+                produceReport.getSource().addAll(produceReport.getOrSource());
+                produceReport.getOrSource().clear();
+                printOneCardProductionAction.run();
             });
         }
         consoleServices.getConsoleUI().showActionChoices(SOURCE_CHOOSER_TITLE);
     }
 
-    private void produceDeal(int dealIndex) {
+    private void printDeals(int dealIndex) {
         log.debug("produceDeal");
-        if (dealIndex == produceChoices.size()) {
+        if (dealIndex == produceReports.size()) {
             doProduce(ProductionStates.FACTION_BOARD_PRODUCE);
             return;
         }
-        if (Sources.CARD.equals(produceChoices.get(dealIndex).getDeal())) {
-            cardSourceProduce(dealIndex, () -> produceDeal(dealIndex + 1));
+        if (Sources.CARD.equals(produceReports.get(dealIndex).getDeal())) {
+            cardSourceProduce(dealIndex, () -> printDeals(dealIndex + 1));
         } else {
-            consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(dealIndex));
-            produceDeal(dealIndex + 1);
+            consoleServices.getConsolePrinter().dealProduceInfo(produceReports.get(dealIndex));
+            printDeals(dealIndex + 1);
         }
     }
 
     private void cardSourceProduce(int index, Runnable nextProduction) {
         consoleServices.getConsoleUI().putAction("Frakční karta", () -> {
             gamePartsServices.getCardService().dealFactionCardToPlayer(player);
-            consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(index));
+            consoleServices.getConsolePrinter().dealProduceInfo(produceReports.get(index));
             nextProduction.run();
         });
         consoleServices.getConsoleUI().putAction("Běžná karta", () -> {
             gamePartsServices.getCardService().dealCommonCardToPlayer(player, gamePartsServices.getGameService().getRoom(roomID));
-            consoleServices.getConsolePrinter().dealProduceInfo(produceChoices.get(index));
+            consoleServices.getConsolePrinter().dealProduceInfo(produceReports.get(index));
             nextProduction.run();
         });
         consoleServices.getConsoleUI().showActionChoices(SOURCE_CHOOSER_TITLE);

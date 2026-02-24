@@ -5,7 +5,7 @@ import cz.games.lp.backend.service.GameService;
 import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.backend.service.ProductionService;
 import cz.games.lp.backend.service.SourceService;
-import cz.games.lp.gamecore.actions.ProduceChoice;
+import cz.games.lp.gamecore.actions.ProduceReport;
 import cz.games.lp.gamecore.actions.ProductionActions;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,25 +25,32 @@ public class ProductionServiceImpl implements ProductionService {
     }
 
     @Override
-    public Map<UUID, List<ProduceChoice>> produceFactionCards(UUID roomID) {
+    public Map<UUID, List<ProduceReport>> produceFactionCards(UUID roomID) {
         log.debug("performProductionPhase");
         return productionActions.produceFactionCards(roomID);
     }
 
     @Override
-    public Map<UUID, List<ProduceChoice>> produceDeals(UUID roomID) {
+    public Map<UUID, List<ProduceReport>> produceDeals(UUID roomID) {
         log.debug("produceDeals");
         return productionActions.produceDeals(roomID);
     }
 
     @Override
-    public Map<UUID, ProduceChoice> produceFactionBoard(UUID roomID) {
+    public Map<UUID, ProduceReport> produceFactionBoard(UUID roomID) {
         log.debug("produceFactionBoard");
         return productionActions.produceFactionBoard(roomID);
     }
 
     @Override
-    public Map<UUID, List<ProduceChoice>> produceCommonCards(UUID roomID) {
+    public Map<UUID, List<ProduceReport>> produceCommonCards(UUID roomID) {
+        log.debug("produceCommonCards");
         return productionActions.produceCommonCards(roomID);
+    }
+
+    @Override
+    public ProduceReport produceFromSingleCard(String cardID, UUID roomID, UUID playerID) {
+        log.debug("produceFromSingleCard");
+        return productionActions.produceFromSingleCard(cardID, roomID, playerID);
     }
 }

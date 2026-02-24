@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ProduceChoice {
+public class ProduceReport {
 
     private final String cardID;
     private final List<Sources> source;
@@ -19,7 +19,7 @@ public class ProduceChoice {
     private boolean produceAnotherProduction;
     private List<String> allBuiltProductions = new ArrayList<>();
 
-    public ProduceChoice(String cardID, List<Sources> source, List<Sources> orSource, Sources deal) {
+    ProduceReport(String cardID, List<Sources> source, List<Sources> orSource, Sources deal) {
         this.cardID = cardID;
         this.source = source;
         this.orSource = orSource;

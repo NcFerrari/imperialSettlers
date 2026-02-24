@@ -47,7 +47,7 @@ public class CardActions {
 
     private String dealCard(Player player, CardDeck cardDeck, int cardNumber) {
         String cardId = cardDeck.getCardPrefix().getCardPrefix() + (cardNumber < 10 ? "00" : "0") + cardNumber;
-        Card card = cardCatalog.cardMap().get(cardId);
+        Card card = getCardByID(cardId);
         if (card != null) {
             player.getCardsInHand().add(card);
             cardDeck.getCards().remove((Integer) cardNumber);
@@ -64,6 +64,10 @@ public class CardActions {
     }
 
     public Card getNewPlayerCard(Player player, int cardNumber) {
-        return cardCatalog.cardMap().get(player.getFactionCardDeck().getCardPrefix().getCardPrefix() + (cardNumber < 10 ? "00" : "0") + cardNumber);
+        return getCardByID(player.getFactionCardDeck().getCardPrefix().getCardPrefix() + (cardNumber < 10 ? "00" : "0") + cardNumber);
+    }
+
+    public Card getCardByID(String cardID) {
+        return cardCatalog.cardMap().get(cardID);
     }
 }

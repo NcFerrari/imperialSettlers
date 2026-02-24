@@ -1,8 +1,8 @@
 package cz.games.lp.backend.orchestration;
 
 import cz.games.lp.backend.orchestration.enums.ConsoleStates;
-import cz.games.lp.backend.service.agregates.ConsoleServices;
-import cz.games.lp.backend.service.agregates.GamePartsServices;
+import cz.games.lp.backend.service.unifiedservices.ConsoleServices;
+import cz.games.lp.backend.service.unifiedservices.GamePartsServices;
 import cz.games.lp.gamecore.components.enums.CardCategories;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -103,15 +103,20 @@ public class ConsoleOrchestrator {
 
     private void mockData() {
         log.debug("mockData");
-        gamePartsServices.getCardService().cardMap().values()
+        gamePartsServices.getCardService().cardMap()
+                .entrySet()
                 .stream()
-                .filter(card -> CardCategories.COMMON_PRODUCTION.equals(card.getCardCategory()))
-                .forEach(card -> gamePartsServices.getPlayerService().getPlayer(roomID, playerID).getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).add(card));
+                .filter(entry -> CardCategories.COMMON_PRODUCTION.equals(entry.getValue().getCardCategory()))
+                .filter(entry -> entry.getValue().getCardId().contains("com"))
+                .forEach(entry -> {
+                    System.out.println(entry.getValue());
+                    gamePartsServices.getPlayerService().getPlayer(roomID, playerID).getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).add(entry.getValue());
+                });
     }
 
     private void performActionsPhase() {
         log.debug("performActionsPhase");
-        log.info(":)");
+        consoleServices.getConsoleUI().showActionChoices("action");
     }
 
     private void initCommonActions() {

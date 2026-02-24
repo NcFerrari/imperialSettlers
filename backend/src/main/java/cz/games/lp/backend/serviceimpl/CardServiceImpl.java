@@ -38,11 +38,19 @@ public class CardServiceImpl implements CardService {
 
     @Override
     public String dealFactionCardToPlayer(Player player) {
+        log.debug("dealFactionCardToPlayer");
         return cardActions.dealFactionCard(player);
     }
 
     @Override
     public String dealCommonCardToPlayer(Player player, GameRoom gameRoom) {
+        log.debug("dealCommonCardToPlayer");
         return cardActions.dealCommonCard(player, gameRoom);
+    }
+
+    @Override
+    public Card getCardByID(String cardID) {
+        log.debug("getCardByID");
+        return cardActions.getCardByID(cardID);
     }
 }

@@ -9,43 +9,50 @@ import cz.games.lp.gamecore.components.enums.RoundPhases;
 import cz.games.lp.gamecore.components.enums.Sources;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions playerActions, CardActions cardActions,
                                 SourceActions sourceActions) {
 
-    public Map<UUID, List<ProduceChoice>> produceFactionCards(UUID roomID) {
+    public Map<UUID, List<ProduceReport>> produceFactionCards(UUID roomID) {
         gameRoomActions.getRoom(roomID).setCurrentPhase(RoundPhases.PRODUCTION);
         return gameRoomActions.getRoom(roomID).getPlayers()
                 .stream()
                 .collect(Collectors.toMap(
                         Player::getPlayerID,
-                        player -> player.getBuiltLocations().get(CardCategories.FACTION_PRODUCTION).stream().map(card -> produceFromSingleCard(card, roomID, player.getPlayerID())).toList()
+                        player -> player.getBuiltLocations().get(CardCategories.FACTION_PRODUCTION).stream().map(card -> produceFromSingleCard(card.getCardId(), roomID, player.getPlayerID())).toList()
                 ));
     }
 
-    public Map<UUID, List<ProduceChoice>> produceCommonCards(UUID roomID) {
+    public Map<UUID, List<ProduceReport>> produceCommonCards(UUID roomID) {
         return gameRoomActions.getRoom(roomID).getPlayers()
                 .stream()
                 .collect(Collectors.toMap(
                         Player::getPlayerID,
-                        player -> player.getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).stream().map(card -> produceFromSingleCard(card, roomID, player.getPlayerID())).toList()
+                        player -> player.getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).stream().map(card -> produceFromSingleCard(card.getCardId(), roomID, player.getPlayerID())).toList()
                 ));
     }
 
-    private ProduceChoice produceFromSingleCard(Card card, UUID roomID, UUID playerID) {
+    public ProduceReport produceFromSingleCard(String cardID, UUID roomID, UUID playerID) {
+        Card card = cardActions.getCardByID(cardID);
         List<Sources> sourcesList = card.getCondition() != null ? conditionProcess(card, roomID, playerID) : getSourcesFromEffects(card.getCardEffect());
         Player player = playerActions.getPlayer(roomID, playerID);
         if (CardEffects.PRODUCE_ANOTHER_PRODUCTION.equals(card.getCardEffect().getFirst())) {
-            ProduceChoice produceChoice = new ProduceChoice(card.getCardId(), null, null, null);
-            produceChoice.setProduceAnotherProduction(true);
-            produceChoice.getAllBuiltProductions();
-            return produceChoice;
+            ProduceReport produceReport = new ProduceReport(card.getCardId(), Collections.emptyList(), Collections.emptyList(), null);
+            produceReport.setProduceAnotherProduction(true);
+            produceReport.getAllBuiltProductions().addAll(
+                    Stream.of(player.getBuiltLocations().get(CardCategories.FACTION_PRODUCTION).stream().map(Card::getCardId), player.getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).stream().map(Card::getCardId))
+                            .flatMap(s -> s)
+                            .toList()
+            );
+            return produceReport;
         }
         if (card.getOrEffect().isEmpty()) {
             sourcesList
@@ -61,7 +68,7 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
                         }
                     });
         }
-        return new ProduceChoice(card.getCardId(), sourcesList, getSourcesFromEffects(card.getOrEffect()), null);
+        return new ProduceReport(card.getCardId(), sourcesList, getSourcesFromEffects(card.getOrEffect()), null);
     }
 
     private List<Sources> conditionProcess(Card card, UUID roomID, UUID playerID) {
@@ -85,11 +92,11 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
                 .toList());
     }
 
-    public Map<UUID, List<ProduceChoice>> produceDeals(UUID roomID) {
+    public Map<UUID, List<ProduceReport>> produceDeals(UUID roomID) {
         return gameRoomActions.getRoom(roomID).getPlayers().stream().collect(Collectors.toMap(Player::getPlayerID, this::produceDeals));
     }
 
-    private List<ProduceChoice> produceDeals(Player player) {
+    private List<ProduceReport> produceDeals(Player player) {
         player.getDeals()
                 .stream()
                 .filter(card -> !Sources.CARD.equals(card.getDealSource()))
@@ -100,16 +107,16 @@ public record ProductionActions(GameRoomActions gameRoomActions, PlayerActions p
                         player.getOwnSources().merge(card.getDealSource(), 1, Integer::sum);
                     }
                 });
-        return player.getDeals().stream().map(card -> new ProduceChoice(card.getCardId(), null, null, card.getDealSource())).toList();
+        return player.getDeals().stream().map(card -> new ProduceReport(card.getCardId(), Collections.emptyList(), Collections.emptyList(), card.getDealSource())).toList();
     }
 
-    public Map<UUID, ProduceChoice> produceFactionBoard(UUID roomID) {
+    public Map<UUID, ProduceReport> produceFactionBoard(UUID roomID) {
         gameRoomActions.getRoom(roomID).getPlayers().forEach(player -> player.getFaction().getFactionProduction().forEach(source -> player.getOwnSources().merge(source, 1, Integer::sum)));
         return gameRoomActions.getRoom(roomID).getPlayers()
                 .stream()
                 .collect(Collectors.toMap(
                         Player::getPlayerID,
-                        player -> new ProduceChoice(null, player.getFaction().getFactionProduction(), null, null)
+                        player -> new ProduceReport(null, player.getFaction().getFactionProduction(), Collections.emptyList(), null)
                 ));
     }
 }
