@@ -86,7 +86,7 @@ public class ConsolePrinter {
         log.info("Frakční deska produkuje {}", source);
     }
 
-    public void cardProduction(String cardID, List<Sources> sources) {
-        log.info("Karta {} produkuje: {}", cardID, sources);
+    public void cardProduction(ProduceReport produceReport) {
+        log.info("Karta {} produkuje: {}", produceReport.getCardID(), produceReport.getSource());
     }
 }

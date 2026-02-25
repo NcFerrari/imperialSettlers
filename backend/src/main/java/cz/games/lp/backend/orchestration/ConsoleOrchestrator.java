@@ -108,10 +108,7 @@ public class ConsoleOrchestrator {
                 .stream()
                 .filter(entry -> CardCategories.COMMON_PRODUCTION.equals(entry.getValue().getCardCategory()))
                 .filter(entry -> entry.getValue().getCardId().contains("com"))
-                .forEach(entry -> {
-                    System.out.println(entry.getValue());
-                    gamePartsServices.getPlayerService().getPlayer(roomID, playerID).getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).add(entry.getValue());
-                });
+                .forEach(entry -> gamePartsServices.getPlayerService().getPlayer(roomID, playerID).getBuiltLocations().get(CardCategories.COMMON_PRODUCTION).add(entry.getValue()));
     }
 
     private void performActionsPhase() {
