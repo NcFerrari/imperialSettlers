@@ -1,8 +1,8 @@
 package cz.games.lp.backend.orchestration;
 
 import cz.games.lp.backend.orchestration.enums.ProductionStates;
-import cz.games.lp.backend.service.unifiedservices.ConsoleServices;
-import cz.games.lp.backend.service.unifiedservices.GamePartsServices;
+import cz.games.lp.backend.service.commonservices.ConsoleServices;
+import cz.games.lp.backend.service.commonservices.GamePartsServices;
 import cz.games.lp.gamecore.actions.ProduceReport;
 import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.components.Player;

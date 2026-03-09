@@ -1,7 +1,7 @@
 package cz.games.lp.backend.infrastructure.mapping;
 
-import cz.games.lp.backend.service.unifiedservices.GamePartsServices;
-import cz.games.lp.backend.service.unifiedservices.MappingServices;
+import cz.games.lp.backend.service.commonservices.GamePartsServices;
+import cz.games.lp.backend.service.commonservices.MappingServices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;

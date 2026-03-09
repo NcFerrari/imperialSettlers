@@ -1,9 +1,9 @@
-package cz.games.lp.backend.serviceimpl.agregates;
+package cz.games.lp.backend.serviceimpl.commonservices;
 
 import cz.games.lp.backend.infrastructure.mapping.GameDataLoader;
 import cz.games.lp.backend.infrastructure.mapping.mappers.CardMapper;
 import cz.games.lp.backend.infrastructure.mapping.mappers.FactionMapper;
-import cz.games.lp.backend.service.unifiedservices.MappingServices;
+import cz.games.lp.backend.service.commonservices.MappingServices;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 

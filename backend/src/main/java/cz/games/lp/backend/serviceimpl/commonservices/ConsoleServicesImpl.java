@@ -1,8 +1,8 @@
-package cz.games.lp.backend.serviceimpl.agregates;
+package cz.games.lp.backend.serviceimpl.commonservices;
 
 import cz.games.lp.backend.infrastructure.console.ConsolePrinter;
 import cz.games.lp.backend.infrastructure.console.ConsoleUI;
-import cz.games.lp.backend.service.unifiedservices.ConsoleServices;
+import cz.games.lp.backend.service.commonservices.ConsoleServices;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 

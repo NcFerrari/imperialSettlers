@@ -1,4 +1,4 @@
-package cz.games.lp.backend.serviceimpl.agregates;
+package cz.games.lp.backend.serviceimpl.commonservices;
 
 import cz.games.lp.backend.service.CardService;
 import cz.games.lp.backend.service.FactionService;
@@ -6,7 +6,7 @@ import cz.games.lp.backend.service.GameService;
 import cz.games.lp.backend.service.PlayerService;
 import cz.games.lp.backend.service.ProductionService;
 import cz.games.lp.backend.service.SourceService;
-import cz.games.lp.backend.service.unifiedservices.GamePartsServices;
+import cz.games.lp.backend.service.commonservices.GamePartsServices;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 

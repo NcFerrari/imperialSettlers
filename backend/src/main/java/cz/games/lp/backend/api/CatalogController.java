@@ -1,6 +1,6 @@
 package cz.games.lp.backend.api;
 
-import cz.games.lp.backend.service.unifiedservices.GamePartsServices;
+import cz.games.lp.backend.service.commonservices.GamePartsServices;
 import cz.games.lp.gamecore.components.Card;
 import cz.games.lp.gamecore.components.Faction;
 import cz.games.lp.gamecore.components.enums.FactionTypes;

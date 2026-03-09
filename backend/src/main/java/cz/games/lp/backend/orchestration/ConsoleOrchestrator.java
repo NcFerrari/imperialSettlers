@@ -1,8 +1,8 @@
 package cz.games.lp.backend.orchestration;
 
 import cz.games.lp.backend.orchestration.enums.ConsoleStates;
-import cz.games.lp.backend.service.unifiedservices.ConsoleServices;
-import cz.games.lp.backend.service.unifiedservices.GamePartsServices;
+import cz.games.lp.backend.service.commonservices.ConsoleServices;
+import cz.games.lp.backend.service.commonservices.GamePartsServices;
 import cz.games.lp.gamecore.components.enums.CardCategories;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

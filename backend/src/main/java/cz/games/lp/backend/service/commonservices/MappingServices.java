@@ -1,4 +1,4 @@
-package cz.games.lp.backend.service.unifiedservices;
+package cz.games.lp.backend.service.commonservices;
 
 import cz.games.lp.backend.infrastructure.mapping.GameDataLoader;
 import cz.games.lp.backend.infrastructure.mapping.mappers.CardMapper;
